@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage Portfolio -->
   <url>
     <loc>https://nugrohoamdalportfolio.dpdns.org/</loc>
     <lastmod>2026-11-12</lastmod>
@@ -8,5 +9,28 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/" />
+  </url>
+
+  <!-- Products & AI Tools Catalog -->
+  <url>
+    <loc>https://nugrohoamdalportfolio.dpdns.org/products.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/products.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/products.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/products.html" />
+  </url>
+
+  <!-- Stories & Case Studies -->
+  <url>
+    <loc>https://nugrohoamdalportfolio.dpdns.org/stories.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
   </url>
 </urlset>

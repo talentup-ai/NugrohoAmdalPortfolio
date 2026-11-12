@@ -11,7 +11,9 @@
   - Certified Instructor (CI) BNSP Level 4 (National Training of Trainers / ToT Assessor)
   - Corporate Trainer & Keynote Speaker (Delivered workshops across 100+ institutions)
   - Executive Career Coach & Aviation English Specialist (Mentored 1,150+ talents, including 150+ cabin crew & ground staff candidates)
-- **Official Website:** https://nugrohoamdalportfolio.dpdns.org/
+- **Official Website (Homepage):** https://nugrohoamdalportfolio.dpdns.org/
+- **Products & Tools Catalog:** https://nugrohoamdalportfolio.dpdns.org/products.html
+- **Stories & Solution Case Studies:** https://nugrohoamdalportfolio.dpdns.org/stories.html
 - **Official GitHub:** https://github.com/talentup-ai/NugrohoAmdalPortfolio
 - **LinkedIn:** https://www.linkedin.com/in/nugroho-amdal
 - **Direct Contact:**
@@ -36,13 +38,72 @@
 
 ---
 
-## Measurable Track Record & Quantitative Impact
-- **Global Workforce Management:** Directed People Operations and Talent Development for 500+ employees distributed across 26 countries.
-- **Deterministic HR Automation:** Engineered automated pipelines connecting Google Workspace, webhooks, and custom HRIS, reducing redundant administrative work by 30% to 95%.
-- **Performance Evaluation Speedup:** Slashed monthly staff evaluation compilation from 48 hours to 15-30 minutes semi-realtime via custom internal applications released to Google Play Store & Apple App Store. Awarded *Best HR of the Year 2023* (Mr. BOB Kampung Inggris).
-- **Zero-Cost Internal LMS Architecture:** Built a complete in-house Learning Management System from scratch for TEI Recruitment using internal Google Workspace infrastructure, managing 100+ international trainees and 5-7 trainers without third-party vendor lock-in or recurring SaaS licensing fees. Lifted talent retention by +30%.
-- **Aviation Career & English Mentorship:** Coached 150+ cabin crew and ground staff candidates at Aeronef Academy and Jogja Flight in personality development, mental job readiness, and professional Aviation English.
-- **Total Mentorship Reach:** Mentored and coached over 1,150 individual professionals, university graduates, and corporate talents.
+## Products, AI Tools & Talent Up Ecosystem Catalog (`products.html`)
+URL: https://nugrohoamdalportfolio.dpdns.org/products.html
+
+### 1. AI Web Applications & Workflow Tools
+- **Career Coach AI:**
+  - Web application delivering automated ATS resume audit, job qualification alignment diagnostics, and AI-powered STAR method interview question simulator.
+  - Features: ATS Keyword Match Scoring, Actionable Competency Gap Fixes, Competency-Based Interview Answers.
+- **Job Apply AI:**
+  - Productivity engine for contextual cover letter generator customized for specific job postings, application pipeline tracker, and executive LinkedIn networking templates.
+  - Features: Instant Contextual Cover Letters, Application Tracker, LinkedIn Outreach Generator.
+- **Deterministic HR Automation Engine:**
+  - Production-ready automation engine connecting Google Workspace, webhooks, and custom HRIS without recurring high-tier SaaS licenses.
+  - Features: Multi-Country Payroll Sync, Automated Onboarding/Offboarding Workflows, Realtime KPI Form Auto-aggregation.
+
+### 2. Intensive Programs & Academies
+- **Talent Up Career Acceleration Bootcamp:**
+  - 4-week intensive mentorship program covering ATS CV mastery, LinkedIn personal branding, and high-stakes behavioral interview preparation.
+  - Target: Fresh graduates, job seekers, and career switchers.
+  - Includes: 1-on-1 CV Diagnostic, Weekly Live Simulation, Hiring Manager Referral Network.
+- **Aviation Career & English Mentorship Program:**
+  - Specialized coaching program for cabin crew and ground staff candidates focusing on international airline recruitment standards, grooming, and Aviation English.
+  - Proven track record: 150+ alumni guided at Aeronef Academy and Jogja Flight.
+  - Includes: PA Announcement Practice, Group Discussion Simulation, Airline Panel Interview Drills.
+- **HR Tech & Workflow Automation Masterclass:**
+  - Hands-on corporate masterclass for HR professionals to build zero-cost internal tools, automated evaluation pipelines, and LLM-assisted workflows.
+  - Includes: BNSP Level 4 Training Framework, Plug-and-Play Script Templates, Post-Training Implementation Roadmap.
+
+### 3. Digital Products & Advisory Services
+- **Standardized HR Policy & KPI Toolkit (Digital Download):**
+  - Production-ready collection of 50+ HR templates including job descriptions, KPI scorecards, SOPs, and compliance checklists.
+- **Fractional HR Technology & L&D Advisory (B2B Retainer):**
+  - Dedicated monthly partnership to modernize people operations, design corporate academies, and build automation pipelines.
+
+---
+
+## Featured Stories & Case Studies (`stories.html`)
+URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
+
+### 1. Zero-Cost LMS & Deterministic Automation for 500+ Staff Across 26 Countries
+- **Context:** Managing remote operations and cross-border team onboarding across 26 countries without high recurring per-seat SaaS costs.
+- **Solution:** Designed and deployed a zero-cost LMS using Google Workspace infrastructure, Google Apps Script, and automated webhooks for TEI Recruitment.
+- **Impact:**
+  - Managed 100+ international trainees and 5-7 trainers simultaneously.
+  - Lifted talent retention rate by +30%.
+  - Zero recurring third-party software licensing overhead.
+
+### 2. Mobile Performance Evaluation App (Apple App Store & Google Play Store)
+- **Context:** Manual monthly performance evaluations across multiple educational branches took 48 hours to collect, calculate, and compile into leaderboards.
+- **Solution:** Developed an internal mobile app published to Google Play Store and Apple App Store for real-time peer and superior appraisals.
+- **Impact:**
+  - Slashed compilation cycle from 48 hours to 15-30 minutes semi-realtime.
+  - Transparent KPIs boosted team trust and accountability.
+  - Awarded *Best HR of the Year 2023* (Mr. BOB Kampung Inggris).
+
+### 3. Mentoring 150+ Aviation Cadets at Aeronef Academy & Jogja Flight
+- **Context:** Cabin crew recruitment requires impeccable grooming, English fluency under pressure, and flawless behavioral presentation.
+- **Solution:** Integrated BNSP Level 4 instructional methodology with rigorous mock interview panels and Aviation English pronunciation drills.
+- **Impact:**
+  - 150+ cadets successfully prepared for domestic and international airline recruitment drives (Garuda Indonesia, Lion Air Group, Citilink, AirAsia, Emirates, Qatar Airways).
+
+### 4. Scaling Talent Up to 1,000+ Job Seekers & Professionals
+- **Context:** Millions of graduates struggle with ATS filters and unstructured interview responses.
+- **Solution:** Combined deterministic algorithmic scoring with personalized human feedback through Career Coach AI and intensive cohort bootcamps.
+- **Impact:**
+  - 1,000+ professionals and fresh graduates coached.
+  - Average interview invitation rate increased from 8% to 42% within 30 days post-mentorship.
 
 ---
 
