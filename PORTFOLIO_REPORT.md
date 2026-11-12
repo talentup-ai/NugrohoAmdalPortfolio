@@ -232,7 +232,7 @@ Telah dilakukan audit menyeluruh terhadap ke-49 tautan interaktif yang ada di da
 | **Email Full-Time** | `mailto:nugrohoamdal@gmail.com?subject=Full-Time%20Role%20Inquiry...` | Penawaran Peran Karir | 100% Aktif |
 | **LinkedIn** | `https://www.linkedin.com/in/nugroho-amdal` | Profil Profesional Resmi | 100% Aktif |
 | **Instagram** | `https://instagram.com/nugrohoamdal` | Media Sosial Pribadi | 100% Aktif |
-| **Google Drive** | `https://drive.google.com/drive/u/2/folders/1ZRUml2ghc4s_wu9A7amdEhMezXbU5Xa0` | Kredensial & Sertifikat BNSP | 100% Aktif |
+| **Google Drive** | `https://drive.google.com/drive/folders/1ZRUml2ghc4s_wu9A7amdEhMezXbU5Xa0` | Kredensial & Sertifikat BNSP | 100% Aktif |
 | **Internal Anchors** | `#hero`, `#about`, `#ai-systems`, `#experience`, `#certifications`, `#gallery`, `#services-rates` | Navigasi Halaman Halus (+Offset 80px) | 100% Aktif |
 
 ---
