@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="id" data-lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nugroho Amdal, S.S., CI. - Global HR, HR Technology Workflow Architect & Certified Instructor</title>
+  <meta name="description" content="Portofolio resmi Nugroho Amdal, S.S., CI.: Global HR Specialist (26 Negara), HR Technology Workflow Architect, Certified Instructor (CI) BNSP Level 4 (ToT), Speaker & Career Coach (1.150+ dibimbing).">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nugroho Amdal, S.S., CI. - Global HR, HR Technology Workflow Architect & Certified Instructor">
+  <meta property="og:description" content="Global HR Specialist (26 Negara), HR Technology Workflow Architect, Certified Instructor BNSP Level 4, Speaker & Coach.">
+  <meta property="og:image" content="assets/hero-cutout.png">
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#060B14',
+            cardDark: '#0F172A',
+            cardElevated: '#1E293B',
+            royal: '#2563EB',
+            royalHover: '#1D4ED8',
+            gold: '#F59E0B',
+            goldLight: '#FDE68A',
+            emeraldCustom: '#10B981',
+            cyanCustom: '#38BDF8',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS Animation on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* CSS Variables & Global Dark Obsidian System */
+    :root {
+      --bg-dark: #060B14;
+      --card-bg: #0F172A;
+      --card-elevated: #1E293B;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.35);
+      --royal: #2563EB;
+      --gold: #F59E0B;
+      --emerald: #10B981;
+      --cyan: #38BDF8;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #2563EB;
+      selection-color: #ffffff;
+    }
+
+    /* Bilingual Language Toggling Engine */
+    .lang {
+      display: none !important;
+    }
+    html[data-lang="id"] .lang-id,
+    [data-lang="id"] .lang-id {
+      display: inline !important;
+    }
+    html[data-lang="id"] div.lang-id,
+    html[data-lang="id"] p.lang-id,
+    html[data-lang="id"] section.lang-id,
+    html[data-lang="id"] ul.lang-id,
+    [data-lang="id"] div.lang-id,
+    [data-lang="id"] p.lang-id {
+      display: block !important;
+    }
+    html[data-lang="id"] .lang-id.flex,
+    [data-lang="id"] .lang-id.flex {
+      display: flex !important;
+    }
+    html[data-lang="id"] .lang-id.grid,
+    [data-lang="id"] .lang-id.grid {
+      display: grid !important;
+    }
+
+    html[data-lang="en"] .lang-en,
+    [data-lang="en"] .lang-en {
+      display: inline !important;
+    }
+    html[data-lang="en"] div.lang-en,
+    html[data-lang="en"] p.lang-en,
+    html[data-lang="en"] section.lang-en,
+    html[data-lang="en"] ul.lang-en,
+    [data-lang="en"] div.lang-en,
+    [data-lang="en"] p.lang-en {
+      display: block !important;
+    }
+    html[data-lang="en"] .lang-en.flex,
+    [data-lang="en"] .lang-en.flex {
+      display: flex !important;
+    }
+    html[data-lang="en"] .lang-en.grid,
+    [data-lang="en"] .lang-en.grid {
+      display: grid !important;
+    }
+
+    /* Border Beam Animation (@property / conic-gradient) */
+    @property --beam-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes rotateBeam {
+      0% { --beam-angle: 0deg; }
+      100% { --beam-angle: 360deg; }
+    }
+
+    @keyframes pulseBeamGlow {
+      0%, 100% {
+        box-shadow: 0 0 12px -2px rgba(56, 189, 248, 0.4), 0 0 20px -4px rgba(245, 158, 11, 0.25);
+      }
+      50% {
+        box-shadow: 0 0 22px 2px rgba(56, 189, 248, 0.8), 0 0 32px 4px rgba(245, 158, 11, 0.45);
+      }
+    }
+
+    .border-beam-outer {
+      position: relative;
+      border-radius: 9999px;
+      padding: 2px;
+      background: conic-gradient(
+        from var(--beam-angle),
+        transparent 0deg,
+        transparent 160deg,
+        #2563EB 220deg,
+        #38BDF8 270deg,
+        #F59E0B 320deg,
+        #10B981 350deg,
+        transparent 360deg
+      );
+      animation: rotateBeam 3.2s linear infinite, pulseBeamGlow 2.4s ease-in-out infinite;
+    }
+
+    /* Glassmorphism Styles */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Hero Cutout Mask */
+    .hero-cutout-img {
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
+    }
+
+    /* Subtle Floating Keyframes */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-float-slow {
+      animation: floatGentle 5s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: floatGentle 5s ease-in-out 2.5s infinite;
+    }
+
+    /* Lightbox Modal */
+    #lightboxModal {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    #lightboxModal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Accordion transitions */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 600px;
+      transition: max-height 0.5s ease-in-out;
+    }
+    .accordion-item.active .accordion-chevron {
+      transform: rotate(180deg);
+      color: #38BDF8;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Wordmark -->
+      <a href="#hero" class="flex flex-col group">
+        <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors">
+          Nugroho Amdal<span class="text-gold font-sans font-normal text-sm ml-1">, S.S., CI.</span>
+        </span>
+        <span class="text-[10px] sm:text-xs font-display tracking-widest uppercase text-slate-400 group-hover:text-slate-200 transition-colors">
+          <span class="lang lang-id">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
+          <span class="lang lang-en">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
+        </a>
+        <a href="#ai-systems" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI Systems</span>
+        </a>
+        <a href="#experience" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
+        </a>
+        <a href="#certifications" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Sertifikasi</span><span class="lang lang-en">Credentials</span>
+        </a>
+        <a href="#gallery" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Dokumentasi</span><span class="lang lang-en">Documentation</span>
+        </a>
+        <a href="#services-rates" class="hover:text-white transition-colors">
+          <span class="lang lang-id">Layanan & Rates</span><span class="lang lang-en">Services & Rates</span>
+        </a>
+      </nav>
+
+      <!-- Right Controls: Bilingual Button Beam + CTA + Mobile Hamburger -->
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        
+        <!-- BILINGUAL TOGGLE WITH CONIC ROTATING BORDER BEAM -->
+        <div class="border-beam-outer shadow-lg" title="Ganti Bahasa / Switch Language">
+          <div class="bg-cardDark/95 rounded-full p-1 flex items-center space-x-1">
+            <button id="btnLangID" type="button" onclick="switchLanguage('id')" 
+              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md">
+              ID
+            </button>
+            <button id="btnLangEN" type="button" onclick="switchLanguage('en')" 
+              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white">
+              EN
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Contact CTA -->
+        <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20berdiskusi%20mengenai%20peluang%20kerja%20sama%20atau%20peran%20HR." 
+           target="_blank" rel="noopener noreferrer"
+           class="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold font-display bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+          <span class="lang lang-id">Hubungi Langsung</span>
+          <span class="lang lang-en">Get in Touch</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-4">
+      <a href="#about" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Profil Profesional</span><span class="lang lang-en">Professional Profile</span>
+      </a>
+      <a href="#ai-systems" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Inovasi HR & Sistem AI</span><span class="lang lang-en">HR & AI Systems</span>
+      </a>
+      <a href="#experience" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Rekam Jejak Karir</span><span class="lang lang-en">Career Track Record</span>
+      </a>
+      <a href="#certifications" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Sertifikasi & Penghargaan</span><span class="lang lang-en">Certifications & Awards</span>
+      </a>
+      <a href="#gallery" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Dokumentasi Event & Pelatihan</span><span class="lang lang-en">Event & Training Documentation</span>
+      </a>
+      <a href="#services-rates" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Layanan Speaking & Rate Card</span><span class="lang lang-en">Speaking Services & Rate Card</span>
+      </a>
+      <div class="pt-2 border-t border-white/10 flex flex-col space-y-2">
+        <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda." target="_blank"
+           class="flex items-center justify-center space-x-2 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+          <span>WhatsApp (+62 853-9594-0406)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative pt-28 sm:pt-36 pb-20 md:pb-28 overflow-hidden min-h-[90vh] flex items-center">
+      
+      <!-- Background Hall Image with Dark Navy Gradient Fade to Obsidian -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
+           style="background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.72) 0%, rgba(6, 11, 20, 0.88) 55%, #060B14 100%), url('assets/hero-bg-hall.png');">
+      </div>
+
+      <!-- Subtle Ambient Radial Lights -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Column Left: Copywriting & Audience Routers (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left" data-aos="fade-right" data-aos-duration="1000">
+            
+            <!-- Authority Badge -->
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-cyanCustom/30 backdrop-blur-md shadow-inner text-xs sm:text-sm font-display font-medium text-cyan-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="lang lang-id">Global HR (26 Negara) • Certified Instructor (CI) BNSP Level 4 • HR Technology Workflow Architect</span>
+              <span class="lang lang-en">Global HR (26 Countries) • Certified Instructor (CI) BNSP Level 4 • HR Technology Workflow Architect</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white">
+              <span class="lang lang-id">
+                Menjembatani <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">Operasional HR Global</span>, Otomasi AI Deterministik, dan Kapabilitas Manusia.
+              </span>
+              <span class="lang lang-en">
+                Bridging <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">Global HR Operations</span>, Deterministic AI Workflows, and Human Capability.
+              </span>
+            </h1>
+
+            <!-- Subtitle Description -->
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-sans">
+              <span class="lang lang-id">
+                Praktisi People & Culture dan L&D dengan pengalaman mengelola <strong>500+ staf di 26 negara</strong>, membangun arsitektur otomasi HR Technology deterministik yang memangkas beban admin <strong>30% hingga 95%</strong>, membimbing <strong>1.150+ profesional dan talenta</strong>, serta memegang lisensi <strong>Certified Instructor (CI) BNSP Level 4</strong> yang berwenang melatih dan menguji para Trainer (Training of Trainers).
+              </span>
+              <span class="lang lang-en">
+                People & Culture and L&D practitioner experienced in managing <strong>500+ staff across 26 countries</strong>, architecting deterministic HR Technology automations cutting admin overhead by <strong>30% to 95%</strong>, mentoring <strong>1,150+ professionals and talents</strong>, and holding official <strong>BNSP Level 4 Certified Instructor (CI)</strong> credentials authorized to train and assess Trainers (ToT).
+              </span>
+            </p>
+
+            <!-- Dual-Audience Navigation Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              
+              <!-- Audience 1: Hiring Manager -->
+              <a href="#ai-systems" class="group glass-card p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-blue-500 hover:border-l-cyanCustom">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400 font-display mb-1 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span class="lang lang-id">Untuk Hiring Manager & Recruiter</span>
+                    <span class="lang lang-en">For Hiring Managers & Recruiters</span>
+                  </div>
+                  <h2 class="text-sm sm:text-base font-bold text-white group-hover:text-cyanCustom transition-colors font-display mb-1">
+                    <span class="lang lang-id">Portofolio HR & Inovasi Sistem AI</span>
+                    <span class="lang lang-en">HR & AI Systems Portfolio</span>
+                  </h2>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    <span class="lang lang-id">Studi kasus otomasi HRIS 26 negara, aplikasi evaluasi Play Store, LMS zero-cost, & metrik C-level.</span>
+                    <span class="lang lang-en">26-country HRIS automation, Play Store performance app, zero-cost LMS, & executive metrics.</span>
+                  </p>
+                </div>
+                <div class="mt-3 inline-flex items-center space-x-1 text-xs font-semibold text-sky-400 group-hover:translate-x-1 transition-transform">
+                  <span class="lang lang-id">Jelajahi Studi Kasus & Rekam Jejak</span>
+                  <span class="lang lang-en">Explore Case Studies & Track Record</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+              </a>
+
+              <!-- Audience 2: Corporate & Event Organizer -->
+              <a href="#services-rates" class="group glass-card p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-amber-500 hover:border-l-amber-400">
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400 font-display mb-1 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                    <span class="lang lang-id">Untuk Klien Corporate & EO</span>
+                    <span class="lang lang-en">For Corporate Clients & Event Organizers</span>
+                  </div>
+                  <h2 class="text-sm sm:text-base font-bold text-white group-hover:text-amber-300 transition-colors font-display mb-1">
+                    <span class="lang lang-id">Undang Speaker, Trainer & Coach</span>
+                    <span class="lang lang-en">Book Speaker, Trainer & Coach</span>
+                  </h2>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    <span class="lang lang-id">Topik pelatihan BNSP Level 4, bukti dokumentasi di 100+ institusi, kurikulum kustom, & B2B Rate Card.</span>
+                    <span class="lang lang-en">BNSP Level 4 curricula, proven delivery across 100+ institutions, custom modules, & B2B Rate Card.</span>
+                  </p>
+                </div>
+                <div class="mt-3 inline-flex items-center space-x-1 text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform">
+                  <span class="lang lang-id">Lihat Topik, Layanan & Rates</span>
+                  <span class="lang lang-en">View Topics, Services & Rates</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Primary CTAs & Social Links -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20lebih%20lanjut." 
+                 target="_blank" rel="noopener noreferrer"
+                 class="px-6 py-3.5 rounded-xl font-display font-semibold text-sm bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2.5">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                <span class="lang lang-id">Hubungi WhatsApp (+62 853-9594-0406)</span>
+                <span class="lang lang-en">Connect via WhatsApp (+62 853-9594-0406)</span>
+              </a>
+
+              <a href="mailto:nugrohoamdal@gmail.com?subject=Inquiry%20Collaboration%20-%20Nugroho%20Amdal" 
+                 class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-white/10 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2">
+                <i class="fa-solid fa-envelope text-sky-400"></i>
+                <span>nugrohoamdal@gmail.com</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
+                 class="p-3.5 rounded-xl bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/10 transition-all transform hover:-translate-y-0.5"
+                 title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in text-base"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Column Right: Seamless Hero Cutout & Floating Badges (5 Cols) -->
+          <div class="lg:col-span-5 relative flex justify-center items-end" data-aos="fade-left" data-aos-duration="1000">
+            <div class="relative w-full max-w-md sm:max-w-lg lg:max-w-none flex flex-col items-center">
+              
+              <!-- Subtle Background Light Beam behind cutout -->
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-600/25 via-indigo-500/15 to-transparent rounded-full blur-2xl -z-10 transform scale-95"></div>
+
+              <!-- Main Cutout Image (No Card Frame, Bottom Gradient Mask) -->
+              <img src="assets/hero-cutout.png" 
+                   alt="Nugroho Amdal, S.S., CI." 
+                   class="hero-cutout-img w-full max-h-[580px] lg:max-h-[640px] object-contain object-bottom pointer-events-none select-none">
+
+              <!-- Floating Authority Badge 1: BNSP Level 4 CI (ToT) -->
+              <div class="absolute -top-3 sm:top-2 left-0 sm:-left-4 glass-card px-4 py-3 rounded-2xl border border-emeraldCustom/40 shadow-2xl animate-float-slow flex items-center space-x-3 z-20">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-lg">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase tracking-wider font-display font-bold text-emerald-400">BNSP Certified</div>
+                  <div class="text-xs sm:text-sm font-bold text-white font-display">Certified Instructor (CI) Level 4</div>
+                  <div class="text-[10px] text-slate-300">Training of Trainers (ToT)</div>
+                </div>
+              </div>
+
+              <!-- Floating Authority Badge 2: Best HR of the Year 2023 -->
+              <div class="absolute bottom-16 sm:bottom-20 right-0 sm:-right-4 glass-card px-4 py-3 rounded-2xl border border-amber-500/40 shadow-2xl animate-float-delayed flex items-center space-x-3 z-20">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 text-lg">
+                  <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase tracking-wider font-display font-bold text-amber-400">Awarded 2023</div>
+                  <div class="text-xs sm:text-sm font-bold text-white font-display">Best HR of the Year</div>
+                  <div class="text-[10px] text-slate-300">Mr. BOB Kampung Inggris</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==================== REDESIGNED CLEAN LOGO CARDS (BG-SLATE-50) ==================== -->
+        <div class="mt-16 pt-10 border-t border-white/10" data-aos="fade-up" data-aos-duration="900">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold font-display uppercase tracking-widest text-slate-400">
+                <span class="lang lang-id">Jejak Kolaborasi Industri, Pemerintahan & Institusi Global</span>
+                <span class="lang lang-en">Industry, Government & Global Institutional Footprint</span>
+              </span>
+            </div>
+            <!-- Universities Highlight Badge (No Abbreviations) -->
+            <div class="inline-flex items-center space-x-2 text-xs sm:text-sm font-display text-sky-300 bg-sky-950/70 border border-sky-500/40 rounded-full px-4 sm:px-5 py-2 shadow-inner">
+              <i class="fa-solid fa-graduation-cap text-sky-400 text-sm"></i>
+              <span class="lang lang-id">Kolaborasi Kampus: <strong>Universitas Brawijaya, Universitas Negeri Malang, Universitas Trunojoyo Madura, dan berbagai perguruan tinggi nasional lainnya</strong></span>
+              <span class="lang lang-en">University Engagements: <strong>Universitas Brawijaya, Universitas Negeri Malang, Universitas Trunojoyo Madura, and various other national universities</strong></span>
+            </div>
+          </div>
+
+          <!-- Redesigned Logo Cards Grid (Clean Bright Surface #F8FAFC / bg-slate-50) -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3.5 sm:gap-4 items-center">
+            
+            <!-- 1. The KPI Institute -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="The KPI Institute (Melbourne / Global)">
+              <img src="assets/logo-kpi-institute.png" alt="The KPI Institute" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 2. PT Angkasa Pura II -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="PT Angkasa Pura II (Persero)">
+              <img src="assets/logo-angkasa-pura.png" alt="PT Angkasa Pura II" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 3. Kementerian Pendidikan -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi">
+              <img src="assets/logo-kementerian-pendidikan.webp" alt="Kemendikbudristek" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 4. Aeronef Academy (NEW) -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Aeronef Academy">
+              <img src="assets/logo-aeronefacademy.webp" alt="Aeronef Academy" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 5. Jogja Flight (NEW) -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Jogja Flight">
+              <img src="assets/logo-jogjaflight.jpg" alt="Jogja Flight" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 6. Mr. BOB Kampung Inggris -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Mr. BOB Kampung Inggris">
+              <img src="assets/logo-mrbob.webp" alt="Mr. BOB Kampung Inggris" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 7. TEI Recruitment -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="TEI Recruitment">
+              <img src="assets/logo-teirecruitment.jpg" alt="TEI Recruitment" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 8. Talent Up -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Talent Up">
+              <img src="assets/logo-talentup.png" alt="Talent Up" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 9. AIESEC Global -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="AIESEC Global">
+              <img src="assets/logo-aisec.png" alt="AIESEC" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 10. NusaWork HR Tech (Cropped) -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="NusaWork HR Tech">
+              <img src="assets/logo-nusawork.webp" alt="NusaWork" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 11. Study Abroad Center -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Study Abroad Center">
+              <img src="assets/logo-studyabroadcenter.webp" alt="Study Abroad Center" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 12. LMSL International -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="LMSL International">
+              <img src="assets/logo-lmsl.jpg" alt="LMSL" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- 13. Closing Card: & berbagai perusahaan lainnya -->
+            <div class="col-span-2 sm:col-span-1 rounded-xl h-16 sm:h-20 px-3 py-2 flex items-center justify-center text-center shadow-lg bg-gradient-to-br from-slate-900 via-blue-950/70 to-slate-900 border border-blue-400/40 hover:border-cyan-400 hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group">
+              <span class="font-display font-bold text-xs sm:text-xs text-cyan-300 group-hover:text-white transition-colors leading-tight">
+                <span class="lang lang-id">& berbagai perusahaan lainnya</span>
+                <span class="lang lang-en">& many more organizations</span>
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6-COLUMN TRUST & IMPACT BAR ==================== -->
+    <section class="border-y border-white/10 bg-cardDark/60 backdrop-blur-xl py-8 relative z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-white/10 text-center">
+          
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="50">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">26</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Negara Operasional HR<br><span class="text-slate-300 font-medium">(500+ Karyawan)</span></span>
+              <span class="lang lang-en">Countries Footprint<br><span class="text-slate-300 font-medium">(500+ Employees)</span></span>
+            </div>
+          </div>
+
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-cyanCustom tracking-tight">30% - 95%</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Efisiensi Admin Terukur<br><span class="text-slate-300 font-medium">via Otomasi Deterministik</span></span>
+              <span class="lang lang-en">Operational Efficiency<br><span class="text-slate-300 font-medium">via Structured Workflows</span></span>
+            </div>
+          </div>
+
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="150">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-emeraldCustom tracking-tight">48h → 15m</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Aplikasi Evaluasi Kinerja<br><span class="text-slate-300 font-medium">Play Store & App Store</span></span>
+              <span class="lang lang-en">Performance App<br><span class="text-slate-300 font-medium">Speedup (Semi-Realtime)</span></span>
+            </div>
+          </div>
+
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold tracking-tight">40%</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Biaya Training Dihemat<br><span class="text-slate-300 font-medium">Internal Facilitator Model</span></span>
+              <span class="lang lang-en">Training Cost Saved<br><span class="text-slate-300 font-medium">Internal Facilitator Model</span></span>
+            </div>
+          </div>
+
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="250">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">1.150+</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Profesional & Talenta Dibimbing<br><span class="text-slate-300 font-medium">Coaching, L&D & Aviasi</span></span>
+              <span class="lang lang-en">Professionals & Talents Mentored<br><span class="text-slate-300 font-medium">Coaching, L&D & Aviation</span></span>
+            </div>
+          </div>
+
+          <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-amber-300 tracking-tight">BNSP Lv.4</div>
+            <div class="text-xs text-slate-400 mt-1.5 leading-snug">
+              <span class="lang lang-id">Certified Instructor (CI)<br><span class="text-slate-300 font-medium">& Best HR 2023</span></span>
+              <span class="lang lang-en">Certified Instructor (CI)<br><span class="text-slate-300 font-medium">& Best HR of Year 2023</span></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4 AI & SYSTEMS CASE STUDIES ==================== -->
+    <section id="ai-systems" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
+            <i class="fa-solid fa-microchip"></i>
+            <span class="lang lang-id">Studi Kasus Inovasi Sistem HR</span>
+            <span class="lang lang-en">HR Systems Innovation Case Studies</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Solusi Digital, Otomasi Alur Kerja & AI Enablement Nyata.</span>
+            <span class="lang lang-en">Digital Solutions, Workflow Automation & Proven AI Enablement.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">
+              Bukan sekadar teori konsep AI atau presentasi slide. Berikut adalah 4 sistem dan platform operasional nyata yang saya bangun untuk memecahkan bottleneck kritis di HR, L&D, dan ekosistem karier.
+            </span>
+            <span class="lang lang-en">
+              Beyond transformation slides. Here are 4 real production systems and workflows engineered from scratch to resolve operational bottlenecks across HR, L&D, and career tech.
+            </span>
+          </p>
+        </div>
+
+        <!-- 4 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Case Study 1: The KPI Institute -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold font-display uppercase tracking-wider text-gold">
+                  The KPI Institute • Melbourne (Global 26 Negara)
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 border border-emerald-500/40 text-emerald-400">
+                  -30% Admin Workload
+                </span>
+              </div>
+              
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
+                <span class="lang lang-id">Otomasi Integrasi HRIS In-House & Alur Administrasi Lintas Negara</span>
+                <span class="lang lang-en">In-House HRIS Integration & Cross-Border Admin Automation</span>
+              </h3>
+
+              <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Masalah Bisnis:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Business Pain Point:</span>
+                  </strong>
+                  <span class="lang lang-id">Entri personalia manual, pengingat tinjauan 360 derajat, dan administrasi surat-menyurat untuk 500+ karyawan di zona waktu APAC, EMEA, dan Americas membebani operasional harian.</span>
+                  <span class="lang lang-en">Manual data entry, 360-degree review reminders, and personnel letter generation across 500+ staff in APAC, EMEA, and Americas created massive operational lag.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solusi & Arsitektur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solution & Architecture:</span>
+                  </strong>
+                  <span class="lang lang-id">Membangun pipeline sinkronisasi data dari Google Sheets ke database HRIS in-house via Google Apps Script, otomasi tugas Asana, dan validasi REST API terstruktur.</span>
+                  <span class="lang lang-en">Engineered automated data sync from Google Sheets into custom in-house HRIS using Google Apps Script, Asana task automations, and validated REST API webhooks.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Dampak Terukur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Measurable Impact:</span>
+                  </strong>
+                  <span class="lang lang-id">Memangkas 30% beban admin manual tim People & Culture, mempercepat pelaporan workforce analytics rutin (headcount, time-to-fill, turnover, retensi) langsung ke jajaran C-suite.</span>
+                  <span class="lang lang-en">Reduced manual HR admin load by ~30% and enabled reliable executive workforce analytics reporting (headcount, time-to-fill, turnover, retention) directly to C-suite.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Google Apps Script</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">In-House HRIS API</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Asana Workflows</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">BambooHR & Teamtailor</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Workforce Analytics</span>
+            </div>
+          </div>
+
+          <!-- Case Study 2: Mr. BOB Mobile App -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold font-display uppercase tracking-wider text-gold">
+                  Mr. BOB Kampung Inggris (80+ Tutor/Instruktur)
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 border border-cyan-500/40 text-cyan-400">
+                  48 Jam → 15-30 Menit
+                </span>
+              </div>
+              
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
+                <span class="lang lang-id">Aplikasi Evaluasi Kinerja & Feedback Pelanggan (Play Store & App Store)</span>
+                <span class="lang lang-en">Performance Evaluation & Customer Feedback App (Play & App Store)</span>
+              </h3>
+
+              <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Masalah Bisnis:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Business Pain Point:</span>
+                  </strong>
+                  <span class="lang lang-id">Pengumpulan kuesioner kertas/formulir manual feedback pelanggan atas performa 80+ tutor memakan waktu rekapitulasi hingga 48 jam di setiap siklus periode.</span>
+                  <span class="lang lang-en">Paper forms and manual feedback compilation for 80+ instructors required up to 48 hours per evaluation cycle, delaying coaching interventions.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solusi & Arsitektur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solution & Architecture:</span>
+                  </strong>
+                  <span class="lang lang-id">Merancang dan merilis aplikasi mobile performa internal ke Google Play Store dan Apple App Store yang terhubung langsung ke database Google Sheets tersinkronisasi.</span>
+                  <span class="lang lang-en">Architected and published an internal performance mobile app to Google Play Store & Apple App Store connected directly to a synchronized Google Sheets database.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Dampak Terukur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Measurable Impact:</span>
+                  </strong>
+                  <span class="lang lang-id">Rekapitulasi data dipangkas dari 48 jam menjadi 15-30 menit secara semi-realtime, mendongkrak produktivitas tim +15%, dan memenangkan penghargaan Best HR of the Year 2023.</span>
+                  <span class="lang lang-en">Slashed compilation time from 48 hours to 15-30 minutes semi-realtime, lifted team productivity by +15%, and earned Best HR of the Year 2023.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Google Play Store</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Apple App Store</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Google Sheets DB</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Real-Time HR Dashboard</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">KPI Framework</span>
+            </div>
+          </div>
+
+          <!-- Case Study 3: TEI Recruitment Zero-Cost LMS -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold font-display uppercase tracking-wider text-gold">
+                  TEI Recruitment • L&D Internasional
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 border border-indigo-500/40 text-indigo-300">
+                  Zero-Cost LMS • +30% Retention
+                </span>
+              </div>
+              
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
+                <span class="lang lang-id">Pembangunan Internal Learning Management System (LMS) Bebas Biaya Lisensi</span>
+                <span class="lang lang-en">Zero-Cost Internal Learning Management System (LMS) Architecture</span>
+              </h3>
+
+              <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Masalah Bisnis:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Business Pain Point:</span>
+                  </strong>
+                  <span class="lang lang-id">Kebutuhan mengkoordinasikan kurikulum, pelatihan 5-7 trainer (~4 kelas/trainer), dan memantau kemajuan 100+ peserta lintas negara tanpa bujet lisensi LMS enterprise yang mahal.</span>
+                  <span class="lang lang-en">Needed to organize curriculum, coordinate 5-7 trainers (~4 classes/trainer), and monitor 100+ trainees across timezones without enterprise LMS subscription costs.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solusi & Arsitektur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solution & Architecture:</span>
+                  </strong>
+                  <span class="lang lang-id">Membangun ekosistem LMS internal dari nol menggunakan orkestrasi Google Workspace (Sheets, Slides, Forms, Apps Script), Zoom, dan rubrik asesmen Kirkpatrick Model.</span>
+                  <span class="lang lang-en">Built a custom internal LMS from scratch leveraging Google Workspace (Sheets, Slides, Forms, Apps Script), Zoom, and Kirkpatrick evaluation rubrics.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Dampak Terukur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Measurable Impact:</span>
+                  </strong>
+                  <span class="lang lang-id">Meningkatkan skor evaluasi performa peserta sebesar +20% dan tingkat retensi kerja sebesar +30% dalam 3 bulan untuk klien manufaktur, hospitality, dan medis di Eropa & Timur Tengah.</span>
+                  <span class="lang lang-en">Boosted trainee competency test scores by +20% and 3-month job retention by +30% for manufacturing, hospitality, and healthcare employers in Europe & Middle East.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Google Workspace LMS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Kirkpatrick Evaluation</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">100+ IDPs</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Apps Script Automation</span>
+            </div>
+          </div>
+
+          <!-- Case Study 4: Talent Up AI Ecosystem -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <span class="text-xs font-bold font-display uppercase tracking-wider text-gold">
+                  Talent Up • Founder & Systems Builder
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 border border-amber-500/40 text-amber-300">
+                  ~100 Active Users • 1.150+ Coached
+                </span>
+              </div>
+              
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
+                <span class="lang lang-id">Career Coach AI, Job Apply AI & Otomasi Bisnis End-to-End</span>
+                <span class="lang lang-en">Career Coach AI, Job Apply AI & End-to-End Business Automation</span>
+              </h3>
+
+              <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Masalah Bisnis:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-1"></i> Business Pain Point:</span>
+                  </strong>
+                  <span class="lang lang-id">Pencari kerja kesulitan mengaudit CV & LinkedIn, memetakan kecocokan psikometrik (RIASEC/OCEAN), serta mendeteksi lowongan kerja bodong (scam) secara mandiri.</span>
+                  <span class="lang lang-en">Job seekers lacked accessible tools to audit ATS resumes/LinkedIn, map psychological career alignment (RIASEC/OCEAN), and identify scam job postings.</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solusi & Arsitektur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Solution & Architecture:</span>
+                  </strong>
+                  <span class="lang lang-id">Membangun web app Career Coach AI berbasis Gemini API (~100 pengguna aktif termasuk user berbayar), prototipe Job Apply AI, serta integrasi webhook Scalev + Mayar + Apps Script + Hermes/Nginx tanpa biaya server bulanan.</span>
+                  <span class="lang lang-en">Developed Career Coach AI web app powered by Gemini API (~100 active users including paid subscribers), Job Apply AI prototype, and zero-server-cost webhook integration (Scalev + Mayar + Apps Script + Hermes).</span>
+                </div>
+
+                <div>
+                  <strong class="text-white block font-display text-xs uppercase tracking-wider mb-1 text-slate-400">
+                    <span class="lang lang-id"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Dampak Terukur:</span>
+                    <span class="lang lang-en"><i class="fa-solid fa-chart-line text-emerald-400 mr-1"></i> Measurable Impact:</span>
+                  </strong>
+                  <span class="lang lang-id">Melayani 1.150+ peserta bimbingan karier, 200+ pengguna e-learning terstruktur, serta memotong alur manual onboarding pembayaran menjadi otomatis 100%.</span>
+                  <span class="lang lang-en">Empowered 1,150+ coaching participants, 200+ structured e-learning students, and 100% automated payment-to-access onboarding workflows.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Gemini API</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Webhooks & REST API</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Scalev & Mayar</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">Nginx / Hermes</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-medium text-slate-300">RIASEC & OCEAN Psychometrics</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Callout Box: Responsible & Deterministic AI Principle -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-emerald-500/35 relative overflow-hidden" data-aos="fade-up">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-white mb-2">
+                <span class="lang lang-id">Prinsip Responsible & Human-Centered AI (Arsitektur Deterministik)</span>
+                <span class="lang lang-en">Responsible & Human-Centered AI Principle (Deterministic Architecture)</span>
+              </h4>
+              <p class="text-sm text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">
+                  Dalam merancang sistem HR dan operasional perusahaan, saya memanfaatkan AI coding assistants untuk mempercepat riset dan penulisan kode, namun memastikan alur produksi data kritikal berjalan secara <strong>deterministik</strong> (melalui skrip terstruktur, webhook, dan validasi API), bukan menyerahkan keputusan data personalia sensitif pada model AI generatif yang berisiko halusinasi data. Pendekatan ini menjamin akurasi data 100%, kepatuhan hukum tenaga kerja, keamanan data privasi karyawan, serta kemudahan adopsi oleh tim non-teknis.
+                </span>
+                <span class="lang lang-en">
+                  When architecting enterprise HR and operational systems, I leverage AI coding assistants to accelerate R&D and implementation while strictly ensuring critical production data workflows run <strong>deterministically</strong> (via structured scripts, webhooks, and validated APIs), never delegating sensitive personnel decisions to hallucination-prone generative models. This guarantees 100% data integrity, regulatory compliance, privacy security, and effortless adoption by non-technical teams.
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ME & 6 KEUNGGULAN ==================== -->
+    <section id="about" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Column Left: Professional Bio (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-500/30 text-xs font-bold uppercase tracking-wider text-amber-400 font-display">
+              <i class="fa-solid fa-user-tie"></i>
+              <span class="lang lang-id">Tentang Nugroho Amdal</span>
+              <span class="lang lang-en">About Nugroho Amdal</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <span class="lang lang-id">
+                Praktisi People & Culture yang Menggabungkan <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Strategi Global</span>, Ketajaman Analitik, dan Eksekusi Teknologi.
+              </span>
+              <span class="lang lang-en">
+                People & Culture Practitioner Combining <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Global Strategy</span>, Analytical Rigor, and Tech Execution.
+              </span>
+            </h2>
+
+            <div class="text-base sm:text-lg text-slate-300 space-y-4 font-sans leading-relaxed">
+              <p class="lang lang-id">
+                Saya beroperasi di persimpangan <strong>Global HR Operations, HR Technology & Workflow Automation, Learning & Development (L&D), serta Leadership Coaching</strong>. Jejak pengalaman profesional saya merentang dari memimpin operasional SDM berskala 500+ staf lintas 26 negara di kawasan APAC, EMEA, dan Americas (The KPI Institute), mengawal operasional layanan digital dan pelatihan berstandar keselamatan di BUMN (PT Angkasa Pura II Bandara Soekarno-Hatta), membina 150+ talenta aviasi di Aeronef Academy dan Jogja Flight, memimpin ekspansi rekrutmen massal 40+ staf dalam 2 bulan di Mr. BOB, hingga mendirikan platform Career Tech berbasis AI di Talent Up.
+              </p>
+              <p class="lang lang-en">
+                I operate at the intersection of <strong>Global HR Operations, HR Technology & Workflow Automation, Learning & Development (L&D), and Leadership Coaching</strong>. My background spans managing multi-region HR operations for 500+ personnel across 26 countries in APAC, EMEA, and Americas (The KPI Institute), aviation digital service operations and safety-standard training at SOE (PT Angkasa Pura II Soekarno-Hatta Airport), coaching 150+ aviation talents at Aeronef Academy and Jogja Flight, high-velocity mass hiring at Mr. BOB, to founding AI-driven career tech systems at Talent Up.
+              </p>
+              <p class="lang lang-id">
+                Sebagai <strong>HR Technology Workflow Architect</strong> di ranah HR, saya terbiasa membedah bottleneck operasional yang kompleks, merumuskan problem statement yang terarah, membangun arsitektur sistem yang presisi, serta memfasilitasi adopsi tim melalui bimbingan interaktif dan pelatihan bersertifikasi BNSP Level 4.
+              </p>
+              <p class="lang lang-en">
+                As an <strong>HR Technology Workflow Architect</strong> in HR, I specialize in dissecting complex operational roadblocks, formulating precise problem statements, building robust deterministic workflows, and coaching teams toward adoption through structured, BNSP Level 4 certified frameworks.
+              </p>
+            </div>
+
+            <!-- Key Attributes Chips -->
+            <div class="pt-2 flex flex-wrap gap-2.5">
+              <span class="px-3 py-1.5 rounded-full bg-slate-800 border border-white/10 text-xs font-semibold text-sky-300 flex items-center space-x-1.5">
+                <i class="fa-solid fa-earth-americas"></i>
+                <span>Cross-Cultural Agility (26 Countries)</span>
+              </span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800 border border-white/10 text-xs font-semibold text-emerald-300 flex items-center space-x-1.5">
+                <i class="fa-solid fa-code-branch"></i>
+                <span>Deterministic HR Tech & Systems</span>
+              </span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-800 border border-white/10 text-xs font-semibold text-amber-300 flex items-center space-x-1.5">
+                <i class="fa-solid fa-award"></i>
+                <span>Certified Instructor BNSP Lv.4</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Column Right: Executive Contact Card (5 Cols) -->
+          <div class="lg:col-span-5" data-aos="fade-left">
+            <div class="glass-card p-7 sm:p-8 rounded-3xl border border-white/15 relative">
+              <div class="flex items-center space-x-4 mb-6">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold font-serif shadow-lg shadow-blue-500/25">
+                  NA
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl font-bold text-white">Nugroho Amdal, S.S., CI.</h3>
+                  <p class="text-xs text-slate-400 font-display">Surabaya, ID • Open to Jakarta / Global Remote</p>
+                </div>
+              </div>
+
+              <div class="space-y-4 text-sm font-sans mb-8">
+                <div class="flex items-start space-x-3 text-slate-300">
+                  <i class="fa-brands fa-whatsapp text-emerald-400 text-lg mt-0.5"></i>
+                  <div>
+                    <div class="text-xs text-slate-400 font-display uppercase tracking-wider">WhatsApp Langsung</div>
+                    <a href="https://wa.me/6285395940406" target="_blank" class="text-white hover:text-emerald-400 font-semibold transition-colors">
+                      +62 853-9594-0406
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3 text-slate-300">
+                  <i class="fa-solid fa-envelope text-sky-400 text-lg mt-0.5"></i>
+                  <div>
+                    <div class="text-xs text-slate-400 font-display uppercase tracking-wider">Email Korespondensi</div>
+                    <a href="mailto:nugrohoamdal@gmail.com" class="text-white hover:text-sky-400 font-semibold transition-colors">
+                      nugrohoamdal@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3 text-slate-300">
+                  <i class="fa-brands fa-linkedin text-blue-400 text-lg mt-0.5"></i>
+                  <div>
+                    <div class="text-xs text-slate-400 font-display uppercase tracking-wider">Profil LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-400 font-semibold transition-colors">
+                      linkedin.com/in/nugroho-amdal
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3 text-slate-300">
+                  <i class="fa-brands fa-instagram text-pink-400 text-lg mt-0.5"></i>
+                  <div>
+                    <div class="text-xs text-slate-400 font-display uppercase tracking-wider">Instagram</div>
+                    <a href="https://instagram.com/nugrohoamdal" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-400 font-semibold transition-colors">
+                      @nugrohoamdal
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3 text-slate-300">
+                  <i class="fa-solid fa-location-dot text-amber-400 text-lg mt-0.5"></i>
+                  <div>
+                    <div class="text-xs text-slate-400 font-display uppercase tracking-wider">Domisili & Fleksibilitas</div>
+                    <div class="text-slate-200">Surabaya • Fleksibel Onsite/Hybrid Jakarta & Remote Global</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-white/10">
+                <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20menjadwalkan%20diskusi%2015%20menit." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-display font-semibold text-sm text-center block transition-all shadow-md shadow-blue-600/30">
+                  <span class="lang lang-id">Jadwalkan Diskusi Pengenalan 15 Menit</span>
+                  <span class="lang lang-en">Schedule 15-Min Introductory Call</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 6 Poin Keunggulan "Mengapa Nugroho" -->
+        <div class="mt-20">
+          <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+              <span class="lang lang-id">Enam Pilar Nilai Tambah "Mengapa Nugroho"</span>
+              <span class="lang lang-en">Six Pillars of Value: "Why Choose Nugroho"</span>
+            </h3>
+            <p class="text-sm text-slate-400 font-sans">
+              <span class="lang lang-id">Kombinasi langka penguasaan People Strategy, kapabilitas coding & otomasi sistem, serta lisensi instruktur resmi.</span>
+              <span class="lang lang-en">A rare blend of People Operations mastery, hands-on automation scripting, and certified instructional excellence.</span>
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="50">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">1. Global Footprint (26 Negara)</span>
+                <span class="lang lang-en">1. Global Footprint (26 Countries)</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Pengalaman nyata memimpin operasional SDM 500+ staf lintas benua (APAC, EMEA, Americas) dengan pemahaman kepatuhan hukum kerja internasional dan workforce analytics C-level.</span>
+                <span class="lang lang-en">Proven management of 500+ staff across APAC, EMEA, and Americas with deep cross-border compliance and executive workforce reporting expertise.</span>
+              </p>
+            </div>
+
+            <!-- POIN 2: REVISED HR TECHNOLOGY WORKFLOW ARCHITECT -->
+            <div class="glass-card p-6 rounded-2xl border-2 border-cyan-500/40" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">2. HR Technology Workflow Architect (Otomasi Deterministik)</span>
+                <span class="lang lang-en">2. HR Technology Workflow Architect (Deterministic Automation)</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Bukan sekadar pengguna prompt biasa: merancang sistem otomasi untuk memangkas administrasi yang berulang (redundant), memantau kinerja karyawan secara real-time berbasis data, menyusun alur onboarding hingga peningkatan kompetensi karyawan (leveling up) dengan standar kualitas yang stabil, serta membangun Learning Management System (LMS) menggunakan sumber daya internal yang hemat biaya tanpa bergantung pada vendor pihak ketiga. Terbukti menghasilkan efisiensi operasional sebesar 30% hingga 95% di berbagai perusahaan yang ditangani.</span>
+                <span class="lang lang-en">Beyond basic prompt engineering: architecting deterministic automation systems to eliminate redundant administrative tasks, monitor employee performance in real time through structured data, standardize onboarding through employee leveling-up pipelines with consistent quality, and build cost-efficient internal Learning Management Systems (LMS) without third-party vendor lock-in. Proven to deliver 30% to 95% operational efficiency across handled organizations.</span>
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="150">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">3. Certified Instructor (CI) BNSP Level 4</span>
+                <span class="lang lang-en">3. BNSP Level 4 Certified Instructor</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Memegang sertifikasi instruktur tingkat tertinggi (Level 4) yang berwenang melatih, menguji, dan menyertifikasi para Trainer (ToT), menjamin standar pedagogi terbaik.</span>
+                <span class="lang lang-en">Certified at the highest instructor tier (Level 4), officially authorized to train and assess Trainers (ToT), ensuring world-class pedagogical delivery.</span>
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+              <div class="w-12 h-12 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-piggy-bank"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">4. Penghematan Biaya & Efisiensi Nyata</span>
+                <span class="lang lang-en">4. Proven Cost Savings & Efficiency</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Berhasil menghemat 40% anggaran training eksternal via program fasilitator internal dan memangkas waktu kompilasi evaluasi tutor dari 48 jam menjadi 15-30 menit.</span>
+                <span class="lang lang-en">Delivered 40% training expenditure savings via internal facilitator development and accelerated feedback compilation from 48 hours to 15-30 minutes.</span>
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="250">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-compass"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">5. Human-Centered & Data-Driven Coaching</span>
+                <span class="lang lang-en">5. Human-Centered & Data-Driven Coaching</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Membimbing 1.150+ individu dengan pendekatan empatik yang dipadukan dengan tes psikometrik valid (RIASEC/OCEAN) dan audit karier berbasis data.</span>
+                <span class="lang lang-en">Mentored 1,150+ individuals by blending empathetic coaching with validated psychometric frameworks (RIASEC/OCEAN) and data-backed ATS audits.</span>
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+              <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mb-2">
+                <span class="lang lang-id">6. Rekam Jejak Multi-Sektor Teruji</span>
+                <span class="lang lang-en">6. Multi-Sector Rigor & Adaptability</span>
+              </h4>
+              <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Pengalaman langsung di lingkungan korporasi BUMN aviasi (Angkasa Pura II), akademi aviasi (Aeronef & Jogja Flight), riset global The KPI Institute, dinamika cepat startup, hingga kemitraan perguruan tinggi ternama.</span>
+                <span class="lang lang-en">Hands-on experience across state-owned aviation giants (Angkasa Pura II), aviation flight academies (Aeronef & Jogja Flight), global think tanks, fast-paced startups, and top national universities.</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== REKAM JEJAK KARIR & METRIK HR ==================== -->
+    <section id="experience" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
+            <i class="fa-solid fa-timeline"></i>
+            <span class="lang lang-id">Rekam Jejak Karir Terverifikasi</span>
+            <span class="lang lang-en">Verified Career Track Record</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Pengalaman Kerja Terverifikasi & Dampak Kuantitatif.</span>
+            <span class="lang lang-en">Verified Professional Roles & Quantitative Impact.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Memimpin siklus penuh People Operations, analitik tenaga kerja tingkat eksekutif, serta transformasi L&D di skala nasional dan global.</span>
+            <span class="lang lang-en">Leading end-to-end People Operations, executive workforce analytics, and L&D transformations across national and global footprints.</span>
+          </p>
+        </div>
+
+        <!-- Career Experience Cards Grid (Including Aeronef Academy & Jogja Flight) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Experience 1: The KPI Institute -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="50">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>Feb 2025 - Jan 2026 • Melbourne, Australia (Remote)</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-blue-600/20 text-cyanCustom border border-blue-500/30">Global Scale</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">The KPI Institute</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Global HR Specialist</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Memimpin operasional HR global untuk 500+ karyawan di 26 negara (APAC, EMEA, Americas) dengan akurasi penempatan pengembangan 92%.</span>
+                <span class="lang lang-en">Led global HR operations for 500+ employees across 26 countries (APAC, EMEA, Americas) with a 92% development accuracy rate.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Menyusun dan mempresentasikan laporan rutin Workforce Analytics (headcount, time-to-fill, turnover, retensi) langsung kepada C-level untuk persetujuan strategi tenaga kerja.</span>
+                <span class="lang lang-en">Compiled and presented regular Workforce Analytics reports (headcount, time-to-fill, turnover, retention) directly to C-level executives.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Merancang model Internal Facilitator Development yang memangkas biaya pelatihan eksternal hingga 40% sekaligus memperkuat retensi pemimpin internal.</span>
+                <span class="lang lang-en">Designed an Internal Facilitator Development model that cut external training costs by 40% while boosting internal leadership retention.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Menuntaskan rekrutmen 11 posisi spesialis hingga manajerial dalam 4 bulan serta mengelola evaluasi kinerja 360 derajat lintas zona waktu.</span>
+                <span class="lang lang-en">Closed 11 specialist-to-managerial roles within 4 months and managed cross-timezone 360-degree performance appraisal cycles.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Membangun otomasi integrasi Google Sheets ke HRIS in-house yang memangkas ~30% beban kerja administrasi manual tim HR.</span>
+                <span class="lang lang-en">Built Google Sheets-to-HRIS automation workflows reducing manual HR administrative workload by ~30%.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 2: Mr. BOB Kampung Inggris -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>2023 - 2024 • Kediri (Onsite/Hybrid)</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">🏆 Best HR 2023</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">Mr. BOB Kampung Inggris</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">HR Generalist & Team Supervisor</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Meraih penghargaan <strong>Best HR of the Year 2023</strong> atas inovasi aplikasi evaluasi kinerja dan pembinaan kepemimpinan instruktur.</span>
+                <span class="lang lang-en">Awarded <strong>Best HR of the Year 2023</strong> for breakthrough HR app innovation and instructor leadership development.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Membangun aplikasi evaluasi tutor internal (Google Play Store & Apple App Store) yang memangkas rekapitulasi umpan balik 80+ tutor dari 48 jam menjadi 15-30 menit.</span>
+                <span class="lang lang-en">Built internal tutor performance app (Play Store & App Store) cutting feedback compilation for 80+ instructors from 48 hours to 15-30 minutes.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Memimpin rekrutmen volume tinggi: merekrut 40+ staf dalam 2 bulan (>1.000 sourcing & >100 wawancara/bulan) serta menaikkan pelamar 40% via employer branding.</span>
+                <span class="lang lang-en">Led high-volume recruiting: 40+ hires in 2 months (>1,000 sourced & >100 interviews/mo) and increased applicant pool by 40% via employer branding.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Merancang kerangka KPI & SOP (+15% produktivitas tim) serta mengawal koordinasi payroll bi-weekly untuk 80+ staf dengan akurasi 100%.</span>
+                <span class="lang lang-en">Formulated KPI & SOP frameworks (+15% team productivity) and managed bi-weekly payroll for 80+ staff with 100% accuracy.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 3: Aeronef Academy & Jogja Flight (NEW) -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl border-2 border-sky-500/40" data-aos="fade-up" data-aos-delay="150">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>Aviation Career Acceleration • Onsite/Hybrid</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">150+ Candidates Coached</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">Aeronef Academy & Jogja Flight</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Career Coach & Aviation English Trainer</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Membimbing lebih dari 150 kandidat Cabin Crew dan Ground Staff dalam pengembangan kepribadian (Personality Development), etika profesional aviasi, serta kesiapan mental kerja menghadapi tahapan seleksi ketat maskapai penerbangan komersial nasional dan internasional.</span>
+                <span class="lang lang-en">Mentored over 150 Cabin Crew and Ground Staff candidates in Personality Development, professional aviation grooming standards, and psychological resilience for national and international airline selection.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Menyusun dan memfasilitasi kurikulum intensif Aviation English berstandar industri aviasi, mencakup simulasi wawancara bahasa Inggris, pengumuman kabin (Passenger Announcements/PA), in-flight communication, dan komunikasi operasional darurat.</span>
+                <span class="lang lang-en">Formulated and delivered an intensive Aviation English curriculum adhering to global aviation standards, covering English interview drills, in-flight passenger announcements (PA), and emergency crew communication.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Menyelenggarakan mock interview komprehensif, evaluasi grooming, dan bimbingan executive presence, yang secara konsisten melipatgandakan tingkat kelulusan dan keberhasilan penempatan kerja para peserta didik.</span>
+                <span class="lang lang-en">Conducted comprehensive mock interview panels, grooming assessments, and executive presence coaching, consistently accelerating placement and hiring success rates across commercial airline cohorts.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 4: TEI Recruitment -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>Apr 2024 - Jan 2025 • L&D Internasional</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Global L&D</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">TEI Recruitment</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Learning & Development Specialist</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Meningkatkan skor performa peserta 20% dan retensi 30% dalam 3 bulan melalui program onboarding, mentoring, dan 100+ Individual Development Plans (IDPs).</span>
+                <span class="lang lang-en">Increased trainee performance scores by 20% and retention by 30% within 3 months through structured onboarding and 100+ IDPs.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Membangun Internal LMS Zero-Cost dari nol berbasis Google Workspace (Sheets, Slides, Forms, Apps Script) dan Zoom untuk memantau 5-7 trainer (~4 kelas/trainer).</span>
+                <span class="lang lang-en">Engineered a Zero-Cost Internal LMS from scratch using Google Workspace and Zoom to coordinate 5-7 trainers (~4 classes/trainer).</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Merancang kurikulum berbasis kompetensi dan evaluasi Kirkpatrick untuk klien industri manufaktur, perhotelan, dan medis di Eropa & Timur Tengah.</span>
+                <span class="lang lang-en">Designed competency-based curricula and Kirkpatrick evaluations for manufacturing, hospitality, and medical clients in Europe & Middle East.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 5: Talent Up -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="250">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>2023 - Sekarang • Coaching sejak Jan 2018</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">AI Ecosystem</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">Talent Up</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Founder & AI-Enabled Systems Builder</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Membangun Career Coach AI (Gemini API web app untuk audit CV/LinkedIn, asesmen RIASEC/OCEAN, & deteksi loker scam) yang digunakan ~100 pengguna aktif (termasuk user berbayar).</span>
+                <span class="lang lang-en">Built Career Coach AI (Gemini API web app for resume audits, RIASEC/OCEAN psychometrics, & scam detection) adopted by ~100 active users (including paying customers).</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Mengembangkan prototipe Job Apply AI serta mengintegrasikan otomasi bisnis webhook (Scalev, Mayar, Apps Script, Google Sheets) tanpa biaya server bulanan.</span>
+                <span class="lang lang-en">Engineered Job Apply AI prototype and integrated end-to-end webhook automation (Scalev, Mayar, Apps Script, Sheets) with zero monthly server cost.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Membimbing 1.150+ individu, memfasilitasi 100+ sesi pelatihan/seminar di institusi nasional & global, serta melayani 200+ pengguna modul e-learning.</span>
+                <span class="lang lang-en">Coached 1,150+ individuals, delivered 100+ training/speaking sessions nationwide and internationally, and served 200+ e-learning users.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 6: PT Angkasa Pura II (Persero) -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>Jun 2019 - Des 2021 • Bandara Soekarno-Hatta</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-blue-600/20 text-blue-300 border border-blue-500/30">BUMN (SOE)</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">PT Angkasa Pura II (Persero)</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Digital Service Staff & Training Officer</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Mendukung operasional layanan digital untuk rata-rata 40.000 penumpang harian, menaikkan kepuasan pelanggan 20% dan memangkas downtime sistem 15%.</span>
+                <span class="lang lang-en">Supported digital operations serving 40,000 daily passengers, lifting customer satisfaction by 20% and reducing system downtime by 15%.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Berkolaborasi lintas fungsi dalam pengujian fungsional, dokumentasi kendala, serta pengelolaan 140+ perangkat digital bandara berstandar aviasi.</span>
+                <span class="lang lang-en">Collaborated cross-functionally on functional testing, documentation, and maintenance of 140+ aviation-standard digital devices.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Merancang dan membawakan pelatihan Business English komunikasi untuk staf bandara dan jajaran Senior Management.</span>
+                <span class="lang lang-en">Designed and delivered tailored Business English communication training for airport staff and Senior Management.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 7: Nuansa Indonesia -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl md:col-span-2" data-aos="fade-up" data-aos-delay="350">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-bold text-gold font-display mb-2">
+              <span>Executive Operations & Commercial</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-white/10">Executive Leadership</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-1">Nuansa Indonesia</h3>
+            <div class="text-sm font-semibold text-sky-400 font-display mb-4">Chief Operating Officer (COO)</div>
+            
+            <ul class="space-y-2.5 text-sm text-slate-300 font-sans list-disc pl-5">
+              <li>
+                <span class="lang lang-id">Memimpin logistik dan operasional bisnis end-to-end, mengoptimalkan struktur biaya sembari menjaga standar layanan pelanggan.</span>
+                <span class="lang lang-en">Directed end-to-end business operations and logistics, optimizing cost structures while sustaining top-tier service standards.</span>
+              </li>
+              <li>
+                <span class="lang lang-id">Membangun kemitraan strategis dengan pemasok utama dan mengamankan klien korporat melalui pitch penawaran terarah.</span>
+                <span class="lang lang-en">Established strategic supplier partnerships and secured corporate clients through targeted commercial pitches.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- 3-Column Skills & Tech Stack -->
+        <div class="mt-20">
+          <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+              <span class="lang lang-id">Keahlian Inti, Sistem & Teknologi Stack</span>
+              <span class="lang lang-en">Core Skills, Systems & Tech Stack</span>
+            </h3>
+            <p class="text-sm text-slate-400 font-sans">
+              <span class="lang lang-id">Kombinasi kapabilitas People & Culture, arsitektur otomasi alur kerja, dan analitik data SDM.</span>
+              <span class="lang lang-en">Integrated capabilities across People & Culture, workflow automation architecture, and workforce analytics.</span>
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Col 1 -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+              <div class="inline-block px-3 py-1 rounded-lg bg-blue-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-5">
+                People Operations & L&D
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Global HR Operations (26 Countries)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Workforce Analytics & C-Level Reporting</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">360-Degree Performance Appraisal</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">High-Volume & Managerial Recruitment</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Competency-Based TNA & IDPs</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Kirkpatrick L&D Evaluation</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Employee Lifecycle & Relations</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Payroll Coordination & Labor Law</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Employer Branding</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Executive Coaching & Facilitation</span>
+              </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+              <div class="inline-block px-3 py-1 rounded-lg bg-cyan-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-5">
+                HR Tech & Workflow Automation
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Google Apps Script</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Google Workspace Data Architecture</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">REST API & Webhook Integration</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">In-House HRIS Integration</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Asana Workflow Automation</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Google Cloud AI Studio (Gemini API)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Deterministic Workflow Design</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Zero-Cost LMS Architecture</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Nginx & Hermes Routing</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Git & VS Code CLI</span>
+              </div>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+              <div class="inline-block px-3 py-1 rounded-lg bg-indigo-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-5">
+                HR Tech & Analytics Tools
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">BambooHR (HRIS)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Teamtailor (ATS)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">LinkedIn Recruiter</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Boolean & X-Ray Search</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">HR Dashboards & KPI Design</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Advanced Google Sheets & Excel</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Time-to-Fill & Retention Metrics</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs text-slate-200">Deel / Remote Global Ops Concepts</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== KREDENSIAL, SERTIFIKASI & PENDIDIKAN ==================== -->
+    <section id="certifications" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider text-emerald-400 font-display mb-3">
+            <i class="fa-solid fa-stamp"></i>
+            <span class="lang lang-id">Kredensial & Standar Mutu Internasional</span>
+            <span class="lang lang-en">Credentials & International Quality Standards</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Sertifikasi Resmi, Standar Mutu & Penghargaan.</span>
+            <span class="lang lang-en">Official Certifications, Quality Standards & Honors.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Standar kompetensi resmi berlisensi BNSP, sistem manajemen mutu ISO, serta pendidikan akademis bahasa dan teknologi.</span>
+            <span class="lang lang-en">Certified under national BNSP competency rubrics, ISO management systems, and academic degrees in language and technology.</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Col 1: Professional Certifications (Gold Highlight) -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl border-2 border-amber-500/30 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="inline-block px-3 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 font-display text-xs font-bold uppercase tracking-wider mb-5">
+                <span class="lang lang-id">Sertifikasi Profesional</span>
+                <span class="lang lang-en">Professional Certifications</span>
+              </div>
+
+              <!-- Flagship Badge: Certified Instructor Level 4 ToT -->
+              <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/40 mb-4">
+                <div class="flex items-start space-x-3">
+                  <i class="fa-solid fa-award text-amber-400 text-2xl mt-1"></i>
+                  <div>
+                    <div class="text-xs font-bold text-amber-400 font-display uppercase tracking-wider">Highlight Utama</div>
+                    <div class="text-base font-bold text-white font-display">Certified Instructor (CI) - BNSP Level 4</div>
+                    <div class="text-xs text-amber-200 mt-0.5">Kompeten untuk Training of Trainers (ToT)</div>
+                    <div class="text-[11px] text-slate-400 font-mono mt-1">Ref: 197/PST/ToT/WIP-TRNG/VII/2026</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2 text-xs sm:text-sm text-slate-300 font-sans mb-6">
+                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-white/5 flex items-center space-x-2.5">
+                  <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                  <span>ISO 9001:2015 (Quality Management System)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-white/5 flex items-center space-x-2.5">
+                  <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                  <span>ISO 45001:2018 (Occupational Health & Safety)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-white/5 flex items-center space-x-2.5">
+                  <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                  <span>SMK3 PP No. 50 Tahun 2012</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-white/5 flex items-center space-x-2.5">
+                  <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                  <span>Safety & Health Program in Oil & Gas Industry</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- GDrive Link Button -->
+            <a href="https://drive.google.com/drive/u/2/folders/1ZRUml2ghc4s_wu9A7amdEhMezXbU5Xa0" target="_blank" rel="noopener noreferrer"
+               class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 shadow-lg transition-all transform hover:-translate-y-0.5">
+              <i class="fa-solid fa-folder-open text-base"></i>
+              <span class="lang lang-id">Buka Folder Bukti Sertifikat (GDrive)</span>
+              <span class="lang lang-en">Open Certificate Drive Folder</span>
+            </a>
+          </div>
+
+          <!-- Col 2: Education & Language Agility -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="inline-block px-3 py-1 rounded-lg bg-blue-600/20 text-blue-300 border border-blue-500/40 font-display text-xs font-bold uppercase tracking-wider mb-5">
+                <span class="lang lang-id">Pendidikan & Bahasa</span>
+                <span class="lang lang-en">Education & Languages</span>
+              </div>
+
+              <div class="space-y-4 text-xs sm:text-sm text-slate-300 font-sans mb-6">
+                <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="text-xs font-bold text-sky-400 font-display">Sarjana Sastra (S.S.) / Bachelor of Arts</div>
+                  <div class="text-white font-semibold mt-1">English Language & Literature</div>
+                  <div class="text-xs text-slate-400">STIBA Malang • IPK / GPA: 3.52 / 4.00</div>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="text-xs font-bold text-sky-400 font-display">Teknik Komputer & Jaringan (TKJ)</div>
+                  <div class="text-white font-semibold mt-1">Computer & Network Engineering</div>
+                  <div class="text-xs text-slate-400">SMK Canda Bhirawa Pare</div>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="text-xs font-bold text-sky-400 font-display">English Proficiency</div>
+                  <div class="text-white font-semibold mt-1">Full Professional Proficiency (TOEFL 516)</div>
+                  <div class="text-xs text-slate-400">Fluent in Executive Speaking & Technical Writing</div>
+                </div>
+
+                <div class="p-3.5 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="text-xs font-bold text-sky-400 font-display">Bahasa Indonesia</div>
+                  <div class="text-white font-semibold mt-1">Native Proficiency</div>
+                  <div class="text-xs text-slate-400">Standard Bahasa Indonesia for Corporate & Public Speaking</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-xs text-slate-400 font-display">
+              <i class="fa-solid fa-graduation-cap text-sky-400 mr-1.5"></i>
+              STIBA Malang & SMK TKJ Pare
+            </div>
+          </div>
+
+          <!-- Col 3: Awards & Key Honors -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div class="inline-block px-3 py-1 rounded-lg bg-purple-600/20 text-purple-300 border border-purple-500/40 font-display text-xs font-bold uppercase tracking-wider mb-5">
+                <span class="lang lang-id">Penghargaan & Pencapaian</span>
+                <span class="lang lang-en">Awards & Recognition</span>
+              </div>
+
+              <div class="space-y-4 text-xs sm:text-sm text-slate-300 font-sans mb-6">
+                <!-- Award 1 -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 to-transparent border border-amber-500/30">
+                  <div class="flex items-center space-x-2 text-amber-300 font-bold font-display text-sm">
+                    <i class="fa-solid fa-trophy text-amber-400 text-lg"></i>
+                    <span>Best HR of the Year 2023</span>
+                  </div>
+                  <div class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                    Dianugerahkan oleh Mr. BOB Kampung Inggris atas terobosan pembuatan aplikasi mobile evaluasi performa tutor dan pembentukan SOP KPI baru.
+                  </div>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="p-4 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="flex items-center space-x-2 text-sky-300 font-bold font-display text-sm">
+                    <i class="fa-solid fa-rocket text-sky-400"></i>
+                    <span>Founder of Talent Up</span>
+                  </div>
+                  <div class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                    Membangun komunitas karier, melayani 1.150+ peserta coaching, dan merilis Career Coach AI berbasis Gemini API.
+                  </div>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="p-4 rounded-2xl bg-slate-800/80 border border-white/5">
+                  <div class="flex items-center space-x-2 text-emerald-300 font-bold font-display text-sm">
+                    <i class="fa-solid fa-users text-emerald-400"></i>
+                    <span>100+ Speaking & Training Sessions</span>
+                  </div>
+                  <div class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                    Menjadi pembicara dan fasilitator di kementerian, konferensi internasional, korporat BUMN, startup, serta universitas terkemuka.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-xs text-slate-400 font-display">
+              <i class="fa-solid fa-star text-amber-400 mr-1.5"></i>
+              Continuous Excellence & Proven Impact
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== GALERI DOKUMENTASI (12 FOTO ASLI) ==================== -->
+    <section id="gallery" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
+            <i class="fa-solid fa-camera"></i>
+            <span class="lang lang-id">Galeri Dokumentasi & Bukti Lapangan</span>
+            <span class="lang lang-en">Event Documentation & Field Proof</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Jejak Kolaborasi di Kementerian, BUMN, Bisnis Global & Kampus.</span>
+            <span class="lang lang-en">Track Record Across Ministries, SOEs, Global Forums & Campuses.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Dokumentasi nyata saat memfasilitasi pelatihan, seminar eksekutif, coaching, dan transformasi kapabilitas talenta. Klik gambar untuk memperbesar.</span>
+            <span class="lang lang-en">Real-world visual proof from executive seminars, corporate workshops, coaching clinics, and international forums. Click any photo to inspect in high resolution.</span>
+          </p>
+        </div>
+
+        <!-- 12 Photos Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          
+          <!-- Doc 1 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-01-kemendikbud.webp', 'Seminar Karir Kemendikbud Jakarta', 'Pembicara pengembangan karir di lingkungan kementerian dan institusi nasional.')"
+               data-aos="fade-up" data-aos-delay="50">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-01-kemendikbud.webp" alt="Kemendikbud" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Seminar Karir Kemendikbud</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Pembicara pengembangan karir di lingkungan kementerian dan institusi nasional.</p>
+            </div>
+          </div>
+
+          <!-- Doc 2 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-02-intl-seminar.webp', 'International Business Seminar', 'Featured speaker on global talent strategy and organizational competitiveness.')"
+               data-aos="fade-up" data-aos-delay="100">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-02-intl-seminar.webp" alt="International Seminar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">International Business Seminar</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Pembicara strategi talent development dan daya saing organisasi global.</p>
+            </div>
+          </div>
+
+          <!-- Doc 3 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-03-brand-collab.webp', 'Kolaborasi Brand & HR Tech', 'Thought leadership on recruitment pipeline optimization and team performance.')"
+               data-aos="fade-up" data-aos-delay="150">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-03-brand-collab.webp" alt="Brand Collab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Kolaborasi Brand & HR Tech</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Edukasi optimasi alur rekrutmen dan manajemen performa tim.</p>
+            </div>
+          </div>
+
+          <!-- Doc 4 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-04-startup-training.webp', 'Startup Training Session', 'Fasilitasi peningkatan kapabilitas tim sesuai ekspektasi bisnis modern.')"
+               data-aos="fade-up" data-aos-delay="200">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-04-startup-training.webp" alt="Startup Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Startup Training Session</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Fasilitasi peningkatan kapabilitas tim sesuai ekspektasi bisnis modern.</p>
+            </div>
+          </div>
+
+          <!-- Doc 5 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-05-diaspora.webp', 'Jaringan Diaspora Global', 'Kolaborasi dan jejaring profesional lintas negara.')"
+               data-aos="fade-up" data-aos-delay="50">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-05-diaspora.webp" alt="Diaspora" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Jaringan Diaspora Global</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Kolaborasi dan jejaring profesional lintas negara.</p>
+            </div>
+          </div>
+
+          <!-- Doc 6 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-06-aiesec.webp', 'AIESEC Global Event', 'Pembicara pengembangan kepemimpinan muda di forum internasional.')"
+               data-aos="fade-up" data-aos-delay="100">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-06-aiesec.webp" alt="AIESEC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">AIESEC Global Event</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Pembicara pengembangan kepemimpinan muda di forum internasional.</p>
+            </div>
+          </div>
+
+          <!-- Doc 7 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-07-bumn.webp', 'Kolaborasi dengan BUMN', 'Fasilitasi pelatihan dan berbagi praktik terbaik di lingkungan korporasi negara.')"
+               data-aos="fade-up" data-aos-delay="150">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-07-bumn.webp" alt="BUMN" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Kolaborasi Korporasi BUMN</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Fasilitasi pelatihan dan praktik terbaik di lingkungan BUMN.</p>
+            </div>
+          </div>
+
+          <!-- Doc 8 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-08-komunitas.webp', 'Sharing di Komunitas Karir', 'Pembimbingan aktif strategi pencarian kerja dan peningkatan kompetensi.')"
+               data-aos="fade-up" data-aos-delay="200">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-08-komunitas.webp" alt="Komunitas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Komunitas Karir Profesional</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Pembimbingan strategi pencarian kerja dan peningkatan kompetensi.</p>
+            </div>
+          </div>
+
+          <!-- Doc 9 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-09-webinar-nasional.webp', 'Webinar Karir Nasional', 'Sesi edukasi skala besar bersama ratusan peserta dari berbagai provinsi.')"
+               data-aos="fade-up" data-aos-delay="50">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-09-webinar-nasional.webp" alt="Webinar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Webinar Karir Nasional</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Sesi edukasi skala besar bersama ratusan peserta berbagai kota.</p>
+            </div>
+          </div>
+
+          <!-- Doc 10 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-10-kampus.webp', 'Kuliah Tamu & Seminar Kampus', 'Menjembatani kesiapan lulusan universitas dengan kebutuhan industri nyata.')"
+               data-aos="fade-up" data-aos-delay="100">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-10-kampus.webp" alt="Kampus UB UM UTM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Kuliah Tamu Kampus Nasional</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Menjembatani kesiapan lulusan dengan standar industri nyata.</p>
+            </div>
+          </div>
+
+          <!-- Doc 11 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-11-industry-partner.webp', 'Kemitraan Industri', 'Kolaborasi strategis bersama para praktisi dan pemimpin bisnis.')"
+               data-aos="fade-up" data-aos-delay="150">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-11-industry-partner.webp" alt="Industry Partner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Kemitraan Industri</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Kolaborasi strategis bersama praktisi dan pemimpin bisnis.</p>
+            </div>
+          </div>
+
+          <!-- Doc 12 -->
+          <div class="group glass-card rounded-2xl overflow-hidden cursor-pointer" 
+               onclick="openLightbox('assets/doc-12-public-speaking.webp', 'Public Speaking & Executive Presence Training', 'Melatih komunikasi persuasif dan kepercayaan diri profesional.')"
+               data-aos="fade-up" data-aos-delay="200">
+            <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+              <img src="assets/doc-12-public-speaking.webp" alt="Public Speaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-display font-bold text-sm text-white mb-1">Public Speaking & Presence</h4>
+              <p class="text-xs text-slate-400 line-clamp-2">Melatih komunikasi persuasif dan kepemimpinan profesional.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TOPIK PELATIHAN & SEMINAR ==================== -->
+    <section id="topics" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-500/30 text-xs font-bold uppercase tracking-wider text-amber-400 font-display mb-3">
+            <i class="fa-solid fa-book-open"></i>
+            <span class="lang lang-id">Silabus & Topik Pelatihan</span>
+            <span class="lang lang-en">Syllabi & Training Topics</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Kurikulum Berbasis Kompetensi (BNSP Level 4) yang Dapat Dikustomisasi.</span>
+            <span class="lang lang-en">Customizable Competency-Based Curricula (BNSP Level 4).</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Setiap materi dirancang dengan pendekatan pedagogi terstruktur, studi kasus dunia kerja aktual, dan tolok ukur evaluasi Kirkpatrick Model.</span>
+            <span class="lang lang-en">Every module integrates pedagogical rigor, real-world operational case studies, and measurable Kirkpatrick evaluation benchmarks.</span>
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          
+          <!-- Category 1 -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up">
+            <div class="inline-block px-3 py-1 rounded-lg bg-blue-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-4">
+              HR Innovation, AI Enablement & Future of Work
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyanCustom mt-1"></i>
+                <span><strong>AI-Assisted Workflow Automation for HR & People Operations:</strong> Membangun otomasi alur kerja administrasi bebas halusinasi.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyanCustom mt-1"></i>
+                <span><strong>Building Zero-Cost Internal LMS & HR Dashboards:</strong> Memaksimalkan ekosistem Google Workspace untuk efisiensi L&D.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyanCustom mt-1"></i>
+                <span><strong>Global Talent Management & Remote Workforce Analytics:</strong> Manajemen tim multinasional dan metrik C-suite.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyanCustom mt-1"></i>
+                <span><strong>Responsible & Human-Centered AI Adoption:</strong> Menjaga kepatuhan data dan etika AI di lingkungan korporasi.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up">
+            <div class="inline-block px-3 py-1 rounded-lg bg-indigo-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-4">
+              Leadership, L&D & Organizational Capability
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                <span><strong>Training of Trainers (ToT) & Internal Facilitator:</strong> Standar BNSP Level 4 untuk instruktur perusahaan.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                <span><strong>Management Trainee (MT) & First-Time Manager Readiness:</strong> Akselerasi kesiapan kepemimpinan baru.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                <span><strong>360-Degree Performance Appraisal & Coaching Clinic:</strong> Evaluasi kinerja objektif dan dialog konstruktif.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-indigo-400 mt-1"></i>
+                <span><strong>Structured Onboarding & Retention Architecture:</strong> Mengamankan retensi talenta sejak hari pertama bekerja.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="glass-card p-7 sm:p-8 rounded-3xl" data-aos="fade-up">
+            <div class="inline-block px-3 py-1 rounded-lg bg-emerald-600 text-white font-display text-xs font-bold uppercase tracking-wider mb-4">
+              Career Acceleration & Professional English
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <span><strong>Career Clarity, ATS CV & Global Interview Mastery:</strong> Menembus seleksi kerja multinasional dan global.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <span><strong>Business English & Executive Communication for Leaders:</strong> Negosiasi dan presentasi level pimpinan.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <span><strong>English for Specific Purposes (ESP):</strong> Kurikulum khusus untuk sektor aviasi, hospitality, dan korporat.</span>
+              </div>
+              <div class="flex items-start space-x-3 text-sm text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <span><strong>Public Speaking, Storytelling & Stakeholder Influencing:</strong> Menumbuhkan karisma panggung dan persuasif.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4 PILAR LAYANAN KOLABORASI ==================== -->
+    <section id="services" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
+            <i class="fa-solid fa-handshake"></i>
+            <span class="lang lang-id">Layanan Kolaborasi B2B & Personal</span>
+            <span class="lang lang-en">B2B & Individual Collaboration Services</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Empat Pilar Kontribusi untuk Organisasi & Individu.</span>
+            <span class="lang lang-en">Four Strategic Contribution Pillars for Teams & Leaders.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Format kolaborasi fleksibel, mulai dari lokakarya korporat full-day, keynote seminar, coaching privat 1-on-1, hingga pelatihan bahasa bisnis intensif.</span>
+            <span class="lang lang-en">Flexible engagement models spanning full-day corporate workshops, keynote speaking, 1-on-1 executive coaching, to specialized business English.</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+            <div>
+              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
+                <img src="assets/pillar-01-training.webp" alt="Corporate Training" class="w-full h-full object-cover">
+              </div>
+              <div class="p-7">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Corporate Training & L&D Consulting</h3>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
+                <p class="text-xs text-slate-300 mb-4">Korporasi, BUMN, multinasional, startup, dan universitas yang ingin meningkatkan kapabilitas tim HR, leader, dan staf.</p>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
+                <p class="text-xs text-slate-300">Full-day workshop, bootcamp multi-sesi, penyusunan TNA/IDP, atau perancangan arsitektur LMS & otomasi kerja.</p>
+              </div>
+            </div>
+            <div class="p-7 pt-0">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%20dengan%20Corporate%20Training." target="_blank"
+                 class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
+                <span>Diskusikan Kebutuhan Training</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
+                <img src="assets/pillar-02-speaking.webp" alt="Keynote Speaking" class="w-full h-full object-cover">
+              </div>
+              <div class="p-7">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Keynote Speaking / Seminar / Webinar</h3>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
+                <p class="text-xs text-slate-300 mb-4">Forum bisnis, konferensi HR, townhall perusahaan, kementerian, dan seminar kampus skala nasional maupun internasional.</p>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
+                <p class="text-xs text-slate-300">Keynote speech, panel discussion, atau fireside chat (durasi 60-90 menit, Bahasa Indonesia atau English, Online/Offline).</p>
+              </div>
+            </div>
+            <div class="p-7 pt-0">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20mengundang%20sebagai%20Pembicara." target="_blank"
+                 class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
+                <span>Undang sebagai Pembicara</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150">
+            <div>
+              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
+                <img src="assets/pillar-03-coaching.webp" alt="1-on-1 Coaching" class="w-full h-full object-cover">
+              </div>
+              <div class="p-7">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">1-on-1 Career & Leadership Coaching</h3>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
+                <p class="text-xs text-slate-300 mb-4">Profesional, spesialis, hingga manajer yang sedang menavigasi promosi, transisi karier global, atau kepemimpinan strategis.</p>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
+                <p class="text-xs text-slate-300">Paket 4 sesi privat intensif per bulan (online) didukung asesmen psikometrik RIASEC/OCEAN & audit CV/LinkedIn data-driven.</p>
+              </div>
+            </div>
+            <div class="p-7 pt-0">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%201-on-1%20Coaching." target="_blank"
+                 class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
+                <span>Konsultasi Sesi Coaching</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
+                <img src="assets/pillar-04-english.webp" alt="Executive English" class="w-full h-full object-cover">
+              </div>
+              <div class="p-7">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Professional & Executive English Training</h3>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
+                <p class="text-xs text-slate-300 mb-4">Tim korporat, leader, dan profesional yang berinteraksi langsung dengan stakeholder regional/global.</p>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
+                <p class="text-xs text-slate-300">Program komunikasi bisnis, negosiasi, presentasi eksekutif, dan wawancara internasional dengan standar rubrik terukur.</p>
+              </div>
+            </div>
+            <div class="p-7 pt-0">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20info%20Executive%20English." target="_blank"
+                 class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
+                <span>Konsultasi Bahasa Bisnis</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TRANSPARENT B2B RATE CARD & TERMS ==================== -->
+    <section id="services-rates" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-gold/20 border border-gold/30 text-xs font-bold uppercase tracking-wider text-gold font-display mb-3">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>B2B Rate Card (Speaking, Training & Coaching)</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <span class="lang lang-id">Referensi Investasi Layanan Kolaborasi Transparan.</span>
+            <span class="lang lang-en">Transparent Collaboration Investment Reference.</span>
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <span class="lang lang-id">Berikut adalah baseline referensi resmi investasi untuk pelibatan sebagai pembicara, trainer, atau coach. Penawaran final disesuaikan dengan ruang lingkup dan tujuan acara Anda.</span>
+            <span class="lang lang-en">Official reference baseline rates for speaking, training, and coaching engagements. Final commercial proposals are tailored to your objectives and cohort scope.</span>
+          </p>
+        </div>
+
+        <!-- Rate Card 4-Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="glass-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-white mb-1">Speaking / Webinar / Seminar</h3>
+              <p class="text-xs text-slate-400 font-display mb-5">Durasi 60-90 menit / sesi</p>
+
+              <div class="space-y-4 text-xs font-sans">
+                <div class="pb-3 border-b border-white/10">
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Corporate & Government</div>
+                  <div class="flex justify-between text-slate-300"><span>Online:</span><span class="font-bold text-white">Rp3.000.000 - Rp5.000.000</span></div>
+                  <div class="flex justify-between text-slate-300 mt-1"><span>Offline:</span><span class="font-bold text-white">Rp5.000.000 - Rp8.000.000</span></div>
+                </div>
+
+                <div class="pb-3 border-b border-white/10">
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Startup / SME</div>
+                  <div class="flex justify-between text-slate-300"><span>Online:</span><span class="font-bold text-white">Mulai Rp1.500.000</span></div>
+                  <div class="flex justify-between text-slate-300 mt-1"><span>Offline:</span><span class="font-bold text-white">Mulai Rp2.500.000</span></div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">University / Non-Profit</div>
+                  <div class="flex justify-between text-slate-300"><span>Online:</span><span class="font-bold text-white">Rp500.000 - Rp1.000.000</span></div>
+                  <div class="flex justify-between text-slate-300 mt-1"><span>Offline:</span><span class="font-bold text-white">Rp750.000 - Rp1.500.000</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20booking%20jadwal%20Speaking%20atau%20Seminar." target="_blank"
+                 class="w-full py-2.5 rounded-xl bg-blue-600/30 hover:bg-blue-600 text-cyanCustom hover:text-white border border-blue-500/40 font-display font-semibold text-xs text-center block transition-all">
+                Booking Jadwal Speaking
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-white mb-1">Training & L&D Workshop</h3>
+              <p class="text-xs text-slate-400 font-display mb-5">Full-day workshop / modul kustom</p>
+
+              <div class="space-y-4 text-xs font-sans">
+                <div class="pb-3 border-b border-white/10">
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Corporate</div>
+                  <div class="flex justify-between text-slate-300"><span>Online:</span><span class="font-bold text-white">Rp8.000.000 - Rp20.000.000</span></div>
+                  <div class="flex justify-between text-slate-300 mt-1"><span>Offline:</span><span class="font-bold text-white">Rp10.000.000 - Rp25.000.000</span></div>
+                </div>
+
+                <div class="pb-3 border-b border-white/10">
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Startup / SME</div>
+                  <div class="flex justify-between text-slate-300"><span>Online:</span><span class="font-bold text-white">Mulai Rp4.000.000</span></div>
+                  <div class="flex justify-between text-slate-300 mt-1"><span>Offline:</span><span class="font-bold text-white">Mulai Rp6.000.000</span></div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">University / Institusi</div>
+                  <div class="flex justify-between text-slate-300"><span>Online/Offline:</span><span class="font-bold text-white">Rp2.000.000 - Rp3.000.000</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20request%20proposal%20Training." target="_blank"
+                 class="w-full py-2.5 rounded-xl bg-blue-600/30 hover:bg-blue-600 text-cyanCustom hover:text-white border border-blue-500/40 font-display font-semibold text-xs text-center block transition-all">
+                Request Proposal Training
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-white mb-1">Coaching Package</h3>
+              <p class="text-xs text-slate-400 font-display mb-5">4 sesi privat / bulan (Online)</p>
+
+              <div class="space-y-4 text-xs font-sans">
+                <div class="pb-3 border-b border-white/10">
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Corporate-Sponsored</div>
+                  <div class="text-base font-bold text-white mt-1">Rp2.000.000 - Rp3.000.000</div>
+                  <div class="text-slate-400 text-[11px] mt-0.5">per karyawan / bulan</div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-gold uppercase tracking-wider text-[11px] mb-1.5">Individual / Private</div>
+                  <div class="text-base font-bold text-white mt-1">Rp1.500.000 - Rp2.500.000</div>
+                  <div class="text-slate-400 text-[11px] mt-0.5">per individu / bulan (Inc. AI Audit)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20mendaftar%20paket%20Coaching." target="_blank"
+                 class="w-full py-2.5 rounded-xl bg-blue-600/30 hover:bg-blue-600 text-cyanCustom hover:text-white border border-blue-500/40 font-display font-semibold text-xs text-center block transition-all">
+                Daftar Sesi Coaching
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Full-Time / Strategic Advisory -->
+          <div class="glass-card p-6 sm:p-7 rounded-3xl border-2 border-indigo-500/40 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="inline-block px-2.5 py-0.5 rounded-md bg-indigo-500/20 text-indigo-300 font-display text-[10px] font-bold uppercase tracking-wider mb-2">
+                Hiring Opportunity
+              </div>
+              <h3 class="font-serif text-xl font-bold text-white mb-1">Full-Time Role / HR Advisory</h3>
+              <p class="text-xs text-slate-400 font-display mb-4">Global HR • HR Technology • L&D Leadership</p>
+
+              <p class="text-xs text-slate-300 leading-relaxed font-sans mb-4">
+                <span class="lang lang-id">Terbuka untuk peluang kepemimpinan Full-Time (Surabaya, Hybrid/Relokasi Jakarta, atau Remote Global) maupun retainer konsultasi arsitektur sistem HR Technology & AI.</span>
+                <span class="lang lang-en">Open to Full-Time leadership opportunities (Surabaya, Jakarta Hybrid/Relocation, or Global Remote) and HR Technology workflow advisory retainers.</span>
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/10">
+              <a href="mailto:nugrohoamdal@gmail.com?subject=Full-Time%20Role%20Inquiry%20-%20Nugroho%20Amdal"
+                 class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-display font-semibold text-xs text-center block transition-all shadow-md shadow-indigo-600/30">
+                Hubungi Langsung untuk CV
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Ketentuan & Catatan Rate Card -->
+        <div class="mt-12 p-6 sm:p-7 rounded-2xl bg-cardDark/80 border border-white/10 text-xs sm:text-sm text-slate-300 space-y-2 font-sans" data-aos="fade-up">
+          <div class="font-bold font-display uppercase tracking-wider text-slate-200 mb-2">
+            <i class="fa-solid fa-circle-info text-sky-400 mr-1.5"></i>
+            <span class="lang lang-id">Ketentuan & Syarat Kolaborasi Layanan:</span>
+            <span class="lang lang-en">Collaboration Terms & Booking Policies:</span>
+          </div>
+          <ul class="space-y-1.5 list-disc pl-5 text-slate-400">
+            <li><span class="lang lang-id">Untuk kegiatan offline di luar wilayah Surabaya, akomodasi dan transportasi (tiket pesawat/kereta, penginapan & penjemputan lokal) disediakan oleh pihak pengundang atau klien.</span><span class="lang lang-en">For onsite events outside Surabaya, standard travel and accommodation are provided by the client organization.</span></li>
+            <li><span class="lang lang-id">Setiap sesi training diawali dengan pemetaan kebutuhan singkat (TNA) agar materi, studi kasus, dan simulasi relevan dengan KPI perusahaan.</span><span class="lang lang-en">Every corporate training engagement includes a brief Needs Analysis (TNA) to customize case studies directly to team KPIs.</span></li>
+            <li><span class="lang lang-id">Biaya sudah termasuk modul materi presentasi PDF, lembar kerja (worksheet), dan sertifikat keikutsertaan digital (jika disyaratkan).</span><span class="lang lang-en">Investment includes slide decks (PDF), interactive exercise worksheets, and digital participation certificates when required.</span></li>
+            <li><span class="lang lang-id">Dukungan faktur resmi, NPWP, dan administrasi pemotongan PPh 21 / 23 tersedia sesuai regulasi perpajakan yang berlaku.</span><span class="lang lang-en">Official invoices, tax ID (NPWP), and formal withholding tax documentation (PPh 21/23) provided upon request.</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ACCORDION ==================== -->
+    <section id="faq" class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>FAQ</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
+            <span class="lang lang-id">Pertanyaan yang Sering Diajukan.</span>
+            <span class="lang lang-en">Frequently Asked Questions.</span>
+          </h2>
+          <p class="text-sm text-slate-400 font-sans">
+            <span class="lang lang-id">Seputar ketersediaan rekrutmen profesional, implementasi teknologi HR, dan penyelenggaraan acara.</span>
+            <span class="lang lang-en">Details regarding professional hiring, HR technology approach, and event arrangements.</span>
+          </p>
+        </div>
+
+        <!-- Accordion Items -->
+        <div class="space-y-4">
+          
+          <!-- Item 1 -->
+          <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10 active" data-aos="fade-up">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+              <span>
+                <span class="lang lang-id">Apakah Nugroho terbuka untuk posisi Full-Time di Jakarta, Surabaya, atau Remote Global?</span>
+                <span class="lang lang-en">Is Nugroho open to Full-Time roles in Jakarta, Surabaya, or Global Remote?</span>
+              </span>
+              <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-300 text-slate-400 ml-4 flex-shrink-0"></i>
+            </button>
+            <div class="accordion-content px-6 pb-5 text-sm text-slate-300 leading-relaxed font-sans">
+              <span class="lang lang-id">
+                Ya. Saat ini saya berdomisili di Surabaya dan sangat terbuka untuk penempatan Hybrid/Onsite di Surabaya maupun Jakarta, serta peran Remote penuh lintas zona waktu global (APAC, EMEA, Americas). Silakan hubungi langsung via WhatsApp atau email untuk meminta CV spesifik sesuai posisi.
+              </span>
+              <span class="lang lang-en">
+                Yes. Currently based in Surabaya, I am fully open to Hybrid/Onsite positions in Surabaya or Jakarta, as well as Global Remote roles across APAC, EMEA, and Americas timezones. Feel free to connect via WhatsApp or email to request a position-tailored CV.
+              </span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+              <span>
+                <span class="lang lang-id">Bagaimana pendekatan teknis Anda terkait implementasi AI dan otomasi di HR?</span>
+                <span class="lang lang-en">What is your technical approach to AI and workflow automation in HR?</span>
+              </span>
+              <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-300 text-slate-400 ml-4 flex-shrink-0"></i>
+            </button>
+            <div class="accordion-content px-6 pb-5 text-sm text-slate-300 leading-relaxed font-sans">
+              <span class="lang lang-id">
+                Saya memanfaatkan AI coding assistant untuk mengakselerasi riset, penulisan kode, dan pembuatan prototipe, namun seluruh alur produksi untuk data personalia berjalan secara <strong>deterministik</strong> (Google Apps Script, REST API, Webhooks, dan integrasi database internal). Hal ini menjamin 100% akurasi, privasi data karyawan, dan nol risiko halusinasi generatif.
+              </span>
+              <span class="lang lang-en">
+                I use AI coding assistants to speed up research, code scaffolding, and prototyping, while strictly running all production workflows <strong>deterministically</strong> (via Google Apps Script, validated REST APIs, webhooks, and database scripts). This ensures 100% data fidelity, employee privacy, and zero hallucination risk.
+              </span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+              <span>
+                <span class="lang lang-id">Apakah materi training/seminar dapat disesuaikan dengan kebutuhan spesifik perusahaan?</span>
+                <span class="lang lang-en">Can training or speaking modules be tailored to our specific corporate challenges?</span>
+              </span>
+              <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-300 text-slate-400 ml-4 flex-shrink-0"></i>
+            </button>
+            <div class="accordion-content px-6 pb-5 text-sm text-slate-300 leading-relaxed font-sans">
+              <span class="lang lang-id">
+                Tentu saja. Sebagai Trainer bersertifikasi BNSP Level 4, setiap keterlibatan didahului dengan sesi Training Needs Analysis (TNA) singkat agar studi kasus, bahasa pengantar (Bahasa Indonesia / Full English), simulasi interaktif, dan output akhir selaras dengan tantangan bisnis dan target KPI Anda.
+              </span>
+              <span class="lang lang-en">
+                Absolutely. As a certified BNSP Level 4 Instructor, every engagement starts with a concise Training Needs Analysis (TNA) so that case studies, delivery language (Indonesian / English), interactive exercises, and takeaways directly support your team's operational KPIs.
+              </span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+              <span>
+                <span class="lang lang-id">Bagaimana alur pemesanan (booking) dan skema pembayaran?</span>
+                <span class="lang lang-en">What is the booking workflow and commercial payment structure?</span>
+              </span>
+              <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-300 text-slate-400 ml-4 flex-shrink-0"></i>
+            </button>
+            <div class="accordion-content px-6 pb-5 text-sm text-slate-300 leading-relaxed font-sans">
+              <span class="lang lang-id">
+                Proses diawali dengan konsultasi singkat via WhatsApp atau Google Meet untuk mengonfirmasi jadwal dan ruang lingkup. Setelah proposal disepakati, konfirmasi tanggal dilakukan dengan DP 50%, dan pelunasan dapat diselesaikan H-1 atau H+7 setelah acara sesuai kesepakatan invoice perusahaan.
+              </span>
+              <span class="lang lang-en">
+                The process begins with an introductory discussion via WhatsApp or video call to confirm timeline and scope. Once agreed, booking is secured via a standard 50% deposit, with the remainder settled upon event completion or net-7/14 corporate invoice terms.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FINAL CTA STAGE BANNER ==================== -->
+    <section id="kolaborasi" class="relative py-28 overflow-hidden min-h-[500px] flex items-center">
+      
+      <!-- Stage Background Image with Dark Gradient Overlay -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
+           style="background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.85) 0%, rgba(6, 11, 20, 0.92) 50%, #060B14 100%), url('assets/cta-bg-stage.png');">
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+        
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-400/40 text-xs font-bold font-display uppercase tracking-wider text-cyanCustom mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="lang lang-id">Mari Berkolaborasi & Terhubung</span>
+          <span class="lang lang-en">Let's Connect & Collaborate</span>
+        </div>
+
+        <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <span class="lang lang-id">Siap Berdiskusi untuk Peran Strategis HR Maupun Kolaborasi Event.</span>
+          <span class="lang lang-en">Ready to Connect for Strategic HR Roles or Event Collaborations.</span>
+        </h2>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 font-sans">
+          <span class="lang lang-id">
+            Hubungi saya melalui WhatsApp atau email untuk menjadwalkan diskusi santai 15 menit, meminta CV lengkap sesuai posisi, atau mendiskusikan silabus acara organisasi Anda.
+          </span>
+          <span class="lang lang-en">
+            Reach out via WhatsApp or email to schedule an introductory 15-minute conversation, request my latest tailored CV, or explore customized training modules for your upcoming event.
+          </span>
+        </p>
+
+        <!-- CTA Buttons Row -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20berdiskusi%20lebih%20lanjut%20setelah%20melihat%20portofolio%20Anda." 
+             target="_blank" rel="noopener noreferrer"
+             class="px-8 py-4 rounded-xl font-display font-semibold text-base bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-2xl shadow-blue-600/40 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-3">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+            <span>Chat via WhatsApp (+62 853-9594-0406)</span>
+          </a>
+
+          <a href="mailto:nugrohoamdal@gmail.com" 
+             class="px-6 py-4 rounded-xl font-display font-semibold text-base bg-slate-800/90 hover:bg-slate-700/90 text-white border border-white/15 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+            <i class="fa-solid fa-envelope text-sky-400"></i>
+            <span>nugrohoamdal@gmail.com</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
+             class="px-6 py-4 rounded-xl font-display font-semibold text-base bg-slate-800/90 hover:bg-blue-600 text-white border border-white/15 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+            <i class="fa-brands fa-linkedin-in text-sky-300"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-white/10 bg-obsidian py-12 relative z-10 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <div>
+          <span class="font-serif text-lg font-bold text-white">Nugroho Amdal, S.S., CI.</span>
+          <p class="text-xs text-slate-400 mt-1">
+            Global HR • HR Technology Workflow Architect • Certified Instructor (CI) BNSP Level 4 • Speaker & Coach
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-6 text-base">
+          <a href="https://wa.me/6285395940406" target="_blank" class="hover:text-emerald-400 transition-colors" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="mailto:nugrohoamdal@gmail.com" class="hover:text-sky-400 transition-colors" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/nugrohoamdal" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-white/5 text-center text-xs text-slate-500">
+        © 2026 Nugroho Amdal, S.S., CI. All rights reserved. • Built for 100% self-hosted GitHub Pages deployment.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING ACTION BUTTON (FAB) ==================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+    
+    <!-- Collapsible Mini Action Buttons -->
+    <div id="fabMenu" class="hidden flex-col items-end space-y-2.5 transition-all duration-300">
+      <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%20untuk%20berdiskusi." target="_blank" 
+         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-emerald-600 text-white shadow-xl hover:bg-emerald-500 text-xs font-semibold font-display">
+        <span>Chat WhatsApp</span>
+        <i class="fa-brands fa-whatsapp text-base"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
+         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-blue-600 text-white shadow-xl hover:bg-blue-500 text-xs font-semibold font-display">
+        <span>Connect LinkedIn</span>
+        <i class="fa-brands fa-linkedin-in text-base"></i>
+      </a>
+      <a href="https://instagram.com/nugrohoamdal" target="_blank" rel="noopener noreferrer"
+         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-pink-600 text-white shadow-xl hover:bg-pink-500 text-xs font-semibold font-display">
+        <span>Instagram</span>
+        <i class="fa-brands fa-instagram text-base"></i>
+      </a>
+    </div>
+
+    <!-- Main FAB Toggle Button -->
+    <button id="fabBtn" type="button" onclick="toggleFab()"
+            class="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-105 active:scale-95 focus:outline-none"
+            aria-label="Connect Floating Action Button">
+      <i id="fabIcon" class="fa-solid fa-comment-dots"></i>
+    </button>
+  </div>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 invisible flex items-center justify-center p-4 sm:p-6" onclick="closeLightbox(event)">
+    <div class="relative max-w-4xl w-full bg-cardDark border border-white/20 rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+      <button type="button" onclick="closeLightbox(null)" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-red-600 text-white flex items-center justify-center text-lg transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="aspect-[16/10] sm:aspect-[16/9] bg-black flex items-center justify-center overflow-hidden">
+        <img id="lightboxImg" src="" alt="Documentation Preview" class="w-full h-full object-contain">
+      </div>
+      <div class="p-6">
+        <h3 id="lightboxTitle" class="font-serif text-xl sm:text-2xl font-bold text-white mb-1"></h3>
+        <p id="lightboxCaption" class="text-sm text-slate-300"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LIBS & SCRIPTS ==================== -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- AOS Animate on Scroll -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script>
+    // Initialize Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 60,
+      easing: 'ease-out-cubic'
+    });
+
+    // Bilingual Toggle Logic
+    function switchLanguage(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      localStorage.setItem('portfolio-lang', lang);
+
+      const btnID = document.getElementById('btnLangID');
+      const btnEN = document.getElementById('btnLangEN');
+
+      if (lang === 'id') {
+        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
+      } else {
+        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-display transition-all duration-300 text-slate-400 hover:text-white';
+      }
+    }
+
+    // Load Saved Language Preference
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('portfolio-lang') || 'id';
+      switchLanguage(savedLang);
+    });
+
+    // Navbar Scroll Glass Blur Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('bg-obsidian/95', 'shadow-2xl', 'border-white/15');
+        navbar.classList.remove('bg-obsidian/80', 'border-white/10');
+      } else {
+        navbar.classList.add('bg-obsidian/80', 'border-white/10');
+        navbar.classList.remove('bg-obsidian/95', 'shadow-2xl', 'border-white/15');
+      }
+    });
+
+    // Mobile Navigation Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+    function toggleMobileMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuIcon.classList.remove('fa-bars');
+        mobileMenuIcon.classList.add('fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.classList.remove('fa-xmark');
+        mobileMenuIcon.classList.add('fa-bars');
+      }
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // Floating Action Button Toggle
+    const fabMenu = document.getElementById('fabMenu');
+    const fabIcon = document.getElementById('fabIcon');
+    function toggleFab() {
+      const isHidden = fabMenu.classList.contains('hidden');
+      if (isHidden) {
+        fabMenu.classList.remove('hidden');
+        fabMenu.classList.add('flex');
+        fabIcon.classList.remove('fa-comment-dots');
+        fabIcon.classList.add('fa-xmark');
+      } else {
+        fabMenu.classList.add('hidden');
+        fabMenu.classList.remove('flex');
+        fabIcon.classList.remove('fa-xmark');
+        fabIcon.classList.add('fa-comment-dots');
+      }
+    }
+
+    // Accordion Toggle Function
+    function toggleAccordion(button) {
+      const currentItem = button.closest('.accordion-item');
+      const allItems = document.querySelectorAll('.accordion-item');
+      
+      allItems.forEach(item => {
+        if (item !== currentItem) {
+          item.classList.remove('active');
+        }
+      });
+      currentItem.classList.toggle('active');
+    }
+
+    // Lightbox Modal Functions
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    function openLightbox(src, title, caption) {
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title;
+      lightboxCaption.textContent = caption;
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
