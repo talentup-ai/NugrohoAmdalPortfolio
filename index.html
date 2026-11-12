@@ -158,18 +158,39 @@
       animation: rotateBeam 3.2s linear infinite, pulseBeamGlow 2.4s ease-in-out infinite;
     }
 
-    /* Glassmorphism Styles */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    /* Glassmorphism Styles & Hardware GPU Compositing */
     .glass-card {
       background: rgba(15, 23, 42, 0.72);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     .glass-card:hover {
       border-color: rgba(56, 189, 248, 0.35);
-      transform: translateY(-4px);
+      transform: translateY(-4px) translateZ(0);
+      -webkit-transform: translateY(-4px) translateZ(0);
       box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    /* GPU Acceleration for Heavy Ambient Glow & Decorative Blurs */
+    [class*="blur-3xl"],
+    [class*="blur-2xl"] {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      contain: paint;
+      pointer-events: none;
     }
 
     /* Hero Cutout Mask */
@@ -2414,23 +2435,39 @@
   </div>
 
   <!-- ==================== JAVASCRIPT LIBS & SCRIPTS ==================== -->
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <!-- AOS Animate on Scroll -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <script>
-    // Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true
+    // Native Smooth Scrolling for Anchor Links (with fixed navbar offset)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const navOffset = 80;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            // Auto close mobile menu if open
+            const mobMenu = document.getElementById('mobileMenu');
+            const mobIcon = document.getElementById('mobileMenuIcon');
+            if (mobMenu && !mobMenu.classList.contains('hidden')) {
+              mobMenu.classList.add('hidden');
+              if (mobIcon) {
+                mobIcon.classList.remove('fa-xmark');
+                mobIcon.classList.add('fa-bars');
+              }
+            }
+          }
+        }
+      });
     });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
     // Initialize AOS
     AOS.init({
