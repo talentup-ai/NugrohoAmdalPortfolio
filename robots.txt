@@ -1,0 +1,46 @@
+# robots.txt for Nugroho Amdal Professional Portfolio
+# https://nugrohoamdalportfolio.dpdns.org/
+
+User-agent: *
+Allow: /
+
+# Explicit rules for Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Explicit permissions for Generative AI Search & LLM Crawlers (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://nugrohoamdalportfolio.dpdns.org/sitemap.xml
