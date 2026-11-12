@@ -163,6 +163,16 @@
       scroll-padding-top: 5rem;
     }
 
+    /* Desktop Root Font-Size Scaling (Matches ~80% zoom proportion) */
+    @media (min-width: 1024px) {
+      html {
+        font-size: 13px;
+      }
+      nav a {
+        white-space: nowrap;
+      }
+    }
+
     /* Glassmorphism Styles & Hardware GPU Compositing */
     .glass-card {
       background: rgba(15, 23, 42, 0.72);
