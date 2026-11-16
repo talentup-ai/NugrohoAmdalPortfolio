@@ -41,6 +41,9 @@
 ## Products, AI Tools & Talent Up Ecosystem Catalog (`products.html`)
 URL: https://nugrohoamdalportfolio.dpdns.org/products.html
 
+- Career Clarity App: AI-powered ATS CV generator to bypass ATS rejections. (Link: https://careerclarity-app.vercel.app/)
+- Talent Up Career Bootcamp: Lifetime access, pay-once career mentorship. Helped 1,000+ layoff victims & fresh grads land global remote jobs. (Link: https://talentup.myscalev.com/careerdevelopment)
+
 ### 1. AI Web Applications & Workflow Tools
 - **Career Coach AI:**
   - Web application delivering automated ATS resume audit, job qualification alignment diagnostics, and AI-powered STAR method interview question simulator.
@@ -104,6 +107,16 @@ URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
 - **Impact:**
   - 1,000+ professionals and fresh graduates coached.
   - Average interview invitation rate increased from 8% to 42% within 30 days post-mentorship.
+
+### 5. Beating ATS Screening with Career Clarity App
+- **Context:** Fresh graduates and job seekers frequently face automatic rejections because standard resumes fail algorithmic ATS parsing.
+- **Solution:** Career Clarity App (https://careerclarity-app.vercel.app/) uses Generative AI to diagnose keyword gaps and align resumes with global recruiter criteria.
+- **Impact:** Eliminates ATS rejections and multiplies interview callback opportunities.
+
+### 6. Layoff Recovery & Landing Global Remote Jobs via Talent Up Mentorship
+- **Context:** Economic downturn and "tech winter" left seasoned workers and career switchers battling hiring age limits in domestic markets.
+- **Solution:** Talent Up Career Development (https://talentup.myscalev.com/careerdevelopment) offers pay-once, lifetime access mentorship teaching multinational remote hiring secrets, STAR framing, and global outreach.
+- **Impact:** 1,000+ alumni guided to cross-border remote and on-site dream roles.
 
 ---
 
