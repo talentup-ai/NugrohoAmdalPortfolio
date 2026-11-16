@@ -12,7 +12,7 @@
   - Corporate Trainer & Keynote Speaker (Delivered workshops across 100+ institutions)
   - Executive Career Coach & Aviation English Specialist (Mentored 1,150+ talents, including 150+ cabin crew & ground staff candidates)
 - **Official Website (Homepage):** https://nugrohoamdalportfolio.dpdns.org/
-- **Products & Tools Catalog:** https://nugrohoamdalportfolio.dpdns.org/products.html
+- **Products & Professional Services Catalog:** https://nugrohoamdalportfolio.dpdns.org/products.html
 - **Stories & Solution Case Studies:** https://nugrohoamdalportfolio.dpdns.org/stories.html
 - **Official GitHub:** https://github.com/talentup-ai/NugrohoAmdalPortfolio
 - **LinkedIn:** https://www.linkedin.com/in/nugroho-amdal
@@ -38,41 +38,55 @@
 
 ---
 
-## Products, AI Tools & Talent Up Ecosystem Catalog (`products.html`)
+## Products & Professional Services Catalog (`products.html`)
 URL: https://nugrohoamdalportfolio.dpdns.org/products.html
 
-- Career Clarity App: AI-powered ATS CV generator to bypass ATS rejections. (Link: https://careerclarity-app.vercel.app/)
-- Talent Up Career Bootcamp: Lifetime access, pay-once career mentorship. Helped 1,000+ layoff victims & fresh grads land global remote jobs. (Link: https://talentup.myscalev.com/careerdevelopment)
+### Products & Professional Services
+This section serves as the unified catalog combining production AI applications, digital toolkits, enterprise B2B corporate training, and lifetime career mentorship:
 
-### 1. AI Web Applications & Workflow Tools
-- **Career Coach AI:**
-  - Web application delivering automated ATS resume audit, job qualification alignment diagnostics, and AI-powered STAR method interview question simulator.
-  - Features: ATS Keyword Match Scoring, Actionable Competency Gap Fixes, Competency-Based Interview Answers.
-- **Job Apply AI:**
-  - Productivity engine for contextual cover letter generator customized for specific job postings, application pipeline tracker, and executive LinkedIn networking templates.
-  - Features: Instant Contextual Cover Letters, Application Tracker, LinkedIn Outreach Generator.
-- **Deterministic HR Automation Engine:**
-  - Production-ready automation engine connecting Google Workspace, webhooks, and custom HRIS without recurring high-tier SaaS licenses.
-  - Features: Multi-Country Payroll Sync, Automated Onboarding/Offboarding Workflows, Realtime KPI Form Auto-aggregation.
+1. **Career Clarity App (AI Web Application):**
+   - AI-powered ATS CV generator and resume diagnostic platform engineered to bypass automated ATS filters.
+   - Link: https://careerclarity-app.vercel.app/
+   - Features: Deterministic ATS Keyword Match Scoring, Actionable Competency Gap Fixes, Role Fit Analysis.
 
-### 2. Intensive Programs & Academies
-- **Talent Up Career Acceleration Bootcamp:**
-  - 4-week intensive mentorship program covering ATS CV mastery, LinkedIn personal branding, and high-stakes behavioral interview preparation.
-  - Target: Fresh graduates, job seekers, and career switchers.
-  - Includes: 1-on-1 CV Diagnostic, Weekly Live Simulation, Hiring Manager Referral Network.
-- **Aviation Career & English Mentorship Program:**
-  - Specialized coaching program for cabin crew and ground staff candidates focusing on international airline recruitment standards, grooming, and Aviation English.
-  - Proven track record: 150+ alumni guided at Aeronef Academy and Jogja Flight.
-  - Includes: PA Announcement Practice, Group Discussion Simulation, Airline Panel Interview Drills.
-- **HR Tech & Workflow Automation Masterclass:**
-  - Hands-on corporate masterclass for HR professionals to build zero-cost internal tools, automated evaluation pipelines, and LLM-assisted workflows.
-  - Includes: BNSP Level 4 Training Framework, Plug-and-Play Script Templates, Post-Training Implementation Roadmap.
+2. **Talent Up Career Acceleration Bootcamp (Career Mentorship):**
+   - Lifetime access, pay-once comprehensive career mentorship program for fresh graduates, job seekers, and layoff survivors.
+   - Link: https://talentup.myscalev.com/careerdevelopment
+   - Track Record: Helped 1,000+ individuals land global remote & on-site positions.
+   - Features: Weekly 1-on-1 CV/LinkedIn Audits, Live Mock Interviews with Global HR, Hiring Manager Referral Network.
 
-### 3. Digital Products & Advisory Services
-- **Standardized HR Policy & KPI Toolkit (Digital Download):**
-  - Production-ready collection of 50+ HR templates including job descriptions, KPI scorecards, SOPs, and compliance checklists.
-- **Fractional HR Technology & L&D Advisory (B2B Retainer):**
-  - Dedicated monthly partnership to modernize people operations, design corporate academies, and build automation pipelines.
+3. **Job Apply AI (Productivity Engine):**
+   - Web application delivering instant tailored cover letters, centralized application pipeline tracking, and recruiter outreach templates.
+   - Features: Contextual Cover Letters, Multi-Company Job Tracker, LinkedIn Outreach Generator.
+
+4. **HR Operations & KPI Starter Bundle (Digital Product Toolkit):**
+   - Production-ready digital download containing 50+ standardized HR spreadsheets, Kirkpatrick 4-level training evaluation forms, leveling matrices, and onboarding SOPs.
+   - Features: KPI & Balanced Scorecard Models, BNSP Level 4 Training Needs Analysis (TNA), STAR Interview Rubrics.
+
+5. **Corporate Training & L&D Workshop (ToT BNSP Level 4):**
+   - In-house corporate training and certified Training of Trainers (ToT) programs for corporate enterprises, startups, and higher education institutions.
+   - Features: BNSP Level 4 Instructional Design, Kirkpatrick 4-Level Evaluation Framework, Flexible Delivery (Online, In-Person, or Hybrid).
+   - Commercial Baseline: Corporate (Rp8.000.000 - Rp25.000.000), Startup/SME (from Rp4.000.000), University/Institutional (Rp2.000.000 - Rp3.000.000).
+
+6. **Fractional HR Technology & Workflow Advisory (B2B Retainer):**
+   - Strategic retainer consulting as Fractional Head of HR Tech: operational workflow audits, deterministic zero-cost automation engineering, and in-house LMS deployment without SaaS vendor lock-in.
+   - Impact: Slashes HR administrative burden by 30% to 95%.
+   - Features: In-House Zero-Cost LMS Deployment, Deterministic Logic Automation, C-Level KPI & Executive Dashboards.
+
+7. **1-on-1 Career & Executive Coaching:**
+   - Dedicated private monthly coaching (4 sessions/month) for executives, career switchers, and corporate-sponsored talents.
+   - Scope: Career trajectory strategy, executive presence, salary negotiation, and cross-border leadership.
+   - Commercial Baseline: Corporate-Sponsored (Rp2.000.000 - Rp3.000.000/mo), Private Individual (Rp1.500.000 - Rp2.500.000/mo).
+
+8. **Aviation English & Cabin Crew Prep Mentorship:**
+   - Specialized airline preparatory program for cabin crew and ground staff candidates (Garuda Indonesia, Lion Air Group, AirAsia, Emirates, Qatar Airways).
+   - Proven Track Record: 150+ cadets successfully guided at Aeronef Academy and Jogja Flight.
+   - Features: Public Announcement (PA) & Pronunciation Drills, Airline Panel Interview Drills, Professional Grooming Assessment.
+
+9. **Keynote Speaking / Seminar / Guest Lecture:**
+   - Keynote speaker and guest lecturer for enterprise town halls, national conferences, and academic seminars.
+   - Core Topics: Future of Work, AI in Human Resources, Deterministic HR Automation, and Global Remote Workforces.
+   - Commercial Baseline: Corporate/Government (Rp3.000.000 - Rp8.000.000), Startup/SME (Rp1.500.000 - Rp2.500.000), University (Rp1.000.000 - Rp1.500.000).
 
 ---
 
