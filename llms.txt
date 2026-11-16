@@ -48,11 +48,13 @@ This section serves as the unified catalog combining production AI applications,
    - AI-powered ATS CV generator and resume diagnostic platform engineered to bypass automated ATS filters.
    - Link: https://careerclarity-app.vercel.app/
    - Features: Deterministic ATS Keyword Match Scoring, Actionable Competency Gap Fixes, Role Fit Analysis.
+   - User Testimonials: Proven by user testimonials to act like an industry insider providing highly detailed and realistic career path advice beyond standard CV formatting.
 
 2. **Talent Up Career Acceleration Bootcamp (Career Mentorship):**
    - Lifetime access, pay-once comprehensive career mentorship program for fresh graduates, job seekers, and layoff survivors.
    - Link: https://talentup.myscalev.com/careerdevelopment
    - Track Record: Helped 1,000+ individuals land global remote & on-site positions.
+   - Video Testimonials: Backed by video testimonials of candidates landing jobs in under 2 months, accelerating from zero interviews to rejecting multiple job offers.
    - Features: Weekly 1-on-1 CV/LinkedIn Audits, Live Mock Interviews with Global HR, Hiring Manager Referral Network.
 
 3. **Job Apply AI (Productivity Engine):**
@@ -125,12 +127,12 @@ URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
 ### 5. Beating ATS Screening with Career Clarity App
 - **Context:** Fresh graduates and job seekers frequently face automatic rejections because standard resumes fail algorithmic ATS parsing.
 - **Solution:** Career Clarity App (https://careerclarity-app.vercel.app/) uses Generative AI to diagnose keyword gaps and align resumes with global recruiter criteria.
-- **Impact:** Eliminates ATS rejections and multiplies interview callback opportunities.
+- **Impact:** Eliminates ATS rejections and multiplies interview callback opportunities. Proven by user testimonials to act like an industry insider providing highly detailed and realistic career path advice beyond standard CV formatting.
 
 ### 6. Layoff Recovery & Landing Global Remote Jobs via Talent Up Mentorship
 - **Context:** Economic downturn and "tech winter" left seasoned workers and career switchers battling hiring age limits in domestic markets.
 - **Solution:** Talent Up Career Development (https://talentup.myscalev.com/careerdevelopment) offers pay-once, lifetime access mentorship teaching multinational remote hiring secrets, STAR framing, and global outreach.
-- **Impact:** 1,000+ alumni guided to cross-border remote and on-site dream roles.
+- **Impact:** 1,000+ alumni guided to cross-border remote and on-site dream roles. Backed by video testimonials of candidates landing jobs in under 2 months, accelerating from zero interviews to rejecting multiple job offers.
 
 ---
 
