@@ -371,35 +371,35 @@
       </a>
 
       <!-- Desktop Navigation Links (8 Items) -->
-      <nav class="hidden xl:flex items-center gap-2 2xl:gap-3.5 font-medium text-slate-300 text-xs 2xl:text-[13px]">
-        <a href="index.html#about" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+      <nav class="hidden xl:flex items-center gap-4 2xl:gap-6">
+        <a href="index.html#about" onclick="handleNavClick(event, 'index.html#about')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="index.html#ai-systems" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="index.html#ai-systems" onclick="handleNavClick(event, 'index.html#ai-systems')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI</span>
         </a>
-        <a href="index.html#experience" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="index.html#experience" onclick="handleNavClick(event, 'index.html#experience')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="products.html" class="whitespace-nowrap text-cyanCustom font-semibold border-b-2 border-cyanCustom pb-0.5">
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[15px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
           <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
         </a>
-        <a href="stories.html" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Cerita & Solusi</span><span class="lang lang-en">Stories & Solutions</span>
         </a>
-        <a href="index.html#certifications" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="index.html#certifications" onclick="handleNavClick(event, 'index.html#certifications')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Sertifikasi</span><span class="lang lang-en">Certifications</span>
         </a>
-        <a href="index.html#gallery" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="index.html#gallery" onclick="handleNavClick(event, 'index.html#gallery')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Dokumentasi</span><span class="lang lang-en">Documentation</span>
         </a>
-        <a href="products.html#services-rates" class="whitespace-nowrap hover:text-cyanCustom transition-colors py-1">
+        <a href="#services-rates" onclick="handleNavClick(event, '#services-rates')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Layanan & Rates</span><span class="lang lang-en">Rates & Services</span>
         </a>
       </nav>
 
       <!-- Right Controls: Bilingual Button Beam + CTA + Mobile Hamburger -->
-      <div class="shrink-0 flex items-center gap-2.5">
+      <div class="shrink-0 flex items-center gap-3">
         
         <!-- BILINGUAL TOGGLE WITH CONIC ROTATING BORDER BEAM -->
         <div class="border-beam-outer shadow-lg" title="Ganti Bahasa / Switch Language">
@@ -457,7 +457,7 @@
       <a href="index.html#gallery" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'index.html#gallery')">
         <span class="lang lang-id">Dokumentasi Event & Pelatihan</span><span class="lang lang-en">Event & Training Documentation</span>
       </a>
-      <a href="products.html#services-rates" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'products.html#services-rates')">
+      <a href="#services-rates" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#services-rates')">
         <span class="lang lang-id">Layanan Speaking, Training & Rate Card</span><span class="lang lang-en">Speaking, Training & Rate Card</span>
       </a>
       <div class="pt-3 mt-1 border-t border-white/10 flex flex-col space-y-2">
@@ -1398,7 +1398,7 @@
         e.preventDefault();
         e.stopPropagation();
       }
-      const menu = document.getElementById('mobileMenu');
+      const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
       if (!menu) return;
       const isHidden = menu.classList.contains('hidden');
@@ -1418,9 +1418,9 @@
     }
 
     function closeMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
+      const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
-      if (menu && !menu.classList.contains('hidden')) {
+      if (menu) {
         menu.classList.add('hidden');
         if (icon) {
           icon.classList.remove('fa-xmark');
@@ -1429,23 +1429,43 @@
       }
     }
 
-    function handleNavClick(e, href) {
+    function handleNavClick(event, href) {
+      // 1. Tutup menu mobile jika sedang terbuka (dukung mobile-menu dan mobileMenu)
+      const mobMenu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
+      if (mobMenu) {
+        mobMenu.classList.add('hidden');
+      }
+      const mobIcon = document.getElementById('mobileMenuIcon');
+      if (mobIcon) {
+        mobIcon.classList.remove('fa-xmark');
+        mobIcon.classList.add('fa-bars');
+      }
+
+      // 2. Deteksi apakah href mengarah ke section ID di halaman aktif
       const currentPath = window.location.pathname.split('/').pop() || 'products.html';
+      const isHome = (currentPath === '' || currentPath === 'index.html');
       const isProducts = (currentPath === 'products.html');
-      
-      let targetHash = '';
-      if (href.startsWith('#')) {
-        targetHash = href;
-      } else if (href.startsWith('products.html#')) {
-        if (isProducts) {
-          targetHash = '#' + href.split('#')[1];
+      const isStories = (currentPath === 'stories.html');
+
+      let targetId = '';
+      if (href.startsWith('#') && href.length > 1) {
+        targetId = href;
+      } else if (href.includes('#')) {
+        const parts = href.split('#');
+        const targetPage = parts[0];
+        const hash = '#' + parts[1];
+        if ((isHome && (targetPage === 'index.html' || targetPage === '')) ||
+            (isProducts && targetPage === 'products.html') ||
+            (isStories && targetPage === 'stories.html')) {
+          targetId = hash;
         }
       }
 
-      if (targetHash) {
-        const targetEl = document.querySelector(targetHash);
+      // 3. Jika mengarah ke ID di halaman aktif, cegah default behavior dan lakukan smooth scroll dengan offset 80px
+      if (targetId) {
+        const targetEl = document.querySelector(targetId);
         if (targetEl) {
-          if (e) e.preventDefault();
+          if (event) event.preventDefault();
           const navOffset = 80;
           const elementPosition = targetEl.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - navOffset;
@@ -1453,13 +1473,11 @@
             top: offsetPosition,
             behavior: 'smooth'
           });
-          history.pushState(null, null, targetHash);
-          setTimeout(closeMobileMenu, 150);
+          history.pushState(null, null, targetId);
           return;
         }
       }
-
-      setTimeout(closeMobileMenu, 200);
+      // Jika href mengarah ke halaman lain, browser akan berpindah halaman secara normal
     }
 
     // Attach to global window
@@ -1467,7 +1485,7 @@
     window.closeMobileMenu = closeMobileMenu;
     window.handleNavClick = handleNavClick;
 
-    // Delegated Smooth Scrolling for internal hash links on products.html
+    // Delegated Smooth Scrolling for all anchor links (both #hash and products.html#hash)
     document.addEventListener('click', function(e) {
       const anchor = e.target.closest('a');
       if (!anchor) return;
@@ -1475,29 +1493,33 @@
       if (!href) return;
 
       const currentPath = window.location.pathname.split('/').pop() || 'products.html';
+      const isHome = (currentPath === '' || currentPath === 'index.html');
       const isProducts = (currentPath === 'products.html');
+      const isStories = (currentPath === 'stories.html');
 
-      if (href.startsWith('#') && href !== '#') {
-        const targetEl = document.querySelector(href);
-        if (targetEl) {
-          e.preventDefault();
-          const navOffset = 80;
-          const elementPosition = targetEl.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-          history.pushState(null, null, href);
-          closeMobileMenu();
+      let targetId = '';
+      if (href.startsWith('#') && href.length > 1 && href !== '#') {
+        targetId = href;
+      } else if (href.includes('#')) {
+        const parts = href.split('#');
+        const targetPage = parts[0];
+        const hash = '#' + parts[1];
+        if ((isHome && (targetPage === 'index.html' || targetPage === '')) ||
+            (isProducts && targetPage === 'products.html') ||
+            (isStories && targetPage === 'stories.html')) {
+          targetId = hash;
         }
-      } else if (href.startsWith('products.html#') && isProducts) {
-        const hash = '#' + href.split('#')[1];
-        const targetEl = document.querySelector(hash);
+      }
+
+      if (targetId) {
+        const targetEl = document.querySelector(targetId);
         if (targetEl) {
           e.preventDefault();
           const navOffset = 80;
           const elementPosition = targetEl.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - navOffset;
           window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-          history.pushState(null, null, hash);
+          history.pushState(null, null, targetId);
           closeMobileMenu();
         }
       }
@@ -1505,7 +1527,7 @@
 
     // Close mobile menu when tapping outside
     document.addEventListener('click', function(e) {
-      const menu = document.getElementById('mobileMenu');
+      const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const btn = document.getElementById('mobileMenuBtn');
       if (menu && !menu.classList.contains('hidden')) {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
