@@ -423,9 +423,8 @@
         <a href="index.html#experience" class="text-xs 2xl:text-sm whitespace-nowrap hover:text-white transition-colors">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="products.html" class="text-xs 2xl:text-sm whitespace-nowrap hover:text-white transition-colors flex items-center gap-1.5">
+        <a href="products.html" class="text-xs 2xl:text-sm whitespace-nowrap hover:text-cyanCustom transition-colors">
           <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
-          <span class="text-[9px] px-1.5 py-0.5 rounded bg-cyanCustom/20 text-cyanCustom font-bold uppercase">New</span>
         </a>
         <a href="stories.html" class="text-xs 2xl:text-sm whitespace-nowrap text-cyanCustom font-semibold border-b-2 border-cyanCustom pb-0.5">
           <span class="lang lang-id">Cerita & Solusi</span><span class="lang lang-en">Stories & Solutions</span>
@@ -467,24 +466,21 @@
     </div>
 
     <!-- Mobile Dropdown Navigation -->
-    <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-4">
-      <a href="index.html#about" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
-        <span class="lang lang-id">Profil Profesional</span><span class="lang lang-en">Professional Profile</span>
+    <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-2">
+      <a href="index.html#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
       </a>
-      <a href="index.html#ai-systems" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
-        <span class="lang lang-id">Inovasi HR & Sistem AI</span><span class="lang lang-en">HR & AI Systems</span>
+      <a href="index.html#ai-systems" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI Systems</span>
       </a>
-      <a href="index.html#experience" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
-        <span class="lang lang-id">Rekam Jejak Karir</span><span class="lang lang-en">Career Track Record</span>
+      <a href="index.html#experience" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
       </a>
-      <a href="products.html" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
+      <a href="products.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md" onclick="toggleMobileMenu()">
         <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
       </a>
-      <a href="stories.html" class="block text-cyanCustom text-base font-semibold py-1" onclick="toggleMobileMenu()">
-        <span class="lang lang-id">Cerita Solusi & Insight</span><span class="lang lang-en">Stories & Solutions</span>
-      </a>
-      <a href="index.html#services-rates" class="block text-slate-200 hover:text-cyanCustom text-base font-medium py-1" onclick="toggleMobileMenu()">
-        <span class="lang lang-id">Layanan Speaking & Rate Card</span><span class="lang lang-en">Speaking Services & Rate Card</span>
+      <a href="stories.html" class="block px-3 py-2 text-base font-medium text-cyanCustom hover:text-white hover:bg-gray-800 rounded-md" onclick="toggleMobileMenu()">
+        <span class="lang lang-id">Cerita & Solusi</span><span class="lang lang-en">Stories & Solutions</span>
       </a>
       <div class="pt-2 border-t border-white/10 flex flex-col space-y-2">
         <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20membaca%20cerita%20solusi%20Anda." target="_blank" rel="noopener noreferrer"
@@ -1540,18 +1536,26 @@
     const mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
     function toggleMobileMenu() {
+      if (!mobileMenu) return;
       const isHidden = mobileMenu.classList.contains('hidden');
       if (isHidden) {
         mobileMenu.classList.remove('hidden');
-        mobileMenuIcon.classList.remove('fa-bars');
-        mobileMenuIcon.classList.add('fa-xmark');
+        if (mobileMenuIcon) {
+          mobileMenuIcon.classList.remove('fa-bars');
+          mobileMenuIcon.classList.add('fa-xmark');
+        }
       } else {
         mobileMenu.classList.add('hidden');
-        mobileMenuIcon.classList.remove('fa-xmark');
-        mobileMenuIcon.classList.add('fa-bars');
+        if (mobileMenuIcon) {
+          mobileMenuIcon.classList.remove('fa-xmark');
+          mobileMenuIcon.classList.add('fa-bars');
+        }
       }
     }
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    window.toggleMobileMenu = toggleMobileMenu;
   </script>
 </body>
 </html>
