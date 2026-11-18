@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Frontend HRIS & Payroll Engine | Nugroho Amdal, S.S., CI.</title>
+  <meta name="description" content="Simulasi antarmuka interaktif Automated HRIS & Payroll Engine (27-Sheet Zero-Macro Architecture) karya Nugroho Amdal, S.S., CI. PPh 21 TER, BPJS, Log Cuti, dan 20 KPI Eksekutif.">
+  <link rel="canonical" href="https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050B14'/><path d='M30 75 V25 L50 55 L70 25 V75' stroke='%2338BDF8' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='80' cy='25' r='5' fill='%23D4AF37'/></svg>">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#050B14',
+            cardDark: '#0B132B',
+            royal: '#1C2541',
+            accentCyan: '#38BDF8',
+            accentGold: '#D4AF37',
+            emeraldCustom: '#10B981'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    body {
+      background-color: #050B14;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-card {
+      background: rgba(11, 19, 43, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.25s ease-in-out;
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050B14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1C2541;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38BDF8;
+    }
+  </style>
+</head>
+<body x-data="{
+  lang: 'id',
+  sidebarOpen: false,
+  activeTab: 'all',
+  searchQuery: '',
+  selectedEmp: null,
+  showModal: false,
+  employees: [
+    {
+      nik: 'EMP-001',
+      name: 'Budi Santoso',
+      role: 'Senior Software Engineer',
+      dept: 'Technology',
+      status: 'PKWTT (Tetap)',
+      tenure: '3 thn 4 bln',
+      ptkp: 'K/1 (TER B)',
+      baseSalary: 18500000,
+      allowance: 2500000,
+      overtime: 1200000,
+      gross: 22200000,
+      terRate: '8.25%',
+      pph21: 1831500,
+      bpjsTk: 666000,
+      bpjsKes: 222000,
+      thp: 19480500,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '8 hari'
+    },
+    {
+      nik: 'EMP-002',
+      name: 'Wulan Sari',
+      role: 'HR Business Partner',
+      dept: 'People & HR',
+      status: 'PKWTT (Tetap)',
+      tenure: '2 thn 8 bln',
+      ptkp: 'TK/0 (TER A)',
+      baseSalary: 14000000,
+      allowance: 1800000,
+      overtime: 0,
+      gross: 15800000,
+      terRate: '5.75%',
+      pph21: 908500,
+      bpjsTk: 474000,
+      bpjsKes: 158000,
+      thp: 14259500,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '10 hari'
+    },
+    {
+      nik: 'EMP-003',
+      name: 'Ahmad Fauzi',
+      role: 'Operations Lead',
+      dept: 'Operations',
+      status: 'PKWT (Alert: 1.8 thn)',
+      tenure: '1 thn 10 bln',
+      ptkp: 'K/2 (TER B)',
+      baseSalary: 13500000,
+      allowance: 1500000,
+      overtime: 850000,
+      gross: 15850000,
+      terRate: '6.25%',
+      pph21: 990625,
+      bpjsTk: 475500,
+      bpjsKes: 158500,
+      thp: 14225375,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '5 hari'
+    },
+    {
+      nik: 'EMP-004',
+      name: 'Dewi Lestari',
+      role: 'Senior Finance Analyst',
+      dept: 'Finance',
+      status: 'PKWTT (Tetap)',
+      tenure: '4 thn 1 bln',
+      ptkp: 'TK/1 (TER A)',
+      baseSalary: 15500000,
+      allowance: 2000000,
+      overtime: 0,
+      gross: 17500000,
+      terRate: '6.50%',
+      pph21: 1137500,
+      bpjsTk: 525000,
+      bpjsKes: 175000,
+      thp: 15662500,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '9 hari'
+    },
+    {
+      nik: 'EMP-005',
+      name: 'Rian Pratama',
+      role: 'Growth Marketing Lead',
+      dept: 'Marketing',
+      status: 'PKWT (Kontrak)',
+      tenure: '1 thn 2 bln',
+      ptkp: 'TK/0 (TER A)',
+      baseSalary: 13000000,
+      allowance: 1500000,
+      overtime: 400000,
+      gross: 14900000,
+      terRate: '5.50%',
+      pph21: 819500,
+      bpjsTk: 447000,
+      bpjsKes: 149000,
+      thp: 13484500,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '7 hari'
+    },
+    {
+      nik: 'EMP-006',
+      name: 'Siti Rahmawati',
+      role: 'Talent Acquisition Specialist',
+      dept: 'People & HR',
+      status: 'PKWTT (Tetap)',
+      tenure: '2 thn 0 bln',
+      ptkp: 'TK/0 (TER A)',
+      baseSalary: 11500000,
+      allowance: 1200000,
+      overtime: 300000,
+      gross: 13000000,
+      terRate: '4.75%',
+      pph21: 617500,
+      bpjsTk: 390000,
+      bpjsKes: 130000,
+      thp: 11862500,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '11 hari'
+    },
+    {
+      nik: 'EMP-007',
+      name: 'Hendro Wijaya',
+      role: 'DevOps & Cloud Engineer',
+      dept: 'Technology',
+      status: 'PKWTT (Tetap)',
+      tenure: '3 thn 0 bln',
+      ptkp: 'K/0 (TER A)',
+      baseSalary: 17000000,
+      allowance: 2200000,
+      overtime: 600000,
+      gross: 19800000,
+      terRate: '7.50%',
+      pph21: 1485000,
+      bpjsTk: 594000,
+      bpjsKes: 198000,
+      thp: 17523000,
+      audit: 'Pass (Valid 100%)',
+      leaveBalance: '6 hari'
+    }
+  ],
+  formatRupiah(num) {
+    return 'Rp ' + Number(num).toLocaleString('id-ID');
+  },
+  get filteredEmployees() {
+    return this.employees.filter(emp => {
+      const matchDept = (this.activeTab === 'all' || emp.dept.toLowerCase().includes(this.activeTab.toLowerCase()));
+      const query = this.searchQuery.toLowerCase();
+      const matchSearch = emp.name.toLowerCase().includes(query) ||
+                          emp.nik.toLowerCase().includes(query) ||
+                          emp.role.toLowerCase().includes(query) ||
+                          emp.dept.toLowerCase().includes(query);
+      return matchDept && matchSearch;
+    });
+  },
+  openDetail(emp) {
+    this.selectedEmp = emp;
+    this.showModal = true;
+  }
+}" class="min-h-screen flex flex-col antialiased">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-xl border-b border-white/10 px-4 lg:px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <!-- Mobile Sidebar Toggle -->
+      <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/10 focus:outline-none">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+          <i class="fa-solid fa-calculator text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-sm sm:text-base font-bold text-white tracking-tight font-display">
+              <span x-show="lang === 'id'">Executive HR & Payroll Dashboard (Simulasi)</span>
+              <span x-show="lang === 'en'">Executive HR & Payroll Dashboard (Simulation)</span>
+            </h1>
+            <span class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase tracking-wider">
+              <i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Zero-Macro
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400">
+            <span x-show="lang === 'id'">Arsitektur Sistem 27 Modul Terintegrasi • PPh 21 TER, BPJS, Log Cuti & 33 Audit Rules</span>
+            <span x-show="lang === 'en'">27 Integrated Modules Architecture • PPh 21 TER, BPJS, Leave Log & 33 Audit Rules</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="flex items-center space-x-3">
+      <!-- Language Switcher -->
+      <div class="bg-cardDark rounded-full p-1 border border-white/10 flex items-center text-xs font-bold">
+        <button @click="lang = 'id'" :class="lang === 'id' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white'" class="px-2.5 py-1 rounded-full transition-all">ID</button>
+        <button @click="lang = 'en'" :class="lang === 'en' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white'" class="px-2.5 py-1 rounded-full transition-all">EN</button>
+      </div>
+
+      <!-- Live Sheet Preview Link -->
+      <a href="https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview" target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-all shadow">
+        <i class="fa-solid fa-table-cells"></i>
+        <span x-show="lang === 'id'">Live Sheet</span>
+        <span x-show="lang === 'en'">Live Sheet</span>
+      </a>
+
+      <!-- Back to Portfolio -->
+      <a href="index.html#ai-systems" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold font-display shadow-md shadow-blue-600/30 transition-all transform hover:-translate-y-0.5">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span x-show="lang === 'id'">Kembali ke Portofolio</span>
+        <span x-show="lang === 'en'">Back to Portfolio</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
+           class="fixed lg:static inset-y-0 left-0 z-30 w-64 bg-cardDark/95 backdrop-blur-2xl border-r border-white/10 flex flex-col justify-between transition-transform duration-300 ease-in-out pt-16 lg:pt-0">
+      
+      <!-- Navigation Links -->
+      <div class="p-4 space-y-1">
+        <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 font-display">
+          <span x-show="lang === 'id'">Navigasi Modul (27 Modul)</span>
+          <span x-show="lang === 'en'">Module Navigation (27 Sheets)</span>
+        </div>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl bg-blue-600/20 text-cyanCustom border border-cyanCustom/30 text-xs font-semibold">
+          <i class="fa-solid fa-chart-pie w-4 text-center"></i>
+          <span>Executive Dashboard</span>
+          <span class="ml-auto text-[9px] bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded font-mono">20 KPI</span>
+        </button>
+
+        <button @click="activeTab = 'all'" class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-users w-4 text-center text-slate-400"></i>
+          <span>Master Data Karyawan</span>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-calendar-check w-4 text-center text-slate-400"></i>
+          <span>Single-Entry Log Cuti</span>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-money-bill-wave w-4 text-center text-slate-400"></i>
+          <span>Payroll & PPh 21 TER</span>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-shield-halved w-4 text-center text-slate-400"></i>
+          <span>BPJS TK & Kesehatan</span>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-calculator w-4 text-center text-slate-400"></i>
+          <span>Kalkulator PP 35/2021</span>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/5 text-xs font-medium transition-colors">
+          <i class="fa-solid fa-list-check w-4 text-center text-emerald-400"></i>
+          <span class="text-emerald-400 font-semibold">33 Audit Rules (Cek Data)</span>
+        </button>
+      </div>
+
+      <!-- Bottom Sidebar Box -->
+      <div class="p-4 border-t border-white/10 space-y-3">
+        <div class="p-3 rounded-2xl bg-slate-900/90 border border-emerald-500/30 text-xs">
+          <div class="flex items-center gap-1.5 text-emerald-400 font-bold mb-1 text-[11px]">
+            <i class="fa-solid fa-shield-check"></i>
+            <span>Zero-Macro Security</span>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-snug">
+            100% Native Google Sheets & Excel formula tanpa resiko security alert VBA.
+          </p>
+        </div>
+
+        <a href="https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview" target="_blank" rel="noopener noreferrer"
+           class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-semibold flex items-center justify-center space-x-2 shadow transition-all">
+          <i class="fa-solid fa-external-link-alt text-xs"></i>
+          <span>Buka Spreadsheet Asli</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay when sidebar is open on mobile -->
+    <div x-show="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 bg-black/60 z-20 lg:hidden"></div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6">
+
+      <!-- ================= 4 TOP METRIC CARDS ================= -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        
+        <!-- Card 1: Headcount -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl border-l-4 border-l-cyanCustom">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span class="font-display font-medium uppercase tracking-wider">
+              <span x-show="lang === 'id'">Total Karyawan (Headcount)</span>
+              <span x-show="lang === 'en'">Total Active Headcount</span>
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyanCustom flex items-center justify-center">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-white font-display">13</span>
+            <span class="text-xs text-emerald-400 font-semibold"><i class="fa-solid fa-user-check"></i> 100% Aktif</span>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-white/5">
+            <span>PKWTT: <strong>10</strong> | PKWT: <strong>3</strong></span>
+            <span class="text-cyanCustom">0 Flag Expired</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Tingkat Kehadiran -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl border-l-4 border-l-emeraldCustom">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span class="font-display font-medium uppercase tracking-wider">
+              <span x-show="lang === 'id'">Tingkat Kehadiran</span>
+              <span x-show="lang === 'en'">Attendance Rate</span>
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emeraldCustom flex items-center justify-center">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-emerald-400 font-display">96.4%</span>
+            <span class="text-xs text-slate-400">Target > 95%</span>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-white/5">
+            <span>Cuti Disetujui: <strong>8 hari</strong></span>
+            <span class="text-emerald-400">0 Alpa / Bolos</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Total Bruto Payroll -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl border-l-4 border-l-amber-500">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span class="font-display font-medium uppercase tracking-wider">
+              <span x-show="lang === 'id'">Total Bruto Payroll</span>
+              <span x-show="lang === 'en'">Gross Payroll Expense</span>
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-2xl lg:text-2xl font-extrabold text-white font-display">Rp 197.436.411</span>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-white/5">
+            <span>Gapok + Tunjangan Tetap</span>
+            <span class="text-amber-400">PPh 21 PP 58/2023</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Take Home Pay (THP) -->
+        <div class="glass-card glass-card-hover p-5 rounded-2xl border-l-4 border-l-blue-500">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span class="font-display font-medium uppercase tracking-wider">
+              <span x-show="lang === 'id'">Total Take Home Pay (THP)</span>
+              <span x-show="lang === 'en'">Net Distributed (THP)</span>
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+          </div>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-2xl lg:text-2xl font-extrabold text-cyan-300 font-display">Rp 170.056.949</span>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-white/5">
+            <span>Dipotong PPh 21 & BPJS</span>
+            <span class="text-emerald-400">100% Reconciled</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= COMPLIANCE & AUDIT HIGHLIGHT BANNER ================= -->
+      <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-cardDark to-royal border border-emerald-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-start space-x-3.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-list-check text-lg"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-sm sm:text-base font-bold text-white font-display">33 Aturan Audit Otomatis (Sheet: Cek Data)</h2>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">AUDIT SCORE: 100% OK</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-0.5">
+              Validasi integritas relasi antar 27 sheet: NIK ganda, sisa saldo cuti minus, durasi PKWT > 5 tahun (UU Cipta Kerja), skema tarif PPh 21 TER A/B/C, dan limit upah BPJS TK/Kes.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="text-xs text-slate-400">Zero Error Found</span>
+          <button @click="alert('Seluruh 33 aturan audit otomatis pada sistem ini berstatus PASS tanpa konflik relasi data!')" class="px-3.5 py-1.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border border-emerald-500/40 text-xs font-semibold transition-all">
+            Lihat Detail Audit
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= EMPLOYEE PAYROLL TABLE & FILTERS ================= -->
+      <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-4">
+        
+        <!-- Controls: Search & Department Tabs -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button @click="activeTab = 'all'" :class="activeTab === 'all' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all">
+              Semua Departemen
+            </button>
+            <button @click="activeTab = 'Technology'" :class="activeTab === 'Technology' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all">
+              Technology
+            </button>
+            <button @click="activeTab = 'People & HR'" :class="activeTab === 'People & HR' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all">
+              HR & People
+            </button>
+            <button @click="activeTab = 'Finance'" :class="activeTab === 'Finance' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all">
+              Finance
+            </button>
+            <button @click="activeTab = 'Operations'" :class="activeTab === 'Operations' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'" class="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all">
+              Operations
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative min-w-[220px]">
+            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+            <input type="text" x-model="searchQuery" placeholder="Cari NIK / Nama / Jabatan..."
+                   class="w-full bg-obsidian/80 border border-white/10 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyanCustom transition-colors">
+          </div>
+        </div>
+
+        <!-- Table Container -->
+        <div class="overflow-x-auto rounded-xl border border-white/10">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-cardDark text-slate-400 font-display text-[11px] uppercase tracking-wider border-b border-white/10">
+              <tr>
+                <th class="py-3 px-4 font-semibold">NIK & Nama Karyawan</th>
+                <th class="py-3 px-4 font-semibold">Departemen & Jabatan</th>
+                <th class="py-3 px-4 font-semibold">Status Kontrak</th>
+                <th class="py-3 px-4 font-semibold">Gaji Bruto</th>
+                <th class="py-3 px-4 font-semibold">PPh 21 TER</th>
+                <th class="py-3 px-4 font-semibold">BPJS Potongan</th>
+                <th class="py-3 px-4 font-semibold">THP (Net)</th>
+                <th class="py-3 px-4 font-semibold text-center">Audit</th>
+                <th class="py-3 px-4 font-semibold text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 font-sans">
+              <template x-for="emp in filteredEmployees" :key="emp.nik">
+                <tr class="hover:bg-white/5 transition-colors cursor-pointer" @click="openDetail(emp)">
+                  <!-- Name & NIK -->
+                  <td class="py-3.5 px-4">
+                    <div class="font-bold text-white" x-text="emp.name"></div>
+                    <div class="text-[10px] text-slate-400 font-mono" x-text="emp.nik"></div>
+                  </td>
+                  <!-- Dept & Role -->
+                  <td class="py-3.5 px-4">
+                    <div class="text-slate-200" x-text="emp.role"></div>
+                    <div class="text-[10px] text-cyanCustom" x-text="emp.dept"></div>
+                  </td>
+                  <!-- Status -->
+                  <td class="py-3.5 px-4">
+                    <span :class="emp.status.includes('PKWTT') ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'"
+                          class="px-2 py-0.5 rounded-full text-[10px] font-semibold border inline-block" x-text="emp.status"></span>
+                    <div class="text-[10px] text-slate-400 mt-0.5" x-text="'Masa: ' + emp.tenure"></div>
+                  </td>
+                  <!-- Gross -->
+                  <td class="py-3.5 px-4 font-semibold text-white" x-text="formatRupiah(emp.gross)"></td>
+                  <!-- PPh 21 TER -->
+                  <td class="py-3.5 px-4">
+                    <div class="text-amber-400 font-semibold" x-text="formatRupiah(emp.pph21)"></div>
+                    <div class="text-[10px] text-slate-400" x-text="emp.ptkp + ' (' + emp.terRate + ')'"></div>
+                  </td>
+                  <!-- BPJS -->
+                  <td class="py-3.5 px-4 text-slate-300" x-text="formatRupiah(emp.bpjsTk + emp.bpjsKes)"></td>
+                  <!-- THP -->
+                  <td class="py-3.5 px-4 font-bold text-cyan-300" x-text="formatRupiah(emp.thp)"></td>
+                  <!-- Audit Status -->
+                  <td class="py-3.5 px-4 text-center">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                      <i class="fa-solid fa-check text-[9px]"></i> Pass
+                    </span>
+                  </td>
+                  <!-- Action -->
+                  <td class="py-3.5 px-4 text-right">
+                    <button @click.stop="openDetail(emp)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyanCustom hover:text-white border border-white/10 text-xs font-medium transition-colors">
+                      Slip Gaji
+                    </button>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex items-center justify-between text-xs text-slate-400 pt-2">
+          <span>Menampilkan <strong class="text-white" x-text="filteredEmployees.length"></strong> dari 13 data simulasi</span>
+          <span class="italic text-[11px]">*Klik baris karyawan untuk melihat simulasi kalkulasi slip gaji detail.</span>
+        </div>
+      </div>
+
+      <!-- ================= MODAL DETAIL SLIP GAJI & BREAKDOWN ================= -->
+      <div x-show="showModal" x-transition.opacity class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" style="display: none;">
+        <div @click.away="showModal = false" class="bg-cardDark border border-white/15 rounded-3xl max-w-2xl w-full p-6 space-y-5 shadow-2xl relative">
+          
+          <!-- Modal Header -->
+          <div class="flex items-start justify-between border-b border-white/10 pb-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyanCustom border border-cyan-500/40 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white font-display" x-text="selectedEmp?.name"></h3>
+                <p class="text-xs text-slate-400" x-text="selectedEmp?.nik + ' • ' + selectedEmp?.role + ' (' + selectedEmp?.dept + ')'"></p>
+              </div>
+            </div>
+            <button @click="showModal = false" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors">
+              <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+          </div>
+
+          <!-- Slip Details Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+            <!-- Pendapatan -->
+            <div class="p-4 rounded-2xl bg-obsidian/70 border border-white/10 space-y-2.5">
+              <div class="text-cyanCustom font-bold uppercase tracking-wider text-[11px] font-display flex items-center justify-between">
+                <span>Komponen Pendapatan</span>
+                <i class="fa-solid fa-plus-circle"></i>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Gaji Pokok:</span>
+                <span class="font-semibold text-white" x-text="formatRupiah(selectedEmp?.baseSalary)"></span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Tunjangan Tetap:</span>
+                <span class="font-semibold text-white" x-text="formatRupiah(selectedEmp?.allowance)"></span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Upah Lembur (Overtime):</span>
+                <span class="font-semibold text-white" x-text="formatRupiah(selectedEmp?.overtime)"></span>
+              </div>
+              <div class="pt-2 border-t border-white/10 flex justify-between font-bold text-sm text-emerald-400">
+                <span>Total Bruto:</span>
+                <span x-text="formatRupiah(selectedEmp?.gross)"></span>
+              </div>
+            </div>
+
+            <!-- Potongan -->
+            <div class="p-4 rounded-2xl bg-obsidian/70 border border-white/10 space-y-2.5">
+              <div class="text-amber-400 font-bold uppercase tracking-wider text-[11px] font-display flex items-center justify-between">
+                <span>Potongan Pajak & Jaminan</span>
+                <i class="fa-solid fa-minus-circle"></i>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>PPh 21 TER (<span x-text="selectedEmp?.terRate"></span>):</span>
+                <span class="font-semibold text-amber-400" x-text="formatRupiah(selectedEmp?.pph21)"></span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>BPJS Ketenagakerjaan (3%):</span>
+                <span class="font-semibold text-slate-200" x-text="formatRupiah(selectedEmp?.bpjsTk)"></span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>BPJS Kesehatan (1%):</span>
+                <span class="font-semibold text-slate-200" x-text="formatRupiah(selectedEmp?.bpjsKes)"></span>
+              </div>
+              <div class="pt-2 border-t border-white/10 flex justify-between font-bold text-sm text-red-400">
+                <span>Total Potongan:</span>
+                <span x-text="formatRupiah((selectedEmp?.pph21 || 0) + (selectedEmp?.bpjsTk || 0) + (selectedEmp?.bpjsKes || 0))"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Net THP Final -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-900/40 via-cardDark to-cyan-950/40 border border-cyanCustom/30 flex items-center justify-between">
+            <div>
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-display font-semibold">Take Home Pay (THP Bersih Diterima)</span>
+              <div class="text-2xl font-extrabold text-cyan-300 font-display" x-text="formatRupiah(selectedEmp?.thp)"></div>
+            </div>
+            <div class="text-right text-xs">
+              <span class="text-slate-400">Sisa Hak Cuti Tahunan:</span>
+              <div class="text-sm font-bold text-emerald-400" x-text="selectedEmp?.leaveBalance"></div>
+            </div>
+          </div>
+
+          <!-- Close / Sheet Button -->
+          <div class="flex items-center justify-end space-x-3 pt-2">
+            <button @click="showModal = false" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors">
+              Tutup Preview
+            </button>
+            <a href="https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview" target="_blank" rel="noopener noreferrer"
+               class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-colors shadow flex items-center gap-1.5">
+              <i class="fa-solid fa-table-cells"></i>
+              <span>Buka di Google Sheets</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer Info Bar -->
+  <footer class="bg-obsidian border-t border-white/10 px-4 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
+    <div>
+      <span class="text-slate-300 font-semibold">Automated HRIS & Payroll Architecture</span> • Dirancang oleh <span class="text-white font-bold">Nugroho Amdal, S.S., CI.</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="index.html#ai-systems" class="text-cyanCustom hover:text-white transition-colors">Portofolio Sistem HR</a>
+      <a href="products.html" class="text-cyanCustom hover:text-white transition-colors">Konsultasi HR Tech</a>
+      <a href="stories.html" class="text-cyanCustom hover:text-white transition-colors">Studi Kasus 27 Modul</a>
+    </div>
+  </footer>
+
+</body>
+</html>
