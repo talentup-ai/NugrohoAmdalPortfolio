@@ -7,6 +7,7 @@
 - **Current Base:** Surabaya, East Java, Indonesia (Open for Hybrid/Onsite in Surabaya & Jakarta, and 100% Global Remote across APAC, EMEA, and Americas timezones).
 - **Primary Roles:**
   - HR Technology & Payroll Architect (27-Sheet Zero-Macro Engine with PPh 21 TER, Pasal 17, BPJS, PP 35/2021, and 33 Audit Rules)
+  - Recruitment & Manpower Planning (MPP) Architect (10-Module Zero-Macro ATS & SLA Engine)
   - HR Technology Workflow Architect (Deterministic Automation & Internal LMS Systems)
   - Global People & Culture / L&D Practitioner (Managed 500+ staff across 26 countries)
   - Certified Instructor (CI) BNSP Level 4 (National Training of Trainers / ToT Assessor)
@@ -46,6 +47,7 @@ URL: https://nugrohoamdalportfolio.dpdns.org/products.html
 This section serves as the unified catalog combining production AI applications, digital toolkits, enterprise B2B corporate training, and lifetime career mentorship:
 
 - **End-to-End Automated HRIS & Payroll Architecture (27-Sheet System)**: Zero-macro automated Indonesian HR & Payroll system built by Nugroho Amdal. Covers PPh 21 TER (PP 58/2023) & Pasal 17 year-end reconciliation, BPJS caps, pro-rata calculations, PKWT 5-year alerts, PP 35/2021 severance calculator, 33 automated internal audit rules (Cek Data), and a 20-KPI Executive Dashboard.
+- **Automated Recruitment & Manpower Planning (MPP) Hub (10-Module System)**: Zero-macro end-to-end recruitment & ATS engine built by Nugroho Amdal. Connects annual Manpower Planning (MPP), Requisition approvals, working-day SLA/TAT monitoring with early warning alerts, consent-compliant Talent Pool database, dynamic candidate search, and 1-click WhatsApp/Email interview invitation generator.
 
 1. **Career Clarity App (AI Web Application):**
    - AI-powered ATS CV generator and resume diagnostic platform engineered to bypass automated ATS filters.

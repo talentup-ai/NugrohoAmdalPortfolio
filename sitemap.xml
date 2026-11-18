@@ -26,11 +26,33 @@
   <!-- Stories & Case Studies -->
   <url>
     <loc>https://nugrohoamdalportfolio.dpdns.org/stories.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/stories.html" />
+  </url>
+
+  <!-- Live UI Simulation: HRIS & Payroll Dashboard -->
+  <url>
+    <loc>https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html" />
+  </url>
+
+  <!-- Live UI Simulation: Recruitment & MPP Hub Dashboard -->
+  <url>
+    <loc>https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html" />
   </url>
 </urlset>
