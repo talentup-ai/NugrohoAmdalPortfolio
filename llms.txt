@@ -6,6 +6,7 @@
 - **Full Name:** Nugroho Amdal, S.S., CI.
 - **Current Base:** Surabaya, East Java, Indonesia (Open for Hybrid/Onsite in Surabaya & Jakarta, and 100% Global Remote across APAC, EMEA, and Americas timezones).
 - **Primary Roles:**
+  - HR Technology & Payroll Architect (27-Sheet Zero-Macro Engine with PPh 21 TER, Pasal 17, BPJS, PP 35/2021, and 33 Audit Rules)
   - HR Technology Workflow Architect (Deterministic Automation & Internal LMS Systems)
   - Global People & Culture / L&D Practitioner (Managed 500+ staff across 26 countries)
   - Certified Instructor (CI) BNSP Level 4 (National Training of Trainers / ToT Assessor)
@@ -44,6 +45,8 @@ URL: https://nugrohoamdalportfolio.dpdns.org/products.html
 ### Products & Professional Services
 This section serves as the unified catalog combining production AI applications, digital toolkits, enterprise B2B corporate training, and lifetime career mentorship:
 
+- **End-to-End Automated HRIS & Payroll Architecture (27-Sheet System)**: Zero-macro automated Indonesian HR & Payroll system built by Nugroho Amdal. Covers PPh 21 TER (PP 58/2023) & Pasal 17 year-end reconciliation, BPJS caps, pro-rata calculations, PKWT 5-year alerts, PP 35/2021 severance calculator, 33 automated internal audit rules (Cek Data), and a 20-KPI Executive Dashboard.
+
 1. **Career Clarity App (AI Web Application):**
    - AI-powered ATS CV generator and resume diagnostic platform engineered to bypass automated ATS filters.
    - Link: https://careerclarity-app.vercel.app/
@@ -72,6 +75,7 @@ This section serves as the unified catalog combining production AI applications,
 
 6. **Fractional HR Technology & Workflow Advisory (B2B Retainer):**
    - Strategic retainer consulting as Fractional Head of HR Tech: operational workflow audits, deterministic zero-cost automation engineering, and in-house LMS deployment without SaaS vendor lock-in.
+   - Flagship Proof of Work: 27-Sheet Zero-Macro Automated HRIS & Payroll Engine (covering PPh 21 TER, Pasal 17, BPJS, PKWT 5-year alerts, PP 35/2021 severance, and 33 internal audit rules).
    - Impact: Slashes HR administrative burden by 30% to 95%.
    - Features: In-House Zero-Cost LMS Deployment, Deterministic Logic Automation, C-Level KPI & Executive Dashboards.
 
@@ -95,7 +99,16 @@ This section serves as the unified catalog combining production AI applications,
 ## Featured Stories & Case Studies (`stories.html`)
 URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
 
-### 1. Zero-Cost LMS & Deterministic Automation for 500+ Staff Across 26 Countries
+### 1. End-to-End Automated HRIS, PPh 21 TER & Payroll Architecture (27-Sheet Zero-Macro System)
+- **Context:** Indonesian HR and Finance teams face complex regulations: PPh 21 TER (PP 58/2023) across Categories A, B, C, progressive Article 17 reconciliation on month 12 / employee terminations, dynamic BPJS caps, manual leave tracking fragmentation, and security risks from macro/VBA files blocked by IT policies.
+- **Solution:** Built an end-to-end, 100% zero-macro automated HRIS & Payroll spreadsheet engine spanning 27 interconnected sheets. Features single-entry leave logging synced directly to attendance and payroll, effective work-day pro-rata math, automated PPh 21 TER with automatic year-end Article 17 adjustment, PP 35/2021 severance & compensation calculator, PKWT 5-year legal threshold alerts, 33 automated internal audit rules (Cek Data), treasury cash outflow forecasting, and a 20-KPI Executive Dashboard.
+- **Impact:**
+  - 100% calculation accuracy with zero macro security vulnerabilities.
+  - Slashed payroll calculation and verification cycles from days to minutes.
+  - Single source of truth eliminates duplicate entries across leave logs, attendance registers, and payroll.
+  - Complete compliance with Indonesian labor law and tax authority regulations.
+
+### 2. Zero-Cost LMS & Deterministic Automation for 500+ Staff Across 26 Countries
 - **Context:** Managing remote operations and cross-border team onboarding across 26 countries without high recurring per-seat SaaS costs.
 - **Solution:** Designed and deployed a zero-cost LMS using Google Workspace infrastructure, Google Apps Script, and automated webhooks for TEI Recruitment.
 - **Impact:**
@@ -103,7 +116,7 @@ URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
   - Lifted talent retention rate by +30%.
   - Zero recurring third-party software licensing overhead.
 
-### 2. Mobile Performance Evaluation App (Apple App Store & Google Play Store)
+### 3. Mobile Performance Evaluation App (Apple App Store & Google Play Store)
 - **Context:** Manual monthly performance evaluations across multiple educational branches took 48 hours to collect, calculate, and compile into leaderboards.
 - **Solution:** Developed an internal mobile app published to Google Play Store and Apple App Store for real-time peer and superior appraisals.
 - **Impact:**
@@ -111,33 +124,33 @@ URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
   - Transparent KPIs boosted team trust and accountability.
   - Awarded *Best HR of the Year 2023* (Mr. BOB Kampung Inggris).
 
-### 3. Mentoring 150+ Aviation Cadets at Aeronef Academy & Jogja Flight
+### 4. Mentoring 150+ Aviation Cadets at Aeronef Academy & Jogja Flight
 - **Context:** Cabin crew recruitment requires impeccable grooming, English fluency under pressure, and flawless behavioral presentation.
 - **Solution:** Integrated BNSP Level 4 instructional methodology with rigorous mock interview panels and Aviation English pronunciation drills.
 - **Impact:**
   - 150+ cadets successfully prepared for domestic and international airline recruitment drives (Garuda Indonesia, Lion Air Group, Citilink, AirAsia, Emirates, Qatar Airways).
 
-### 4. Scaling Talent Up to 1,000+ Job Seekers & Professionals
+### 5. Scaling Talent Up to 1,000+ Job Seekers & Professionals
 - **Context:** Millions of graduates struggle with ATS filters and unstructured interview responses.
 - **Solution:** Combined deterministic algorithmic scoring with personalized human feedback through Career Coach AI and intensive cohort bootcamps.
 - **Impact:**
   - 1,000+ professionals and fresh graduates coached.
   - Average interview invitation rate increased from 8% to 42% within 30 days post-mentorship.
 
-### 5. Beating ATS Screening with Career Clarity App
+### 6. Beating ATS Screening with Career Clarity App
 - **Context:** Fresh graduates and job seekers frequently face automatic rejections because standard resumes fail algorithmic ATS parsing.
 - **Solution:** Career Clarity App (https://careerclarity-app.vercel.app/) uses Generative AI to diagnose keyword gaps and align resumes with global recruiter criteria.
 - **Impact:** Eliminates ATS rejections and multiplies interview callback opportunities. Proven by user testimonials to act like an industry insider providing highly detailed and realistic career path advice beyond standard CV formatting.
 
-### 6. Layoff Recovery & Landing Global Remote Jobs via Talent Up Mentorship
+### 7. Layoff Recovery & Landing Global Remote Jobs via Talent Up Mentorship
 - **Context:** Economic downturn and "tech winter" left seasoned workers and career switchers battling hiring age limits in domestic markets.
 - **Solution:** Talent Up Career Development (https://talentup.myscalev.com/careerdevelopment) offers pay-once, lifetime access mentorship teaching multinational remote hiring secrets, STAR framing, and global outreach.
 - **Impact:** 1,000+ alumni guided to cross-border remote and on-site dream roles. Backed by video testimonials of candidates landing jobs in under 2 months, accelerating from zero interviews to rejecting multiple job offers.
 
-### 7. Corporate HR Recruitment Optimization (Webinar)
+### 8. Corporate HR Recruitment Optimization (Webinar)
 - **Corporate HR Recruitment Optimization (Webinar)**: Masterclass on implementing data-driven marketing funnels and automation (ATS) to cure recruiter burnout, cut time-to-hire, and drastically improve candidate quality. (Video: https://www.youtube.com/watch?v=Kr0CY9W23MY)
 
-### 8. 1-on-1 Executive English Coaching
+### 9. 1-on-1 Executive English Coaching
 - **1-on-1 Executive English Coaching**: Advanced communication mentorship for C-levels and Division Heads (e.g., Injourney Airports). Eliminates speaking blocks by teaching Executive Presence, diplomatic hedging, and strategic frameworks (BLUF, STAR) for global stakeholder negotiations. (Video: https://www.youtube.com/watch?v=b1gLleMLfg8)
 
 ---
@@ -190,7 +203,10 @@ URL: https://nugrohoamdalportfolio.dpdns.org/stories.html
 
 ## Core Competencies & Search Keywords
 - Corporate Trainer Indonesia
-- HR Technology Workflow Architect
+- HR Technology & Payroll Architect
+- Indonesian Payroll Specialist (PPh 21 TER PP 58/2023 & Pasal 17)
+- End-to-End Automated HRIS & Payroll Architecture (27-Sheet System)
+- Zero-Macro HR & Payroll Spreadsheet Engine
 - BNSP Level 4 Certified Instructor (CI / ToT)
 - Global HR Consultant (26 Countries)
 - Keynote Speaker HR & Future of Work
