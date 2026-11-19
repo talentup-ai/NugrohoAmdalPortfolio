@@ -395,8 +395,8 @@
     }
 
     /* GPU Acceleration for Heavy Ambient Glow & Decorative Blurs */
-    [class*="blur-3xl"],
-    [class*="blur-2xl"] {
+    [class~="blur-3xl"],
+    [class~="blur-2xl"] {
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
       backface-visibility: hidden;
@@ -488,7 +488,7 @@
     </div>
 
     <!-- Mobile Dropdown Navigation (8 Items) -->
-    <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-5 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain shadow-2xl transition-all duration-300">
+    <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-5 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain shadow-2xl transition-all duration-300 pointer-events-auto relative z-50">
       <a href="index.html#about" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'index.html#about')">
         <span class="lang lang-id">Profil Profesional</span><span class="lang lang-en">Professional Profile</span>
       </a>
@@ -1762,36 +1762,6 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <script>
-    // Native Smooth Scrolling for Anchor Links (with fixed navbar offset)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId !== '#') {
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            const navOffset = 80;
-            const elementPosition = targetEl.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-            // Auto close mobile menu if open
-            const mobMenu = document.getElementById('mobileMenu');
-            const mobIcon = document.getElementById('mobileMenuIcon');
-            if (mobMenu && !mobMenu.classList.contains('hidden')) {
-              mobMenu.classList.add('hidden');
-              if (mobIcon) {
-                mobIcon.classList.remove('fa-xmark');
-                mobIcon.classList.add('fa-bars');
-              }
-            }
-          }
-        }
-      });
-    });
-
     // Initialize AOS
     AOS.init({
       once: true,
@@ -1903,12 +1873,12 @@
 
         if (targetEl) {
           if (event) event.preventDefault();
+          const navOffset = 80;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + (window.scrollY || window.pageYOffset) - navOffset;
           closeMobileMenu();
 
           setTimeout(() => {
-            const navOffset = 80;
-            const elementPosition = targetEl.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navOffset;
             window.scrollTo({
               top: offsetPosition,
               behavior: 'smooth'
