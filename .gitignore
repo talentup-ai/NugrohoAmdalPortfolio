@@ -14,3 +14,9 @@ desktop.ini
 scratch/
 tmp/
 *.tmp
+
+# SEO & Audit Reports
+jev-seo-reports/
+audit-reports/
+.agents/skills/jev-seo/.venv/
+
