@@ -1,0 +1,97 @@
+# NUGROHO AMDAL, S.S., CI.
+**GLOBAL HR OPERATIONS | PEOPLE OPERATIONS | L&D | TALENT ACQUISITION & HR SYSTEMS**  
+Surabaya, Indonesia (Open to 100% Remote / Hybrid / Global) | Phone/WA: +62 853-9594-0406 | Email: nugrohoamdal@gmail.com  
+LinkedIn: https://www.linkedin.com/in/nugroho-amdal/ | Portfolio: https://nugrohoamdalportfolio.dpdns.org/
+
+---
+
+## PROFESSIONAL SUMMARY
+Versatile Human Resources, People Operations, and Learning & Development (L&D) professional (BNSP Certified Trainer Level 4 and Best HR of the Year 2023) with 5+ years of cross-functional experience across global HR operations, multi-country salary benchmarking, performance review operations, full-cycle recruitment, training delivery, and HR workflow automation. Proven track record supporting ~500 employees across 26 countries in a 100% remote B2B organization (The KPI Institute), directly supervising 80+ instructors and coordinating bi-weekly payroll with 100% accuracy (Mr. BOB), and leading cross-timezone trainers and 100+ Individual Development Plans (TEI Recruitment). Architect of zero-macro HRIS and payroll systems (PPh 21 TER, BPJS, 33 audit rules, and Apps Script mass PDF pay slips), EVP Analytics & Culture Diagnostic engines, and data-driven recruitment funnels, combined with executive coaching (BLUF framework for Injourney Airports leadership) and stakeholder collaboration.
+
+---
+
+## CORE COMPETENCIES & FUNCTIONAL PILLARS
+- **Employee Value Proposition (EVP) Design & People Analytics:** Credibility Gap Analysis (Management Claims vs. Employee Reality), Evidence Gap & SOP Readiness Audit, Give-Get Ratio Modeling, Voice of Employee (VoE) Qualitative Analysis, Culture Diagnostic Framework, Priority Action Score (PAS) for 0-30 Day Quick Wins, 90-Day EVP Index Simulation (3.30 to 3.95), Transparent "Give & Get" Job Ad Structuring.
+- **Global HR Operations, Compensation & Payroll Systems:** Multi-Country Salary Benchmarking & Job Leveling (26 Countries), 27-Sheet Zero-Macro Automated HRIS & Payroll Engine, PPh 21 TER (PP 58/2023) & Pasal 17, BPJS Kesehatan & Ketenagakerjaan, PP 35/2021 Severance Calculation, 5-Year PKWT Contract Monitoring, 33 Automated Audit Rules, Workforce Analytics (Headcount, Turnover, Time-to-Fill, Retention), KPI & SOP Design.
+- **Performance Management, Leadership & Executive Coaching:** 360-Degree Performance Review Operations, Executive Mentorship (BLUF Framework & Diplomatic Hedging for Injourney Airports leadership), Diverse Cultural Behaviors Management, Direct Team Supervision (80+ Instructors & Cross-Timezone Trainers), Management Trainee & Supervisor Coaching, Employee Relations, Change Management Support.
+- **Talent Acquisition & Recruitment Marketing:** Data-Driven Recruitment Marketing Funnel, ATS Implementation (Teamtailor), Time-to-Hire Bottleneck Elimination & Recruiter Burnout Prevention, End-to-End Specialist & Managerial Recruitment, High-Volume Hiring, Competency-Based Interviewing, Boolean & Google X-Ray Sourcing, LinkedIn Recruiter, Employer Branding.
+- **Learning & Development (L&D) & Training Delivery:** Competency-Based Curriculum Design, Individual Development Plans (IDPs), Kirkpatrick Evaluation, Pre/Post Training Assessments, Internal Facilitator Development, LMS Design & Administration, Executive Business English Training.
+- **HR Systems, Spreadsheets & Workflow Automation:** 27-Sheet Zero-Macro Automated HRIS & Payroll Engine (Google Sheets & Excel), 10-Module Recruitment & MPP Hub, Google Apps Script Mass PDF Pay Slip Export & Monthly Archive, Dark Mode / Glassmorphism HR Dashboard UI Design, AI Prompt Architecture & Logic Framework Design, Advanced Google Sheets & Excel Data Modeling, BambooHR (HRIS), Teamtailor (ATS), Asana Automation.
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Global Human Resources Specialist / Global HR Generalist | The KPI Institute
+*Feb 2025 - Jan 2026 | Melbourne, Australia (100% Remote | Global B2B Scope: ~500 Employees Across 26 Countries in APAC, EMEA & Americas) | Reporting to HR Manager*
+- **Global HR Operations & Cultural Complexity:** Managed cross-border day-to-day HR operations, global onboarding, offboarding, and personnel documentation for ~500 employees across 26 countries; navigated diverse cultural behaviors and maintained international talent pipelines.
+- **Data-Driven Recruitment Marketing Funnel & ATS:** Transformed traditional intuition-based recruitment into a data-driven talent acquisition funnel via Teamtailor ATS, cutting time-to-hire bottlenecks and eliminating recruiter burnout while completing end-to-end hiring for 11 cross-border specialist-to-managerial roles in 4 months.
+- **26-Country Salary Benchmarking & Job Leveling Tool:** Built an internal salary benchmarking and job leveling tool covering positions across 26 countries based on structured salary research, supporting the HR Manager and leadership in country-specific salary adjustments.
+- **360-Degree Performance Review Operations:** Coordinated cross-timezone 360-degree performance evaluation cycles and development planning across peers, direct reports, and managers, achieving 92%-95% development and feedback accuracy.
+- **HRIS & Workflow Automation:** Diagnosed manual data entry bottlenecks and built Google Apps Script and API automations connecting Google Sheets with the in-house HRIS, BambooHR, Teamtailor ATS, and Asana, cutting manual HR administrative workload by ~30%.
+- **Executive Reporting & Training Cost Optimization:** Prepared recurring headcount, time-to-fill, turnover, and retention analytics presented directly to C-level leaders for headcount planning, and designed an internal facilitator development model that saved 40% in external training costs.
+
+### Learning and Development (L&D) Specialist | TEI Recruitment
+*Apr 2024 - Jan 2025 | Indonesia (International Client Scope: Europe & Middle East | Manufacturing, Automotive, Hospitality & Healthcare) | Cross-Timezone Remote*
+- **Trainer Leadership & Program Delivery:** Led and coordinated a team of 5 to 7 trainers across time zones (~4 online classes per trainer), delivering structured onboarding and mentoring programs that improved trainee performance scores by 20% and 3-month retention by 30%.
+- **Competency Curricula & 100+ IDPs:** Created competency-based training modules, assessment rubrics, and Individual Development Plans (IDPs) for 100+ trainees, evaluating learning outcomes using pre/post assessments and the Kirkpatrick model.
+- **Zero-Cost Internal LMS Architecture:** Built a custom internal Learning Management System (LMS) from scratch using Google Workspace (Sheets, Slides, Forms, Apps Script) and Zoom to manage trainer onboarding, curriculum delivery, and trainee progress tracking without paid LMS licensing.
+
+### HR Generalist, Team Supervisor & Employer Branding | Mr. BOB Kampung Inggris
+*Jan 2023 - Jan 2024 | Kediri, East Java, Indonesia (Awarded Best HR of the Year 2023) | Full-Time*
+- **Direct People Supervision & Leadership Coaching:** Directly supervised, evaluated, and coached 80+ instructors; launched the Management Trainee (MT) and supervisor coaching program that raised supervisor competency scores by 18%.
+- **KPI Architecture, SOPs & Payroll Coordination:** Designed KPI frameworks and SOPs that increased overall team productivity by 15%, and coordinated bi-weekly payroll data for 80+ employees alongside the Finance team with 100% accuracy.
+- **Internal Performance Evaluation App (Play Store & App Store):** Designed and deployed an internal tutor performance reporting mobile app connected to a Google Sheets database, reducing customer feedback compilation time for 80+ tutors from ~48 hours to 15-30 minutes per cycle.
+- **High-Volume Recruitment & Employer Branding:** Executed workforce planning and full-cycle recruitment of 40+ employees in 2 months (1,000+ sourcing actions and 100+ monthly competency interviews at peak) and ran employer branding campaigns that grew applicant volume by 40%.
+
+### Founder, Career Coach & HR/AI Workflow Builder | Talent Up
+*Jan 2023 - Present | Indonesia (Independent Initiative | Coaching & Communication Track Record Since 2018) | Remote*
+- **27-Sheet Zero-Macro Automated HRIS & Payroll Engine:** Architected an automated Google Sheets and Excel HR/payroll engine without macros or VBA, accommodating PPh 21 TER (PP 58/2023), PPh 21 Pasal 17, BPJS Kesehatan & Ketenagakerjaan, PP 35/2021 severance calculation, single-source leave log, 5-year PKWT monitoring, 33 automated audit rules, Google Apps Script monthly archive with mass PDF pay slips to Google Drive, and a Dark Mode / Glassmorphism HR dashboard UI.
+- **Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic Engine:** Engineered a data-driven diagnostic engine (Google Sheets + Apps Script + Google Form Sync) measuring Credibility Gap, Evidence Gap, Give-Get Ratio, Voice of Employee (VoE), and computing Priority Action Scores to recommend zero-budget Quick Wins (e.g., Hybrid SOPs and meeting curfew policies) while generating transparent Give & Get job ad drafts.
+- **TalentUp AI Career Coach Product Architecture:** Designed prompt architecture and deterministic logic frameworks for Career Coach AI, supporting ~100 active users with CV/LinkedIn audits, RIASEC/OCEAN assessments, and scam job detection via Gemini API.
+- **Executive Leadership & Communication Mentorship (Injourney Airports):** Conducted executive coaching for client Pak Hadi (Division Head at Injourney Airports) focusing on Executive English, leadership communication, and diplomatic hedging using the BLUF Framework (Bottom Line Up Front), preparing him to negotiate with 46 foreign airlines toward Skytrax 5-Star airport targets.
+- **Career Coaching & Institutional Training:** Coached 1,000+ career seekers and delivered workshops across 100+ institutions and 200+ e-learning users on career preparation, interview readiness, workplace communication, and professional development.
+- **End-to-End Business Automation:** Configured deterministic webhooks, Scalev and Mayar payment gateways, Google Sheets databases, and automated notification pipelines with zero monthly server costs.
+
+### Chief Operating Officer (COO) | Nuansa Indonesia
+*Aug 2021 - Apr 2024 | Bandung, Indonesia | Operations Management*
+- **Operational & Commercial Execution:** Managed operational workflows, logistics, cost optimization, and key supplier partnerships while securing corporate and private clients through targeted presentations and pitches.
+
+### Digital Service Staff & Training Officer | PT Angkasa Pura II (Persero) - Soekarno-Hatta Airport
+*Jun 2019 - Dec 2021 | Tangerang, Banten, Indonesia (Enterprise Aviation Operations) | Full-Time*
+- **Cross-Functional Digital Service Operations:** Supported digital customer services for ~40,000 daily passengers and collaborated with technical teams to manage 140+ terminal digital devices, contributing to a 20% increase in customer satisfaction and a 15% reduction in system downtime.
+- **Corporate & Executive Training Delivery:** Designed and delivered tailored Business English and service delivery training for airport personnel and Senior Management, and provided language support during meetings with international airline partners.
+
+### Earlier Training & Coaching Roles | TEI Recruitment, The Daffodils & Alfalfa English Club
+*Feb 2015 - Mar 2023 | Jakarta & East Java, Indonesia*
+- **Foundational L&D & Coaching Track Record:** Served as Training & Development Officer at TEI Recruitment (Jul 2021 - Aug 2022, +30% employee performance and interview readiness), Interview Coach at The Daffodils (May 2021 - Mar 2023), and English Instructor / Immersion Camp Lead (Feb 2015 - May 2019) coaching learners from Indonesia, Malaysia, Thailand, and the Middle East.
+
+---
+
+## SELECTED HR SYSTEMS & OPERATIONAL INNOVATION PROJECTS
+- **Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic Engine (Talent Up):** End-to-end diagnostic engine (Google Sheets + Apps Script + Google Form Sync) measuring Credibility Gaps across 5 EVP pillars, auditing SOP readiness, mapping Give-Get ratios, tracking anonymous Voice of Employee (VoE) sentiments, simulating 90-day impact recovery, and computing Priority Action Scores to recommend zero-budget Quick Wins (e.g. Hybrid SOPs and evening meeting bans) while generating honest, transparent job descriptions.
+- **27-Sheet Zero-Macro Automated HRIS & Payroll Engine (Talent Up):** Architected a comprehensive macro-free Google Sheets and Excel HR/payroll engine compliant with PPh 21 TER (PP 58/2023), PPh 21 Pasal 17, BPJS, and PP 35/2021 severance, featuring 33 automated audit rules, Google Apps Script monthly archive with mass PDF pay slips to Drive, and a Dark Mode Glassmorphism dashboard UI.
+- **Automated Recruitment & Manpower Planning (MPP) Hub (Talent Up):** 10-module zero-macro recruitment management engine seamlessly connecting annual Manpower Planning (MPP), Requisition & Approval matrices, working-day SLA/TAT monitoring with Early Warning Alerts, consent-compliant Talent Pool database, dynamic multi-parameter candidate filtering, and a 1-click WhatsApp & Email interview invitation dispatcher.
+- **Executive Negotiation Mentorship & BLUF Strategy (Injourney Airports):** Trained Division Head Pak Hadi using the BLUF Framework (Bottom Line Up Front) and diplomatic communication hedging, preparing him to negotiate with 46 foreign airlines toward Skytrax 5-Star airport targets.
+- **Global 26-Country Salary Benchmarking & Job Leveling Tool (The KPI Institute):** Built a structured salary research calculator and job leveling matrix across 26 countries to standardize role tiers and guide country-specific salary adjustments.
+- **Data-Driven Recruitment Marketing Funnel & ATS (The KPI Institute):** Transformed traditional recruitment into an acquisition funnel via Teamtailor ATS, eliminating time-to-hire bottlenecks and recruiter burnout while closing 11 specialist-to-managerial roles in 4 months.
+- **In-House HRIS & Multi-Platform Automation (The KPI Institute):** Connected Google Sheets with in-house HRIS, BambooHR, Teamtailor, and Asana via Google Apps Script to automate leave letters, 360-review reminders, and personnel data sync (-30% manual HR workload).
+- **Real-Time Tutor Performance Evaluation App (Mr. BOB):** Deployed an internal mobile app on Play Store and App Store linked to Google Sheets, cutting 80+ instructor performance recap cycles from 48 hours to 15-30 minutes.
+- **Zero-Cost Google Workspace LMS (TEI Recruitment):** Built an internal LMS tracking 5-7 trainers and 100+ trainees across time zones, driving +20% assessment scores and +30% 3-month retention.
+
+---
+
+## EDUCATION
+- **Bachelor of English Language and Literature (S.S.) - STIBA Malang:** GPA: 3.52 / 4.00. Academic focus on Linguistics, Psychoanalysis, Neurolinguistics, and Teaching Methodologies (building strong foundations in human behavior assessment, coaching, and cross-cultural communication).
+
+---
+
+## CERTIFICATIONS, AWARDS & LANGUAGES
+- **Awards & Professional Certifications:** Best HR of the Year 2023 (Mr. BOB Kampung Inggris) | BNSP Certified Trainer of Trainers (ToT) Level 4 (Certified Instructor - CI) | KPI Professional Certified (The KPI Institute) | ISO 9001:2015 (Quality Management Systems) | ISO 45001:2018 (Occupational Health & Safety) | SMK3 PP No. 50/2012.
+- **Languages:** Indonesian (Native) | English (Full Professional Working Proficiency).
+
+---
+
+## VOLUNTEER & COMMUNITY INVOLVEMENT
+- **Remote Worker Community (Current):** Actively supporting fellow remote professionals in troubleshooting remote-work challenges, distributed workflow adaptation, and global career readiness.
+- **Book & Human Development Community & Children's Education Volunteering:** Facilitating book discussions on psychology, human behavior, and personal growth, alongside volunteering to teach English and foundational skills to children.
