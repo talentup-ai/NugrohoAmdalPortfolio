@@ -15,8 +15,8 @@ scratch/
 tmp/
 *.tmp
 
-# SEO & Audit Reports
+# SEO & Audit Reports & Local Agent Skills
 jev-seo-reports/
 audit-reports/
-.agents/skills/jev-seo/.venv/
+.agents/
 

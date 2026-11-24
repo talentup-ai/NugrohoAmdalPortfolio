@@ -613,9 +613,7 @@
 
       <!-- Subtle Ambient Radial Lights (Wrapped to Prevent Mobile Overflow) -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none w-full">
-        <div class="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-blue-600/15 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/3 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
-      </div>
+        </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -633,10 +631,10 @@
             <!-- Main Headline -->
             <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white">
               <span class="lang lang-id">
-                Menjembatani <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">Operasional HR Global</span>, Otomasi AI Deterministik, dan Kapabilitas Manusia.
+                Menjembatani <span class="text-sky-300">Operasional HR Global</span>, Otomasi AI Deterministik, dan Kapabilitas Manusia.
               </span>
               <span class="lang lang-en">
-                Bridging <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">Global HR Operations</span>, Deterministic AI Workflows, and Human Capability.
+                Bridging <span class="text-sky-300">Global HR Operations</span>, Deterministic AI Workflows, and Human Capability.
               </span>
             </h1>
 
@@ -728,41 +726,39 @@
 
           </div>
 
-          <!-- Column Right: Seamless Hero Cutout & Floating Badges (5 Cols) -->
-          <div class="lg:col-span-5 relative flex justify-center items-end w-full max-w-full" data-aos="fade-left" data-aos-duration="1000">
+          <!-- Column Right: Seamless Hero Cutout & Grounded Authority Deck (5 Cols) -->
+          <div class="lg:col-span-5 relative flex flex-col items-center justify-end w-full max-w-full" data-aos="fade-left" data-aos-duration="1000">
             <div class="relative w-full max-w-md sm:max-w-lg lg:max-w-none flex flex-col items-center">
               
-              <!-- Subtle Background Light Beam behind cutout -->
-              <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10 w-full">
-                <div class="w-full h-full bg-gradient-to-t from-blue-600/25 via-indigo-500/15 to-transparent rounded-full blur-2xl transform scale-95"></div>
-              </div>
-
               <!-- Main Cutout Image (No Card Frame, Bottom Gradient Mask) -->
               <img src="assets/hero-cutout.png" 
                    alt="Nugroho Amdal, S.S., CI. - Global HR Specialist, HR Technology Workflow Architect & Certified Instructor BNSP Level 4" 
-                   class="hero-cutout-img w-full max-w-full max-h-[580px] lg:max-h-[640px] object-contain object-bottom pointer-events-none select-none" width="1080" height="1350">
+                   class="hero-cutout-img w-full max-w-full max-h-[540px] lg:max-h-[580px] object-contain object-bottom pointer-events-none select-none" width="1080" height="1350">
 
-              <!-- Floating Authority Badge 1: BNSP Level 4 CI (ToT) -->
-              <div class="absolute -top-3 sm:top-2 left-2 sm:-left-4 glass-card px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-emeraldCustom/40 shadow-2xl animate-float-slow flex items-center space-x-2.5 sm:space-x-3 z-20 max-w-[calc(100vw-3rem)]">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-base sm:text-lg flex-shrink-0">
-                  <i class="fa-solid fa-certificate"></i>
+              <!-- Grounded Authority Status Deck (Solid, Non-Floating) -->
+              <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 z-20">
+                <!-- Status Item 1: BNSP Level 4 CI (ToT) -->
+                <div class="glass-card px-4 py-3 rounded-xl border border-emeraldCustom/30 bg-slate-900/80 shadow-md flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-[10px] uppercase tracking-wider font-display font-bold text-emerald-400 truncate">BNSP Certified</div>
+                    <div class="text-xs sm:text-sm font-bold text-white font-display truncate">Certified Instructor (CI) Level 4</div>
+                    <div class="text-[11px] text-slate-300 truncate">Training of Trainers (ToT)</div>
+                  </div>
                 </div>
-                <div class="min-w-0">
-                  <div class="text-[10px] uppercase tracking-wider font-display font-bold text-emerald-400 truncate">BNSP Certified</div>
-                  <div class="text-xs sm:text-sm font-bold text-white font-display truncate">Certified Instructor (CI) Level 4</div>
-                  <div class="text-[10px] text-slate-300 truncate">Training of Trainers (ToT)</div>
-                </div>
-              </div>
 
-              <!-- Floating Authority Badge 2: Best HR of the Year 2023 -->
-              <div class="absolute bottom-16 sm:bottom-20 right-2 sm:-right-4 glass-card px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-2xl border border-amber-500/40 shadow-2xl animate-float-delayed flex items-center space-x-2.5 sm:space-x-3 z-20 max-w-[calc(100vw-3rem)]">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 text-base sm:text-lg flex-shrink-0">
-                  <i class="fa-solid fa-trophy"></i>
-                </div>
-                <div class="min-w-0">
-                  <div class="text-[10px] uppercase tracking-wider font-display font-bold text-amber-400 truncate">Awarded 2023</div>
-                  <div class="text-xs sm:text-sm font-bold text-white font-display truncate">Best HR of the Year</div>
-                  <div class="text-[10px] text-slate-300 truncate">Mr. BOB Kampung Inggris</div>
+                <!-- Status Item 2: Best HR of the Year 2023 -->
+                <div class="glass-card px-4 py-3 rounded-xl border border-amber-500/30 bg-slate-900/80 shadow-md flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-lg bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg flex-shrink-0">
+                    <i class="fa-solid fa-trophy"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-[10px] uppercase tracking-wider font-display font-bold text-amber-400 truncate">Awarded 2023</div>
+                    <div class="text-xs sm:text-sm font-bold text-white font-display truncate">Best HR of the Year</div>
+                    <div class="text-[11px] text-slate-300 truncate">Mr. BOB Kampung Inggris</div>
+                  </div>
                 </div>
               </div>
 
@@ -944,20 +940,19 @@
             </p>
           </div>
 
-          <!-- 6-Card Complexity-Ordered Grid (Level 1 to Level 6) -->
+          <!-- 7-Card Complexity-Ordered Grid (Level 1 to Level 7) -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-16">
 
             <!-- Card 1: Enterprise Architecture (Level 1 - Highest Complexity) -->
             <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-cyan-500/40 group hover:shadow-2xl hover:shadow-cyan-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 font-display">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-cyan-400 font-display">
                     <i class="fa-solid fa-server mr-1"></i>
                     <span>01 • ENTERPRISE ARCHITECTURE</span>
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-display">
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-cyan-300/80 font-display">
                     <span class="lang lang-id">Level 1 • Tertinggi</span>
                     <span class="lang lang-en">Level 1 • Highest</span>
                   </span>
@@ -1017,15 +1012,14 @@
 
             <!-- Card 2: Governance & Global Ops (Level 2) -->
             <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-indigo-500/40 group hover:shadow-2xl hover:shadow-indigo-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 font-display">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-indigo-400 font-display">
                     <i class="fa-solid fa-globe mr-1"></i>
                     <span>02 • GOVERNANCE &amp; GLOBAL OPS</span>
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-display">
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-indigo-300/80 font-display">
                     <span class="lang lang-id">Level 2 • Kompleks</span>
                     <span class="lang lang-en">Level 2 • Complex</span>
                   </span>
@@ -1085,15 +1079,14 @@
 
             <!-- Card 3: Talent Acquisition & EVP (Level 3) -->
             <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-teal-500/40 group hover:shadow-2xl hover:shadow-teal-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl pointer-events-none"></div>
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-teal-500/15 border border-teal-500/30 text-teal-400 font-display">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-teal-400 font-display">
                     <i class="fa-solid fa-user-plus mr-1"></i>
                     <span>03 • TALENT ACQUISITION &amp; EVP</span>
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-teal-500/10 border border-teal-500/20 text-teal-300 font-display">
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-teal-300/80 font-display">
                     <span class="lang lang-id">Level 3 • Taktis</span>
                     <span class="lang lang-en">Level 3 • Tactical</span>
                   </span>
@@ -1153,15 +1146,14 @@
 
             <!-- Card 4: Corporate L&D & Training (Level 4) -->
             <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-emerald-500/40 group hover:shadow-2xl hover:shadow-emerald-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-display">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-emerald-400 font-display">
                     <i class="fa-solid fa-chalkboard-user mr-1"></i>
                     <span>04 • CORPORATE L&amp;D &amp; TRAINING</span>
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-display">
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-emerald-300/80 font-display">
                     <span class="lang lang-id">Level 4 • Terapan</span>
                     <span class="lang lang-en">Level 4 • Applied</span>
                   </span>
@@ -1221,15 +1213,14 @@
 
             <!-- Card 5: Executive Mentorship (Level 5) -->
             <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 group hover:shadow-2xl hover:shadow-amber-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-amber-500/15 border border-amber-500/30 text-amber-400 font-display">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-amber-400 font-display">
                     <i class="fa-solid fa-user-tie mr-1"></i>
                     <span>05 • EXECUTIVE MENTORSHIP</span>
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 border border-amber-500/20 text-amber-300 font-display">
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-amber-300/80 font-display">
                     <span class="lang lang-id">Level 5 • Eksekutif</span>
                     <span class="lang lang-en">Level 5 • Executive</span>
                   </span>
@@ -1287,19 +1278,85 @@
               </div>
             </div>
 
-            <!-- Card 6: Career & Personal Growth (Level 6 - Most Accessible) -->
-            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-purple-500/40 group hover:shadow-2xl hover:shadow-purple-500/5">
-              <div class="absolute -top-12 -right-12 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <!-- Card 6: Keynote Speaking & Campus/Brand Events (Level 6 - New) -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-sky-500/40 group hover:shadow-2xl hover:shadow-sky-500/5">
               <div>
-                <!-- Header Badges -->
+                <!-- Minimalist Header Eyebrow -->
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-purple-500/15 border border-purple-500/30 text-purple-400 font-display">
-                    <i class="fa-solid fa-compass mr-1"></i>
-                    <span>06 • CAREER &amp; PERSONAL GROWTH</span>
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-sky-400 font-display">
+                    <i class="fa-solid fa-microphone-lines mr-1"></i>
+                    <span>06 • KEYNOTE SPEAKING &amp; CAMPUS/BRAND EVENTS</span>
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-sky-300/80 font-display">
+                    <span class="lang lang-id">Level 6 • Edukatif &amp; Publik</span>
+                    <span class="lang lang-en">Level 6 • Public &amp; Educational</span>
                   </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-500/10 border border-purple-500/20 text-purple-300 font-display">
-                    <span class="lang lang-id">Level 6 • Aksesibel</span>
-                    <span class="lang lang-en">Level 6 • Accessible</span>
+                </div>
+
+                <!-- Card Title -->
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3.5 leading-snug group-hover:text-sky-300 transition-colors">
+                  <span class="lang lang-id">Keynote Speaker, Webinar &amp; Campus/Brand Workshop Facilitator</span>
+                  <span class="lang lang-en">Keynote Speaker, Webinar &amp; Campus/Brand Workshop Facilitator</span>
+                </h3>
+
+                <!-- Problem & Solution Block -->
+                <div class="space-y-3 text-sm text-slate-300 font-sans mb-5">
+                  <!-- Problem -->
+                  <div class="p-3.5 rounded-xl bg-slate-950/60 border border-white/5">
+                    <div class="font-display text-[11px] uppercase tracking-wider font-bold text-rose-400 mb-1.5 flex items-center">
+                      <i class="fa-solid fa-triangle-exclamation mr-1.5 text-rose-400 text-xs"></i>
+                      <span class="lang lang-id">Tantangan &amp; Masalah Kritis:</span>
+                      <span class="lang lang-en">Critical Problem / Bottleneck:</span>
+                    </div>
+                    <p class="leading-relaxed text-xs sm:text-sm text-slate-300">
+                      <span class="lang lang-id">Materi seminar kampus maupun event brand sering kali terlalu teoretis dan terputus dari standar rekrutmen maupun teknologi HR global saat ini.</span>
+                      <span class="lang lang-en">Campus seminars and brand events often rely on outdated theory disconnected from real global recruitment standards and modern HR technology.</span>
+                    </p>
+                  </div>
+
+                  <!-- Solution -->
+                  <div class="p-3.5 rounded-xl bg-slate-950/60 border border-white/5">
+                    <div class="font-display text-[11px] uppercase tracking-wider font-bold text-emerald-400 mb-1.5 flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-emerald-400 text-xs"></i>
+                      <span class="lang lang-id">Solusi yang Saya Berikan:</span>
+                      <span class="lang lang-en">Delivered Solution:</span>
+                    </div>
+                    <p class="leading-relaxed text-xs sm:text-sm text-slate-300">
+                      <span class="lang lang-id">Membawakan keynote speech &amp; workshop interaktif berbasis praktik HR global—teruji di Universitas Brawijaya, UM, UTM, organisasi internasional (AIESEC), hingga platform HR Tech (NusaWork).</span>
+                      <span class="lang lang-en">Delivering high-impact keynote speeches and interactive workshops grounded in global HR practice—proven across Brawijaya University, UM, UTM, AIESEC, and HR Tech platforms (NusaWork).</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Target Audience Footer -->
+              <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400 gap-1.5 sm:gap-2">
+                <div class="flex items-center space-x-1.5 text-slate-400 flex-shrink-0">
+                  <i class="fa-solid fa-bullseye text-sky-400 text-xs"></i>
+                  <span class="font-semibold font-display uppercase tracking-wider text-[11px]">
+                    <span class="lang lang-id">Target:</span>
+                    <span class="lang lang-en">Target:</span>
+                  </span>
+                </div>
+                <div class="font-medium text-slate-200 sm:text-right">
+                  <span class="lang lang-id">Universitas &amp; Organisasi Mahasiswa (AIESEC), Brand &amp; HR Tech, Event Organizer</span>
+                  <span class="lang lang-en">Universities &amp; Student Organizations (AIESEC), Brands &amp; HR Tech, Event Organizers</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 7: Career & Personal Growth (Level 7 - Most Accessible) -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 bg-slate-900/60 relative overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-purple-500/40 group hover:shadow-2xl hover:shadow-purple-500/5">
+              <div>
+                <!-- Minimalist Header Eyebrow -->
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <div class="inline-flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase text-purple-400 font-display">
+                    <i class="fa-solid fa-compass mr-1"></i>
+                    <span>07 • CAREER &amp; PERSONAL GROWTH</span>
+                  </div>
+                  <span class="text-[11px] font-medium uppercase tracking-wider text-purple-300/80 font-display">
+                    <span class="lang lang-id">Level 7 • Aksesibel</span>
+                    <span class="lang lang-en">Level 7 • Accessible</span>
                   </span>
                 </div>
 
@@ -1381,10 +1438,10 @@
           </h2>
           <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
             <span class="lang lang-id">
-              Bukan sekadar teori konsep AI atau presentasi slide. Berikut adalah sistem dan platform operasional nyata yang saya bangun untuk memecahkan bottleneck kritis di HR, penggajian (payroll), L&D, dan ekosistem karier.
+              Sistem operasional deterministik dan arsitektur alur kerja yang telah diimplementasikan untuk mengeliminasi bottleneck kritis di rekrutmen, penggajian (PPh 21 TER), analitik budaya (EVP), dan pengembangan karier.
             </span>
             <span class="lang lang-en">
-              Beyond transformation slides. Here are real production systems and workflows engineered from scratch to resolve operational bottlenecks across HR, payroll, L&D, and career tech.
+              Deterministic operating systems and production-grade workflows engineered to eliminate critical bottlenecks in recruitment, payroll (PPh 21 TER), culture analytics (EVP), and career development.
             </span>
           </p>
         </div>
@@ -1394,7 +1451,6 @@
           
           <!-- Featured Flagship: 27-Sheet Automated HRIS & Payroll Architecture -->
           <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-cyan-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
-            <div class="absolute -top-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -1418,8 +1474,8 @@
               </div>
 
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
-                <span class="lang lang-id">End-to-End Automated HRIS, PPh 21 TER & Payroll Engine (27 Modul Terintegrasi)</span>
-                <span class="lang lang-en">End-to-End Automated HRIS, PPh 21 TER & Payroll Engine (27 Integrated Modules)</span>
+                <span class="lang lang-id">Automated HRIS, PPh 21 TER & Payroll Engine Siklus Penuh (27 Modul Terintegrasi)</span>
+                <span class="lang lang-en">Full-Lifecycle Automated HRIS, PPh 21 TER & Payroll Engine (27 Integrated Modules)</span>
               </h3>
 
               <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
@@ -1496,7 +1552,6 @@
           
           <!-- Featured System 2: Automated Recruitment & Manpower Planning (MPP) Hub -->
           <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-blue-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
-            <div class="absolute -top-24 -right-24 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -1540,7 +1595,7 @@
                     <span class="lang lang-en"><i class="fa-solid fa-gears text-sky-400 mr-1"></i> Zero-Macro System Architecture:</span>
                   </strong>
                   <span class="lang lang-id">Sistem manajemen rekrutmen end-to-end tanpa macro (Zero-VBA) yang menghubungkan perencanaan MPP tahunan, Requisition & Approval tracking, pemantauan SLA/TAT otomatis dengan Early Warning Alert, database Talent Pool berbasis consent (masa simpan data), filter pencarian kandidat dinamis, hingga generator undangan interview WhatsApp & Email 1-klik.</span>
-                  <span class="lang lang-en">An end-to-end zero-macro (Zero-VBA) recruitment management engine seamlessly connecting annual Manpower Planning (MPP), Requisition & Approval matrices, working-day SLA/TAT monitoring with Early Warning Alerts, consent-compliant Talent Pool database, dynamic multi-parameter candidate filtering, and a 1-click WhatsApp & Email interview invitation dispatcher.</span>
+                  <span class="lang lang-en">A unified full-lifecycle recruitment management engine (Zero-VBA) seamlessly connecting annual Manpower Planning (MPP), Requisition & Approval matrices, working-day SLA/TAT monitoring with Early Warning Alerts, consent-compliant Talent Pool database, dynamic multi-parameter candidate filtering, and a 1-click WhatsApp & Email interview invitation dispatcher.</span>
                 </div>
 
                 <div>
@@ -1592,7 +1647,6 @@
           
           <!-- Featured System 3: Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic -->
           <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-purple-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
-            <div class="absolute -top-24 -right-24 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -1866,8 +1920,8 @@
               </div>
               
               <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4 leading-snug">
-                <span class="lang lang-id">Career Coach AI, Job Apply AI & Otomasi Bisnis End-to-End</span>
-                <span class="lang lang-en">Career Coach AI, Job Apply AI & End-to-End Business Automation</span>
+                <span class="lang lang-id">Career Coach AI, Job Apply AI & Otomasi Bisnis Terpadu</span>
+                <span class="lang lang-en">Career Coach AI, Job Apply AI & Comprehensive Business Automation</span>
               </h3>
 
               <div class="space-y-3.5 text-sm text-slate-300 font-sans mb-6">
@@ -1953,10 +2007,10 @@
 
             <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               <span class="lang lang-id">
-                Praktisi People & Culture yang Menggabungkan <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Strategi Global</span>, Ketajaman Analitik, dan Eksekusi Teknologi.
+                Praktisi People & Culture yang Menggabungkan <span class="text-sky-300">Strategi Global</span>, Ketajaman Analitik, dan Eksekusi Teknologi.
               </span>
               <span class="lang lang-en">
-                People & Culture Practitioner Combining <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Global Strategy</span>, Analytical Rigor, and Tech Execution.
+                People & Culture Practitioner Combining <span class="text-sky-300">Global Strategy</span>, Analytical Rigor, and Tech Execution.
               </span>
             </h2>
 
