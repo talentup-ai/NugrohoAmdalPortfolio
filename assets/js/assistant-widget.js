@@ -15,7 +15,7 @@
 // Contoh: const CLOUD_RUN_ENDPOINT = 'https://amdal-portfolio-assistant-abcdefg-et.a.run.app';
 // Jika dibiarkan kosong (''), widget beroperasi dalam Mode Cerdas Lokal (Local Fallback).
 // =========================================================================
-const CLOUD_RUN_ENDPOINT = '';
+const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
 (function () {
   'use strict';
