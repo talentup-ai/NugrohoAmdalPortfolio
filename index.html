@@ -3468,35 +3468,8 @@
     </div>
   </footer>
 
-  <!-- ==================== FLOATING ACTION BUTTON (FAB) ==================== -->
-  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
-    
-    <!-- Collapsible Mini Action Buttons -->
-    <div id="fabMenu" class="hidden flex-col items-end space-y-2.5 transition-all duration-300">
-      <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%20untuk%20berdiskusi." target="_blank" rel="noopener noreferrer" 
-         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-emerald-600 text-white shadow-xl hover:bg-emerald-500 text-xs font-semibold font-display">
-        <span>Chat WhatsApp</span>
-        <i class="fa-brands fa-whatsapp text-base"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
-         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-blue-600 text-white shadow-xl hover:bg-blue-500 text-xs font-semibold font-display">
-        <span>Connect LinkedIn</span>
-        <i class="fa-brands fa-linkedin-in text-base"></i>
-      </a>
-      <a href="https://instagram.com/nugrohoamdal" target="_blank" rel="noopener noreferrer"
-         class="flex items-center space-x-2 px-3 py-2 rounded-full bg-pink-600 text-white shadow-xl hover:bg-pink-500 text-xs font-semibold font-display">
-        <span>Instagram</span>
-        <i class="fa-brands fa-instagram text-base"></i>
-      </a>
-    </div>
-
-    <!-- Main FAB Toggle Button -->
-    <button id="fabBtn" type="button" onclick="toggleFab()"
-            class="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-105 active:scale-95 focus:outline-none"
-            aria-label="Connect Floating Action Button">
-      <i id="fabIcon" class="fa-solid fa-comment-dots"></i>
-    </button>
-  </div>
+  <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->
+  <script src="assets/js/assistant-widget.js" defer></script>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 invisible flex items-center justify-center p-4 sm:p-6" onclick="closeLightbox(event)">
@@ -3733,20 +3706,10 @@
 
 
     // Floating Action Button Toggle
-    const fabMenu = document.getElementById('fabMenu');
-    const fabIcon = document.getElementById('fabIcon');
+    // Floating Action Button Toggle (Handled by Asisten Mas Amdal widget)
     function toggleFab() {
-      const isHidden = fabMenu.classList.contains('hidden');
-      if (isHidden) {
-        fabMenu.classList.remove('hidden');
-        fabMenu.classList.add('flex');
-        fabIcon.classList.remove('fa-comment-dots');
-        fabIcon.classList.add('fa-xmark');
-      } else {
-        fabMenu.classList.add('hidden');
-        fabMenu.classList.remove('flex');
-        fabIcon.classList.remove('fa-xmark');
-        fabIcon.classList.add('fa-comment-dots');
+      if (window.openAmdalAssistant) {
+        window.openAmdalAssistant();
       }
     }
 

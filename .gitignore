@@ -1,4 +1,4 @@
-# Operating System Files
+﻿# Operating System Files
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -19,4 +19,7 @@ tmp/
 jev-seo-reports/
 audit-reports/
 .agents/
+
+# Assistant Backend (Cloud Run Serverless)
+backend-assistant/
 
