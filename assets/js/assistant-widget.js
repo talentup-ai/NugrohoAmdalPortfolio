@@ -1,20 +1,14 @@
 /**
- * Asisten Mas Amdal - Interactive AI Portfolio Assistant Widget
+ * Asisten Mas Amdal - Hospitality Concierge & Diagnostic Advisor
  * Designed for: Nugroho Amdal, S.S., CI. Portfolio (https://nugrohoamdalportfolio.dpdns.org)
  * Features:
- *  - 1.2s smooth slide-up entrance with subtle pulse ring
- *  - 6s auto-dismiss bilingual callout bubble (1x per session)
- *  - Multi-channel handover (WhatsApp with contextual topic, LinkedIn, Instagram)
- *  - Interactive markdown link parser ([Text](URL))
- *  - Serverless Google Cloud Run (Gemini 2.5 Flash) backend with intelligent local fallback
+ *  - Full-screen dynamic viewport on mobile with visualViewport keyboard avoidance
+ *  - Auto-collapsing header after first message to maximize chat reading space
+ *  - Contextual Channel Routing (Dynamic WhatsApp, LinkedIn, Instagram link pills)
+ *  - 10-turn history memory synchronization with Gemini 2.5/Flash multi-model cascade
+ *  - Interactive markdown link parser with dedicated channel branding
  */
 
-// =========================================================================
-// KONFIGURASI BACKEND CLOUD RUN
-// Ganti nilai string di bawah dengan URL produksi Google Cloud Run Anda.
-// Contoh: const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
-// Jika dibiarkan kosong (''), widget beroperasi dalam Mode Cerdas Lokal (Local Fallback).
-// =========================================================================
 const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
 (function () {
@@ -34,46 +28,40 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       btnLabel: 'Tanya Asisten Mas Amdal',
       onlineStatus: 'Online',
       headerTitle: 'Asisten Mas Amdal',
-      headerSubtitle: 'Siap menemani & bantu info portofolio',
-      welcome: 'Halo! Selamat datang di portofolio Mas Amdal. Saya siap menemani Anda menjelajahi sistem HRIS, recruitment hub, studi kasus C-Level, maupun info pelatihan. Ada yang ingin Anda eksplorasi bersama?',
+      headerSubtitle: 'Hospitality Concierge & Diagnostic Advisor',
+      welcome: 'Halo! Selamat datang di portofolio Mas Amdal. Lagi cari solusi untuk tim/perusahaan atau mau diskusi seputar pengembangan karier nih? Cerita santai aja, aku siap bantu arahin 😊',
       quickPromptsLabel: 'Topik cepat yang sering ditanyakan:',
       prompts: [
-        'Lihat demo sistem HRIS, Recruitment & EVP',
-        'Info sesi Coaching & Bootcamp karier',
+        'Lihat demo sistem HRIS & Rekrutmen',
+        'Diskusi persiapan karier & interview',
         'Info In-House Training & Speaking'
       ],
-      handoverLabel: 'Ingin menyapa atau ngobrol langsung dengan Mas Amdal?',
-      placeholder: 'Tulis pertanyaan atau pilih topik di atas...',
+      placeholder: 'Tulis pesan Anda di sini...',
       sendBtnAria: 'Kirim pesan ke asisten',
-      closeBtnAria: 'Tutup jendela asisten',
-      waDefault: 'Halo Mas Amdal, saya sedang melihat portofolio Anda dan ingin berdiskusi lebih lanjut.',
-      waContextPrefix: 'Halo Mas Amdal, saya baru saja berdiskusi dengan asisten portofolio Anda mengenai: '
+      closeBtnAria: 'Tutup jendela asisten'
     },
     en: {
       callout: "Need help exploring? Ask Mas Amdal's Assistant here 😸",
       btnLabel: "Ask Mas Amdal's Assistant",
       onlineStatus: 'Online',
       headerTitle: "Mas Amdal's Assistant",
-      headerSubtitle: 'Here to guide you through the portfolio',
-      welcome: "Hello! Welcome to Mas Amdal's portfolio. I'm here to guide you through his HRIS systems, recruitment hubs, C-Level case studies, and training programs. How may I assist you today?",
+      headerSubtitle: 'Hospitality Concierge & Diagnostic Advisor',
+      welcome: "Hi there! Welcome to Mas Amdal's portfolio. Are you exploring HR solutions for your team or looking for career guidance? Feel free to share what's on your mind—happy to help!",
       quickPromptsLabel: 'Frequently explored topics:',
       prompts: [
-        'Explore live HRIS, Recruitment & EVP demos',
-        'Career Coaching & Bootcamp details',
-        'In-House Training & Speaking services'
+        'Explore live HRIS & Recruitment demos',
+        'Career mentorship & interview prep',
+        'In-House Training & Speaking details'
       ],
-      handoverLabel: 'Prefer to connect or talk directly with Mas Amdal?',
-      placeholder: 'Type your question or choose a topic above...',
+      placeholder: 'Type your message here...',
       sendBtnAria: 'Send message to assistant',
-      closeBtnAria: 'Close assistant window',
-      waDefault: 'Hello Mas Amdal, I am exploring your portfolio and would love to connect directly.',
-      waContextPrefix: 'Hello Mas Amdal, I was just discussing with your portfolio assistant regarding: '
+      closeBtnAria: 'Close assistant window'
     }
   };
 
   const t = isEn ? I18N.en : I18N.id;
 
-  // Social & Contact URLs
+  // Social & Contact Official URLs
   const CONTACT_LINKS = {
     whatsapp: 'https://wa.me/6285395940406',
     linkedin: 'https://www.linkedin.com/in/nugroho-amdal',
@@ -84,7 +72,6 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
   let chatHistory = [];
   let isChatOpen = false;
   let isSending = false;
-  let recentTopic = '';
 
   // Inject Styles
   function injectStyles() {
@@ -101,12 +88,11 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         --amdal-blue: #2563EB;
         --amdal-blue-hover: #1D4ED8;
         --amdal-blue-light: #60A5FA;
-        --amdal-gold: #F59E0B;
         --amdal-emerald: #10B981;
         --amdal-ease: cubic-bezier(0.16, 1, 0.3, 1);
       }
 
-      /* Container */
+      /* Root Container */
       #amdal-assistant-root {
         position: fixed;
         bottom: 24px;
@@ -196,15 +182,9 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
       /* Subtle Pulse Ring on Entrance */
       @keyframes amdalPulseRing {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 18px rgba(37, 99, 235, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-        }
+        0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+        70% { box-shadow: 0 0 0 18px rgba(37, 99, 235, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
       }
 
       .amdal-pulse-effect {
@@ -220,7 +200,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         background: #0F172A;
         border: 1px solid rgba(59, 130, 246, 0.35);
         border-radius: 16px;
-        padding: 10px 14px 10px 14px;
+        padding: 10px 14px;
         margin-bottom: 10px;
         max-width: 320px;
         box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(37, 99, 235, 0.15);
@@ -301,20 +281,46 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
       /* Window Header */
       .amdal-chat-header {
-        padding: 16px 18px;
-        background: rgba(15, 23, 42, 0.85);
+        padding: 14px 18px;
+        background: rgba(15, 23, 42, 0.88);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
         flex-shrink: 0;
+        transition: all 0.3s var(--amdal-ease);
+        position: relative;
+      }
+
+      /* Collapsed Header State: Minimal floating bar with clean close button */
+      .amdal-chat-header.is-collapsed {
+        padding: 8px 14px;
+        background: rgba(15, 23, 42, 0.65);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        min-height: 42px;
+      }
+
+      .amdal-chat-header.is-collapsed .amdal-header-profile {
+        display: none;
+      }
+
+      .amdal-chat-header.is-collapsed .amdal-header-actions {
+        margin-left: auto;
+      }
+
+      .amdal-chat-header.is-collapsed .amdal-icon-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.08);
       }
 
       .amdal-header-profile {
         display: flex;
         align-items: center;
         gap: 12px;
+        transition: opacity 0.25s ease;
       }
 
       .amdal-header-avatar {
@@ -398,7 +404,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       .amdal-msg {
         display: flex;
         flex-direction: column;
-        max-width: 88%;
+        max-width: 90%;
         animation: amdalFadeIn 0.3s var(--amdal-ease) forwards;
       }
 
@@ -416,7 +422,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       }
 
       .amdal-bubble {
-        padding: 12px 15px;
+        padding: 12px 16px;
         font-size: 13.5px;
         line-height: 1.55;
         border-radius: 18px;
@@ -425,7 +431,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
       .amdal-msg-assistant .amdal-bubble {
         background: #1E293B;
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         color: #E2E8F0;
         border-top-left-radius: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -438,30 +444,79 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
       }
 
-      /* Clickable Markdown Resource Link Pills */
+      /* Contextual Channel Link Pills */
       .amdal-chat-link {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        background: rgba(37, 99, 235, 0.18);
-        border: 1px solid rgba(96, 165, 250, 0.4);
+        gap: 6px;
+        background: rgba(37, 99, 235, 0.16);
+        border: 1px solid rgba(96, 165, 250, 0.38);
         color: #93C5FD !important;
-        padding: 3px 9px;
-        border-radius: 8px;
+        padding: 4px 10px;
+        border-radius: 9999px;
         font-size: 12px;
         font-weight: 600;
         text-decoration: none;
-        margin: 4px 2px;
+        margin: 3px 2px;
         vertical-align: middle;
         transition: all 0.2s var(--amdal-ease);
       }
 
       .amdal-chat-link:hover {
-        background: rgba(37, 99, 235, 0.35);
+        background: rgba(37, 99, 235, 0.32);
         color: #FFFFFF !important;
         border-color: #60A5FA;
         transform: translateY(-1px);
-        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      }
+
+      .amdal-link-icon {
+        width: 12.5px;
+        height: 12.5px;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+
+      /* WhatsApp Dynamic Pill */
+      .amdal-link-wa {
+        background: rgba(16, 185, 129, 0.15);
+        border-color: rgba(52, 211, 153, 0.45);
+        color: #6EE7B7 !important;
+      }
+
+      .amdal-link-wa:hover {
+        background: rgba(16, 185, 129, 0.32);
+        border-color: #34D399;
+        color: #FFFFFF !important;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+
+      /* LinkedIn Dynamic Pill */
+      .amdal-link-linkedin {
+        background: rgba(14, 118, 168, 0.18);
+        border-color: rgba(56, 189, 248, 0.45);
+        color: #7DD3FC !important;
+      }
+
+      .amdal-link-linkedin:hover {
+        background: rgba(14, 118, 168, 0.35);
+        border-color: #38BDF8;
+        color: #FFFFFF !important;
+        box-shadow: 0 4px 12px rgba(14, 118, 168, 0.3);
+      }
+
+      /* Instagram Dynamic Pill */
+      .amdal-link-instagram {
+        background: rgba(225, 48, 108, 0.15);
+        border-color: rgba(244, 114, 182, 0.45);
+        color: #F472B6 !important;
+      }
+
+      .amdal-link-instagram:hover {
+        background: rgba(225, 48, 108, 0.32);
+        border-color: #F472B6;
+        color: #FFFFFF !important;
+        box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
       }
 
       /* Quick Prompts Container */
@@ -469,7 +524,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         display: flex;
         flex-direction: column;
         gap: 6px;
-        margin-top: 8px;
+        margin-top: 10px;
       }
 
       .amdal-prompts-label {
@@ -497,8 +552,8 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       }
 
       .amdal-prompt-chip:hover {
-        background: rgba(37, 99, 235, 0.15);
-        border-color: rgba(96, 165, 250, 0.4);
+        background: rgba(37, 99, 235, 0.18);
+        border-color: rgba(96, 165, 250, 0.45);
         color: #FFFFFF;
         transform: translateX(2px);
       }
@@ -531,73 +586,11 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         40% { transform: scale(1); opacity: 1; }
       }
 
-      /* Multi-Channel Handover Panel */
-      .amdal-handover-panel {
-        padding: 12px 16px;
-        background: rgba(15, 23, 42, 0.95);
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        flex-shrink: 0;
-      }
-
-      .amdal-handover-title {
-        font-size: 11px;
-        font-weight: 500;
-        color: #94A3B8;
-        text-align: center;
-      }
-
-      .amdal-handover-buttons {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr;
-        gap: 6px;
-      }
-
-      .amdal-handover-btn {
-        padding: 7px 10px;
-        border-radius: 10px;
-        font-size: 11.5px;
-        font-weight: 600;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        transition: all 0.2s var(--amdal-ease);
-      }
-
-      .amdal-handover-wa {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        color: #FFFFFF;
-        border: 1px solid rgba(16, 185, 129, 0.4);
-      }
-
-      .amdal-handover-wa:hover {
-        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
-        transform: translateY(-1px);
-      }
-
-      .amdal-handover-social {
-        background: rgba(255, 255, 255, 0.05);
-        color: #CBD5E1;
-        border: 1px solid rgba(255, 255, 255, 0.09);
-      }
-
-      .amdal-handover-social:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #FFFFFF;
-        border-color: rgba(255, 255, 255, 0.2);
-        transform: translateY(-1px);
-      }
-
       /* Chat Input Bar */
       .amdal-chat-input-bar {
-        padding: 10px 14px 14px 14px;
+        padding: 12px 14px 14px 14px;
         background: #060B14;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -611,7 +604,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         border-radius: 14px;
         padding: 10px 14px;
         color: #FFFFFF;
-        font-size: 13px;
+        font-size: 13.5px;
         outline: none;
         transition: border-color 0.2s ease, background 0.2s ease;
       }
@@ -653,14 +646,39 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         box-shadow: none;
       }
 
-      /* Mobile Media Query */
-      @media (max-width: 640px) {
+      /* Full-Screen Dynamic Viewport on Mobile (< 768px) */
+      @media (max-width: 767px) {
         #amdal-assistant-root {
-          bottom: 16px;
-          right: 16px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100%;
+          pointer-events: none;
+        }
+
+        .amdal-chat-window {
+          position: fixed;
+          inset: 0;
+          width: 100vw;
+          height: 100dvh;
+          max-width: 100vw;
+          max-height: 100dvh;
+          border-radius: 0;
+          border: none;
+          margin: 0;
+          z-index: 999999;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: 0;
         }
 
         .amdal-widget-trigger {
+          position: fixed;
+          bottom: 16px;
+          right: 16px;
           padding: 8px 14px 8px 10px;
         }
 
@@ -668,27 +686,26 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
           font-size: 12.5px;
         }
 
-        .amdal-chat-window {
+        .amdal-callout-bubble {
           position: fixed;
-          bottom: 12px;
-          right: 12px;
-          left: 12px;
-          width: auto;
-          max-width: none;
-          height: calc(100vh - 80px);
-          max-height: 600px;
-          margin-bottom: 0;
+          bottom: 68px;
+          right: 16px;
+          max-width: calc(100vw - 32px);
         }
 
-        .amdal-callout-bubble {
-          max-width: calc(100vw - 32px);
+        .amdal-chat-messages {
+          padding: 12px 14px;
+        }
+
+        .amdal-chat-input-bar {
+          padding: 8px 12px 12px 12px;
         }
       }
     `;
     document.head.appendChild(styleEl);
   }
 
-  // Markdown Parser to HTML
+  // Markdown Parser to HTML with Contextual Link Icons
   function renderMarkdown(mdText) {
     if (!mdText) return '';
 
@@ -699,7 +716,23 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
     // Markdown Links: [Title](https://...)
     html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (match, title, url) => {
-      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="amdal-chat-link"><span>${title}</span> <svg style="width:11px;height:11px;display:inline-block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>`;
+      let iconSvg = '';
+      let pillClass = 'amdal-chat-link';
+
+      if (/wa\.me|whatsapp\.com/i.test(url)) {
+        pillClass += ' amdal-link-wa';
+        iconSvg = `<svg class="amdal-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.5c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.39-1.74-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>`;
+      } else if (/linkedin\.com/i.test(url)) {
+        pillClass += ' amdal-link-linkedin';
+        iconSvg = `<svg class="amdal-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.32a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>`;
+      } else if (/instagram\.com/i.test(url)) {
+        pillClass += ' amdal-link-instagram';
+        iconSvg = `<svg class="amdal-link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`;
+      } else {
+        iconSvg = `<svg class="amdal-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`;
+      }
+
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="${pillClass}"><span>${title}</span>${iconSvg}</a>`;
     });
 
     // Bold: **text**
@@ -715,108 +748,85 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     return html;
   }
 
-    // Intelligent Local Fallback Engine (Human-Like Conversational Concierge)
+  // Intelligent Local Fallback Engine (Diagnostic Concierge Pattern)
   function generateLocalResponse(userMessage) {
     const text = userMessage.toLowerCase().trim();
 
-    // 1. Simple Greetings & Small Talk (Short & Natural, no brochure dump)
+    // 1. Simple Greetings & Small Talk (0 Links, Empathetic Listening)
     if (/^(halo|hai|hi|hello|pagi|siang|sore|malam|test|tes|permisi|assalamu|p)[\s!.,?]*$/i.test(text)) {
       if (isEn) {
-        return "Hello! Warm welcome to Mas Amdal's portfolio. I'm his personal assistant here to help. Are you looking into his automated HR systems, career mentorship, or perhaps corporate training?";
+        return "Hello! Warm welcome to Mas Amdal's portfolio. Are you exploring HR solutions for your team or looking for career guidance? Feel free to share what's on your mind—happy to help!";
       } else {
-        return "Halo! Selamat datang di portofolio Mas Amdal. Saya asisten pribadi Mas Amdal yang siap menemani Anda hari ini. 😊\n\nAda hal spesifik yang ingin Anda ketahui seputar sistem HR, bimbingan karier, atau sesi corporate training bersama Mas Amdal?";
+        return "Halo! Senang sekali Anda mampir ke portofolio Mas Amdal. Apakah Anda sedang mencari solusi sistem HR untuk tim, atau ingin berdiskusi seputar pengembangan karier? Boleh cerita santai apa yang sedang menjadi fokus Anda saat ini 😊";
       }
     }
 
-    // 2. Career Bimbingan / Dapat Kerja / Bootcamp / Coaching
+    // 2. Flight Attendant / Aviation Inquiry
+    if (/flight attendant|pramugari|pramugara|cabin crew|aviasi|maskapai|aviation/i.test(text)) {
+      if (/nol|ragu|belum pernah|baru mulai|bingung mulai|tips/i.test(text) || !/interview|bahasa inggris|inggris|jadwal|booking/i.test(text)) {
+        // Diagnosis Phase (0 Links)
+        if (isEn) {
+          return "That's an inspiring path! Cabin crew recruitment is known for its rigorous grooming and panel interviews, especially for international carriers. To give the best advice, have you attended walk-in interviews before, or are you preparing from scratch? Which stage feels most challenging right now?";
+        } else {
+          return "Wah, keren banget targetnya ke flight attendant! Persaingannya memang ketat ya di tahap grooming dan panel interview, apalagi kalau mengincar maskapai internasional. Biar aku nggak asal kasih saran, sekarang Kakak sudah pernah ikut walk-in interview sebelumnya atau baru persiapan dari nol? Bagian mana nih yang paling bikin deg-degan—CV, Bahasa Inggris, atau sesi interview-nya?";
+        }
+      } else {
+        // Prescription Phase (1 Precise Link)
+        if (isEn) {
+          return "I understand completely—aviation English and panel interviews require genuine confidence under pressure. Mas Amdal guides candidates through targeted [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html) focusing on airline panel simulations and English STAR techniques. Are you aiming for domestic carriers or global ones like Emirates or Singapore Airlines?";
+        } else {
+          return "Paham banget Kak, interview bahasa Inggris di aviasi memang menuntut kelancaran dan ketenangan merespons skenario pelayanan penumpang. Untuk persiapan intensif dari nol, Mas Amdal biasa mendampingi lewat [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html) khusus simulasi panel interview dan teknik STAR berbahasa Inggris. Boleh tahu target maskapai incaran Kakak domestik seperti Garuda/Batik atau internasional seperti Emirates/Qatar/Singapore Airlines?";
+        }
+      }
+    }
+
+    // 3. Doubt / Reputation Validation (Routing LinkedIn)
+    if (/ragu|reputasi|terbukti|beneran|kredibilitas|bukti|review|testimoni/i.test(text)) {
+      if (isEn) {
+        return "It is completely natural to verify credentials first! Mas Amdal mentored C-Level leadership at Injourney Airports during strategic negotiations with 46 international airlines towards Skytrax 5-Star status. To explore his verified certifications and global track record, feel free to visit [LinkedIn Mas Amdal](https://www.linkedin.com/in/nugroho-amdal).";
+      } else {
+        return "Wajar banget Kak kalau ingin memastikan dulu, apalagi standar aviasi dan korporat memang sangat ketat. Mas Amdal sendiri pernah mendampingi level eksekutif (Division Head Injourney Airports) dalam negosiasi dengan 46 maskapai internasional menuju standar Skytrax 5-Star. Biar makin yakin sama rekam jejak dan proyek globalnya, Kakak bisa kepoin langsung [LinkedIn Mas Amdal](https://www.linkedin.com/in/nugroho-amdal) di sini ya—semua sertifikasi BNSP dan histori kolaborasinya tercatat lengkap di sana.";
+      }
+    }
+
+    // 4. Career Mentorship / Bootcamp / Coaching
     if (/kerja|bootcamp|bimbing|dapat kerja|mentor|coaching|cv|resume|interview|loker|lamar/i.test(text)) {
-      recentTopic = 'Bimbingan Karier & Bootcamp Talent Up';
-      if (isEn) {
-        return "Mas Amdal offers structured career mentorship through [Talent Up Career Development Bootcamp](https://talentup.myscalev.com/careerdevelopment) and private [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nTo be completely transparent: Mas Amdal **does not make empty job-placement guarantees**, but provides intensive tactical preparation—from ATS resume revamps and LinkedIn positioning to mock interviews and cross-border remote job hunting secrets.\n\nYou can also test your resume keyword score on the free [Career Clarity App](https://careerclarity-app.vercel.app/). What role or industry are you currently targeting?";
+      if (/biaya|harga|jadwal|daftar|ikut/i.test(text)) {
+        return "Mas Amdal menyediakan program [Talent Up Career Development Bootcamp](https://talentup.myscalev.com/careerdevelopment) serta sesi privat [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html) (mulai Rp150.000 untuk fresh graduate). Kalau ingin bahas kecocokan jadwal dan kebutuhan Kakak, langsung hubungi [WhatsApp Mas Amdal](https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20tertarik%20konsultasi%20bimbingan%20karier) ya!";
       } else {
-        return "Untuk pendampingan karier, Mas Amdal memiliki program [Talent Up Career Development Bootcamp](https://talentup.myscalev.com/careerdevelopment) dan sesi privat [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nSebagai catatan jujur: Mas Amdal **tidak menjual janji instan penyaluran kerja**, melainkan membekali Anda dengan senjata perang nyata—mulai dari bedah CV ATS mendalam, strategi menembus rekrutmen remote/multinasional, hingga simulasi wawancara intensif.\n\nAnda juga bisa mencoba cek kata kunci resume secara gratis di [Career Clarity App](https://careerclarity-app.vercel.app/). Boleh tahu posisi atau bidang apa yang sedang ingin Anda tuju saat ini?";
+        return "Untuk bimbingan karier, Mas Amdal tidak menjual janji kosong penyaluran kerja instan, melainkan membekali kandidat dengan taktik nyata—mulai dari bedah CV ATS, strategi rekrutmen remote internasional, hingga simulasi interview. Anda juga bisa mencoba tes kata kunci gratis di [Career Clarity App](https://careerclarity-app.vercel.app/). Boleh tahu bidang pekerjaan atau industri apa yang sedang ingin Anda tuju?";
       }
     }
 
-    // 3. Client Portfolio / Track Record / Siapa yang pernah di-handle
-    if (/client|klien|handle|siapa aja|perusahaan|kampus|mitra|injourney|hadi|pengalaman/i.test(text)) {
-      recentTopic = 'Portofolio Klien & Rekam Jejak Mas Amdal';
-      if (isEn) {
-        return "Mas Amdal has guided a broad range of leaders and organizations:\n\n- **Executive & Enterprise:** Coached **Pak Hadi (Division Head at Injourney Airports / PT Angkasa Pura II)** using the BLUF Framework and diplomatic hedging in high-stakes negotiations with 46 international airlines towards Skytrax 5-Star status.\n- **Global Scope:** Managed end-to-end HR operations for **~500 employees across 26 countries at The KPI Institute** (Melbourne/Remote).\n- **Industry & Higher Ed:** Facilitated masterclasses and speaking sessions for **NusaWork HR Tech, AIESEC**, as well as **Universitas Brawijaya (UB), UM, and UTM**.\n- **Job Seekers:** Mentored **1,150+ professionals and graduates** through Talent Up.\n\nIs there a specific organizational challenge or collaboration format you'd like to explore?";
-      } else {
-        return "Mas Amdal telah mendampingi beragam klien dari level eksekutif hingga ribuan talenta:\n\n- **Level Eksekutif & BUMN:** Pendampingan Executive Coaching untuk **Pak Hadi (Division Head di Injourney Airports / PT Angkasa Pura II)** menggunakan BLUF Framework & diplomatic hedging dalam negosiasi dengan 46 maskapai internasional menuju standar Skytrax 5-Star.\n- **Skala Global:** Mengelola operasional HR untuk **~500 karyawan lintas 26 negara di The KPI Institute** (Melbourne/Remote).\n- **Industri & Kampus:** Mengisi sesi pelatihan dan seminar di **NusaWork HR Tech, AIESEC**, serta kampus seperti **Universitas Brawijaya (UB), UM, dan UTM**.\n- **Profesional & Pencari Kerja:** Membimbing **1.150+ talenta** melalui Talent Up.\n\nApakah ada kebutuhan korporasi atau topik diskusi khusus yang sedang Anda rencanakan?";
-      }
-    }
-
-    // 4. Automated HRIS & Payroll System
+    // 5. Automated HRIS & Payroll System
     if (/hris|payroll|gaji|pph|bpjs|pesangon|slip/i.test(text)) {
-      recentTopic = 'Automated HRIS & Payroll 27-Sheet Zero-Macro';
-      if (isEn) {
-        return "Mas Amdal architected the **Automated HRIS & Payroll 27-Sheet Zero-Macro Engine**, a fully deterministic system built without macros or VBA to eliminate calculation errors.\n\nIt automatically calculates PPh 21 TER (PP 58/2023), BPJS, PP 35/2021 severance, tracks 5-year PKWT contracts, and exports mass PDF payslips via Google Apps Script.\n\nFeel free to explore the live simulation here:\n- [Interactive HRIS Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)\n\nWould you like to discuss customizing this system for your company's payroll rules?";
+      if (/demo|lihat|coba|link/i.test(text)) {
+        return "Anda bisa langsung mencoba [Simulasi Interaktif Dashboard HRIS](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html) buatan Mas Amdal. Sistem 27-sheet zero-macro ini menghitung otomatis PPh 21 TER, BPJS, dan pesangon PP 35/2021 secara deterministik. Apakah di perusahaan Anda ada skema tunjangan khusus yang sedang ingin dirapikan?";
       } else {
-        return "Mas Amdal merancang **Automated HRIS & Payroll 27-Sheet Zero-Macro**, sistem operasional HR dan penggajian terintegrasi 27 sheet tanpa makro/VBA yang rumit.\n\nSistem ini menghitung otomatis PPh 21 TER (PP 58/2023), BPJS Kesehatan & Ketenagakerjaan, pesangon PP 35/2021, memantau kontrak PKWT 5 tahun, serta dilengkapi 33 audit rules dan ekspor massal slip gaji PDF.\n\nAnda bisa langsung mencoba simulasinya di sini:\n- [Simulasi Interaktif Dashboard HRIS](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)\n- [Pratinjau Spreadsheet HRIS & Payroll](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)\n\nApakah sistem penggajian di perusahaan Anda saat ini membutuhkan penyesuaian khusus?";
+        return "Otomatisasi payroll memang krusial untuk mencegah human error dan kepatuhan regulasi PPh 21 TER serta BPJS. Boleh tahu saat ini tim HR Anda mengelola berapa karyawan dan kendala utamanya lebih di kalkulasi pajak, absensi, atau distribusi slip gaji?";
       }
     }
 
-    // 5. Recruitment & MPP Hub
+    // 6. Recruitment & MPP Hub
     if (/rekrut|recruitment|mpp|hiring|tat|sla|sourcing|talent pool/i.test(text)) {
-      recentTopic = 'Automated Recruitment & Manpower Planning Hub';
-      if (isEn) {
-        return "The **Automated Recruitment & MPP Hub (10-Module)** was engineered by Mas Amdal to eliminate recruiter burnout and optimize time-to-hire through stage-by-stage SLA tracking, a consent-based talent pool, and 1-click WhatsApp/Email invitation generators.\n\nExplore the live interface:\n- [Interactive Recruitment Dashboard](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)\n\nHow is your current hiring volume and recruitment SLA managed?";
+      if (/demo|lihat|coba|link/i.test(text)) {
+        return "Silakan jelajahi [Simulasi Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html) untuk melihat pelacakan SLA rekrutmen dan generator undangan interview otomatis. Apakah volume hiring tim Anda saat ini tergolong tinggi per bulannya?";
       } else {
-        return "Mas Amdal merancang **Automated Recruitment & MPP Hub 10-Modul** untuk mengeliminasi recruiter burnout dan memangkas waktu rekrutmen melalui pelacakan SLA per tahapan, talent pool terpusat, dan generator undangan interview 1-klik terhubung ke WhatsApp & Email.\n\nSilakan jelajahi dasbornya di sini:\n- [Simulasi Dashboard Rekrutmen & MPP](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)\n- [Pratinjau Spreadsheet Recruitment Hub](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)\n\nApakah saat ini tim rekrutmen Anda sedang menghadapi tantangan *time-to-hire* tertentu?";
+        return "Menata pipeline rekrutmen dan manpower planning memang sangat membantu menjaga waktu pemenuhan kandidat (time-to-hire). Boleh tahu kendala terbesarnya saat ini ada di sourcing kandidat, screening awal, atau koordinasi jadwal interview dengan user?";
       }
     }
 
-    // 6. EVP Analytics & Culture Diagnostic
-    if (/evp|culture|budaya|retensi|diagnostic|give-get|voe/i.test(text)) {
-      recentTopic = 'Employee Value Proposition (EVP) Analytics';
-      if (isEn) {
-        return "The **EVP Analytics & Culture Diagnostic Engine (6-Tab)** bridges the gap between management promises and daily employee reality by auditing Credibility Gap, Evidence Gap, and Give-Get ratios, prioritizing zero-budget Quick Wins.\n\nCheck out the dashboard:\n- [Interactive EVP Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)\n\nIs employee retention or employer branding alignment a current focus for your organization?";
-      } else {
-        return "**Employee Value Proposition (EVP) Analytics & Culture Diagnostic 6-Tab** dirancang Mas Amdal untuk mendiagnosis kesenjangan janji manajemen vs realitas karyawan lapangan, membedah Give-Get Ratio, serta menghasilkan Priority Action Score (PAS) untuk Quick Wins tanpa biaya tambahan.\n\nCoba simulasinya di sini:\n- [Simulasi Interaktif Dashboard EVP](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)\n- [Pratinjau Spreadsheet EVP Diagnostic](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)\n\nApakah retensi talenta atau kesiapan SOP kerja fleksibel sedang menjadi perhatian tim Anda?";
-      }
-    }
-
-    // 7. Corporate In-House Training, Speaking & Rate Card
+    // 7. Corporate In-House Training, Speaking & Rate Card (Routing WhatsApp)
     if (/in-house|training|speaking|webinar|workshop|kuliah tamu|biaya|harga|rate card|honor/i.test(text)) {
-      recentTopic = 'Corporate In-House Training & Keynote Speaking';
-      if (isEn) {
-        return "Mas Amdal is a **BNSP Level 4 Certified Instructor** and **Best HR of the Year 2023**.\n\n- **In-House Corporate Training Bundling (Batch):** Rp10.000.000 – Rp25.000.000 flat-rate for up to 30+ participants (no extra charge per head beyond 30).\n- **Keynote Speaking / Guest Lecture (60-90 Mins):** Rp3.000.000 – Rp8.000.000 (Corporate) / Rp1.000.000 – Rp1.500.000 (University/Non-Profit).\n- All formats can be flexibly aligned with your organizational budget and learning outcomes.\n\nReview the complete details: [Products & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nWhat topic or event date are you currently considering?";
-      } else {
-        return "Mas Amdal adalah **Certified Instructor BNSP Level 4** dan peraih **Best HR of the Year 2023**.\n\n- **In-House Corporate Training Bundling (Batch):** **Rp 10.000.000 – Rp 25.000.000 flat-rate** untuk s/d 30+ peserta (lebih dari 30 peserta harga tetap sama, materi tailored).\n- **Keynote Speaking / Kuliah Tamu (60–90 Menit):** Rp 3.000.000 – Rp 8.000.000 (Korporasi) / Rp 1.000.000 – Rp 1.500.000 (Universitas/Non-Profit disesuaikan).\n- Semua skema biaya sangat terbuka untuk penyesuaian ruang lingkup dan anggaran.\n\nLihat rincian lengkap: [Katalog Produk & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nKira-kira topik atau format sesi seperti apa yang sedang Anda rencanakan?";
-      }
+      return "Mas Amdal adalah BNSP Level 4 Certified Instructor dan Best HR of the Year 2023. Untuk In-House Training korporat mulai Rp10.000.000 (flat s/d 30+ peserta) dan Keynote Speaking mulai Rp3.000.000, rincian lengkapnya ada di [Katalog Produk & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html). Untuk diskusi penyesuaian materi dan jadwal, yuk langsung terhubung di [WhatsApp Mas Amdal](https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20kami%20tertarik%20mengundang%20untuk%20sesi%20training%2Fspeaking)!";
     }
 
-    // 8. Specific Bio Inquiry (Only triggered if specifically asking about bio)
-    if (/siapa (itu|sih|sebenarnya)? mas amdal|biodata|profil lengkap|tentang mas amdal|background mas amdal/i.test(text)) {
-      recentTopic = 'Profil & Kredensial Mas Amdal';
-      if (isEn) {
-        return "**Nugroho Amdal, S.S., CI. ('Mas Amdal')** is an HR Technology & Workflow Architect, BNSP Level 4 Certified Instructor, and Best HR of the Year 2023. With experience managing ~500 employees across 26 countries at The KPI Institute, he specializes in deterministic HR systems, culture diagnostics, and executive communication coaching.\n\nLearn more about his journey: [Solution Stories & Case Studies](https://nugrohoamdalportfolio.dpdns.org/stories.html).\n\nWhat area of his expertise would you like to explore further?";
-      } else {
-        return "**Nugroho Amdal, S.S., CI. ('Mas Amdal')** adalah HR Technology & Workflow Architect, Certified Instructor BNSP Level 4, dan peraih Best HR of the Year 2023. Berpengalaman mengelola ~500 karyawan lintas 26 negara di The KPI Institute, Mas Amdal berfokus pada otomatisasi sistem HR, analitik budaya EVP, dan coaching komunikasi kepemimpinan.\n\nPelajari studi kasusnya di: [Bedah Studi Kasus & Solusi](https://nugrohoamdalportfolio.dpdns.org/stories.html).\n\nAda aspek tertentu yang ingin kita bahas bersama?";
-      }
-    }
-
-    // Default Conversational Fallback
-    recentTopic = 'Eksplorasi Portofolio Mas Amdal';
+    // 8. General / Fallback
     if (isEn) {
-      return "I'm here to help you navigate Mas Amdal's work! We can explore his live [HRIS & Payroll Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html), [Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html), [EVP Analytics](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html), or discuss [Bootcamp & Coaching](https://talentup.myscalev.com/careerdevelopment).\n\nWhat brings you here today?";
+      return "I'm here to help you navigate Mas Amdal's portfolio! We can discuss his live [HRIS Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html) or [Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html). What specific topic would you like to explore together?";
     } else {
-      return "Saya siap membantu Anda menjelajahi portofolio Mas Amdal! Anda bisa melihat langsung simulasi sistem seperti [HRIS Dashboard](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html), [Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html), [EVP Analytics](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html), maupun info seputar [Bootcamp & Coaching Karier](https://talentup.myscalev.com/careerdevelopment).\n\nAda topik yang ingin Anda eksplorasi lebih dulu?";
+      return "Saya siap membantu Anda menjelajahi portofolio Mas Amdal! Anda bisa mencoba [Simulasi HRIS Dashboard](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html) maupun berdiskusi seputar [1-on-1 Coaching Karier](https://nugrohoamdalportfolio.dpdns.org/products.html). Boleh tahu topik apa yang paling menarik perhatian Anda?";
     }
-  }
-
-  // Update Dynamic Handover WhatsApp Link
-  function updateHandoverLinks() {
-    const waBtn = document.getElementById('amdal-handover-wa-btn');
-    if (!waBtn) return;
-
-    let textToSend = t.waDefault;
-    if (recentTopic) {
-      textToSend = `${t.waContextPrefix}${recentTopic}. Mohon info ketersediaan Mas Amdal untuk berdiskusi lebih lanjut.`;
-    }
-    waBtn.href = `${CONTACT_LINKS.whatsapp}?text=${encodeURIComponent(textToSend)}`;
   }
 
   // DOM Elements Builder
@@ -833,13 +843,13 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       <button type="button" class="amdal-callout-close" id="amdal-callout-close-btn" aria-label="Dismiss callout">✕</button>
     `;
 
-    // 2. Chat Window Modal
+    // 2. Chat Window Modal (Clean Layout, No Static Footer)
     const chatWindow = document.createElement('div');
     chatWindow.id = 'amdal-chat-window';
     chatWindow.className = 'amdal-chat-window is-hidden';
     chatWindow.innerHTML = `
-      <div class="amdal-chat-header">
-        <div class="amdal-header-profile">
+      <div class="amdal-chat-header" id="amdal-chat-header">
+        <div class="amdal-header-profile" id="amdal-header-profile">
           <div class="amdal-header-avatar">
             MA
             <div class="amdal-online-dot"></div>
@@ -874,31 +884,6 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         </div>
       </div>
 
-      <!-- Multi-Channel Handover Panel -->
-      <div class="amdal-handover-panel">
-        <div class="amdal-handover-title">${t.handoverLabel}</div>
-        <div class="amdal-handover-buttons">
-          <a href="${CONTACT_LINKS.whatsapp}?text=${encodeURIComponent(t.waDefault)}" 
-             target="_blank" rel="noopener noreferrer" 
-             class="amdal-handover-btn amdal-handover-wa" id="amdal-handover-wa-btn">
-            <svg style="width: 14px; height: 14px;" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.5c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.39-1.74-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
-            <span>WhatsApp</span>
-          </a>
-          <a href="${CONTACT_LINKS.linkedin}" 
-             target="_blank" rel="noopener noreferrer" 
-             class="amdal-handover-btn amdal-handover-social">
-            <svg style="width: 13px; height: 13px;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.32a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="${CONTACT_LINKS.instagram}" 
-             target="_blank" rel="noopener noreferrer" 
-             class="amdal-handover-btn amdal-handover-social">
-            <svg style="width: 13px; height: 13px;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            <span>Instagram</span>
-          </a>
-        </div>
-      </div>
-
       <!-- Chat Input Field -->
       <form class="amdal-chat-input-bar" id="amdal-chat-form">
         <input type="text" class="amdal-input-field" id="amdal-input-field" 
@@ -928,8 +913,41 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     root.appendChild(triggerBtn);
     document.body.appendChild(root);
 
-    // Bind Event Listeners
+    // Bind Event Listeners & Visual Viewport
     setupEvents(calloutEl, chatWindow, triggerBtn);
+    setupVisualViewport();
+  }
+
+  // Setup Visual Viewport for Virtual Keyboard Awareness on Mobile
+  function setupVisualViewport() {
+    if (!window.visualViewport) return;
+
+    const adaptToViewport = () => {
+      if (!isChatOpen || window.innerWidth >= 768) {
+        const win = document.getElementById('amdal-chat-window');
+        if (win && window.innerWidth >= 768) {
+          win.style.height = '';
+          win.style.top = '';
+        }
+        return;
+      }
+
+      const win = document.getElementById('amdal-chat-window');
+      if (!win) return;
+
+      const vv = window.visualViewport;
+      // Fit exact visual viewport height and offset to stay pinned above keyboard
+      win.style.height = `${vv.height}px`;
+      win.style.top = `${vv.offsetTop}px`;
+
+      const container = document.getElementById('amdal-messages-container');
+      if (container) {
+        container.scrollTop = container.scrollHeight;
+      }
+    };
+
+    window.visualViewport.addEventListener('resize', adaptToViewport);
+    window.visualViewport.addEventListener('scroll', adaptToViewport);
   }
 
   // Setup Interaction Events
@@ -1031,6 +1049,13 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         win.classList.add('is-open');
       });
       trigger.style.display = 'none';
+
+      // Adapt to mobile visual viewport if mobile
+      if (window.innerWidth < 768 && window.visualViewport) {
+        win.style.height = `${window.visualViewport.height}px`;
+        win.style.top = `${window.visualViewport.offsetTop}px`;
+      }
+
       if (input) {
         setTimeout(() => input.focus(), 300);
       }
@@ -1039,7 +1064,17 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       setTimeout(() => {
         win.classList.add('is-hidden');
         trigger.style.display = 'inline-flex';
+        win.style.height = '';
+        win.style.top = '';
       }, 350);
+    }
+  }
+
+  // Collapse Header on User Interaction
+  function collapseHeader() {
+    const headerEl = document.getElementById('amdal-chat-header');
+    if (headerEl && !headerEl.classList.contains('is-collapsed')) {
+      headerEl.classList.add('is-collapsed');
     }
   }
 
@@ -1093,6 +1128,9 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     if (!text || isSending) return;
     isSending = true;
 
+    // Smoothly collapse header to maximize reading room
+    collapseHeader();
+
     const sendBtn = document.getElementById('amdal-send-btn');
     if (sendBtn) sendBtn.disabled = true;
 
@@ -1103,14 +1141,14 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       let assistantReply = '';
 
       if (CLOUD_RUN_ENDPOINT && CLOUD_RUN_ENDPOINT.trim() !== '') {
-        // Send to Cloud Run Endpoint
+        // Send to Vercel/Cloud Run Endpoint with 10-turn history
         const endpoint = CLOUD_RUN_ENDPOINT.replace(/\/+$/, '') + '/api/chat';
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: text,
-            history: chatHistory.slice(-6)
+            history: chatHistory.slice(-10)
           })
         });
 
@@ -1128,13 +1166,11 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 
       removeTypingIndicator();
       appendMessage('assistant', assistantReply);
-      updateHandoverLinks();
     } catch (err) {
       console.warn('[Asisten Mas Amdal] Backend unreachable, using local fallback:', err.message);
       removeTypingIndicator();
       const fallbackReply = generateLocalResponse(text);
       appendMessage('assistant', fallbackReply);
-      updateHandoverLinks();
     } finally {
       isSending = false;
       if (sendBtn) sendBtn.disabled = false;
