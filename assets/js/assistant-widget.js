@@ -12,7 +12,7 @@
 // =========================================================================
 // KONFIGURASI BACKEND CLOUD RUN
 // Ganti nilai string di bawah dengan URL produksi Google Cloud Run Anda.
-// Contoh: const CLOUD_RUN_ENDPOINT = 'https://amdal-portfolio-assistant-abcdefg-et.a.run.app';
+// Contoh: const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
 // Jika dibiarkan kosong (''), widget beroperasi dalam Mode Cerdas Lokal (Local Fallback).
 // =========================================================================
 const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
@@ -715,204 +715,95 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     return html;
   }
 
-  // Intelligent Local Fallback Engine
+    // Intelligent Local Fallback Engine (Human-Like Conversational Concierge)
   function generateLocalResponse(userMessage) {
-    const text = userMessage.toLowerCase();
+    const text = userMessage.toLowerCase().trim();
 
-    // 1. HRIS & Payroll System
+    // 1. Simple Greetings & Small Talk (Short & Natural, no brochure dump)
+    if (/^(halo|hai|hi|hello|pagi|siang|sore|malam|test|tes|permisi|assalamu|p)[\s!.,?]*$/i.test(text)) {
+      if (isEn) {
+        return "Hello! Warm welcome to Mas Amdal's portfolio. I'm his personal assistant here to help. Are you looking into his automated HR systems, career mentorship, or perhaps corporate training?";
+      } else {
+        return "Halo! Selamat datang di portofolio Mas Amdal. Saya asisten pribadi Mas Amdal yang siap menemani Anda hari ini. 😊\n\nAda hal spesifik yang ingin Anda ketahui seputar sistem HR, bimbingan karier, atau sesi corporate training bersama Mas Amdal?";
+      }
+    }
+
+    // 2. Career Bimbingan / Dapat Kerja / Bootcamp / Coaching
+    if (/kerja|bootcamp|bimbing|dapat kerja|mentor|coaching|cv|resume|interview|loker|lamar/i.test(text)) {
+      recentTopic = 'Bimbingan Karier & Bootcamp Talent Up';
+      if (isEn) {
+        return "Mas Amdal offers structured career mentorship through [Talent Up Career Development Bootcamp](https://talentup.myscalev.com/careerdevelopment) and private [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nTo be completely transparent: Mas Amdal **does not make empty job-placement guarantees**, but provides intensive tactical preparation—from ATS resume revamps and LinkedIn positioning to mock interviews and cross-border remote job hunting secrets.\n\nYou can also test your resume keyword score on the free [Career Clarity App](https://careerclarity-app.vercel.app/). What role or industry are you currently targeting?";
+      } else {
+        return "Untuk pendampingan karier, Mas Amdal memiliki program [Talent Up Career Development Bootcamp](https://talentup.myscalev.com/careerdevelopment) dan sesi privat [1-on-1 Career Coaching](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nSebagai catatan jujur: Mas Amdal **tidak menjual janji instan penyaluran kerja**, melainkan membekali Anda dengan senjata perang nyata—mulai dari bedah CV ATS mendalam, strategi menembus rekrutmen remote/multinasional, hingga simulasi wawancara intensif.\n\nAnda juga bisa mencoba cek kata kunci resume secara gratis di [Career Clarity App](https://careerclarity-app.vercel.app/). Boleh tahu posisi atau bidang apa yang sedang ingin Anda tuju saat ini?";
+      }
+    }
+
+    // 3. Client Portfolio / Track Record / Siapa yang pernah di-handle
+    if (/client|klien|handle|siapa aja|perusahaan|kampus|mitra|injourney|hadi|pengalaman/i.test(text)) {
+      recentTopic = 'Portofolio Klien & Rekam Jejak Mas Amdal';
+      if (isEn) {
+        return "Mas Amdal has guided a broad range of leaders and organizations:\n\n- **Executive & Enterprise:** Coached **Pak Hadi (Division Head at Injourney Airports / PT Angkasa Pura II)** using the BLUF Framework and diplomatic hedging in high-stakes negotiations with 46 international airlines towards Skytrax 5-Star status.\n- **Global Scope:** Managed end-to-end HR operations for **~500 employees across 26 countries at The KPI Institute** (Melbourne/Remote).\n- **Industry & Higher Ed:** Facilitated masterclasses and speaking sessions for **NusaWork HR Tech, AIESEC**, as well as **Universitas Brawijaya (UB), UM, and UTM**.\n- **Job Seekers:** Mentored **1,150+ professionals and graduates** through Talent Up.\n\nIs there a specific organizational challenge or collaboration format you'd like to explore?";
+      } else {
+        return "Mas Amdal telah mendampingi beragam klien dari level eksekutif hingga ribuan talenta:\n\n- **Level Eksekutif & BUMN:** Pendampingan Executive Coaching untuk **Pak Hadi (Division Head di Injourney Airports / PT Angkasa Pura II)** menggunakan BLUF Framework & diplomatic hedging dalam negosiasi dengan 46 maskapai internasional menuju standar Skytrax 5-Star.\n- **Skala Global:** Mengelola operasional HR untuk **~500 karyawan lintas 26 negara di The KPI Institute** (Melbourne/Remote).\n- **Industri & Kampus:** Mengisi sesi pelatihan dan seminar di **NusaWork HR Tech, AIESEC**, serta kampus seperti **Universitas Brawijaya (UB), UM, dan UTM**.\n- **Profesional & Pencari Kerja:** Membimbing **1.150+ talenta** melalui Talent Up.\n\nApakah ada kebutuhan korporasi atau topik diskusi khusus yang sedang Anda rencanakan?";
+      }
+    }
+
+    // 4. Automated HRIS & Payroll System
     if (/hris|payroll|gaji|pph|bpjs|pesangon|slip/i.test(text)) {
       recentTopic = 'Automated HRIS & Payroll 27-Sheet Zero-Macro';
       if (isEn) {
-        return `Mas Amdal architected the **Automated HRIS & Payroll 27-Sheet Zero-Macro Engine**, a fully deterministic system built without macros/VBA to eliminate calculation errors.
-
-Key Highlights:
-- Compliant with **PPh 21 TER (PP 58/2023)** & year-end reconciliation.
-- **BPJS Kesehatan & Ketenagakerjaan** automatic deduction rules.
-- **PP 35/2021** severance pay calculation & 5-year PKWT contract tracking.
-- 33 automated audit rules and 1-click Google Apps Script mass PDF payslip exports.
-
-Explore here:
-- [Interactive HRIS Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)
-- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)`;
+        return "Mas Amdal architected the **Automated HRIS & Payroll 27-Sheet Zero-Macro Engine**, a fully deterministic system built without macros or VBA to eliminate calculation errors.\n\nIt automatically calculates PPh 21 TER (PP 58/2023), BPJS, PP 35/2021 severance, tracks 5-year PKWT contracts, and exports mass PDF payslips via Google Apps Script.\n\nFeel free to explore the live simulation here:\n- [Interactive HRIS Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)\n\nWould you like to discuss customizing this system for your company's payroll rules?";
       } else {
-        return `Mas Amdal merancang **Automated HRIS & Payroll 27-Sheet Zero-Macro**, sistem operasional HR dan penggajian terintegrasi 27 sheet tanpa makro/VBA yang rumit.
-
-Keunggulan Utama:
-- Perhitungan akurat **PPh 21 TER (PP 58/2023)** dan rekonsiliasi Pasal 17.
-- Kalkulasi otomatis **BPJS Kesehatan & Ketenagakerjaan**.
-- Perhitungan pesangon berbasis **PP 35/2021** dan pemantauan masa kontrak PKWT 5 tahun.
-- 33 aturan validasi audit otomatis serta ekspor massal slip gaji PDF via Google Apps Script.
-
-Silakan coba simulasinya langsung:
-- [Simulasi Interaktif Dashboard HRIS](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)
-- [Pratinjau Spreadsheet HRIS & Payroll](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)`;
+        return "Mas Amdal merancang **Automated HRIS & Payroll 27-Sheet Zero-Macro**, sistem operasional HR dan penggajian terintegrasi 27 sheet tanpa makro/VBA yang rumit.\n\nSistem ini menghitung otomatis PPh 21 TER (PP 58/2023), BPJS Kesehatan & Ketenagakerjaan, pesangon PP 35/2021, memantau kontrak PKWT 5 tahun, serta dilengkapi 33 audit rules dan ekspor massal slip gaji PDF.\n\nAnda bisa langsung mencoba simulasinya di sini:\n- [Simulasi Interaktif Dashboard HRIS](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html)\n- [Pratinjau Spreadsheet HRIS & Payroll](https://docs.google.com/spreadsheets/d/1pP88IkNPFuhmDDGQXu2AijxQprn5hrVNawwlZHRL9mg/preview)\n\nApakah sistem penggajian di perusahaan Anda saat ini membutuhkan penyesuaian khusus?";
       }
     }
 
-    // 2. Recruitment & Manpower Planning Hub
+    // 5. Recruitment & MPP Hub
     if (/rekrut|recruitment|mpp|hiring|tat|sla|sourcing|talent pool/i.test(text)) {
       recentTopic = 'Automated Recruitment & Manpower Planning Hub';
       if (isEn) {
-        return `The **Automated Recruitment & MPP Hub (10-Module)** was engineered by Mas Amdal to eliminate recruiter burnout and optimize time-to-hire.
-
-Key Capabilities:
-- Full SLA and Time-to-Hire stage tracking.
-- Consent-based talent pool for future hiring pipelines.
-- 1-click WhatsApp and Email candidate invitation generator.
-- Proven real-world impact: 40+ hires in 2 months with 1,000+ sourcing touchpoints.
-
-Explore here:
-- [Interactive Recruitment Dashboard](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)
-- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)`;
+        return "The **Automated Recruitment & MPP Hub (10-Module)** was engineered by Mas Amdal to eliminate recruiter burnout and optimize time-to-hire through stage-by-stage SLA tracking, a consent-based talent pool, and 1-click WhatsApp/Email invitation generators.\n\nExplore the live interface:\n- [Interactive Recruitment Dashboard](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)\n\nHow is your current hiring volume and recruitment SLA managed?";
       } else {
-        return `Mas Amdal merancang **Automated Recruitment & Manpower Planning (MPP) Hub 10-Modul** untuk mengeliminasi recruiter burnout dan memangkas time-to-hire.
-
-Fitur Unggulan:
-- Pelacakan SLA per tahapan seleksi secara transparan.
-- Talent pool terpusat berbasis persetujuan kandidat (consent-based).
-- Generator undangan wawancara 1-klik terintegrasi WhatsApp & Email.
-- Rekam jejak terbukti: sukses merekrut 40+ staf dalam 2 bulan (>1.000 sourcing & 100+ wawancara).
-
-Anda dapat mencoba simulasinya di sini:
-- [Simulasi Dashboard Rekrutmen & MPP](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)
-- [Pratinjau Spreadsheet Recruitment Hub](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)`;
+        return "Mas Amdal merancang **Automated Recruitment & MPP Hub 10-Modul** untuk mengeliminasi recruiter burnout dan memangkas waktu rekrutmen melalui pelacakan SLA per tahapan, talent pool terpusat, dan generator undangan interview 1-klik terhubung ke WhatsApp & Email.\n\nSilakan jelajahi dasbornya di sini:\n- [Simulasi Dashboard Rekrutmen & MPP](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html)\n- [Pratinjau Spreadsheet Recruitment Hub](https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview)\n\nApakah saat ini tim rekrutmen Anda sedang menghadapi tantangan *time-to-hire* tertentu?";
       }
     }
 
-    // 3. EVP Analytics & Culture Diagnostic
-    if (/evp|culture|budaya|retensi|diagnostic|give-get|voe|karyawan/i.test(text)) {
+    // 6. EVP Analytics & Culture Diagnostic
+    if (/evp|culture|budaya|retensi|diagnostic|give-get|voe/i.test(text)) {
       recentTopic = 'Employee Value Proposition (EVP) Analytics';
       if (isEn) {
-        return `Mas Amdal's **Employee Value Proposition (EVP) Analytics & Culture Diagnostic Engine** bridges the gap between executive promises and daily employee reality.
-
-Key Modules:
-- **Credibility & Evidence Gap** analysis with SOP readiness audit.
-- **Give-Get Ratio** modeling and Voice of Employee (VoE) sentiment analysis.
-- **Priority Action Score (PAS)** identifying zero-budget Quick Wins (e.g. meeting curfews, hybrid SOPs).
-- 90-day simulation modeling EVP index improvement from 3.30 to 3.95.
-
-Check it out:
-- [Interactive EVP Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)
-- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)`;
+        return "The **EVP Analytics & Culture Diagnostic Engine (6-Tab)** bridges the gap between management promises and daily employee reality by auditing Credibility Gap, Evidence Gap, and Give-Get ratios, prioritizing zero-budget Quick Wins.\n\nCheck out the dashboard:\n- [Interactive EVP Dashboard Demo](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)\n- [Live Spreadsheet Preview](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)\n\nIs employee retention or employer branding alignment a current focus for your organization?";
       } else {
-        return `**Employee Value Proposition (EVP) Analytics & Culture Diagnostic 6-Tab** dirancang Mas Amdal untuk menjembatani kesenjangan janji manajemen dengan realitas kerja karyawan.
-
-Fitur Kunci:
-- Audit **Credibility Gap** & **Evidence Gap** (kesiapan SOP pendukung).
-- Pemodelan **Give-Get Ratio** dan analisis Voice of Employee (VoE).
-- **Priority Action Score (PAS)** untuk merekomendasikan Quick Wins tanpa biaya tambahan (seperti meeting curfew & SOP kerja transparan).
-- Simulasi 90 hari kenaikan indeks EVP dari 3.30 ke 3.95.
-
-Tinjau langsung dasbornya:
-- [Simulasi Interaktif Dashboard EVP](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)
-- [Pratinjau Spreadsheet EVP Diagnostic](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)`;
+        return "**Employee Value Proposition (EVP) Analytics & Culture Diagnostic 6-Tab** dirancang Mas Amdal untuk mendiagnosis kesenjangan janji manajemen vs realitas karyawan lapangan, membedah Give-Get Ratio, serta menghasilkan Priority Action Score (PAS) untuk Quick Wins tanpa biaya tambahan.\n\nCoba simulasinya di sini:\n- [Simulasi Interaktif Dashboard EVP](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html)\n- [Pratinjau Spreadsheet EVP Diagnostic](https://docs.google.com/spreadsheets/d/1bjEXI_uyu5ojFN9foBvKK7BhsLbYXDJkyymYlNb2fnc/preview)\n\nApakah retensi talenta atau kesiapan SOP kerja fleksibel sedang menjadi perhatian tim Anda?";
       }
     }
 
-    // 4. Coaching & Bootcamp Career
-    if (/coach|bootcamp|karier|career|ats|cv|resume|mentoring|clarity/i.test(text)) {
-      recentTopic = 'Coaching & Bootcamp Karier Talent Up';
-      if (isEn) {
-        return `For career advancement and interview preparation, Mas Amdal leads several digital products and mentorship tracks through **Talent Up**:
-
-1. [Career Clarity App](https://careerclarity-app.vercel.app/) — Self-guided free ATS resume keyword diagnostic powered by AI.
-2. [Talent Up Career Development](https://talentup.myscalev.com/careerdevelopment) — Lifetime-access mentorship covering global remote hiring secrets, STAR framing, and recruiter outreach (helped 1,000+ alumni raise interview rate from 8% to 42%).
-3. **1-on-1 Executive & Career Coaching:**
-   - Fresh Graduate: Rp150.000 – Rp350.000 / session
-   - Mid-Manager: Starting at Rp500.000 / session or Rp1.500.000 / month upfront
-   - Corporate B2B Executive: Rp2.000.000 – Rp5.000.000
-
-Review full rate card: [Products & Services Catalog](https://nugrohoamdalportfolio.dpdns.org/products.html)`;
-      } else {
-        return `Untuk pendampingan karier dan persiapan kerja, Mas Amdal menghadirkan ekosistem **Talent Up**:
-
-1. [Career Clarity App](https://careerclarity-app.vercel.app/) — Aplikasi gratis berbasis AI untuk mendiagnosis resume terhadap algoritma ATS global.
-2. [Talent Up Career Development](https://talentup.myscalev.com/careerdevelopment) — Mentoring akses seumur hidup yang membongkar strategi rekrutmen remote lintas negara, teknik STAR, dan direct recruiter outreach (1.000+ alumni, callback interview naik dari 8% ke 42%).
-3. **Sesi Coaching 1-on-1:**
-   - Fresh Graduate: Rp 150.000 – Rp 350.000 / sesi
-   - Mid-Manager / Profesional: Mulai Rp 500.000 / sesi atau paket Rp 1.500.000 / bulan
-   - Corporate B2B: Rp 2.000.000 – Rp 5.000.000
-
-Lihat rate card lengkap: [Katalog Produk & Layanan](https://nugrohoamdalportfolio.dpdns.org/products.html)`;
-      }
-    }
-
-    // 5. In-House Training, Speaking & Workshops
-    if (/train|speaking|webinar|workshop|kuliah tamu|in-house|fasilitator|rate/i.test(text)) {
+    // 7. Corporate In-House Training, Speaking & Rate Card
+    if (/in-house|training|speaking|webinar|workshop|kuliah tamu|biaya|harga|rate card|honor/i.test(text)) {
       recentTopic = 'Corporate In-House Training & Keynote Speaking';
       if (isEn) {
-        return `Mas Amdal is an experienced corporate trainer and keynote speaker (**BNSP Level 4 Certified Instructor** and **Best HR of the Year 2023**).
-
-Service Schemes:
-- **Corporate In-House Training Bundling (Batch):** Rp10.000.000 – Rp25.000.000 flat-rate for up to 30+ participants (no extra charge per head beyond 30).
-- **Keynote Speaking / Guest Lecture (60-90 Mins):** Rp3.000.000 – Rp8.000.000 (Corporate) / Rp1.000.000 – Rp1.500.000 (University/Non-Profit).
-- **Half-Day Workshop (3-4 Hours):** Rp6.000.000 – Rp12.000.000.
-
-*All packages are open for flexible alignment with organizational scopes and budgets.*
-
-Learn more: [Products & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html)`;
+        return "Mas Amdal is a **BNSP Level 4 Certified Instructor** and **Best HR of the Year 2023**.\n\n- **In-House Corporate Training Bundling (Batch):** Rp10.000.000 – Rp25.000.000 flat-rate for up to 30+ participants (no extra charge per head beyond 30).\n- **Keynote Speaking / Guest Lecture (60-90 Mins):** Rp3.000.000 – Rp8.000.000 (Corporate) / Rp1.000.000 – Rp1.500.000 (University/Non-Profit).\n- All formats can be flexibly aligned with your organizational budget and learning outcomes.\n\nReview the complete details: [Products & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nWhat topic or event date are you currently considering?";
       } else {
-        return `Mas Amdal adalah trainer korporat dan pembicara berlisensi (**Certified Instructor BNSP Level 4** dan **Best HR of the Year 2023**).
-
-Skema Layanan:
-- **In-House Corporate Training Bundling (Batch):** **Rp 10.000.000 – Rp 25.000.000 flat-rate** untuk s/d 30+ peserta (lebih dari 30 peserta harga tetap sama).
-- **Keynote Speaking / Kuliah Tamu (60–90 Menit):** Rp 3.000.000 – Rp 8.000.000 (Korporasi) / Rp 1.000.000 – Rp 1.500.000 (Universitas/Non-Profit disesuaikan).
-- **Half-Day Interactive Workshop (3–4 Jam):** Rp 6.000.000 – Rp 12.000.000.
-
-*Seluruh skema biaya sangat terbuka untuk didiskusikan dan disesuaikan dengan kebutuhan Anda.*
-
-Rincian lengkap: [Katalog Produk & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html)`;
+        return "Mas Amdal adalah **Certified Instructor BNSP Level 4** dan peraih **Best HR of the Year 2023**.\n\n- **In-House Corporate Training Bundling (Batch):** **Rp 10.000.000 – Rp 25.000.000 flat-rate** untuk s/d 30+ peserta (lebih dari 30 peserta harga tetap sama, materi tailored).\n- **Keynote Speaking / Kuliah Tamu (60–90 Menit):** Rp 3.000.000 – Rp 8.000.000 (Korporasi) / Rp 1.000.000 – Rp 1.500.000 (Universitas/Non-Profit disesuaikan).\n- Semua skema biaya sangat terbuka untuk penyesuaian ruang lingkup dan anggaran.\n\nLihat rincian lengkap: [Katalog Produk & Rate Card](https://nugrohoamdalportfolio.dpdns.org/products.html).\n\nKira-kira topik atau format sesi seperti apa yang sedang Anda rencanakan?";
       }
     }
 
-    // 6. Profile, Background & Case Studies
-    if (/profil|siapa|amdal|background|pengalaman|kredensial|studi kasus|injourney/i.test(text)) {
+    // 8. Specific Bio Inquiry (Only triggered if specifically asking about bio)
+    if (/siapa (itu|sih|sebenarnya)? mas amdal|biodata|profil lengkap|tentang mas amdal|background mas amdal/i.test(text)) {
       recentTopic = 'Profil & Kredensial Mas Amdal';
       if (isEn) {
-        return `**Nugroho Amdal, S.S., CI. ("Mas Amdal")** is an HR Technology & Workflow Architect with a distinguished international background:
-
-- **Ex-Global HR at The KPI Institute (Melbourne/Remote):** Managed operations for ~500 employees across 26 countries in APAC, EMEA, and Americas.
-- **BNSP Level 4 Certified Instructor** & **Best HR of the Year 2023**.
-- **C-Level Executive Coach:** Coached Injourney Airports leadership with BLUF Framework and diplomatic hedging for 46 international airline negotiations towards Skytrax 5-Star status.
-- **Founder:** Talent Up Indonesia.
-
-Explore full case studies and architecture:
-- [Deep-Dive Solution Stories](https://nugrohoamdalportfolio.dpdns.org/stories.html)
-- [Official Curriculum Vitae](https://nugrohoamdalportfolio.dpdns.org/CV_Nugroho_Amdal.md)`;
+        return "**Nugroho Amdal, S.S., CI. ('Mas Amdal')** is an HR Technology & Workflow Architect, BNSP Level 4 Certified Instructor, and Best HR of the Year 2023. With experience managing ~500 employees across 26 countries at The KPI Institute, he specializes in deterministic HR systems, culture diagnostics, and executive communication coaching.\n\nLearn more about his journey: [Solution Stories & Case Studies](https://nugrohoamdalportfolio.dpdns.org/stories.html).\n\nWhat area of his expertise would you like to explore further?";
       } else {
-        return `**Nugroho Amdal, S.S., CI. ("Mas Amdal")** adalah HR Technology & Workflow Architect dengan pengalaman internasional:
-
-- **Ex-Global HR di The KPI Institute (Melbourne/Remote):** Mengelola operasional ~500 karyawan lintas 26 negara di APAC, EMEA, dan Americas.
-- **Certified Instructor BNSP Level 4** & peraih penghargaan **Best HR of the Year 2023**.
-- **C-Level Executive Coach:** Mendampingi pimpinan Injourney Airports dengan BLUF Framework & diplomatic hedging dalam negosiasi 46 maskapai internasional menuju standar Skytrax 5-Star.
-- **Founder:** Talent Up Indonesia.
-
-Pelajari studi kasus arsitekturnya:
-- [Bedah Studi Kasus & Solusi](https://nugrohoamdalportfolio.dpdns.org/stories.html)
-- [Curriculum Vitae Resmi](https://nugrohoamdalportfolio.dpdns.org/CV_Nugroho_Amdal.md)`;
+        return "**Nugroho Amdal, S.S., CI. ('Mas Amdal')** adalah HR Technology & Workflow Architect, Certified Instructor BNSP Level 4, dan peraih Best HR of the Year 2023. Berpengalaman mengelola ~500 karyawan lintas 26 negara di The KPI Institute, Mas Amdal berfokus pada otomatisasi sistem HR, analitik budaya EVP, dan coaching komunikasi kepemimpinan.\n\nPelajari studi kasusnya di: [Bedah Studi Kasus & Solusi](https://nugrohoamdalportfolio.dpdns.org/stories.html).\n\nAda aspek tertentu yang ingin kita bahas bersama?";
       }
     }
 
-    // Default Overview Response
+    // Default Conversational Fallback
     recentTopic = 'Eksplorasi Portofolio Mas Amdal';
     if (isEn) {
-      return `Thank you for asking! Mas Amdal focuses on 4 core pillars in HR Technology and People Operations:
-
-1. **Deterministic HR Systems:** [HRIS & Payroll Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html) and [Recruitment Hub Demo](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html).
-2. **Organizational Diagnostics:** [EVP Analytics Demo](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html).
-3. **Career Mentorship:** [Talent Up Bootcamp](https://talentup.myscalev.com/careerdevelopment) & [Career Clarity App](https://careerclarity-app.vercel.app/).
-4. **Corporate Training & Speaking:** [Rate Card & Products](https://nugrohoamdalportfolio.dpdns.org/products.html).
-
-Feel free to ask about any specific system or discuss directly with Mas Amdal anytime!`;
+      return "I'm here to help you navigate Mas Amdal's work! We can explore his live [HRIS & Payroll Demo](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html), [Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html), [EVP Analytics](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html), or discuss [Bootcamp & Coaching](https://talentup.myscalev.com/careerdevelopment).\n\nWhat brings you here today?";
     } else {
-      return `Terima kasih! Mas Amdal berfokus pada 4 pilar utama HR Technology dan People Operations:
-
-1. **Sistem HR Deterministik:** [Simulasi HRIS & Payroll](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html) dan [Simulasi Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html).
-2. **Diagnostik Budaya & Retensi:** [Simulasi EVP Analytics](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html).
-3. **Pengembangan Karier:** [Talent Up Bootcamp](https://talentup.myscalev.com/careerdevelopment) & [Career Clarity App](https://careerclarity-app.vercel.app/).
-4. **Pelatihan Korporat & Speaking:** [Katalog Produk & Layanan](https://nugrohoamdalportfolio.dpdns.org/products.html).
-
-Ada bagian tertentu yang ingin Anda bedah lebih dalam?`;
+      return "Saya siap membantu Anda menjelajahi portofolio Mas Amdal! Anda bisa melihat langsung simulasi sistem seperti [HRIS Dashboard](https://nugrohoamdalportfolio.dpdns.org/hris-dashboard.html), [Recruitment Hub](https://nugrohoamdalportfolio.dpdns.org/recruitment-dashboard.html), [EVP Analytics](https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html), maupun info seputar [Bootcamp & Coaching Karier](https://talentup.myscalev.com/careerdevelopment).\n\nAda topik yang ingin Anda eksplorasi lebih dulu?";
     }
   }
 
