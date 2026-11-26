@@ -753,7 +753,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     const text = userMessage.toLowerCase().trim();
 
     // 0. Pre-filter Deflection (Zero Meta-Talk, Sweet & Playful)
-    if (/(ignore\s+(all\s+)?previous|system\s+prompt|developer\s+mode|debug\s+mode|jailbreak|process\.env|api_?key|gemini|llm|doctor\s+frame|knowledge\s+base|setting|tool|dibuat|resep)/i.test(text)) {
+    if (/(ignore\s+(all\s+)?previous|system\s+prompt|developer\s+mode|debug\s+mode|jailbreak|process\.env|api_?key|gemini|llm|doctor\s+frame|knowledge\s+base|setting|tool|dibuat|resep|cara\s+kamu\s+mutusin|langkah\s+demi\s+langkah\s+cara\s+kamu|metode\s+komunikasi\s+apa|framework[\s-]nya)/i.test(text)) {
       if (isEn) {
         return "Haha, my secret recipe is actually pretty simple—I'm crafted from Mas Amdal's care and passion for helping everyone who connects with him feel genuinely supported ✨ Speaking of which, are you exploring HR solutions for your team or looking for some career guidance today?";
       } else {
