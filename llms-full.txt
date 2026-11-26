@@ -102,6 +102,12 @@
 - **Core Modules:** Credibility Gap Analysis (Management Claims vs. Employee Reality), Evidence Gap Audit, Give-Get Ratio Modeling, Voice of Employee (VoE) Qualitative Analysis, Priority Action Score (PAS) for 0-30 Day Quick Wins, 90-Day EVP Index Simulation (3.30 to 3.95).
 - **Interactive Live Simulator:** https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html
 
+### 4.4. HR Chat Assistant & Employee Helpdesk Orchestration Engine
+- **Technology Stack:** Tailwind CSS, Alpine.js, Deterministic Regex Pre-Filters, RBAC Multi-Tier Kernel, Google Sheets Real-Time Sync.
+- **Core Modules:** 400-char Anti-Prompt Injection Input Guard, 3-Tier Role-Based Access Control (Staff Tier 1, Manager Tier 2, HR Lead Tier 3), 10 Master SOP Policies (POL-01 to POL-10: Cuti Tahunan, Izin Sakit, PP 35/2021 Statutory Special Leave, Kacamata/Medical, BPJS & Paklaring, SPPD Travel, Office Hours, KPI & Promotion, Hiring SLA, Salary Scales & SP1-SP3), 1-Click Action Cards, Live Google Sheets Approval Queue & Security Audit Log.
+- **Interactive Live Simulator:** https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html
+- **Case Study Deep Dive:** https://nugrohoamdalportfolio.dpdns.org/stories.html#hr-chat-assistant
+
 ---
 
 ## 5. Candidate CV & Full Professional Track Record

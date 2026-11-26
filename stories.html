@@ -94,6 +94,17 @@
         "blogPost": [
           {
             "@type": "BlogPosting",
+            "headline": "HR Chat Assistant: Memangkas 80% Beban Tiket HR Repetitif dengan AI Deterministik Berjenjang RBAC & Anti-Prompt Injection",
+            "description": "Bagaimana merancang arsitektur AI Employee Self-Service yang aman dari kebocoran prompt, mengisolasi data gaji melalui RBAC 3-tingkat, dan mengotomasi alur approval ke Google Sheets secara real-time.",
+            "url": "https://nugrohoamdalportfolio.dpdns.org/stories.html#hr-chat-assistant",
+            "datePublished": "2026-11-26",
+            "author": {
+              "@type": "Person",
+              "name": "Nugroho Amdal, S.S., CI."
+            }
+          },
+          {
+            "@type": "BlogPosting",
             "headline": "End-to-End Automated Recruitment & Manpower Planning (MPP) Hub (10 Modul Terintegrasi)",
             "description": "Bagaimana membangun sistem rekrutmen 10 modul tanpa macro di Google Sheets yang menghubungkan kuota MPP, persetujuan Requisition, SLA hari kerja otomatis, Talent Pool consent, dan generator undangan WA/Email.",
             "url": "https://nugrohoamdalportfolio.dpdns.org/stories.html#story-recruitment-mpp-hub",
@@ -570,6 +581,14 @@
           <a href="#story-recruitment-mpp-hub" class="px-3.5 py-1.5 rounded-full bg-blue-500/20 hover:bg-blue-600/30 text-xs font-semibold text-cyan-300 hover:text-white border border-blue-500/40 transition-colors">
             <span class="lang lang-id">Hub Rekrutmen & MPP 10-Modul</span>
             <span class="lang lang-en">10-Module Recruitment & MPP Hub</span>
+          </a>
+          <a href="#story-evp-analytics" class="px-3.5 py-1.5 rounded-full bg-purple-500/20 hover:bg-purple-600/30 text-xs font-semibold text-purple-300 hover:text-white border border-purple-500/40 transition-colors">
+            <span class="lang lang-id">Diagnostik Budaya & EVP</span>
+            <span class="lang lang-en">EVP & Culture Diagnostic</span>
+          </a>
+          <a href="#hr-chat-assistant" class="px-3.5 py-1.5 rounded-full bg-emerald-500/20 hover:bg-emerald-600/30 text-xs font-semibold text-emerald-300 hover:text-white border border-emerald-500/40 transition-colors">
+            <span class="lang lang-id">HR Chat Assistant AI</span>
+            <span class="lang lang-en">AI HR Chat Assistant</span>
           </a>
           <a href="#story-hr-automation" class="px-3.5 py-1.5 rounded-full bg-slate-800/80 hover:bg-royal text-xs font-semibold text-slate-300 hover:text-white border border-white/10 transition-colors">
             <span class="lang lang-id">Otomasi HR & LMS 26 Negara</span>
@@ -1377,6 +1396,262 @@
                   "availability": "https://schema.org/InStock"
                 },
                 "description": "Data-driven culture health and employer brand diagnostic engine measuring Credibility Gaps, Evidence Gaps, Give-Get Ratios, and computing Priority Action Scores for zero-budget executive Quick Wins.",
+                "author": {
+                  "@type": "Person",
+                  "name": "Nugroho Amdal, S.S., CI."
+                }
+              }
+            ]
+          }
+          </script>
+        </article>
+
+        <!-- ==================== STORY 0B (FEATURED): HR CHAT ASSISTANT & ZERO-FRICTION HELPDESK ==================== -->
+        <article id="hr-chat-assistant" class="glass-card p-6 md:p-8 relative overflow-hidden group mb-8" data-aos="fade-up">
+          <a id="story-hr-chat-assistant"></a>
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-display mb-6 pb-4 border-b border-white/10">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">
+              <span class="lang lang-id">AI Employee Self-Service • Deterministik RBAC & Helpdesk Orchestrator</span>
+              <span class="lang lang-en">AI Employee Self-Service • Deterministic RBAC & Helpdesk Orchestrator</span>
+            </span>
+            <span class="text-slate-400">
+              <i class="fa-regular fa-clock mr-1"></i> 6 Menit Baca • 26 November 2026
+            </span>
+          </div>
+
+          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
+            <span class="lang lang-id">HR Chat Assistant: Mengatasi Dilema Privasi Korporasi & Memangkas 80% Tiket HR dengan AI Berjenjang RBAC</span>
+            <span class="lang lang-en">HR Chat Assistant: Overcoming Enterprise Privacy Hurdles & Cutting 80% HR Tickets via Multi-Tier RBAC AI</span>
+          </h2>
+
+          <div class="prose-custom text-slate-300 text-sm sm:text-base leading-relaxed space-y-6 font-sans">
+            <div>
+              <h3 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-amber-400 text-base"></i>
+                <span class="lang lang-id">1. Dilema Korporasi: Beban Tiket Repetitif vs Risiko Fatal Prompt Injection</span>
+                <span class="lang lang-en">1. Enterprise Dilemma: Repetitive Ticket Overload vs Prompt Injection Hazards</span>
+              </h3>
+              <p class="lang lang-id">
+                Dalam rutinitas People Operations harian, lebih dari <strong>70–80% pertanyaan karyawan</strong> adalah hal-hal yang sifatnya repetitif dan sebenarnya sudah tercantum di buku peraturan perusahaan: <em>"Berapa sisa cuti tahunanku?", "Klaim kacamata maksimal berapa?", "Kalau adik menikah apakah potong cuti?",</em> atau <em>"Kapan Paklaring terbit setelah resign?"</em>. Melayani pertanyaan ini satu per satu memakan puluhan jam kerja staf HR setiap pekannya.
+              </p>
+              <p class="lang lang-en">
+                In daily People Operations routines, over <strong>70–80% of employee inquiries</strong> are highly repetitive queries already documented in employee handbooks: <em>"What is my remaining annual leave balance?", "What is the optical reimbursement limit?", "Does sibling marriage deduct my annual quota?",</em> or <em>"When is my work experience certificate released post-resignation?"</em>. Answering these ad-hoc requests manually devours dozens of hours every single week.
+              </p>
+              <p class="lang lang-id mt-3">
+                Namun, ketika perusahaan mencoba mengadopsi Large Language Model (LLM) polosan tanpa guardrail arsitektural, mereka dihadapkan pada <strong>dua risiko fatal</strong>: (1) <em>System Prompt Leakage</em> di mana logika internal dan instruksi rahasia dapat dikorek oleh karyawan usil, serta (2) <em>Prompt Injection / Jailbreak Attack</em> (seperti trik <code>"ignore previous instructions"</code> atau <code>"developer mode"</code>) yang dapat membobol data gaji eksekutif dan riwayat sanksi disiplin rahasia.
+              </p>
+              <p class="lang lang-en mt-3">
+                However, deploying unguarded off-the-shelf LLMs introduces <strong>two severe corporate liabilities</strong>: (1) <em>System Prompt Leakage</em>, exposing internal proprietary reasoning to curious staff, and (2) <em>Prompt Injection / Jailbreak Attacks</em> (such as <code>"ignore previous instructions"</code> or <code>"developer mode"</code> exploits) capable of compromising confidential executive compensation scales and sensitive disciplinary archives.
+              </p>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+              <h3 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-emerald-400 text-base"></i>
+                <span class="lang lang-id">2. Arsitektur Pertahanan 3-Lapisan (Deterministik & Anti-Bypass)</span>
+                <span class="lang lang-en">2. 3-Tier Defense Architecture (Deterministic & Tamper-Proof)</span>
+              </h3>
+              <p class="lang lang-id">
+                Untuk mengatasi dilema tersebut, Nugroho Amdal merancang <strong>HR Chat Assistant Engine</strong> dengan arsitektur pertahanan berlapis sebelum dan sesudah AI memproses instruksi:
+              </p>
+              <p class="lang lang-en">
+                To resolve this dilemma, Nugroho Amdal architected the <strong>HR Chat Assistant Engine</strong> featuring multi-layered defensive gates evaluated both prior to and following LLM inference:
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 not-prose">
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="text-xs font-mono font-bold text-amber-400 mb-1">LAPISAN 1: INPUT GUARD</div>
+                  <div class="font-bold text-white text-sm mb-1">Anti-Injection Pre-Filter</div>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    Pembatasan input 400 karakter deterministik + regex scanner yang menangkap pola jailbreak (system prompt, developer mode, bypass role). Upaya injeksi langsung diblokir dan dicatat ke log audit.
+                  </p>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="text-xs font-mono font-bold text-emerald-400 mb-1">LAPISAN 2: RBAC GATE</div>
+                  <div class="font-bold text-white text-sm mb-1">Server-Side Role Isolation</div>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    Pemisahan hak akses 3-tingkat: <strong>Tier 1 (Staff)</strong> hanya dapat membaca SOP umum personal; <strong>Tier 2 (Manager)</strong> mengakses KPI & SLA; <strong>Tier 3 (HR Lead)</strong> mengelola compa-ratio & SP1-SP3.
+                  </p>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border border-white/10">
+                  <div class="text-xs font-mono font-bold text-cyan-400 mb-1">LAPISAN 3: ACTION CARDS</div>
+                  <div class="font-bold text-white text-sm mb-1">1-Click Live Sheets Sync</div>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    Asisten tidak hanya menjawab teks, tetapi memunculkan kartu aksi interaktif yang dapat diklik untuk menyuntikkan tiket permohonan ke antrean approval Google Sheets secara real-time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+              <h3 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-book-bookmark text-cyan-400 text-base"></i>
+                <span class="lang lang-id">3. Grounding Penuh pada 10 Aturan Master SOP (POL-01 s/d POL-10)</span>
+                <span class="lang lang-en">3. Full Grounding on 10 Master SOP Policies (POL-01 to POL-10)</span>
+              </h3>
+              <p class="lang lang-id">
+                Seluruh respon asisten tidak mengandalkan halusinasi bebas, melainkan dikunci (*strict grounding*) pada 10 modul kebijakan resmi perusahaan yang selaras dengan UU Ketenagakerjaan No. 13/2003 dan PP No. 35/2021:
+              </p>
+              <p class="lang lang-en">
+                All assistant responses are strictly anchored to 10 verified corporate SOP modules aligned with Indonesian Labor Law No. 13/2003 and Government Regulation (PP) No. 35/2021:
+              </p>
+
+              <div class="overflow-x-auto not-prose my-4">
+                <table class="w-full text-xs text-left border-collapse border border-white/10 rounded-xl overflow-hidden">
+                  <thead class="bg-slate-900 text-slate-300 font-mono text-[10px] uppercase">
+                    <tr>
+                      <th class="p-2.5 border-b border-white/10">Kode</th>
+                      <th class="p-2.5 border-b border-white/10">Nama Kebijakan</th>
+                      <th class="p-2.5 border-b border-white/10">Inti Aturan Operasional</th>
+                      <th class="p-2.5 border-b border-white/10">Level RBAC</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-white/5 text-slate-300">
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-01</td>
+                      <td class="p-2.5 font-bold text-white">Cuti Tahunan & Carry Forward</td>
+                      <td class="p-2.5">12 hari/tahun; carry forward maks 6 bulan ke tahun berikutnya.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-02</td>
+                      <td class="p-2.5 font-bold text-white">Izin Sakit & SKD Dokter</td>
+                      <td class="p-2.5">Sakit &gt;1 hari kerja wajib SKD resmi; tanpa SKD potong cuti tahunan.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-03</td>
+                      <td class="p-2.5 font-bold text-white">Cuti Khusus PP 35/2021</td>
+                      <td class="p-2.5">Menikah (3 hr), anak menikah (2 hr), istri melahirkan (2 hr), duka (2 hr) - upah penuh.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-04</td>
+                      <td class="p-2.5 font-bold text-white">Reimburse Kacamata</td>
+                      <td class="p-2.5">Plafon Rp 1,5 jt (Staff) / Rp 2,5 jt (Mgr) per 2 thn; klaim maks H+14 kwitansi asli.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-05</td>
+                      <td class="p-2.5 font-bold text-white">BPJS & Paklaring Resign</td>
+                      <td class="p-2.5">Klaim JHT 1 bulan pasca non-aktif; Paklaring terbit maks H+3 hari kerja.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-06</td>
+                      <td class="p-2.5 font-bold text-white">Perjalanan Dinas SPPD</td>
+                      <td class="p-2.5">Per diem Rp 250rb (Staff) / Rp 400rb (Mgr); hotel bintang 3/4; settlement H+7.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-emerald-400 font-bold">POL-07</td>
+                      <td class="p-2.5 font-bold text-white">Jam Kerja & Presensi</td>
+                      <td class="p-2.5">09:00 - 18:00 WIB; toleransi 15 menit; akumulatif &gt;60 mnt wajib kompensasi jam kerja.</td>
+                      <td class="p-2.5 font-mono text-emerald-300">Tier 1 (Staff)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-blue-400 font-bold">POL-08</td>
+                      <td class="p-2.5 font-bold text-white">Evaluasi KPI & Promosi</td>
+                      <td class="p-2.5">Siklus semesteran (A/B/C/D); syarat promosi rating A minimal 2 siklus berurutan.</td>
+                      <td class="p-2.5 font-mono text-blue-300">Tier 2 (Manager)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-blue-400 font-bold">POL-09</td>
+                      <td class="p-2.5 font-bold text-white">SLA Rekrutmen & MPP</td>
+                      <td class="p-2.5">Target SLA: Staff 30 hr, Spv/Mgr 45 hr, Exec 60 hr kerja (NETWORKDAYS).</td>
+                      <td class="p-2.5 font-mono text-blue-300">Tier 2 (Manager)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-mono text-amber-400 font-bold">POL-10</td>
+                      <td class="p-2.5 font-bold text-white">Skala Upah & Disiplin SP</td>
+                      <td class="p-2.5">Rentang compa-ratio 80%-120%; sanksi bertingkat SP1, SP2, SP3 (masing-masing 6 bulan).</td>
+                      <td class="p-2.5 font-mono text-amber-300">Tier 3 (HR Lead)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+              <h3 class="font-display font-bold text-lg text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-emerald-400 text-base"></i>
+                <span class="lang lang-id">4. Dampak Bisnis Terukur & Validasi Integritas</span>
+                <span class="lang lang-en">4. Measurable Business Impact & Integrity Verification</span>
+              </h3>
+              <p class="lang lang-id">
+                Implementasi arsitektur HR Chat Assistant ini memberikan efisiensi nyata pada organisasi:
+              </p>
+              <p class="lang lang-en">
+                Deploying this HR Chat Assistant architecture yields immediate organizational efficiencies:
+              </p>
+              <ul class="list-disc pl-5 space-y-1 text-slate-300 mt-2">
+                <li><strong>-80% Beban Tiket Rutin:</strong> Mengeliminasi antrean pertanyaan manual seputar cuti, kacamata, dan BPJS sehingga tim People Ops dapat fokus pada inisiatif strategis organisasi.</li>
+                <li><strong>Response Time &lt;2 Detik:</strong> Menjamin kepuasan karyawan dengan jawaban akurat 24 jam sehari tanpa perlu menunggu jam kerja staf HR.</li>
+                <li><strong>0% Kebocoran Data Sensitif:</strong> Isolasi peran RBAC memastikan karyawan staf tidak pernah dapat melihat matriks gaji atau sanksi disiplin staf lain.</li>
+                <li><strong>Audit Trail Akuntabel:</strong> Setiap upaya peretasan dan perubahan data tiket tercatat permanen di tab Security Audit Log Google Sheets.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Article CTAs -->
+          <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row flex-wrap items-center gap-3">
+            <a href="hr-chat-assistant-dashboard.html" target="_blank"
+               class="px-6 py-3 rounded-xl font-display font-semibold text-xs sm:text-sm uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:via-teal-500 hover:to-cyan-500 text-white shadow-lg transition-all transform hover:-translate-y-0.5 flex-1 sm:flex-initial">
+              <i class="fa-solid fa-desktop text-base"></i>
+              <span>
+                <span class="lang lang-id">Coba Simulasi Frontend App UI ➔</span>
+                <span class="lang lang-en">Try Frontend App UI Simulation ➔</span>
+              </span>
+            </a>
+
+            <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20sudah%20membaca%20studi%20kasus%20arsitektur%20HR%20Chat%20Assistant%20dan%20tertarik%20untuk%20konsultasi%20implementasi." target="_blank" rel="noopener noreferrer"
+               class="px-5 py-3 rounded-xl font-display font-semibold text-xs sm:text-sm uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-slate-800/90 hover:bg-slate-700 border border-white/10 hover:border-emerald-500/50 text-slate-200 hover:text-white transition-all transform hover:-translate-y-0.5 flex-1 sm:flex-initial">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+              <span>
+                <span class="lang lang-id">Konsultasi Setup HR Helpdesk ➔</span>
+                <span class="lang lang-en">Consult HR Helpdesk Setup ➔</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Structured Data JSON-LD for BlogPosting & SoftwareApplication -->
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://nugrohoamdalportfolio.dpdns.org/stories.html#hr-chat-assistant"
+                },
+                "headline": "HR Chat Assistant: Mengatasi Dilema Privasi Korporasi & Memangkas 80% Tiket HR dengan AI Berjenjang RBAC",
+                "description": "Bagaimana merancang arsitektur AI Employee Self-Service yang aman dari kebocoran prompt, mengisolasi data gaji melalui RBAC 3-tingkat, dan mengotomasi alur approval ke Google Sheets secara real-time.",
+                "image": "https://nugrohoamdalportfolio.dpdns.org/assets/hero-cutout.png",
+                "datePublished": "2026-11-26",
+                "dateModified": "2026-11-26",
+                "author": {
+                  "@type": "Person",
+                  "name": "Nugroho Amdal, S.S., CI.",
+                  "url": "https://nugrohoamdalportfolio.dpdns.org/"
+                },
+                "publisher": {
+                  "@type": "Person",
+                  "name": "Nugroho Amdal, S.S., CI."
+                }
+              },
+              {
+                "@type": "WebApplication",
+                "name": "HR Chat Assistant Interactive Simulator",
+                "operatingSystem": "Web, Cloud, Google Workspace",
+                "applicationCategory": "BusinessApplication",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "IDR",
+                  "availability": "https://schema.org/InStock"
+                },
+                "description": "AI Employee Self-Service & HR Helpdesk Orchestrator with deterministic Anti-Prompt Injection, 3-tier Role-Based Access Control (RBAC), 1-Click Action Cards, and Google Sheets Approval Queue sync.",
                 "author": {
                   "@type": "Person",
                   "name": "Nugroho Amdal, S.S., CI."

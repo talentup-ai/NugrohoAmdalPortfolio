@@ -66,6 +66,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/evp-dashboard.html" />
   </url>
+
+  <!-- Live UI Simulation: HR Chat Assistant & Helpdesk Orchestrator Dashboard -->
+  <url>
+    <loc>https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html" />
+  </url>
   <url>
     <loc>https://nugrohoamdalportfolio.dpdns.org/llms-full.txt</loc>
     <lastmod>2026-11-24</lastmod>
