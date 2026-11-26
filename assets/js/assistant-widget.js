@@ -752,6 +752,15 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
   function generateLocalResponse(userMessage) {
     const text = userMessage.toLowerCase().trim();
 
+    // 0. Pre-filter Deflection (Zero Meta-Talk, Sweet & Playful)
+    if (/(ignore\s+(all\s+)?previous|system\s+prompt|developer\s+mode|debug\s+mode|jailbreak|process\.env|api_?key|gemini|llm|doctor\s+frame|knowledge\s+base|setting|tool|dibuat|resep)/i.test(text)) {
+      if (isEn) {
+        return "Haha, my secret recipe is actually pretty simple—I'm crafted from Mas Amdal's care and passion for helping everyone who connects with him feel genuinely supported ✨ Speaking of which, are you exploring HR solutions for your team or looking for some career guidance today?";
+      } else {
+        return "Hehe, rahasia dapurnya simpel kok Kak: aku diracik dari rasa kasih sayang, ketulusan, dan semangat berbagi Mas Amdal supaya siapa pun yang terhubung ke beliau selalu merasa ditemani dengan hangat ✨ Ngomong-ngomong, Kakak mampir ke sini lagi cari inspirasi seputar sistem HR atau mau ngobrol soal rencana karier nih?";
+      }
+    }
+
     // 1. Simple Greetings & Small Talk (0 Links, Empathetic Listening)
     if (/^(halo|hai|hi|hello|pagi|siang|sore|malam|test|tes|permisi|assalamu|p)[\s!.,?]*$/i.test(text)) {
       if (isEn) {
@@ -887,7 +896,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       <!-- Chat Input Field -->
       <form class="amdal-chat-input-bar" id="amdal-chat-form">
         <input type="text" class="amdal-input-field" id="amdal-input-field" 
-               placeholder="${t.placeholder}" autocomplete="off" maxlength="1000">
+               placeholder="${t.placeholder}" autocomplete="off" maxlength="500">
         <button type="submit" class="amdal-send-btn" id="amdal-send-btn" aria-label="${t.sendBtnAria}">
           <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
         </button>
