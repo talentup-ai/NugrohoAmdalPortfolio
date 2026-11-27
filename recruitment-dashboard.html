@@ -326,6 +326,9 @@
     });
   }
 }" class="min-h-screen flex flex-col antialiased bg-obsidian text-slate-100">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-blue-600 focus:text-white focus:text-sm focus:font-semibold focus:shadow-xl">
+    <span x-text="lang === 'id' ? 'Langsung ke konten utama' : 'Skip to main content'">Langsung ke konten utama</span>
+  </a>
 
   <!-- ================= TOP HEADER ================= -->
   <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-xl border-b border-white/10 px-3 lg:px-8 py-3 flex items-center justify-between gap-2">
@@ -448,7 +451,7 @@
     </aside>
 
     <!-- ================= MAIN CONTENT DASHBOARD ================= -->
-    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-8">
+    <main id="main-content" tabindex="-1" class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-8 focus:outline-none">
 
       <!-- ================= 4 KPI CARDS UTAMA ================= -->
       <section>
@@ -460,7 +463,7 @@
             </h2>
             <p class="text-sm text-slate-400">Data live dari engine kalkulasi Requisition, MPP, dan Talent Pool</p>
           </div>
-          <span class="text-xs text-slate-500 font-mono hidden sm:inline">Updated: 18 Nov 2026</span>
+          <span class="text-xs text-slate-400 font-mono hidden sm:inline">Updated: 18 Nov 2026</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -575,7 +578,7 @@
                 <tr class="hover:bg-white/5 transition-colors">
                   <td class="py-3.5 px-4 font-mono font-bold text-cyan-300">
                     <span x-text="req.code"></span>
-                    <div class="text-[10px] font-normal text-slate-500 font-sans" x-text="'Ref: ' + req.planId"></div>
+                    <div class="text-[10px] font-normal text-slate-400 font-sans" x-text="'Ref: ' + req.planId"></div>
                   </td>
                   <td class="py-3.5 px-4 text-slate-200">
                     <span class="font-semibold" x-text="req.dept"></span>
@@ -758,6 +761,10 @@
 
   <!-- ================= MODAL PREVIEW UNDANGAN WA & EMAIL ================= -->
   <div x-show="showInviteModal"
+       role="dialog"
+       aria-modal="true"
+       aria-label="1-Click Automated Interview Dispatcher"
+       @keydown.escape.window="showInviteModal = false"
        x-transition:enter="transition ease-out duration-200"
        x-transition:enter-start="opacity-0"
        x-transition:enter-end="opacity-100"

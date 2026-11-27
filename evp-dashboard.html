@@ -411,6 +411,9 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
     setTimeout(() => { this.copySuccess = false; }, 3000);
   }
 }">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-purple-600 focus:text-white focus:text-sm focus:font-semibold focus:shadow-xl">
+    <span x-text="lang === 'id' ? 'Langsung ke konten utama' : 'Skip to main content'">Langsung ke konten utama</span>
+  </a>
 
   <!-- Toast Notification -->
   <div x-show="copySuccess" x-transition:enter="transition ease-out duration-300"
@@ -546,7 +549,7 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
     </aside>
 
     <!-- ================= MAIN CONTENT DASHBOARD ================= -->
-    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-8">
+    <main id="main-content" tabindex="-1" class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-8 focus:outline-none">
 
       <!-- ================= SEGMENT FILTER CONTROLS ================= -->
       <section class="glass-card rounded-2xl p-4 sm:p-5 border border-purple-500/30 bg-purple-950/20">
@@ -601,7 +604,7 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
               <span x-show="lang === 'en'">Active data for segment: <strong class="text-white" x-text="segments[activeSegment].nameEn"></strong></span>
             </p>
           </div>
-          <span class="text-xs text-slate-500 font-mono hidden sm:inline">Benchmark Scale: 1.00 - 5.00</span>
+          <span class="text-xs text-slate-400 font-mono hidden sm:inline">Benchmark Scale: 1.00 - 5.00</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -784,7 +787,7 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
                     <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full" :class="item.sentimentBadge" x-text="item.sentiment"></span>
                   </div>
                   <p class="text-xs sm:text-sm text-slate-200 italic leading-relaxed" x-text="'&ldquo;' + (lang === 'id' ? item.quote : item.quoteEn) + '&rdquo;'"></p>
-                  <div class="text-[10px] text-slate-500">Masa Kerja Responden: <span x-text="item.tenure"></span></div>
+                  <div class="text-[10px] text-slate-400">Masa Kerja Responden: <span x-text="item.tenure"></span></div>
                 </div>
               </template>
             </div>
@@ -866,6 +869,10 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
 
       <!-- ================= MODAL DETAIL PILAR AUDIT ================= -->
       <div x-show="showPillarModal"
+           role="dialog"
+           aria-modal="true"
+           aria-label="Detail Pilar Audit EVP"
+           @keydown.escape.window="showPillarModal = false"
            class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
            x-transition:enter="transition ease-out duration-300"
            x-transition:enter-start="opacity-0"
@@ -888,7 +895,7 @@ Tertarik membangun karir yang jujur dan berdampak? Kirimkan profil Anda sekarang
                     <span class="text-xs font-semibold" :class="selectedPillar.badgeClass" x-text="selectedPillar.status"></span>
                   </div>
                 </div>
-                <button @click="showPillarModal = false" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                <button @click="showPillarModal = false" type="button" aria-label="Close modal" class="text-slate-400 hover:text-white p-1 rounded-lg">
                   <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
               </div>

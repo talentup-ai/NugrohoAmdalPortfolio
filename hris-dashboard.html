@@ -297,6 +297,9 @@
     this.showModal = true;
   }
 }" class="min-h-screen flex flex-col antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-blue-600 focus:text-white focus:text-sm focus:font-semibold focus:shadow-xl">
+    <span x-text="lang === 'id' ? 'Langsung ke konten utama' : 'Skip to main content'">Langsung ke konten utama</span>
+  </a>
 
   <!-- ================= TOP HEADER ================= -->
   <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-xl border-b border-white/10 px-3 lg:px-8 py-3 flex items-center justify-between gap-2">
@@ -428,7 +431,7 @@
     <div x-show="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 bg-black/60 z-20 lg:hidden"></div>
 
     <!-- ================= MAIN CONTENT ================= -->
-    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6">
+    <main id="main-content" tabindex="-1" class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6 focus:outline-none">
 
       <!-- ================= 4 TOP METRIC CARDS ================= -->
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -642,7 +645,7 @@
       </div>
 
       <!-- ================= MODAL DETAIL SLIP GAJI & BREAKDOWN ================= -->
-      <div x-show="showModal" x-transition.opacity class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" style="display: none;">
+      <div x-show="showModal" x-transition.opacity role="dialog" aria-modal="true" aria-label="Detail Slip Gaji Karyawan" @keydown.escape.window="showModal = false" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" style="display: none;">
         <div @click.away="showModal = false" class="bg-cardDark border border-white/15 rounded-3xl max-w-2xl w-full p-6 space-y-5 shadow-2xl relative">
           
           <!-- Modal Header -->
@@ -656,7 +659,7 @@
                 <p class="text-xs text-slate-400" x-text="selectedEmp?.nik + ' • ' + selectedEmp?.role + ' (' + selectedEmp?.dept + ')'"></p>
               </div>
             </div>
-            <button @click="showModal = false" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors">
+            <button @click="showModal = false" type="button" aria-label="Close modal" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors">
               <i class="fa-solid fa-xmark text-lg"></i>
             </button>
           </div>
