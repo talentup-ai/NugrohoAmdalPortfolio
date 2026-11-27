@@ -346,13 +346,28 @@
       scroll-padding-top: 5rem;
     }
 
-    /* Desktop Root Font-Size Scaling (Matches ~80% zoom proportion) */
+    /* Desktop Root Font-Size Scaling (Comfortable Reading Hierarchy) */
     @media (min-width: 1024px) {
       html {
-        font-size: 13px;
+        font-size: 15px;
       }
       nav a {
         white-space: nowrap;
+      }
+    }
+
+    /* Accessibility: Keyboard Focus & Reduced Motion */
+    :focus-visible {
+      outline: 2px solid #38BDF8;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
 
@@ -388,6 +403,9 @@
   </style>
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-royal focus:text-white focus:font-semibold focus:shadow-xl">
+    <span class="lang lang-id">Langsung ke konten utama</span><span class="lang lang-en">Skip to main content</span>
+  </a>
 
   <!-- ==================== NAVIGATION BAR ==================== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
@@ -404,31 +422,31 @@
         </span>
       </a>
 
-      <!-- Desktop Navigation Links (8 Items) -->
-      <nav class="hidden xl:flex items-center gap-4 2xl:gap-6">
-        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+      <!-- Desktop Navigation Links (Unified Phase 4.1 8 Items) -->
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3.5 2xl:gap-5">
+        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="/#ai-systems" onclick="handleNavClick(event, '/#ai-systems')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI</span>
+        <a href="/#case-studies" onclick="handleNavClick(event, '/#case-studies')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Dampak Nyata</span><span class="lang lang-en">Impact</span>
         </a>
-        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[15px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
-          <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
+        <a href="/#hr-tech-lab" onclick="handleNavClick(event, '/#hr-tech-lab')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">HR Tech &amp; AI</span><span class="lang lang-en">HR Tech &amp; AI</span>
         </a>
-        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Cerita & Solusi</span><span class="lang lang-en">Stories & Solutions</span>
+        <a href="/#corporate-solutions" onclick="handleNavClick(event, '/#corporate-solutions')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Konsultasi</span><span class="lang lang-en">Consulting</span>
         </a>
-        <a href="/#certifications" onclick="handleNavClick(event, '/#certifications')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Sertifikasi</span><span class="lang lang-en">Certifications</span>
+        <a href="/#credentials" onclick="handleNavClick(event, '/#credentials')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Kredensial</span><span class="lang lang-en">Credentials</span>
         </a>
-        <a href="/#gallery" onclick="handleNavClick(event, '/#gallery')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Dokumentasi</span><span class="lang lang-en">Documentation</span>
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" aria-current="page" class="text-[13px] 2xl:text-[14px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
+          <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
         </a>
-        <a href="#services-rates" onclick="handleNavClick(event, '#services-rates')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Layanan & Rates</span><span class="lang lang-en">Rates & Services</span>
+        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Cerita &amp; Insight</span><span class="lang lang-en">Stories</span>
         </a>
       </nav>
 
@@ -461,38 +479,38 @@
         <!-- Mobile Menu Toggle Button -->
         <button id="mobileMenuBtn" type="button" onclick="toggleMobileMenu(event)"
                 class="xl:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 active:bg-white/20 focus:outline-none transition-all cursor-pointer touch-manipulation z-50"
-                aria-label="Toggle Navigation">
+                aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobileMenu">
           <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl pointer-events-none"></i>
         </button>
       </div>
 
     </div>
 
-    <!-- Mobile Dropdown Navigation (8 Items) -->
+    <!-- Mobile Dropdown Navigation (Unified Phase 4.1 8 Items) -->
     <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-5 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain shadow-2xl transition-all duration-300 pointer-events-auto relative z-50">
       <a href="/#about" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#about')">
         <span class="lang lang-id">Profil Profesional</span><span class="lang lang-en">Professional Profile</span>
       </a>
-      <a href="/#ai-systems" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#ai-systems')">
-        <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI Systems</span>
+      <a href="/#case-studies" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#case-studies')">
+        <span class="lang lang-id">Dampak Nyata &amp; Studi Kasus</span><span class="lang lang-en">Measurable Impact &amp; Case Studies</span>
       </a>
       <a href="/#experience" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#experience')">
         <span class="lang lang-id">Rekam Jejak Karir</span><span class="lang lang-en">Career Track Record</span>
       </a>
-      <a href="products.html" class="block px-3 py-2 text-sm font-semibold text-cyanCustom hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'products.html')">
-        <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
+      <a href="/#hr-tech-lab" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#hr-tech-lab')">
+        <span class="lang lang-id">HR Tech &amp; AI Workflow Lab</span><span class="lang lang-en">HR Tech &amp; AI Workflow Lab</span>
+      </a>
+      <a href="/#corporate-solutions" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#corporate-solutions')">
+        <span class="lang lang-id">Solusi Konsultasi &amp; Training</span><span class="lang lang-en">Corporate Consulting &amp; Training</span>
+      </a>
+      <a href="/#credentials" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#credentials')">
+        <span class="lang lang-id">Kredensial &amp; Lisensi BNSP</span><span class="lang lang-en">Credentials &amp; BNSP License</span>
+      </a>
+      <a href="products.html" aria-current="page" class="block px-3 py-2 text-sm font-semibold text-cyanCustom hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'products.html')">
+        <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
       </a>
       <a href="stories.html" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'stories.html')">
-        <span class="lang lang-id">Cerita Solusi & Insight Karir</span><span class="lang lang-en">Stories & Career Insights</span>
-      </a>
-      <a href="/#certifications" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#certifications')">
-        <span class="lang lang-id">Sertifikasi & Lisensi BNSP</span><span class="lang lang-en">Certifications & BNSP License</span>
-      </a>
-      <a href="/#gallery" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#gallery')">
-        <span class="lang lang-id">Dokumentasi Event & Pelatihan</span><span class="lang lang-en">Event & Training Documentation</span>
-      </a>
-      <a href="#services-rates" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#services-rates')">
-        <span class="lang lang-id">Layanan Speaking, Training & Rate Card</span><span class="lang lang-en">Speaking, Training & Rate Card</span>
+        <span class="lang lang-id">Cerita Solusi &amp; Insight Karir</span><span class="lang lang-en">Stories &amp; Career Insights</span>
       </a>
       <div class="pt-3 mt-1 border-t border-white/10 flex flex-col space-y-2">
         <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20katalog%20produk%20Anda." target="_blank" rel="noopener noreferrer"
@@ -504,7 +522,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ==================== PAGE HERO BANNER ==================== -->
     <section class="relative pt-32 sm:pt-40 pb-16 overflow-hidden flex items-center">
@@ -1424,12 +1442,10 @@
         <div class="flex flex-wrap justify-center gap-5 text-xs text-slate-400">
           <a href="/" class="hover:text-white transition-colors">Beranda</a>
           <a href="/#about" class="hover:text-white transition-colors">Profil</a>
-          <a href="/#ai-systems" class="hover:text-white transition-colors">Inovasi HR & AI</a>
-          <a href="products.html" class="text-cyanCustom font-semibold">
-            <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
-          </a>
-          <a href="stories.html" class="hover:text-white transition-colors">Cerita & Solusi</a>
-          <a href="/#services-rates" class="hover:text-white transition-colors">Layanan & Rates</a>
+          <a href="/#case-studies" class="hover:text-white transition-colors">Studi Kasus</a>
+          <a href="/#hr-tech-lab" class="hover:text-white transition-colors">Lab HR &amp; AI</a>
+          <a href="products.html" class="text-cyanCustom font-semibold">Produk &amp; Rates</a>
+          <a href="stories.html" class="hover:text-white transition-colors">Cerita &amp; Solusi</a>
         </div>
 
         <div class="flex items-center space-x-6 text-base">
@@ -1510,16 +1526,19 @@
       }
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (!menu) return;
       const isHidden = menu.classList.contains('hidden');
       if (isHidden) {
         menu.classList.remove('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
         if (icon) {
           icon.classList.remove('fa-bars');
           icon.classList.add('fa-xmark');
         }
       } else {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -1530,8 +1549,10 @@
     function closeMobileMenu() {
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (menu) {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -1669,6 +1690,28 @@
           }, 100);
         }
       }
+      // Close mobile menu on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const menu = document.getElementById('mobileMenu');
+          if (menu && !menu.classList.contains('hidden')) {
+            closeMobileMenu();
+            document.getElementById('mobileMenuBtn')?.focus();
+          }
+        }
+      });
+    });
+  </script>
+  <button id="backToTopBtn" type="button" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          class="hidden fixed bottom-24 right-5 z-40 w-10 h-10 rounded-full bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 shadow-lg transition-all items-center justify-center">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+  <script>
+    window.addEventListener('scroll', () => {
+      const btt = document.getElementById('backToTopBtn');
+      if (!btt) return;
+      if (window.scrollY > 600) { btt.classList.remove('hidden'); btt.classList.add('flex'); }
+      else { btt.classList.add('hidden'); btt.classList.remove('flex'); }
     });
   </script>
   <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->

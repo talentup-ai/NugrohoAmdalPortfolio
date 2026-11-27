@@ -400,13 +400,27 @@
       scroll-padding-top: 5rem;
     }
 
-    /* Desktop Root Font-Size Scaling (Matches ~80% zoom proportion) */
+    /* Desktop Root Font-Size Scaling */
     @media (min-width: 1024px) {
       html {
-        font-size: 13px;
+        font-size: 15px;
       }
       nav a {
         white-space: nowrap;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid #38BDF8;
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
     }
 
@@ -485,6 +499,9 @@
   </style>
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-royal focus:text-white focus:font-semibold focus:shadow-xl">
+    <span class="lang lang-id">Langsung ke konten utama</span><span class="lang lang-en">Skip to main content</span>
+  </a>
 
   <!-- ==================== SECTION 1: NAVIGATION BAR ==================== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
@@ -502,30 +519,30 @@
       </a>
 
       <!-- Desktop Navigation Links (8 Hybrid Items) -->
-      <nav class="hidden xl:flex items-center gap-4 2xl:gap-6">
-        <a href="#about" onclick="handleNavClick(event, '#about')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3.5 2xl:gap-5">
+        <a href="#about" onclick="handleNavClick(event, '#about')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="#case-studies" onclick="handleNavClick(event, '#case-studies')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Studi Kasus</span><span class="lang lang-en">Case Studies</span>
+        <a href="#case-studies" onclick="handleNavClick(event, '#case-studies')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Dampak Nyata</span><span class="lang lang-en">Impact</span>
         </a>
-        <a href="#experience" onclick="handleNavClick(event, '#experience')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#experience" onclick="handleNavClick(event, '#experience')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Lab HR & AI</span><span class="lang lang-en">HR Tech Lab</span>
+        <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">HR Tech &amp; AI</span><span class="lang lang-en">HR Tech &amp; AI</span>
         </a>
-        <a href="#corporate-solutions" onclick="handleNavClick(event, '#corporate-solutions')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Solusi Korporat</span><span class="lang lang-en">Corporate</span>
+        <a href="#corporate-solutions" onclick="handleNavClick(event, '#corporate-solutions')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Konsultasi</span><span class="lang lang-en">Consulting</span>
         </a>
-        <a href="#credentials" onclick="handleNavClick(event, '#credentials')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#credentials" onclick="handleNavClick(event, '#credentials')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Kredensial</span><span class="lang lang-en">Credentials</span>
         </a>
-        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Produk &amp; Rates</span><span class="lang lang-en">Products &amp; Rates</span>
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
         </a>
-        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Cerita &amp; Solusi</span><span class="lang lang-en">Stories</span>
+        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Cerita &amp; Insight</span><span class="lang lang-en">Stories</span>
         </a>
       </nav>
 
@@ -558,7 +575,7 @@
         <!-- Mobile Menu Toggle Button -->
         <button id="mobileMenuBtn" type="button" onclick="toggleMobileMenu(event)"
                 class="xl:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 active:bg-white/20 focus:outline-none transition-all cursor-pointer touch-manipulation z-50"
-                aria-label="Toggle Navigation">
+                aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobileMenu">
           <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl pointer-events-none"></i>
         </button>
       </div>
@@ -574,25 +591,25 @@
         <span class="lang lang-id">Enam Pilar Nilai Tambah</span><span class="lang lang-en">Selected Impact &amp; Value</span>
       </a>
       <a href="#case-studies" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#case-studies')">
-        <span class="lang lang-id">Studi Kasus Bisnis</span><span class="lang lang-en">Featured Case Studies</span>
+        <span class="lang lang-id">Dampak Nyata &amp; Studi Kasus</span><span class="lang lang-en">Measurable Impact &amp; Case Studies</span>
       </a>
       <a href="#experience" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#experience')">
         <span class="lang lang-id">Rekam Jejak Karir</span><span class="lang lang-en">Career Track Record</span>
       </a>
       <a href="#hr-tech-lab" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#hr-tech-lab')">
-        <span class="lang lang-id">HR Technology Lab &amp; Simulasi</span><span class="lang lang-en">HR Tech Lab &amp; Simulators</span>
+        <span class="lang lang-id">HR Tech &amp; AI Workflow Lab</span><span class="lang lang-en">HR Tech &amp; AI Workflow Lab</span>
       </a>
       <a href="#corporate-solutions" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#corporate-solutions')">
-        <span class="lang lang-id">Solusi Korporat, Training &amp; Rates</span><span class="lang lang-en">Corporate Solutions &amp; Rates</span>
+        <span class="lang lang-id">Solusi Konsultasi &amp; Training</span><span class="lang lang-en">Corporate Consulting &amp; Training</span>
       </a>
       <a href="#credentials" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#credentials')">
-        <span class="lang lang-id">Sertifikasi BNSP &amp; Dokumentasi</span><span class="lang lang-en">Credentials &amp; Gallery</span>
+        <span class="lang lang-id">Kredensial &amp; Lisensi BNSP</span><span class="lang lang-en">Credentials &amp; BNSP License</span>
       </a>
       <a href="#talent-up" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '#talent-up')">
         <span class="lang lang-id">Ekosistem Talent Up</span><span class="lang lang-en">Talent Up Spotlight</span>
       </a>
       <a href="products.html" class="block px-3 py-2 text-sm font-medium text-cyan-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'products.html')">
-        <span class="lang lang-id">Produk &amp; Rate Card Lengkap</span><span class="lang lang-en">Products &amp; Full Rate Card</span>
+        <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
       </a>
       <a href="stories.html" class="block px-3 py-2 text-sm font-medium text-cyan-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'stories.html')">
         <span class="lang lang-id">Cerita Solusi &amp; Insight Karir</span><span class="lang lang-en">Stories &amp; Career Insights</span>
@@ -614,7 +631,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- ==================== HERO SECTION ==================== -->
     <section id="hero" class="relative pt-28 sm:pt-36 pb-20 md:pb-28 overflow-hidden min-h-[90vh] flex items-center">
       
@@ -3217,7 +3234,7 @@
           
           <!-- Item 1 -->
           <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10 active" data-aos="fade-up">
-            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+            <button type="button" aria-expanded="true" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
               <span>
                 <span class="lang lang-id">Apakah Nugroho terbuka untuk posisi Full-Time di Jakarta, Surabaya, atau Remote Global?</span>
                 <span class="lang lang-en">Is Nugroho open to Full-Time roles in Jakarta, Surabaya, or Global Remote?</span>
@@ -3236,7 +3253,7 @@
 
           <!-- Item 2 -->
           <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
-            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+            <button type="button" aria-expanded="false" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
               <span>
                 <span class="lang lang-id">Bagaimana pendekatan teknis Anda terkait implementasi AI dan otomasi di HR?</span>
                 <span class="lang lang-en">What is your technical approach to AI and workflow automation in HR?</span>
@@ -3255,7 +3272,7 @@
 
           <!-- Item 3 -->
           <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
-            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+            <button type="button" aria-expanded="false" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
               <span>
                 <span class="lang lang-id">Apakah materi training/seminar dapat disesuaikan dengan kebutuhan spesifik perusahaan?</span>
                 <span class="lang lang-en">Can training or speaking modules be tailored to our specific corporate challenges?</span>
@@ -3274,7 +3291,7 @@
 
           <!-- Item 4 -->
           <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up">
-            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
+            <button type="button" aria-expanded="false" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between text-left text-base sm:text-lg font-display font-semibold text-white focus:outline-none" onclick="toggleAccordion(this)">
               <span>
                 <span class="lang lang-id">Bagaimana alur pemesanan (booking) dan skema pembayaran?</span>
                 <span class="lang lang-en">What is the booking workflow and commercial payment structure?</span>
@@ -3815,10 +3832,17 @@
   <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->
   <script src="assets/js/assistant-widget.js?v=2.2" defer></script>
 
+  <!-- ==================== BACK TO TOP BUTTON ==================== -->
+  <button id="backToTopBtn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          aria-label="Kembali ke atas / Back to top"
+          class="fixed bottom-24 right-5 z-40 w-11 h-11 rounded-full bg-cardDark/90 border border-white/15 text-cyanCustom hover:bg-royal hover:text-white shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 invisible translate-y-2 transition-all duration-300">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
   <!-- ==================== LIGHTBOX MODAL ==================== -->
-  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 invisible flex items-center justify-center p-4 sm:p-6" onclick="closeLightbox(event)">
+  <div id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 invisible flex items-center justify-center p-4 sm:p-6" onclick="closeLightbox(event)">
     <div class="relative max-w-4xl w-full bg-cardDark border border-white/20 rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-      <button type="button" onclick="closeLightbox(null)" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-red-600 text-white flex items-center justify-center text-lg transition-colors">
+      <button id="lightboxCloseBtn" type="button" aria-label="Close lightbox preview" onclick="closeLightbox(null)" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-red-600 text-white flex items-center justify-center text-lg transition-colors">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="aspect-[16/10] sm:aspect-[16/9] bg-black flex items-center justify-center overflow-hidden">
@@ -3844,16 +3868,19 @@
       }
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (!menu) return;
       const isHidden = menu.classList.contains('hidden');
       if (isHidden) {
         menu.classList.remove('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
         if (icon) {
           icon.classList.remove('fa-bars');
           icon.classList.add('fa-xmark');
         }
       } else {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -3864,8 +3891,10 @@
     function closeMobileMenu() {
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (menu) {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -4005,8 +4034,9 @@
       }
     });
 
-    // Initialize AOS
+    // Initialize AOS (respecting prefers-reduced-motion)
     AOS.init({
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       once: true,
       duration: 800,
       offset: 60,
@@ -4026,19 +4056,50 @@
         btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
       } else {
         btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
-        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-display transition-all duration-300 text-slate-400 hover:text-white';
+        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
       }
     }
 
-    // Load Saved Language Preference
+    // Load Saved Language Preference & Setup ScrollSpy
+    const navLinks = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+    const trackedSections = ['about', 'case-studies', 'experience', 'hr-tech-lab', 'corporate-solutions', 'credentials']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    function setActiveNav(id) {
+      navLinks.forEach(link => {
+        const isMatch = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('text-cyanCustom', isMatch);
+        link.classList.toggle('border-b-2', isMatch);
+        link.classList.toggle('border-cyanCustom', isMatch);
+        link.classList.toggle('font-semibold', isMatch);
+        link.classList.toggle('text-gray-300', !isMatch);
+        link.classList.toggle('font-medium', !isMatch);
+      });
+    }
+
+    function updateScrollSpy() {
+      if (!trackedSections.length) return;
+      let currentId = '';
+      for (const sec of trackedSections) {
+        if (sec.getBoundingClientRect().top <= 200) {
+          currentId = sec.id;
+        }
+      }
+      setActiveNav(currentId);
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('portfolio-lang') || 'id';
       switchLanguage(savedLang);
+      updateScrollSpy();
     });
 
-    // Navbar Scroll Glass Blur Effect
+    // Navbar Scroll Glass Blur, ScrollSpy & Back-to-Top Visibility
     const navbar = document.getElementById('navbar');
+    const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', () => {
+      updateScrollSpy();
       if (window.scrollY > 20) {
         navbar.classList.add('bg-obsidian/95', 'shadow-2xl', 'border-white/15');
         navbar.classList.remove('bg-obsidian/80', 'border-white/10');
@@ -4046,10 +4107,17 @@
         navbar.classList.add('bg-obsidian/80', 'border-white/10');
         navbar.classList.remove('bg-obsidian/95', 'shadow-2xl', 'border-white/15');
       }
-    });
+      if (backToTopBtn) {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+          backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+        } else {
+          backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-2');
+          backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        }
+      }
+    }, { passive: true });
 
-
-    // Floating Action Button Toggle
     // Floating Action Button Toggle (Handled by Asisten Mas Amdal widget)
     function toggleFab() {
       if (window.openAmdalAssistant) {
@@ -4065,29 +4133,58 @@
       allItems.forEach(item => {
         if (item !== currentItem) {
           item.classList.remove('active');
+          const t = item.querySelector('.accordion-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
         }
       });
-      currentItem.classList.toggle('active');
+      const isNowActive = currentItem.classList.toggle('active');
+      button.setAttribute('aria-expanded', isNowActive ? 'true' : 'false');
     }
 
-    // Lightbox Modal Functions
+    // Lightbox Modal Functions (with Focus Restoration & Escape Support)
     const lightboxModal = document.getElementById('lightboxModal');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+    let lastFocusedBeforeLightbox = null;
 
     function openLightbox(src, title, caption) {
+      lastFocusedBeforeLightbox = document.activeElement;
       lightboxImg.src = src;
       lightboxTitle.textContent = title;
       lightboxCaption.textContent = caption;
       lightboxModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (lightboxCloseBtn) {
+        setTimeout(() => lightboxCloseBtn.focus(), 50);
+      }
     }
 
     function closeLightbox(event) {
       lightboxModal.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocusedBeforeLightbox && typeof lastFocusedBeforeLightbox.focus === 'function') {
+        lastFocusedBeforeLightbox.focus();
+      }
+      lastFocusedBeforeLightbox = null;
     }
+
+    // Global Escape Key Handler for Modal & Mobile Menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (lightboxModal && lightboxModal.classList.contains('active')) {
+        closeLightbox(null);
+        return;
+      }
+      const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (menu && !menu.classList.contains('hidden')) {
+        const focusWasInsideMenu = menu.contains(document.activeElement);
+        closeMobileMenu();
+        if (focusWasInsideMenu && btn) btn.focus();
+      }
+    });
   </script>
 </body>
 </html>

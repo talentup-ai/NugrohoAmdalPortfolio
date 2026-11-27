@@ -358,13 +358,28 @@
       scroll-padding-top: 5rem;
     }
 
-    /* Desktop Root Font-Size Scaling (Matches ~80% zoom proportion) */
+    /* Desktop Root Font-Size Scaling (Comfortable Reading Hierarchy) */
     @media (min-width: 1024px) {
       html {
-        font-size: 13px;
+        font-size: 15px;
       }
       nav a {
         white-space: nowrap;
+      }
+    }
+
+    /* Accessibility: Keyboard Focus & Reduced Motion */
+    :focus-visible {
+      outline: 2px solid #38BDF8;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
 
@@ -422,6 +437,10 @@
   </style>
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-blue-600 focus:text-white focus:font-semibold">
+    <span class="lang lang-id">Lewati ke Konten Utama</span>
+    <span class="lang lang-en">Skip to Main Content</span>
+  </a>
 
   <!-- ==================== NAVIGATION BAR ==================== -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
@@ -430,7 +449,7 @@
       <!-- Brand Wordmark -->
       <a href="/#hero" class="flex flex-col group shrink-0 min-w-max">
         <span class="font-serif text-lg xs:text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors whitespace-nowrap">
-          Nugroho Amdal<span class="text-gold font-sans font-normal text-xs sm:text-sm ml-1">, S.S., CI.</span>
+          Nugroho Amdal<span class="text-gold font-sans font-normal text-xs sm:text-sm">, S.S., CI.</span>
         </span>
         <span class="hidden md:block text-[9px] xl:text-[10px] font-display tracking-wider uppercase text-slate-400 group-hover:text-slate-200 transition-colors whitespace-nowrap">
           <span class="lang lang-id">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
@@ -438,31 +457,31 @@
         </span>
       </a>
 
-      <!-- Desktop Navigation Links (8 Items) -->
-      <nav class="hidden xl:flex items-center gap-4 2xl:gap-6">
-        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+      <!-- Desktop Navigation Links (Unified 8 Items) -->
+      <nav class="hidden xl:flex items-center gap-3.5 2xl:gap-5" aria-label="Primary Navigation">
+        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="/#ai-systems" onclick="handleNavClick(event, '/#ai-systems')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI</span>
+        <a href="/#case-studies" onclick="handleNavClick(event, '/#case-studies')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Studi Kasus</span><span class="lang lang-en">Case Studies</span>
         </a>
-        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
+        <a href="/#hr-tech-lab" onclick="handleNavClick(event, '/#hr-tech-lab')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Lab HR &amp; AI</span><span class="lang lang-en">HR Tech Lab</span>
         </a>
-        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[15px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
-          <span class="lang lang-id">Cerita & Solusi</span><span class="lang lang-en">Stories & Solutions</span>
+        <a href="/#corporate-solutions" onclick="handleNavClick(event, '/#corporate-solutions')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Solusi Korporat</span><span class="lang lang-en">Corporate</span>
         </a>
-        <a href="/#certifications" onclick="handleNavClick(event, '/#certifications')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Sertifikasi</span><span class="lang lang-en">Certifications</span>
+        <a href="/#credentials" onclick="handleNavClick(event, '/#credentials')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Kredensial</span><span class="lang lang-en">Credentials</span>
         </a>
-        <a href="/#gallery" onclick="handleNavClick(event, '/#gallery')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Dokumentasi</span><span class="lang lang-en">Documentation</span>
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+          <span class="lang lang-id">Produk &amp; Rates</span><span class="lang lang-en">Products &amp; Rates</span>
         </a>
-        <a href="/#services-rates" onclick="handleNavClick(event, '/#services-rates')" class="text-[13px] 2xl:text-[15px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
-          <span class="lang lang-id">Layanan & Rates</span><span class="lang lang-en">Rates & Services</span>
+        <a href="stories.html" aria-current="page" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[14px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
+          <span class="lang lang-id">Cerita &amp; Solusi</span><span class="lang lang-en">Stories</span>
         </a>
       </nav>
 
@@ -495,38 +514,38 @@
         <!-- Mobile Menu Toggle Button -->
         <button id="mobileMenuBtn" type="button" onclick="toggleMobileMenu(event)"
                 class="xl:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 active:bg-white/20 focus:outline-none transition-all cursor-pointer touch-manipulation z-50"
-                aria-label="Toggle Navigation">
+                aria-label="Toggle Navigation" aria-expanded="false" aria-controls="mobileMenu">
           <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl pointer-events-none"></i>
         </button>
       </div>
 
     </div>
 
-    <!-- Mobile Dropdown Navigation (8 Items) -->
+    <!-- Mobile Dropdown Navigation -->
     <div id="mobileMenu" class="hidden xl:hidden bg-cardDark/98 backdrop-blur-2xl border-b border-white/10 px-5 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain shadow-2xl transition-all duration-300 pointer-events-auto relative z-50">
       <a href="/#about" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#about')">
         <span class="lang lang-id">Profil Profesional</span><span class="lang lang-en">Professional Profile</span>
       </a>
-      <a href="/#ai-systems" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#ai-systems')">
-        <span class="lang lang-id">Inovasi HR & AI</span><span class="lang lang-en">HR & AI Systems</span>
+      <a href="/#case-studies" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#case-studies')">
+        <span class="lang lang-id">Studi Kasus Bisnis</span><span class="lang lang-en">Featured Case Studies</span>
       </a>
       <a href="/#experience" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#experience')">
         <span class="lang lang-id">Rekam Jejak Karir</span><span class="lang lang-en">Career Track Record</span>
       </a>
+      <a href="/#hr-tech-lab" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#hr-tech-lab')">
+        <span class="lang lang-id">HR Technology Lab &amp; Simulasi</span><span class="lang lang-en">HR Tech Lab &amp; Simulators</span>
+      </a>
+      <a href="/#corporate-solutions" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#corporate-solutions')">
+        <span class="lang lang-id">Solusi Korporat &amp; Training</span><span class="lang lang-en">Corporate Solutions</span>
+      </a>
+      <a href="/#credentials" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#credentials')">
+        <span class="lang lang-id">Sertifikasi BNSP &amp; Dokumentasi</span><span class="lang lang-en">Credentials &amp; Gallery</span>
+      </a>
       <a href="products.html" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'products.html')">
-        <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
+        <span class="lang lang-id">Produk &amp; Rate Card Lengkap</span><span class="lang lang-en">Products &amp; Full Rate Card</span>
       </a>
-      <a href="stories.html" class="block px-3 py-2 text-sm font-semibold text-cyanCustom hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'stories.html')">
-        <span class="lang lang-id">Cerita Solusi & Insight Karir</span><span class="lang lang-en">Stories & Career Insights</span>
-      </a>
-      <a href="/#certifications" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#certifications')">
-        <span class="lang lang-id">Sertifikasi & Lisensi BNSP</span><span class="lang lang-en">Certifications & BNSP License</span>
-      </a>
-      <a href="/#gallery" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#gallery')">
-        <span class="lang lang-id">Dokumentasi Event & Pelatihan</span><span class="lang lang-en">Event & Training Documentation</span>
-      </a>
-      <a href="/#services-rates" class="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, '/#services-rates')">
-        <span class="lang lang-id">Layanan Speaking, Training & Rate Card</span><span class="lang lang-en">Speaking, Training & Rate Card</span>
+      <a href="stories.html" aria-current="page" class="block px-3 py-2 text-sm font-semibold text-cyanCustom hover:text-white hover:bg-gray-800/80 rounded-lg transition-colors" onclick="handleNavClick(event, 'stories.html')">
+        <span class="lang lang-id">Cerita Solusi &amp; Insight Karir</span><span class="lang lang-en">Stories &amp; Career Insights</span>
       </a>
       <div class="pt-3 mt-1 border-t border-white/10 flex flex-col space-y-2">
         <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20membaca%20cerita%20solusi%20Anda." target="_blank" rel="noopener noreferrer"
@@ -538,7 +557,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ==================== EDITORIAL HERO BANNER ==================== -->
     <section class="relative pt-32 sm:pt-40 pb-16 overflow-hidden flex items-center">
@@ -2108,11 +2127,11 @@
         <article class="glass-card p-6 md:p-8 relative overflow-hidden group mb-8">
           <h3 class="text-2xl font-bold text-white mb-4">
             <span class="id-text">Strategi HR Global: Rahasia Menjaring Kandidat Berkualitas via Data & Funneling</span>
-            <span class="en-text hidden">Global HR Strategy: Secrets to Sourcing Quality Candidates via Data & Funneling</span>
+            <span class="en-text">Global HR Strategy: Secrets to Sourcing Quality Candidates via Data & Funneling</span>
           </h3>
           <p class="text-gray-300 leading-relaxed mb-4">
             <span class="id-text"><strong>Ringkasan:</strong> Rekruter sering kelelahan menyortir ratusan CV pelamar yang tidak relevan. Dengan beralih dari "feeling-based decision" ke rekrutmen berbasis data layaknya <em>marketing funnel</em>, Anda bisa memangkas beban admin dan meningkatkan kualitas kandidat secara drastis.</span>
-            <span class="en-text hidden"><strong>BLUF:</strong> Recruiters suffer from burnout sorting hundreds of irrelevant CVs. By moving from "feeling-based decisions" to a data-driven marketing funnel approach, you can eliminate admin burden and dramatically improve candidate quality.</span>
+            <span class="en-text"><strong>BLUF:</strong> Recruiters suffer from burnout sorting hundreds of irrelevant CVs. By moving from "feeling-based decisions" to a data-driven marketing funnel approach, you can eliminate admin burden and dramatically improve candidate quality.</span>
           </p>
           
           <div class="mt-5 mb-5">
@@ -2123,11 +2142,11 @@
 
           <p class="text-gray-400 mb-6">
             <span class="id-text">Dalam webinar bersama NusaWork, saya membedah tuntas mengapa <em>time-to-hire</em> bisa membengkak hingga berbulan-bulan. Kesalahan terbesarnya ada di awal: ketiadaan filter yang presisi. Dengan mengadopsi taktik <em>marketing funnel</em>, mengotomatisasi pekerjaan administratif via ATS, dan menerapkan <em>screening</em> ketat, HR tidak lagi kehabisan energi di depan laptop. Energi Anda tersisa utuh untuk menilai kandidat sesungguhnya secara langsung, memastikan mereka 100% fit dengan kultur perusahaan.</span>
-            <span class="en-text hidden">In a webinar with NusaWork, I dissected why time-to-hire balloons to months. The biggest flaw is upfront: a lack of precise filters. By adopting marketing funnel tactics and automating admin tasks via ATS, HR no longer drains energy in front of a laptop. Instead, your energy is preserved to evaluate actual human candidates, ensuring they perfectly fit the company culture.</span>
+            <span class="en-text">In a webinar with NusaWork, I dissected why time-to-hire balloons to months. The biggest flaw is upfront: a lack of precise filters. By adopting marketing funnel tactics and automating admin tasks via ATS, HR no longer drains energy in front of a laptop. Instead, your energy is preserved to evaluate actual human candidates, ensuring they perfectly fit the company culture.</span>
           </p>
           <a href="https://nugrohoamdalportfolio.dpdns.org/products.html" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-2">
             <span class="id-text">Pelajari Layanan Corporate Training & HR Advisory ➔</span>
-            <span class="en-text hidden">Explore Corporate Training & HR Advisory ➔</span>
+            <span class="en-text">Explore Corporate Training & HR Advisory ➔</span>
           </a>
           
           <script type="application/ld+json">
@@ -2146,11 +2165,11 @@
         <article class="glass-card p-6 md:p-8 relative overflow-hidden group mb-8">
           <h3 class="text-2xl font-bold text-white mb-4">
             <span class="id-text">Executive English Coaching: Mengamankan Otoritas Leader BUMN di Level Global</span>
-            <span class="en-text hidden">Executive English Coaching: Securing BUMN Leaders' Authority Globally</span>
+            <span class="en-text">Executive English Coaching: Securing BUMN Leaders' Authority Globally</span>
           </h3>
           <p class="text-gray-300 leading-relaxed mb-4">
             <span class="id-text"><strong>Ringkasan:</strong> Berkomunikasi bagi level manajerial dan eksekutif (seperti Division Head Injourney Airports) bukan sekadar soal <em>grammar</em>. Ini tentang <em>Executive Presence</em>, diplomasi (hedging), dan kerangka komunikasi strategis agar wibawa tidak runtuh saat menghadapi audiens asing.</span>
-            <span class="en-text hidden"><strong>BLUF:</strong> Communicating at an executive level (e.g., Division Head at Injourney Airports) isn't about grammar. It's about Executive Presence, diplomatic hedging, and strategic frameworks to maintain authority when facing foreign stakeholders.</span>
+            <span class="en-text"><strong>BLUF:</strong> Communicating at an executive level (e.g., Division Head at Injourney Airports) isn't about grammar. It's about Executive Presence, diplomatic hedging, and strategic frameworks to maintain authority when facing foreign stakeholders.</span>
           </p>
           
           <div class="mt-5 mb-5">
@@ -2161,11 +2180,11 @@
 
           <p class="text-gray-400 mb-6">
             <span class="id-text">Banyak petinggi perusahaan raksasa yang mendadak <em>"blank"</em> saat dicecar pertanyaan oleh <em>stakeholder</em> asing atau maskapai global. Melalui program <em>1-on-1 Executive Coaching</em>, kita tidak lagi membahas teori bahasa Inggris dasar. Coaching ini membedah <em>real case</em> di lapangan (seperti negosiasi dengan 46 maskapai asing untuk mencapai target bandara Skytrax Bintang 5). Saya melatih penggunaan metode BLUF (<em>Bottom Line Up Front</em>) dan bahasa diplomatis, sehingga instruksi yang Anda berikan terdengar elegan, tajam, dan tetap mendominasi ruang rapat internasional.</span>
-            <span class="en-text hidden">Many top executives suddenly freeze when grilled by foreign stakeholders or global airlines. Through 1-on-1 Executive Coaching, we skip basic English theory. We dissect real field cases (like negotiating with 46 foreign airlines to achieve a 5-Star Skytrax airport rating). I train leaders in the BLUF method and diplomatic language, ensuring your instructions sound elegant, sharp, and maintain dominance in any international boardroom.</span>
+            <span class="en-text">Many top executives suddenly freeze when grilled by foreign stakeholders or global airlines. Through 1-on-1 Executive Coaching, we skip basic English theory. We dissect real field cases (like negotiating with 46 foreign airlines to achieve a 5-Star Skytrax airport rating). I train leaders in the BLUF method and diplomatic language, ensuring your instructions sound elegant, sharp, and maintain dominance in any international boardroom.</span>
           </p>
           <a href="https://nugrohoamdalportfolio.dpdns.org/products.html" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-2">
             <span class="id-text">Eksplorasi Program 1-on-1 Mentorship ➔</span>
-            <span class="en-text hidden">Explore 1-on-1 Mentorship Programs ➔</span>
+            <span class="en-text">Explore 1-on-1 Mentorship Programs ➔</span>
           </a>
           
           <script type="application/ld+json">
@@ -2246,12 +2265,10 @@
         <div class="flex flex-wrap justify-center gap-5 text-xs text-slate-400">
           <a href="/" class="hover:text-white transition-colors">Beranda</a>
           <a href="/#about" class="hover:text-white transition-colors">Profil</a>
-          <a href="/#ai-systems" class="hover:text-white transition-colors">Inovasi HR & AI</a>
-          <a href="products.html" class="hover:text-white transition-colors">
-            <span class="lang lang-id">Produk & Service</span><span class="lang lang-en">Products & Services</span>
-          </a>
-          <a href="stories.html" class="text-cyanCustom font-semibold">Cerita & Solusi</a>
-          <a href="/#services-rates" class="hover:text-white transition-colors">Layanan & Rates</a>
+          <a href="/#case-studies" class="hover:text-white transition-colors">Studi Kasus</a>
+          <a href="/#hr-tech-lab" class="hover:text-white transition-colors">Lab HR &amp; AI</a>
+          <a href="products.html#services-rates" class="hover:text-white transition-colors">Produk &amp; Rates</a>
+          <a href="stories.html" class="text-cyanCustom font-semibold">Cerita &amp; Solusi</a>
         </div>
 
         <div class="flex items-center space-x-6 text-base">
@@ -2332,16 +2349,19 @@
       }
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (!menu) return;
       const isHidden = menu.classList.contains('hidden');
       if (isHidden) {
         menu.classList.remove('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
         if (icon) {
           icon.classList.remove('fa-bars');
           icon.classList.add('fa-xmark');
         }
       } else {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -2352,8 +2372,10 @@
     function closeMobileMenu() {
       const menu = document.getElementById('mobile-menu') || document.getElementById('mobileMenu');
       const icon = document.getElementById('mobileMenuIcon');
+      const btn = document.getElementById('mobileMenuBtn');
       if (menu) {
         menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -2491,6 +2513,28 @@
           }, 100);
         }
       }
+      // Close mobile menu on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const menu = document.getElementById('mobileMenu');
+          if (menu && !menu.classList.contains('hidden')) {
+            closeMobileMenu();
+            document.getElementById('mobileMenuBtn')?.focus();
+          }
+        }
+      });
+    });
+  </script>
+  <button id="backToTopBtn" type="button" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          class="hidden fixed bottom-24 right-5 z-40 w-10 h-10 rounded-full bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 shadow-lg transition-all items-center justify-center">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+  <script>
+    window.addEventListener('scroll', () => {
+      const btt = document.getElementById('backToTopBtn');
+      if (!btt) return;
+      if (window.scrollY > 600) { btt.classList.remove('hidden'); btt.classList.add('flex'); }
+      else { btt.classList.add('hidden'); btt.classList.remove('flex'); }
     });
   </script>
   <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->
