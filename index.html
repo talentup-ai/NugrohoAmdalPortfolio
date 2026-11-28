@@ -517,6 +517,21 @@
       transform: rotate(180deg);
       color: #38BDF8;
     }
+
+    /* Logo Wall Single-Row Marquee Slider */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .logo-shadow-selective {
+      filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.30));
+    }
+    .logo-kemendikbud-crop {
+      clip-path: polygon(50% 15%, 85% 38%, 84% 75%, 66% 84%, 50% 85%, 34% 84%, 16% 75%, 15% 38%);
+    }
   </style>
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
@@ -832,7 +847,7 @@
 
         </div>
 
-        <!-- ==================== REDESIGNED CLEAN LOGO CARDS (BG-SLATE-50) ==================== -->
+        <!-- ==================== SINGLE-ROW AUTO-SCROLLING LOGO WALL ==================== -->
         <div class="mt-16 pt-10 border-t border-white/10" data-aos="fade-up" data-aos-duration="900">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
             <div>
@@ -849,123 +864,143 @@
             </div>
           </div>
 
-          <!-- Redesigned Optical-Balanced Logo Cards Grid (#F1F5F9 Surface + Per-Logo Drop-Shadow) -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 sm:gap-3.5 items-stretch">
+          <!-- Single-Row Slow Auto-Scrolling Slider with Prev/Next Controls -->
+          <div id="logoWallSlider" class="relative px-11 sm:px-14" aria-label="Logo kolaborasi perusahaan dan institusi">
+            <!-- Prev Control -->
+            <button type="button" id="logoPrevBtn" aria-label="Geser logo ke kiri"
+                    class="absolute left-0 top-[14px] sm:top-[15px] z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/95 hover:bg-blue-600 text-slate-100 hover:text-white border border-white/20 shadow-lg flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyanCustom cursor-pointer">
+              <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
+            </button>
 
-            <!-- 1. The KPI Institute -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="The KPI Institute (Melbourne / Global)">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-kpi-institute.png" alt="The KPI Institute" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="1920" height="1080" loading="lazy" decoding="async">
+            <!-- Next Control -->
+            <button type="button" id="logoNextBtn" aria-label="Geser logo ke kanan"
+                    class="absolute right-0 top-[14px] sm:top-[15px] z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/95 hover:bg-blue-600 text-slate-100 hover:text-white border border-white/20 shadow-lg flex items-center justify-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyanCustom cursor-pointer">
+              <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+            </button>
+
+            <!-- Track Viewport with Subtle Edge Fade Gradients -->
+            <div class="relative overflow-hidden">
+              <div class="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-10 bg-gradient-to-r from-[#060B14] to-transparent z-10" aria-hidden="true"></div>
+              <div class="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-10 bg-gradient-to-l from-[#060B14] to-transparent z-10" aria-hidden="true"></div>
+
+              <div id="logoSliderTrack" tabindex="0" role="region" aria-label="Slider logo kolaborasi perusahaan dan institusi" class="flex overflow-x-auto no-scrollbar select-none gap-4 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyanCustom rounded-xl">
+                <!-- Primary Set: 13 Official Partners -->
+                <div class="flex gap-4 shrink-0" data-logo-set="primary">
+
+                  <!-- 1. The KPI Institute -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-kpi-institute.png" alt="Logo The KPI Institute" class="logo-shadow-selective max-h-10 max-w-[138px] scale-[1.2] w-auto object-contain transition-transform duration-300" width="1920" height="1080" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">The KPI Institute</span>
+                  </div>
+
+                  <!-- 2. Angkasa Pura II -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-angkasa-pura2.webp" alt="Logo Angkasa Pura II" class="logo-shadow-selective max-h-[38px] sm:max-h-[42px] max-w-[136px] w-auto object-contain transition-transform duration-300" width="900" height="320" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Angkasa Pura II</span>
+                  </div>
+
+                  <!-- 3. InJourney -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-InJourney.png" alt="Logo InJourney" class="logo-shadow-selective max-h-[38px] sm:max-h-[42px] max-w-[136px] w-auto object-contain transition-transform duration-300" width="608" height="164" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">InJourney</span>
+                  </div>
+
+                  <!-- 4. Kemendikbudristek -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-kementerian-pendidikan.webp" alt="Logo Kemendikbudristek" class="logo-kemendikbud-crop rounded-md max-h-[48px] sm:max-h-[52px] scale-[1.24] w-auto object-contain transition-transform duration-300" width="768" height="768" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Kemendikbudristek</span>
+                  </div>
+
+                  <!-- 5. Aeronef Academy -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-aeronefacademy.webp" alt="Logo Aeronef Academy" class="logo-shadow-selective max-h-[48px] sm:max-h-[52px] w-auto object-contain transition-transform duration-300" width="1600" height="1111" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Aeronef Academy</span>
+                  </div>
+
+                  <!-- 6. Jogja Flight (Solid White -> No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-jogjaflight.jpg" alt="Logo Jogja Flight" class="max-h-[48px] sm:max-h-[52px] w-auto object-contain transition-transform duration-300" width="402" height="304" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Jogja Flight</span>
+                  </div>
+
+                  <!-- 7. Mr. BOB Kampung Inggris -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-mrbob.webp" alt="Logo Mr. BOB Kampung Inggris" class="logo-shadow-selective max-h-[48px] sm:max-h-[52px] w-auto object-contain transition-transform duration-300" width="2557" height="2560" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Mr. BOB Kampung Inggris</span>
+                  </div>
+
+                  <!-- 8. TEI Recruitment (Solid White -> No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-teirecruitment.jpg" alt="Logo TEI Recruitment" class="max-h-12 scale-[1.25] w-auto object-contain transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">TEI Recruitment</span>
+                  </div>
+
+                  <!-- 9. Talent Up -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-talentup.webp" alt="Logo Talent Up" class="logo-shadow-selective max-h-[48px] sm:max-h-[52px] w-auto object-contain transition-transform duration-300" width="1080" height="1080" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Talent Up</span>
+                  </div>
+
+                  <!-- 10. AIESEC (No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-aisec.png" alt="Logo AIESEC" class="max-h-[38px] sm:max-h-[42px] max-w-[136px] w-auto object-contain transition-transform duration-300" width="1265" height="259" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">AIESEC</span>
+                  </div>
+
+                  <!-- 11. NusaWork (No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-nusawork.webp" alt="Logo NusaWork" class="max-h-[38px] sm:max-h-[42px] max-w-[136px] w-auto object-contain transition-transform duration-300" width="479" height="84" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">NusaWork</span>
+                  </div>
+
+                  <!-- 12. Study Abroad Center (Solid White -> No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-studyabroadcenter.webp" alt="Logo Study Abroad Center" class="max-h-12 scale-[1.25] w-auto object-contain transition-transform duration-300" width="300" height="300" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">Study Abroad Center</span>
+                  </div>
+
+                  <!-- 13. LMSL (Solid White -> No Drop Shadow) -->
+                  <div class="flex flex-col items-center w-[164px] sm:w-[172px] shrink-0 group">
+                    <div class="bg-white rounded-xl h-[68px] sm:h-[72px] w-full flex items-center justify-center px-4 border border-white/10 overflow-hidden">
+                      <img src="assets/logo-lmsl.jpg" alt="Logo LMSL" class="max-h-12 scale-[1.25] w-auto object-contain transition-transform duration-300" width="447" height="447" loading="lazy" decoding="async">
+                    </div>
+                    <span class="mt-2.5 text-[11px] sm:text-xs font-medium text-slate-300 text-center leading-snug tracking-wide">LMSL</span>
+                  </div>
+
+                </div>
               </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">The KPI Institute</span>
             </div>
-
-            <!-- 2. Angkasa Pura II -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="PT Angkasa Pura II (Persero)">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-angkasa-pura.png" alt="Angkasa Pura II" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="900" height="309" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Angkasa Pura II</span>
-            </div>
-
-            <!-- 3. InJourney -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="InJourney (Aviasi &amp; Pariwisata Indonesia)">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-InJourney.png" alt="InJourney" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="608" height="164" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">InJourney</span>
-            </div>
-
-            <!-- 4. Kemendikbudristek -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-kementerian-pendidikan.webp" alt="Kemendikbudristek" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.08] group-hover:scale-110 transition-transform duration-300" width="768" height="768" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Kemendikbudristek</span>
-            </div>
-
-            <!-- 5. Aeronef Academy -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Aeronef Academy">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-aeronefacademy.webp" alt="Aeronef Academy" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-11 w-auto max-w-full object-contain scale-[1.12] group-hover:scale-[1.18] transition-transform duration-300" width="1600" height="1111" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Aeronef Academy</span>
-            </div>
-
-            <!-- 6. Jogja Flight -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Jogja Flight Aviation Training Center">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-jogjaflight.jpg" alt="Jogja Flight" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-11 w-auto max-w-full object-contain mix-blend-multiply scale-[1.15] group-hover:scale-[1.2] transition-transform duration-300" width="402" height="304" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Jogja Flight</span>
-            </div>
-
-            <!-- 7. Mr. BOB Kampung Inggris -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Mr. BOB Kampung Inggris Pare Kediri">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-mrbob.webp" alt="Mr. BOB Kampung Inggris" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.18] group-hover:scale-[1.24] transition-transform duration-300" width="2557" height="2560" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Mr. BOB Kampung Inggris</span>
-            </div>
-
-            <!-- 8. TEI Recruitment -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="TEI Recruitment (Europe &amp; Middle East Scope)">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-teirecruitment.jpg" alt="TEI Recruitment" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.32] group-hover:scale-[1.36] transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">TEI Recruitment</span>
-            </div>
-
-            <!-- 9. Talent Up -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Talent Up Indonesia">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-talentup.webp" alt="Talent Up" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.12] group-hover:scale-[1.18] transition-transform duration-300" width="1080" height="1080" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Talent Up</span>
-            </div>
-
-            <!-- 10. AIESEC -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="AIESEC International">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-aisec.png" alt="AIESEC" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="1265" height="259" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">AIESEC</span>
-            </div>
-
-            <!-- 11. NusaWork -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="NusaWork HR Tech">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-nusawork.webp" alt="NusaWork" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="479" height="84" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">NusaWork</span>
-            </div>
-
-            <!-- 12. Study Abroad Center -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Study Abroad Center Indonesia">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-studyabroadcenter.webp" alt="Study Abroad Center" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.32] group-hover:scale-[1.36] transition-transform duration-300" width="300" height="300" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Study Abroad Center</span>
-            </div>
-
-            <!-- 13. LMSL -->
-            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="London Montessori School Leaders International">
-              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
-                <img src="assets/logo-lmsl.jpg" alt="LMSL" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.24] group-hover:scale-[1.28] transition-transform duration-300" width="447" height="447" loading="lazy" decoding="async">
-              </div>
-              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">LMSL</span>
-            </div>
-
-            <!-- 14. Closing Card: & berbagai perusahaan lainnya -->
-            <div class="rounded-xl p-3 flex flex-col items-center justify-center text-center bg-gradient-to-br from-slate-900 via-blue-950/70 to-slate-900 border border-blue-400/40 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300 group min-h-[104px]">
-              <i class="fa-solid fa-layer-group text-cyan-400/80 text-sm mb-1.5" aria-hidden="true"></i>
-              <span class="font-display font-bold text-[11px] sm:text-xs text-cyan-300 group-hover:text-white transition-colors leading-tight">
-                <span class="lang lang-id">&amp; berbagai perusahaan lainnya</span>
-                <span class="lang lang-en">&amp; many more organizations</span>
-              </span>
-            </div>
-
           </div>
+
+          <!-- Clean Bilingual Caption Below Slider -->
+          <p class="mt-4 text-center text-xs sm:text-sm text-slate-400 font-sans tracking-wide">
+            <span class="lang lang-id">...serta berbagai perusahaan, kementerian, dan institusi pendidikan lainnya</span>
+            <span class="lang lang-en">...and many more corporations, ministries, and educational institutions</span>
+          </p>
         </div>
 
       </div>
@@ -4388,6 +4423,96 @@
         closeMobileMenu();
         if (focusWasInsideMenu && btn) btn.focus();
       }
+    });
+
+    // Single-Row Slow Auto-Scrolling Logo Wall with Prev/Next Controls
+    window.addEventListener('DOMContentLoaded', () => {
+      const slider = document.getElementById('logoWallSlider');
+      const track = document.getElementById('logoSliderTrack');
+      const primary = track ? track.querySelector('[data-logo-set="primary"]') : null;
+      const prevBtn = document.getElementById('logoPrevBtn');
+      const nextBtn = document.getElementById('logoNextBtn');
+      if (!slider || !track || !primary) return;
+
+      const dup = primary.cloneNode(true);
+      dup.setAttribute('data-logo-set', 'duplicate');
+      dup.setAttribute('aria-hidden', 'true');
+      dup.querySelectorAll('img').forEach((img) => {
+        img.alt = '';
+        img.loading = 'eager';
+        img.removeAttribute('title');
+      });
+      track.appendChild(dup);
+
+      const getLoopWidth = () => {
+        const w = dup.offsetLeft - primary.offsetLeft;
+        return w > 0 ? w : (primary.offsetWidth + 16);
+      };
+
+      let isPaused = false;
+      let resumeTimer = null;
+      let manualPauseUntil = 0;
+      let acc = 0;
+      const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const pauseAuto = () => {
+        isPaused = true;
+        if (resumeTimer) clearTimeout(resumeTimer);
+      };
+      const resumeAutoDelayed = (delay = 1200) => {
+        if (resumeTimer) clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => { isPaused = false; }, delay);
+      };
+
+      slider.addEventListener('mouseenter', pauseAuto);
+      slider.addEventListener('mouseleave', () => resumeAutoDelayed(600));
+      slider.addEventListener('focusin', pauseAuto);
+      slider.addEventListener('focusout', (e) => {
+        if (!slider.contains(e.relatedTarget)) resumeAutoDelayed(800);
+      });
+      track.addEventListener('touchstart', pauseAuto, { passive: true });
+      track.addEventListener('touchend', () => resumeAutoDelayed(1400), { passive: true });
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          manualPauseUntil = Date.now() + 1800;
+          const lw = getLoopWidth();
+          if (track.scrollLeft < 360) {
+            track.scrollLeft += lw;
+          }
+          track.scrollBy({ left: -360, behavior: 'smooth' });
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          manualPauseUntil = Date.now() + 1800;
+          const lw = getLoopWidth();
+          if (track.scrollLeft >= lw - 10) {
+            track.scrollLeft -= lw;
+          }
+          track.scrollBy({ left: 360, behavior: 'smooth' });
+        });
+      }
+
+      function tick() {
+        if (!isPaused && !reducedMotionQuery.matches && Date.now() > manualPauseUntil) {
+          const lw = getLoopWidth();
+          if (lw > 0) {
+            acc += 0.45;
+            if (acc >= 1) {
+              const step = Math.floor(acc);
+              acc -= step;
+              track.scrollLeft += step;
+              if (track.scrollLeft >= lw) {
+                track.scrollLeft -= lw;
+              }
+            }
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
     });
   </script>
 </body>
