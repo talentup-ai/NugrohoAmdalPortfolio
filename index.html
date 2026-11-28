@@ -194,6 +194,16 @@
               },
               "price": "500000",
               "priceCurrency": "IDR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "English Public Speaking Coaching (Online & Offline)",
+                "description": "Coaching public speaking bahasa Inggris (1-on-1 & grup) untuk siswa SMA, mahasiswa termasuk persiapan Mawapres, serta pekerja dan profesional. Harga fleksibel & terbuka untuk negosiasi."
+              },
+              "price": "150000",
+              "priceCurrency": "IDR"
             }
           ]
         }
@@ -839,74 +849,119 @@
             </div>
           </div>
 
-          <!-- Redesigned Logo Cards Grid (Clean Bright Surface #F8FAFC / bg-slate-50) -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3.5 sm:gap-4 items-center">
-            
+          <!-- Redesigned Optical-Balanced Logo Cards Grid (#F1F5F9 Surface + Per-Logo Drop-Shadow) -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 sm:gap-3.5 items-stretch">
+
             <!-- 1. The KPI Institute -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="The KPI Institute (Melbourne / Global)">
-              <img src="assets/logo-kpi-institute.png" alt="Logo The KPI Institute Australia - Standar Manajemen Kinerja & KPI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1920" height="1080" loading="lazy" decoding="async">
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="The KPI Institute (Melbourne / Global)">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-kpi-institute.png" alt="The KPI Institute" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="1920" height="1080" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">The KPI Institute</span>
             </div>
 
-            <!-- 2. PT Angkasa Pura II -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="PT Angkasa Pura II (Persero)">
-              <img src="assets/logo-angkasa-pura.png" alt="Logo PT Angkasa Pura II Persero - BUMN Kebandarudaraan Indonesia" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="900" height="309" loading="lazy" decoding="async">
+            <!-- 2. Angkasa Pura II -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="PT Angkasa Pura II (Persero)">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-angkasa-pura.png" alt="Angkasa Pura II" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="900" height="309" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Angkasa Pura II</span>
             </div>
 
-            <!-- 3. Kementerian Pendidikan -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi">
-              <img src="assets/logo-kementerian-pendidikan.webp" alt="Logo Kemendikbudristek - Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="768" height="768" loading="lazy" decoding="async">
+            <!-- 3. InJourney -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="InJourney (Aviasi &amp; Pariwisata Indonesia)">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-InJourney.png" alt="InJourney" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="608" height="164" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">InJourney</span>
             </div>
 
-            <!-- 4. Aeronef Academy (NEW) -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Aeronef Academy">
-              <img src="assets/logo-aeronefacademy.webp" alt="Logo Aeronef Academy - Aviation Training & Career Center" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1600" height="1111" loading="lazy" decoding="async">
+            <!-- 4. Kemendikbudristek -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-kementerian-pendidikan.webp" alt="Kemendikbudristek" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.08] group-hover:scale-110 transition-transform duration-300" width="768" height="768" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Kemendikbudristek</span>
             </div>
 
-            <!-- 5. Jogja Flight (NEW) -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Jogja Flight">
-              <img src="assets/logo-jogjaflight.jpg" alt="Logo Jogja Flight Aviation Training Center - Pendidikan Pramugari & Staff Penerbangan" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="402" height="304" loading="lazy" decoding="async">
+            <!-- 5. Aeronef Academy -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Aeronef Academy">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-aeronefacademy.webp" alt="Aeronef Academy" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-11 w-auto max-w-full object-contain scale-[1.12] group-hover:scale-[1.18] transition-transform duration-300" width="1600" height="1111" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Aeronef Academy</span>
             </div>
 
-            <!-- 6. Mr. BOB Kampung Inggris -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Mr. BOB Kampung Inggris">
-              <img src="assets/logo-mrbob.webp" alt="Logo Mr. BOB Kampung Inggris Pare Kediri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="2557" height="2560" loading="lazy" decoding="async">
+            <!-- 6. Jogja Flight -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Jogja Flight Aviation Training Center">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-jogjaflight.jpg" alt="Jogja Flight" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-11 w-auto max-w-full object-contain mix-blend-multiply scale-[1.15] group-hover:scale-[1.2] transition-transform duration-300" width="402" height="304" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Jogja Flight</span>
             </div>
 
-            <!-- 7. TEI Recruitment -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="TEI Recruitment">
-              <img src="assets/logo-teirecruitment.jpg" alt="Logo TEI Recruitment - International Talent Sourcing" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
+            <!-- 7. Mr. BOB Kampung Inggris -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Mr. BOB Kampung Inggris Pare Kediri">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-mrbob.webp" alt="Mr. BOB Kampung Inggris" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.18] group-hover:scale-[1.24] transition-transform duration-300" width="2557" height="2560" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Mr. BOB Kampung Inggris</span>
             </div>
 
-            <!-- 8. Talent Up -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Talent Up">
-              <img src="assets/logo-talentup.webp" alt="Logo Talent Up Indonesia - Career Acceleration & HR Consulting" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1080" height="1080" loading="lazy" decoding="async">
+            <!-- 8. TEI Recruitment -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="TEI Recruitment (Europe &amp; Middle East Scope)">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-teirecruitment.jpg" alt="TEI Recruitment" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.32] group-hover:scale-[1.36] transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">TEI Recruitment</span>
             </div>
 
-            <!-- 9. AIESEC Global -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="AIESEC Global">
-              <img src="assets/logo-aisec.png" alt="Logo AIESEC Global - International Youth Leadership Organization" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1265" height="259" loading="lazy" decoding="async">
+            <!-- 9. Talent Up -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Talent Up Indonesia">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-talentup.webp" alt="Talent Up" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain scale-[1.12] group-hover:scale-[1.18] transition-transform duration-300" width="1080" height="1080" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Talent Up</span>
             </div>
 
-            <!-- 10. NusaWork HR Tech (Cropped) -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="NusaWork HR Tech">
-              <img src="assets/logo-nusawork.webp" alt="Logo NusaWork HR Tech - Platform HRIS & People Management" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="479" height="84" loading="lazy" decoding="async">
+            <!-- 10. AIESEC -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="AIESEC International">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-aisec.png" alt="AIESEC" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="1265" height="259" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">AIESEC</span>
             </div>
 
-            <!-- 11. Study Abroad Center -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Study Abroad Center">
-              <img src="assets/logo-studyabroadcenter.webp" alt="Logo Study Abroad Center - Konsultan Pendidikan Luar Negeri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="300" height="300" loading="lazy" decoding="async">
+            <!-- 11. NusaWork -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="NusaWork HR Tech">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-nusawork.webp" alt="NusaWork" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-9 max-w-[135px] w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="479" height="84" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">NusaWork</span>
             </div>
 
-            <!-- 12. LMSL International -->
-            <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="LMSL International">
-              <img src="assets/logo-lmsl.jpg" alt="Logo London Montessori School Leaders International" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="447" height="447" loading="lazy" decoding="async">
+            <!-- 12. Study Abroad Center -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="Study Abroad Center Indonesia">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-studyabroadcenter.webp" alt="Study Abroad Center" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.32] group-hover:scale-[1.36] transition-transform duration-300" width="300" height="300" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">Study Abroad Center</span>
             </div>
 
-            <!-- 13. Closing Card: & berbagai perusahaan lainnya -->
-            <div class="col-span-2 sm:col-span-1 rounded-xl h-16 sm:h-20 px-3 py-2 flex items-center justify-center text-center shadow-lg bg-gradient-to-br from-slate-900 via-blue-950/70 to-slate-900 border border-blue-400/40 hover:border-cyan-400 hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group">
-              <span class="font-display font-bold text-xs sm:text-xs text-cyan-300 group-hover:text-white transition-colors leading-tight">
-                <span class="lang lang-id">& berbagai perusahaan lainnya</span>
-                <span class="lang lang-en">& many more organizations</span>
+            <!-- 13. LMSL -->
+            <div class="bg-slate-100 border border-slate-200/80 rounded-xl p-2.5 sm:p-3 flex flex-col items-center justify-between hover:border-blue-400/70 hover:-translate-y-1 transition-all duration-300 group" title="London Montessori School Leaders International">
+              <div class="h-14 w-full flex items-center justify-center overflow-hidden px-3">
+                <img src="assets/logo-lmsl.jpg" alt="LMSL" style="filter: drop-shadow(0 1px 2.5px rgba(15, 23, 42, 0.28));" class="max-h-12 w-auto max-w-full object-contain mix-blend-multiply scale-[1.24] group-hover:scale-[1.28] transition-transform duration-300" width="447" height="447" loading="lazy" decoding="async">
+              </div>
+              <span class="text-[11px] sm:text-xs font-medium text-slate-700 text-center leading-tight mt-2">LMSL</span>
+            </div>
+
+            <!-- 14. Closing Card: & berbagai perusahaan lainnya -->
+            <div class="rounded-xl p-3 flex flex-col items-center justify-center text-center bg-gradient-to-br from-slate-900 via-blue-950/70 to-slate-900 border border-blue-400/40 hover:border-cyan-400 hover:-translate-y-1 transition-all duration-300 group min-h-[104px]">
+              <i class="fa-solid fa-layer-group text-cyan-400/80 text-sm mb-1.5" aria-hidden="true"></i>
+              <span class="font-display font-bold text-[11px] sm:text-xs text-cyan-300 group-hover:text-white transition-colors leading-tight">
+                <span class="lang lang-id">&amp; berbagai perusahaan lainnya</span>
+                <span class="lang lang-en">&amp; many more organizations</span>
               </span>
             </div>
 
@@ -3090,8 +3145,8 @@
             <span class="lang lang-en">Four Strategic Contribution Pillars for Teams & Leaders.</span>
           </h2>
           <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
-            <span class="lang lang-id">Format kolaborasi fleksibel, mulai dari lokakarya korporat full-day, keynote seminar, coaching privat 1-on-1, hingga pelatihan bahasa bisnis intensif.</span>
-            <span class="lang lang-en">Flexible engagement models spanning full-day corporate workshops, keynote speaking, 1-on-1 executive coaching, to specialized business English.</span>
+            <span class="lang lang-id">Format kolaborasi fleksibel, mulai dari lokakarya korporat full-day, keynote seminar, coaching privat 1-on-1, hingga pelatihan <strong>English Public Speaking Coaching (Online &amp; Offline)</strong>. Seluruh skema biaya terbuka untuk diskusi dan negosiasi demi kesepakatan terbaik.</span>
+            <span class="lang lang-en">Flexible engagement models spanning full-day corporate workshops, keynote speaking, 1-on-1 executive coaching, and <strong>English Public Speaking Coaching (Online &amp; Offline)</strong>. All rates are flexible and open to negotiation for the best mutual fit.</span>
           </p>
         </div>
 
@@ -3108,13 +3163,21 @@
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
                 <p class="text-xs text-slate-300 mb-4">Korporasi, BUMN, multinasional, startup, dan universitas yang ingin meningkatkan kapabilitas tim HR, leader, dan staf.</p>
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
-                <p class="text-xs text-slate-300">Full-day workshop, bootcamp multi-sesi, penyusunan TNA/IDP, atau perancangan arsitektur LMS & otomasi kerja.</p>
+                <p class="text-xs text-slate-300 mb-3">Full-day workshop, bootcamp multi-sesi, penyusunan TNA/IDP, atau perancangan arsitektur LMS & otomasi kerja.</p>
+                <p class="text-[11px] text-emerald-300 font-medium">
+                  <i class="fa-solid fa-handshake-angle mr-1" aria-hidden="true"></i>
+                  <span class="lang lang-id">Tarif fleksibel &amp; terbuka untuk negosiasi menyesuaikan skala batch &amp; anggaran institusi.</span>
+                  <span class="lang lang-en">Flexible pricing &amp; open to negotiation based on cohort scope and budget.</span>
+                </p>
               </div>
             </div>
             <div class="p-7 pt-0">
-              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%20dengan%20Corporate%20Training." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20tertarik%20diskusi%20dan%20negosiasi%20Corporate%20Training." target="_blank" rel="noopener noreferrer"
                  class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
-                <span>Diskusikan Kebutuhan Training</span>
+                <span>
+                  <span class="lang lang-id">Diskusikan &amp; Nego Kebutuhan Training</span>
+                  <span class="lang lang-en">Discuss &amp; Negotiate Training Scope</span>
+                </span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -3131,13 +3194,21 @@
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
                 <p class="text-xs text-slate-300 mb-4">Forum bisnis, konferensi HR, townhall perusahaan, kementerian, dan seminar kampus skala nasional maupun internasional.</p>
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
-                <p class="text-xs text-slate-300">Keynote speech, panel discussion, atau fireside chat (durasi 60-90 menit, Bahasa Indonesia atau English, Online/Offline).</p>
+                <p class="text-xs text-slate-300 mb-3">Keynote speech, panel discussion, atau fireside chat (durasi 60-90 menit, Bahasa Indonesia atau English, Online/Offline).</p>
+                <p class="text-[11px] text-emerald-300 font-medium">
+                  <i class="fa-solid fa-handshake-angle mr-1" aria-hidden="true"></i>
+                  <span class="lang lang-id">Honorarium fleksibel &amp; terbuka untuk negosiasi (korporasi, kampus, maupun komunitas).</span>
+                  <span class="lang lang-en">Flexible honorarium &amp; open to negotiation for corporate, campus, or community events.</span>
+                </p>
               </div>
             </div>
             <div class="p-7 pt-0">
-              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20mengundang%20sebagai%20Pembicara." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20ingin%20mengundang%20dan%20diskusi%20sebagai%20Pembicara." target="_blank" rel="noopener noreferrer"
                  class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
-                <span>Undang sebagai Pembicara</span>
+                <span>
+                  <span class="lang lang-id">Undang &amp; Nego Jadwal Pembicara</span>
+                  <span class="lang lang-en">Invite &amp; Negotiate Speaking</span>
+                </span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -3154,13 +3225,21 @@
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
                 <p class="text-xs text-slate-300 mb-4">Profesional, spesialis, hingga manajer yang sedang menavigasi promosi, transisi karier global, atau kepemimpinan strategis.</p>
                 <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
-                <p class="text-xs text-slate-300">Paket 4 sesi privat intensif per bulan (online) didukung asesmen psikometrik RIASEC/OCEAN & audit CV/LinkedIn data-driven.</p>
+                <p class="text-xs text-slate-300 mb-3">Paket 4 sesi privat intensif per bulan (online) didukung asesmen psikometrik RIASEC/OCEAN & audit CV/LinkedIn data-driven.</p>
+                <p class="text-[11px] text-emerald-300 font-medium">
+                  <i class="fa-solid fa-handshake-angle mr-1" aria-hidden="true"></i>
+                  <span class="lang lang-id">Investasi 1-on-1 mulai Rp 150rb/sesi; sangat terbuka untuk diskusi paket terbaik sesuai tujuan karier.</span>
+                  <span class="lang lang-en">1-on-1 starts from IDR 150K/session; open to flexible bundle negotiation.</span>
+                </p>
               </div>
             </div>
             <div class="p-7 pt-0">
-              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%201-on-1%20Coaching." target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20tertarik%20konsultasi%20dan%20nego%20paket%201-on-1%20Coaching." target="_blank" rel="noopener noreferrer"
                  class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
-                <span>Konsultasi Sesi Coaching</span>
+                <span>
+                  <span class="lang lang-id">Konsultasi &amp; Nego Sesi Coaching</span>
+                  <span class="lang lang-en">Consult &amp; Negotiate Coaching</span>
+                </span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -3170,21 +3249,45 @@
           <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
             <div>
               <div class="aspect-[16/9] overflow-hidden bg-slate-900">
-                <img src="assets/pillar-04-english.webp" alt="Layanan Executive Business English & Aviation English Training oleh Nugroho Amdal" class="w-full h-full object-cover object-top" width="1600" height="900" loading="lazy" decoding="async">
+                <img src="assets/pillar-04-english.webp" alt="Layanan English Public Speaking Coaching, Executive Business English & Aviation English oleh Nugroho Amdal" class="w-full h-full object-cover object-top" width="1600" height="900" loading="lazy" decoding="async">
               </div>
               <div class="p-7">
-                <h3 class="font-serif text-2xl font-bold text-white mb-2">Professional & Executive English Training</h3>
-                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Target Peserta</div>
-                <p class="text-xs text-slate-300 mb-4">Tim korporat, leader, dan profesional yang berinteraksi langsung dengan stakeholder regional/global.</p>
-                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format Delivery</div>
-                <p class="text-xs text-slate-300">Program komunikasi bisnis, negosiasi, presentasi eksekutif, dan wawancara internasional dengan standar rubrik terukur.</p>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">
+                  <span class="lang lang-id">English Public Speaking &amp; Executive English</span>
+                  <span class="lang lang-en">English Public Speaking &amp; Executive English</span>
+                </h3>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">
+                  <span class="lang lang-id">Target Peserta (Online &amp; Offline)</span>
+                  <span class="lang lang-en">Target Participants (Online &amp; Offline)</span>
+                </div>
+                <p class="text-xs text-slate-300 mb-4">
+                  <span class="lang lang-id"><strong>English Public Speaking Coaching</strong> untuk <strong>Siswa SMA, Mahasiswa (termasuk persiapan Mawapres)</strong>, <strong>Pekerja/Profesional</strong>, hingga tim eksekutif korporat.</span>
+                  <span class="lang lang-en"><strong>English Public Speaking Coaching</strong> for <strong>High School Students, University Students (incl. Mawapres prep)</strong>, <strong>Working Professionals</strong>, and corporate leaders.</span>
+                </p>
+                <div class="text-xs uppercase tracking-wider font-bold text-gold font-display mb-1">Format &amp; Skema Harga</div>
+                <p class="text-xs text-slate-300 mb-3">
+                  <span class="lang lang-id">1-on-1 mulai Rp 150.000/sesi &amp; paket grup/kampus/sekolah fleksibel. Presentasi eksekutif, lomba/Mawapres, negosiasi, dan wawancara internasional.</span>
+                  <span class="lang lang-en">1-on-1 starts from IDR 150,000/session &amp; flexible group/campus/school packages covering presentations, Mawapres prep, negotiation, &amp; global interviews.</span>
+                </p>
+                <p class="text-[11px] text-emerald-300 font-medium">
+                  <i class="fa-solid fa-handshake-angle mr-1" aria-hidden="true"></i>
+                  <span class="lang lang-id">Harga fleksibel &amp; sangat terbuka untuk negosiasi demi mencapai kesepakatan terbaik.</span>
+                  <span class="lang lang-en">Flexible pricing &amp; very open to negotiation to find the best mutual fit.</span>
+                </p>
               </div>
             </div>
-            <div class="p-7 pt-0">
-              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20ingin%20info%20Executive%20English." target="_blank" rel="noopener noreferrer"
+            <div class="p-7 pt-0 flex flex-wrap items-center justify-between gap-3">
+              <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20tertarik%20konsultasi%20dan%20nego%20English%20Public%20Speaking%20Coaching." target="_blank" rel="noopener noreferrer"
                  class="inline-flex items-center space-x-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
-                <span>Konsultasi Bahasa Bisnis</span>
+                <span>
+                  <span class="lang lang-id">Konsultasi &amp; Nego English Coaching</span>
+                  <span class="lang lang-en">Consult &amp; Negotiate English Coaching</span>
+                </span>
                 <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#english-speaking-slider" class="text-[11px] font-display font-semibold text-cyanCustom hover:text-white underline underline-offset-4">
+                <span class="lang lang-id">Tonton Demo Sesi ➔</span>
+                <span class="lang lang-en">Watch Session Demos ➔</span>
               </a>
             </div>
           </div>
@@ -3200,33 +3303,33 @@
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-gold/20 border border-gold/30 text-xs font-bold uppercase tracking-wider text-gold font-display">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
-                <span class="lang lang-id">Referensi Investasi &amp; B2B Rate Card</span>
-                <span class="lang lang-en">Investment Reference &amp; B2B Rate Card</span>
+                <span class="lang lang-id">Referensi Investasi &amp; B2B Rate Card (Terbuka untuk Nego)</span>
+                <span class="lang lang-en">Investment Reference &amp; B2B Rate Card (Open to Negotiation)</span>
               </div>
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
-                <span class="lang lang-id">Skema Investasi Transparan untuk Kolaborasi Korporat &amp; Coaching.</span>
-                <span class="lang lang-en">Transparent Collaboration Rates for Corporate &amp; Coaching Engagements.</span>
+                <span class="lang lang-id">Skema Investasi Transparan &amp; Fleksibel untuk Semua Layanan.</span>
+                <span class="lang lang-en">Transparent &amp; Flexible Investment Across All Services.</span>
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed font-sans">
-                <span class="lang lang-id">Tersedia skema flat-rate batch untuk In-House Training (tanpa biaya tambahan di atas 30 peserta), setup HRIS harga putus (turnkey), keynote speaking, hingga sesi coaching 1-on-1. Seluruh rincian paket, inklusi, dan syarat kolaborasi tercantum lengkap di halaman Produk &amp; Layanan.</span>
-                <span class="lang lang-en">Structured around flat-rate batch pricing for In-House Training, turnkey one-time HRIS automation setup, keynote speaking, and 1-on-1 coaching. Full package inclusions, commercial terms, and complete rate cards are hosted on the Products &amp; Services page.</span>
+                <span class="lang lang-id">Mencakup Corporate Training, Setup HRIS &amp; HR Tech, Keynote Speaking, 1-on-1 Career &amp; Executive Coaching, hingga <strong>English Public Speaking Coaching (Online &amp; Offline)</strong>. <strong>Seluruh harga bersifat fleksibel dan Mas Amdal sangat terbuka untuk negosiasi maupun diskusi anggaran</strong> guna mencapai kesepakatan terbaik.</span>
+                <span class="lang lang-en">Covers Corporate Training, HRIS &amp; HR Tech Setup, Keynote Speaking, 1-on-1 Career &amp; Executive Coaching, and <strong>English Public Speaking Coaching (Online &amp; Offline)</strong>. <strong>All pricing is flexible and Mas Amdal is very open to negotiation and budget discussions</strong> to reach the best mutual agreement.</span>
               </p>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
                 <div class="p-3 rounded-xl bg-slate-950/70 border border-white/10">
-                  <div class="text-slate-400 text-[11px]">1-on-1 Coaching</div>
-                  <div class="font-bold text-emerald-400 mt-0.5"><span class="lang lang-id">Mulai Rp 150rb</span><span class="lang lang-en">From IDR 150K</span></div>
+                  <div class="text-slate-400 text-[11px]">Coaching &amp; English Public Speaking</div>
+                  <div class="font-bold text-emerald-400 mt-0.5"><span class="lang lang-id">Mulai Rp 150rb / sesi (Nego)</span><span class="lang lang-en">From IDR 150K / sess (Nego)</span></div>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-950/70 border border-white/10">
                   <div class="text-slate-400 text-[11px]">Speaking / Keynote</div>
-                  <div class="font-bold text-sky-400 mt-0.5"><span class="lang lang-id">Rp 1jt – 8jt</span><span class="lang lang-en">IDR 1M – 8M</span></div>
+                  <div class="font-bold text-sky-400 mt-0.5"><span class="lang lang-id">Rp 1jt – 8jt (Nego)</span><span class="lang lang-en">IDR 1M – 8M (Nego)</span></div>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-950/70 border border-white/10">
                   <div class="text-slate-400 text-[11px]">Corporate Training</div>
-                  <div class="font-bold text-orange-400 mt-0.5"><span class="lang lang-id">Rp 10jt – 25jt</span><span class="lang lang-en">IDR 10M – 25M</span></div>
+                  <div class="font-bold text-orange-400 mt-0.5"><span class="lang lang-id">Rp 10jt – 25jt (Nego)</span><span class="lang lang-en">IDR 10M – 25M (Nego)</span></div>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-950/70 border border-white/10">
-                  <div class="text-slate-400 text-[11px]">HRIS Turnkey Setup</div>
-                  <div class="font-bold text-purple-400 mt-0.5"><span class="lang lang-id">Rp 15jt – 35jt</span><span class="lang lang-en">IDR 15M – 35M</span></div>
+                  <div class="text-slate-400 text-[11px]">HRIS &amp; AI Turnkey Setup</div>
+                  <div class="font-bold text-purple-400 mt-0.5"><span class="lang lang-id">Rp 12jt – 35jt (Nego)</span><span class="lang lang-en">IDR 12M – 35M (Nego)</span></div>
                 </div>
               </div>
             </div>
@@ -3236,10 +3339,10 @@
                 <span class="lang lang-id">Lihat Rate Card &amp; Paket Lengkap ➔</span>
                 <span class="lang lang-en">View Full Rate Card &amp; Packages ➔</span>
               </a>
-              <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20kami%20tertarik%20berdiskusi%20mengenai%20sesi%20In-House%20Training%20%2F%20Keynote%20Speaking%20%2F%20Konsultasi%20HR%20korporat." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 rounded-xl bg-blue-600/25 hover:bg-blue-600/45 text-cyanCustom hover:text-white border border-blue-500/40 font-display font-semibold text-xs sm:text-sm text-center flex items-center justify-center space-x-2 transition-all">
+              <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20kami%20ingin%20berdiskusi%20dan%20negosiasi%20kebutuhan%20layanan%20Training%20%2F%20Coaching%20%2F%20HR%20Tech." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 rounded-xl bg-blue-600/25 hover:bg-blue-600/45 text-cyanCustom hover:text-white border border-blue-500/40 font-display font-semibold text-xs sm:text-sm text-center flex items-center justify-center space-x-2 transition-all">
                 <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-                <span class="lang lang-id">Ajukan Proposal &amp; Jadwal Korporat</span>
-                <span class="lang lang-en">Request Corporate Proposal &amp; Availability</span>
+                <span class="lang lang-id">Diskusi &amp; Nego Penawaran via WhatsApp</span>
+                <span class="lang lang-en">Discuss &amp; Negotiate via WhatsApp</span>
               </a>
             </div>
           </div>
@@ -3697,6 +3800,61 @@
 
         </div>
 
+        <!-- Video Slider: Online English Public Speaking Coaching (Click-to-Load Facade, 0ms FCP Impact) -->
+        <div id="english-speaking-slider" class="mt-10 glass-card rounded-2xl p-5 sm:p-6 border border-cyanCustom/30 bg-gradient-to-br from-slate-900/95 via-cardDark to-blue-950/30 scroll-mt-24" data-aos="fade-up">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-5 space-y-3">
+              <div class="inline-flex items-center space-x-2 px-2.5 py-1 rounded-md bg-cyan-500/15 border border-cyan-400/30 text-[11px] font-bold uppercase tracking-wider text-cyanCustom font-display">
+                <i class="fa-brands fa-youtube text-red-400" aria-hidden="true"></i>
+                <span class="lang lang-id">Dokumentasi Video • English Public Speaking</span>
+                <span class="lang lang-en">Video Highlights • English Public Speaking</span>
+              </div>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white leading-snug">
+                <span class="lang lang-id">English Public Speaking Coaching (Online &amp; Offline)</span>
+                <span class="lang lang-en">English Public Speaking Coaching (Online &amp; Offline)</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                <span class="lang lang-id">Sesi praktik langsung untuk <strong>Siswa SMA</strong>, <strong>Mahasiswa (persiapan Mawapres)</strong>, hingga <strong>Pekerja/Profesional</strong>. 1-on-1 mulai Rp 150rb/sesi &amp; paket grup fleksibel — <strong>terbuka untuk negosiasi</strong>.</span>
+                <span class="lang lang-en">Live practice coaching for <strong>High School Students</strong>, <strong>University Students (Mawapres prep)</strong>, and <strong>Professionals</strong>. 1-on-1 from IDR 150K/session &amp; flexible group bundles — <strong>open to negotiation</strong>.</span>
+              </p>
+              <div class="flex flex-wrap gap-2.5 pt-1">
+                <a href="products.html#english-public-speaking" class="px-3.5 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/35 text-cyanCustom hover:text-white border border-cyan-400/30 font-display font-semibold text-xs transition-all">
+                  <span class="lang lang-id">Detail Layanan &amp; Tarif ➔</span>
+                  <span class="lang lang-en">Service Details &amp; Rates ➔</span>
+                </a>
+                <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Amdal%2C%20saya%20tertarik%20konsultasi%20dan%20nego%20English%20Public%20Speaking%20Coaching." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white border border-white/15 font-display font-semibold text-xs inline-flex items-center gap-1.5 transition-all">
+                  <i class="fa-brands fa-whatsapp text-emerald-400" aria-hidden="true"></i>
+                  <span class="lang lang-id">Konsultasi &amp; Nego</span>
+                  <span class="lang lang-en">Consult &amp; Negotiate</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7" tabindex="0" aria-label="Video carousel English Public Speaking Coaching" data-yt-carousel data-slides='[{"id":"R9Pi-F6L7cw","titleId":"Coaching English Public Speaking Universitas Brawijaya","titleEn":"English Public Speaking Coaching — Universitas Brawijaya","captionId":"Sesi online persiapan public speaking &amp; presentasi bahasa Inggris mahasiswa Universitas Brawijaya.","captionEn":"Online English public speaking &amp; stage delivery coaching for Universitas Brawijaya students."},{"id":"2sHSTzyCYPA","titleId":"Coaching English Public Speaking Mahasiswa Berprestasi Malang","titleEn":"English Public Speaking Coaching — Outstanding Student (Mawapres) Malang","captionId":"Pembinaan intensif pidato ilmiah, Q&amp;A kritis, &amp; percaya diri Mawapres Malang.","captionEn":"Intensive English public speaking, critical Q&amp;A, &amp; confidence coaching for Mawapres finalists in Malang."}]'>
+              <div class="aspect-video w-full rounded-xl overflow-hidden border border-white/15 bg-slate-950 shadow-xl" data-yt-stage></div>
+              <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <div class="text-xs sm:text-sm font-display font-bold text-white truncate" data-yt-title>Coaching English Public Speaking Universitas Brawijaya</div>
+                  <div class="text-[11px] text-slate-400 truncate" data-yt-caption>Sesi online persiapan public speaking &amp; presentasi bahasa Inggris mahasiswa Universitas Brawijaya.</div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                  <button type="button" data-yt-prev aria-label="Previous video" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-chevron-left text-xs" aria-hidden="true"></i>
+                  </button>
+                  <div class="flex items-center gap-1.5 px-1.5">
+                    <button type="button" data-yt-dot="0" aria-label="Slide 1" aria-current="true" class="h-2 rounded-full bg-cyanCustom w-6 transition-all"></button>
+                    <button type="button" data-yt-dot="1" aria-label="Slide 2" aria-current="false" class="h-2 rounded-full bg-slate-600 w-2.5 transition-all"></button>
+                  </div>
+                  <span class="text-[11px] font-display font-bold text-slate-300 tabular-nums" data-yt-counter>1/2</span>
+                  <button type="button" data-yt-next aria-label="Next video" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-chevron-right text-xs" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -3878,6 +4036,7 @@
 
   <!-- ==================== ZERO-COOKIE TELEMETRY & ASISTEN MAS AMDAL ==================== -->
   <script src="assets/js/analytics-hook.js" defer></script>
+  <script src="assets/js/yt-carousel.js" defer></script>
   <script src="assets/js/assistant-widget.js?v=2.3" defer></script>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->

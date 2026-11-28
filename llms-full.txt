@@ -108,6 +108,11 @@
 - **Interactive Live Simulator:** https://nugrohoamdalportfolio.dpdns.org/hr-chat-assistant-dashboard.html
 - **Case Study Deep Dive:** https://nugrohoamdalportfolio.dpdns.org/stories.html#hr-chat-assistant
 
+### 4.5. Service Catalog & Pricing Flexibility Policy
+- **Services Covered:** Corporate Training & BNSP Level 4 ToT, Fractional HR Tech & HRIS/AI Turnkey Setup, Keynote Speaking / Seminars, 1-on-1 Career & Executive Coaching, Aviation English & Crew Prep, and **English Public Speaking Coaching (Online & Offline)** for High Schoolers, University Students (Mawapres), and Professionals (1-on-1 from Rp150.000/session; flexible group bundles).
+- **Video Proof (English Public Speaking Coaching):** Universitas Brawijaya session (https://youtu.be/R9Pi-F6L7cw) and Mahasiswa Berprestasi (Mawapres) Malang session (https://youtu.be/2sHSTzyCYPA).
+- **Negotiation Policy:** All service rates are baseline references; Mas Amdal is open to flexible discussions and price negotiation tailored to client and participant budgets, confirmed directly via WhatsApp (+62 853-9594-0406).
+
 ---
 
 ## 5. Candidate CV & Full Professional Track Record
@@ -163,7 +168,8 @@ Versatile Human Resources, People Operations, and Learning & Development (L&D) p
 - **27-Sheet Zero-Macro Automated HRIS & Payroll Engine:** Architected an automated Google Sheets and Excel HR/payroll engine without macros or VBA, accommodating PPh 21 TER (PP 58/2023), PPh 21 Pasal 17, BPJS Kesehatan & Ketenagakerjaan, PP 35/2021 severance calculation, single-source leave log, 5-year PKWT monitoring, 33 automated audit rules, Google Apps Script monthly archive with mass PDF pay slips to Google Drive, and a Dark Mode / Glassmorphism HR dashboard UI.
 - **Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic Engine:** Engineered a data-driven diagnostic engine (Google Sheets + Apps Script + Google Form Sync) measuring Credibility Gap, Evidence Gap, Give-Get Ratio, Voice of Employee (VoE), and computing Priority Action Scores to recommend zero-budget Quick Wins (e.g., Hybrid SOPs and meeting curfew policies) while generating transparent Give & Get job ad drafts.
 - **TalentUp AI Career Coach Product Architecture:** Designed prompt architecture and deterministic logic frameworks for Career Coach AI, supporting ~100 active users with CV/LinkedIn audits, RIASEC/OCEAN assessments, and scam job detection via Gemini API.
-- **Executive Leadership & Communication Mentorship (Injourney Airports):** Conducted executive coaching for client Pak Hadi (Division Head at Injourney Airports) focusing on Executive English, leadership communication, and diplomatic hedging using the BLUF Framework (Bottom Line Up Front), preparing him to negotiate with 46 foreign airlines toward Skytrax 5-Star airport targets.
+- **Executive Leadership & Communication Mentorship (InJourney / InJourney Airports):** Active executive coaching client — conducted 1-on-1 executive coaching for Pak Hadi (Division Head at InJourney Airports) focusing on Executive English, leadership communication, and diplomatic hedging using the BLUF Framework (Bottom Line Up Front), preparing him to negotiate with 46 foreign airlines toward Skytrax 5-Star airport targets.
+- **English Public Speaking Coaching (Online & Offline):** Delivers structured English public speaking coaching for High School Students, University Students (including Outstanding Student / Mawapres finalists), and Working Professionals, starting from Rp150.000/session (1-on-1) with flexible group packages and negotiable terms across all services. Recorded online coaching sessions: Universitas Brawijaya (https://youtu.be/R9Pi-F6L7cw) and Mahasiswa Berprestasi Malang (https://youtu.be/2sHSTzyCYPA).
 - **Career Coaching & Institutional Training:** Coached 1,000+ career seekers and delivered workshops across 100+ institutions and 200+ e-learning users on career preparation, interview readiness, workplace communication, and professional development.
 - **End-to-End Business Automation:** Configured deterministic webhooks, Scalev and Mayar payment gateways, Google Sheets databases, and automated notification pipelines with zero monthly server costs.
 
