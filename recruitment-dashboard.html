@@ -338,17 +338,17 @@
         <i class="fa-solid fa-bars text-lg"></i>
       </button>
 
-      <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+      <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0 overflow-hidden">
         <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
           <i class="fa-solid fa-user-plus text-base sm:text-lg"></i>
         </div>
-        <div class="min-w-0">
-          <div class="flex items-center gap-2">
-            <h1 class="text-xs sm:text-base font-bold text-white tracking-tight font-display truncate">
+        <div class="min-w-0 flex-1 overflow-hidden">
+          <div class="flex items-center gap-2 min-w-0">
+            <h1 class="text-xs sm:text-base font-bold text-white tracking-tight font-display truncate min-w-0">
               <span x-show="lang === 'id'">Recruitment & Manpower Planning (MPP) Hub — Live UI Simulation</span>
               <span x-show="lang === 'en'">Recruitment & Manpower Planning (MPP) Hub — Live UI Simulation</span>
             </h1>
-            <span class="hidden md:inline-flex shrink-0 items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-cyan-300 border border-blue-500/30 uppercase tracking-wider">
+            <span class="hidden xl:inline-flex shrink-0 items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-cyan-300 border border-blue-500/30 uppercase tracking-wider">
               <i class="fa-solid fa-circle text-[6px] animate-pulse"></i> 10 Modul Zero-Macro
             </span>
           </div>
@@ -375,6 +375,16 @@
         <span class="hidden sm:inline" x-show="lang === 'id'">Buka Backend Spreadsheet ➔</span>
         <span class="hidden sm:inline" x-show="lang === 'en'">Open Backend Spreadsheet ➔</span>
         <span class="sm:hidden">Sheets</span>
+      </a>
+
+      <!-- Corporate Handoff CTA -->
+      <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20baru%20mencoba%20simulasi%20Recruitment%20%26%20MPP%20Hub%2010%20Modul%20dan%20ingin%20diskusikan%20custom%20setup%20untuk%20perusahaan%20kami."
+         target="_blank" rel="noopener noreferrer"
+         data-track-event="simulator_corporate_handoff" data-track-target="recruitment_header_cta"
+         class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-300 hover:text-white border border-emerald-500/40 text-xs font-semibold transition-all">
+        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+        <span x-show="lang === 'id'">Custom Setup</span>
+        <span x-show="lang === 'en'">Custom Setup</span>
       </a>
 
       <!-- Back to Portfolio -->
@@ -741,7 +751,15 @@
               Spreadsheet backend dirancang 100% tanpa skrip macro VBA, menghubungkan Requisition ID dengan Plan ID MPP secara otomatis, menghitung SLA hari kerja (Turn Around Time), mendeteksi tanggal kedaluwarsa consent data kandidat, serta menghasilkan pesan undangan otomatis sekali klik.
             </p>
           </div>
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+          <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full lg:w-auto">
+            <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20baru%20mencoba%20simulasi%20Recruitment%20%26%20MPP%20Hub%2010%20Modul%20dan%20ingin%20diskusikan%20custom%20setup%20untuk%20perusahaan%20kami."
+               target="_blank" rel="noopener noreferrer"
+               data-track-event="simulator_corporate_handoff" data-track-target="recruitment_bottom_cta"
+               class="px-5 py-3.5 rounded-xl font-display font-semibold text-xs sm:text-sm text-center flex items-center justify-center space-x-2 bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/40 text-emerald-300 hover:text-white transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+              <span x-show="lang === 'id'">Diskusikan Custom Setup untuk Perusahaan Anda ➔</span>
+              <span x-show="lang === 'en'">Discuss Custom Setup for Your Company ➔</span>
+            </a>
             <a href="https://docs.google.com/spreadsheets/d/1jEyWThrkrcBAh1gMRVEz1IpD3dTopV6L6Ar8SeBNOyA/preview" target="_blank" rel="noopener noreferrer"
                class="px-6 py-3.5 rounded-xl font-display font-semibold text-xs sm:text-sm uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white shadow-lg transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
               <i class="fa-solid fa-table-cells text-base"></i>
@@ -875,5 +893,6 @@
     </div>
   </div>
 
+  <script src="assets/js/analytics-hook.js" defer></script>
 </body>
 </html>

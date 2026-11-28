@@ -179,16 +179,17 @@
           <span x-text="lang === 'id' ? 'ID (Bahasa)' : 'EN (English)'"></span>
         </button>
 
-        <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20tertarik%20dengan%20sistem%20HR%20Chat%20Assistant%20Self-Service%20dan%20Helpdesk%20ini.%20Bisa%20jadwalkan%20diskusi%20implementasi%3F" target="_blank" rel="noopener noreferrer" class="text-xs px-3.5 py-1.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all flex items-center gap-1.5 shadow-xs">
+        <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20baru%20mencoba%20simulasi%20HR%20Chat%20Assistant%20Self-Service%20dan%20ingin%20diskusikan%20custom%20setup%20untuk%20perusahaan%20kami." target="_blank" rel="noopener noreferrer" data-track-event="simulator_corporate_handoff" data-track-target="hr_chat_header_cta" class="text-xs px-3.5 py-1.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all flex items-center gap-1.5 shadow-xs">
           <i class="fa-brands fa-whatsapp text-white"></i>
-          <span x-text="lang === 'id' ? 'Konsultasi Setup' : 'Setup Consultation'"></span>
+          <span x-text="lang === 'id' ? 'Custom Setup' : 'Custom Setup'"></span>
         </a>
       </div>
     </div>
   </header>
 
+  <main id="main-content" tabindex="-1" class="flex-1 w-full flex flex-col focus:outline-none">
   <!-- TOP CONTROL BAR: INVISIBLE SSO ROLE SWITCHER (ZERO UI EMOJIS) -->
-  <section class="border-b border-cardBorder bg-surface py-3 px-4 sm:px-6">
+  <section aria-label="Role Simulation Controls" class="border-b border-cardBorder bg-surface py-3 px-4 sm:px-6">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3.5">
       
       <!-- Role Switcher Tabs (Clean Linear Style) -->
@@ -291,7 +292,7 @@
   </section>
 
   <!-- MAIN DUAL-PANEL CONTAINER (PURE WHITE ON OFF-WHITE BG) -->
-  <main id="main-content" tabindex="-1" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 focus:outline-none">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
     
     <!-- ========================================== -->
     <!-- LEFT PANEL: ZERO-FRICTION EMPLOYEE CHAT (col-5) -->
@@ -707,11 +708,18 @@
         <span>Designed & Architected by <strong>Nugroho Amdal, S.S., CI.</strong></span>
       </div>
 
-      <div class="flex items-center gap-4 text-[11px]">
-        <a href="/" class="hover:text-blue-600 transition-colors">Portofolio Utama</a>
-        <a href="/hris-dashboard.html" class="hover:text-emerald-700 transition-colors">HRIS Engine</a>
-        <a href="/recruitment-dashboard.html" class="hover:text-blue-700 transition-colors">Recruitment MPP</a>
-        <a href="/evp-dashboard.html" class="hover:text-purple-700 transition-colors">EVP Diagnostic</a>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-[11px]">
+        <a href="https://wa.me/6285395940406?text=Halo%20Mas%20Nugroho%2C%20saya%20baru%20mencoba%20simulasi%20HR%20Chat%20Assistant%20Self-Service%20dan%20ingin%20diskusikan%20custom%20setup%20untuk%20perusahaan%20kami."
+           target="_blank" rel="noopener noreferrer"
+           data-track-event="simulator_corporate_handoff" data-track-target="hr_chat_footer_cta"
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-semibold transition-colors">
+          <i class="fa-brands fa-whatsapp text-emerald-700"></i>
+          <span x-text="lang === 'id' ? 'Diskusikan Custom Setup untuk Perusahaan Anda ➔' : 'Discuss Custom Setup for Your Company ➔'"></span>
+        </a>
+        <a href="index.html#hr-tech-lab" class="hover:text-blue-600 transition-colors">Portofolio Utama</a>
+        <a href="hris-dashboard.html" class="hover:text-emerald-700 transition-colors">HRIS Engine</a>
+        <a href="recruitment-dashboard.html" class="hover:text-blue-700 transition-colors">Recruitment MPP</a>
+        <a href="evp-dashboard.html" class="hover:text-purple-700 transition-colors">EVP Diagnostic</a>
       </div>
     </div>
   </footer>
@@ -1205,5 +1213,6 @@
     }
   </script>
 
+  <script src="assets/js/analytics-hook.js" defer></script>
 </body>
 </html>

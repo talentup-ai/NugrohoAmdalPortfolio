@@ -243,7 +243,10 @@
   <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="assets/hero-cutout.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -276,8 +279,9 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- AOS Animation on Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- AOS Animation on Scroll (Non-Blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
 
   <style>
     /* CSS Variables & Global Dark Obsidian System */
@@ -402,11 +406,18 @@
 
     /* Desktop Root Font-Size Scaling */
     @media (min-width: 1024px) {
-      html {
-        font-size: 15px;
-      }
       nav a {
         white-space: nowrap;
+      }
+    }
+    @media (min-width: 1280px) {
+      html {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 1536px) {
+      html {
+        font-size: 15px;
       }
     }
 
@@ -504,60 +515,60 @@
   </a>
 
   <!-- ==================== SECTION 1: NAVIGATION BAR ==================== -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
-    <div class="w-full max-w-full px-4 xl:px-8 h-20 flex items-center justify-between">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/85 backdrop-blur-xl border-b border-white/10">
+    <div class="w-full max-w-[1440px] mx-auto px-4 xl:px-6 h-20 flex items-center justify-between gap-3">
       
       <!-- Brand Wordmark -->
       <a href="#hero" onclick="handleNavClick(event, '#hero')" class="flex flex-col group shrink-0 min-w-max">
-        <span class="font-serif text-lg xs:text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors whitespace-nowrap">
+        <span class="font-serif text-lg sm:text-xl 2xl:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors whitespace-nowrap">
           Nugroho Amdal<span class="text-gold font-sans font-normal text-xs sm:text-sm">, S.S., CI.</span>
         </span>
-        <span class="hidden md:block text-[9px] xl:text-[10px] font-display tracking-wider uppercase text-slate-400 group-hover:text-slate-200 transition-colors whitespace-nowrap">
+        <span class="hidden 2xl:block text-[10px] font-display tracking-wider uppercase text-slate-400 group-hover:text-slate-200 transition-colors whitespace-nowrap">
           <span class="lang lang-id">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
           <span class="lang lang-en">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
         </span>
       </a>
 
       <!-- Desktop Navigation Links (8 Hybrid Items) -->
-      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3.5 2xl:gap-5">
-        <a href="#about" onclick="handleNavClick(event, '#about')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3 xl:gap-4">
+        <a href="#about" onclick="handleNavClick(event, '#about')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="#case-studies" onclick="handleNavClick(event, '#case-studies')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#case-studies" onclick="handleNavClick(event, '#case-studies')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Dampak Nyata</span><span class="lang lang-en">Impact</span>
         </a>
-        <a href="#experience" onclick="handleNavClick(event, '#experience')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#experience" onclick="handleNavClick(event, '#experience')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">HR Tech &amp; AI</span><span class="lang lang-en">HR Tech &amp; AI</span>
         </a>
-        <a href="#corporate-solutions" onclick="handleNavClick(event, '#corporate-solutions')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#corporate-solutions" onclick="handleNavClick(event, '#corporate-solutions')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Konsultasi</span><span class="lang lang-en">Consulting</span>
         </a>
-        <a href="#credentials" onclick="handleNavClick(event, '#credentials')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="#credentials" onclick="handleNavClick(event, '#credentials')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Kredensial</span><span class="lang lang-en">Credentials</span>
         </a>
-        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
         </a>
-        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Cerita &amp; Insight</span><span class="lang lang-en">Stories</span>
         </a>
       </nav>
 
       <!-- Right Controls: Bilingual Button Beam + Recruiter CTA + Mobile Hamburger -->
-      <div class="shrink-0 flex items-center gap-3">
+      <div class="shrink-0 flex items-center gap-2.5">
         
         <!-- BILINGUAL TOGGLE WITH CONIC ROTATING BORDER BEAM -->
         <div class="border-beam-outer shadow-lg" title="Ganti Bahasa / Switch Language">
-          <div class="bg-cardDark/95 rounded-full p-1 flex items-center space-x-1">
+          <div class="bg-cardDark rounded-full p-1 flex items-center space-x-1">
             <button id="btnLangID" type="button" onclick="switchLanguage('id')" 
-              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md">
+              class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md">
               ID
             </button>
             <button id="btnLangEN" type="button" onclick="switchLanguage('en')" 
-              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white">
+              class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white">
               EN
             </button>
           </div>
@@ -566,10 +577,10 @@
         <!-- Quick Contact CTA (Recruiter / Career Focus) -->
         <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20mendiskusikan%20peluang%20karir%20%2F%20peran%20HR%20profesional." 
            target="_blank" rel="noopener noreferrer"
-           class="hidden sm:inline-flex items-center space-x-2 whitespace-nowrap px-3.5 py-2 text-xs font-semibold font-display rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-          <span class="lang lang-id">Hubungi Langsung</span>
-          <span class="lang lang-en">Get in Touch</span>
+           class="hidden sm:inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-1.5 text-[13px] font-semibold font-display rounded-xl bg-blue-700 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-emerald-300 text-sm"></i>
+          <span class="lang lang-id">Hubungi</span>
+          <span class="lang lang-en">Contact</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -633,32 +644,32 @@
 
   <main id="main-content">
     <!-- ==================== HERO SECTION ==================== -->
-    <section id="hero" class="relative pt-28 sm:pt-36 pb-20 md:pb-28 overflow-hidden min-h-[90vh] flex items-center">
+    <section id="hero" class="relative pt-28 sm:pt-32 pb-16 md:pb-24 overflow-hidden min-h-[88vh] flex items-center scroll-mt-24">
       
       <!-- Background Hall Image with Dark Navy Gradient Fade to Obsidian -->
       <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
-           style="background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.72) 0%, rgba(6, 11, 20, 0.88) 55%, #060B14 100%), url('assets/hero-bg-hall.webp');">
+           style="background-color: #060B14; background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.82) 0%, rgba(6, 11, 20, 0.92) 55%, #060B14 100%), url('assets/hero-bg-hall.webp');">
       </div>
 
       <!-- Subtle Ambient Radial Lights (Wrapped to Prevent Mobile Overflow) -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none w-full">
         </div>
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div class="relative z-10 max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           <!-- Column Left: Copywriting & Audience Routers (7 Cols) -->
-          <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
             
             <!-- Authority Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-slate-800/80 border border-cyanCustom/30 backdrop-blur-md shadow-inner text-xs sm:text-sm font-display font-medium text-cyan-300 max-w-full whitespace-normal break-words leading-relaxed">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-cyanCustom/30 backdrop-blur-md shadow-inner text-xs sm:text-sm font-display font-medium text-cyan-300 max-w-full whitespace-normal break-words leading-relaxed">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
               <span class="lang lang-id">Global HR (26 Negara) • Certified Instructor (CI) BNSP Level 4 • HR Technology Workflow Architect</span>
               <span class="lang lang-en">Global HR (26 Countries) • Certified Instructor (CI) BNSP Level 4 • HR Technology Workflow Architect</span>
             </div>
 
             <!-- Main Headline -->
-            <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white">
+            <h1 class="font-serif text-[clamp(2.25rem,3.6vw,3.25rem)] font-bold leading-[1.16] tracking-tight text-white">
               <span class="lang lang-id">
                 Menjembatani <span class="text-sky-300">Operasional HR Global</span>, Otomasi AI Deterministik, dan Kapabilitas Manusia.
               </span>
@@ -668,7 +679,7 @@
             </h1>
 
             <!-- Subtitle Description -->
-            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-sans">
+            <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
               <span class="lang lang-id">
                 Praktisi People & Culture dan L&D dengan pengalaman mengelola <strong>500+ staf di 26 negara</strong>, membangun arsitektur otomasi HR Technology deterministik yang memangkas beban admin <strong>30% hingga 95%</strong>, membimbing <strong>1.150+ profesional dan talenta</strong>, serta memegang lisensi <strong>Certified Instructor (CI) BNSP Level 4</strong> yang berwenang melatih dan menguji para Trainer (Training of Trainers).
               </span>
@@ -678,10 +689,10 @@
             </p>
 
             <!-- Dual-Audience Navigation Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               
               <!-- Audience 1: Hiring Manager -->
-              <a href="#experience" class="group glass-card p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-blue-500 hover:border-l-cyanCustom w-full max-w-full break-words">
+              <a href="#experience" class="group glass-card bg-slate-900/90 p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-blue-500 hover:border-l-cyanCustom w-full max-w-full break-words">
                 <div>
                   <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400 font-display mb-1 flex items-center space-x-1.5">
                     <i class="fa-solid fa-briefcase"></i>
@@ -705,7 +716,7 @@
               </a>
 
               <!-- Audience 2: Corporate & Event Organizer -->
-              <a href="#corporate-solutions" class="group glass-card p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-amber-500 hover:border-l-amber-400 w-full max-w-full break-words">
+              <a href="#corporate-solutions" class="group glass-card bg-slate-900/90 p-5 rounded-2xl flex flex-col justify-between border-l-4 border-l-amber-500 hover:border-l-amber-400 w-full max-w-full break-words">
                 <div>
                   <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400 font-display mb-1 flex items-center space-x-1.5">
                     <i class="fa-solid fa-microphone-lines"></i>
@@ -730,34 +741,41 @@
 
             </div>
 
-            <!-- Primary CTAs & Social Links (Separated Recruiter & Corporate WhatsApp Funnels) -->
-            <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <!-- Primary CTAs & Social Links (Recruiter-Friendly Email/LinkedIn + Corporate WhatsApp Funnels) -->
+            <div class="flex flex-wrap items-center gap-3 pt-1">
               <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20mendiskusikan%20peluang%20karir%20%2F%20peran%20HR%20profesional." 
                  target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full">
-                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg flex-shrink-0"></i>
+                 data-track-event="cta_recruiter_click" data-track-target="hero_whatsapp_career"
+                 class="px-4 py-3 rounded-xl font-display font-semibold text-[13px] bg-blue-700 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-xl shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full">
+                <i class="fa-brands fa-whatsapp text-emerald-300 text-base flex-shrink-0"></i>
                 <span class="lang lang-id">Diskusi Peluang Karir</span>
                 <span class="lang lang-en">Hiring &amp; Career Inquiry</span>
               </a>
 
               <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20kami%20tertarik%20berdiskusi%20mengenai%20sesi%20In-House%20Training%20%2F%20Keynote%20Speaking%20%2F%20Konsultasi%20HR%20korporat." 
                  target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full">
-                <i class="fa-brands fa-whatsapp text-amber-400 text-lg flex-shrink-0"></i>
+                 data-track-event="cta_corporate_click" data-track-target="hero_whatsapp_corporate"
+                 class="px-4 py-3 rounded-xl font-display font-semibold text-[13px] bg-slate-900/90 hover:bg-amber-950/60 text-amber-300 border border-amber-500/40 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full">
+                <i class="fa-brands fa-whatsapp text-amber-400 text-base flex-shrink-0"></i>
                 <span class="lang lang-id">Kolaborasi &amp; Training Korporat</span>
                 <span class="lang lang-en">Corporate &amp; Training</span>
               </a>
 
-              <a href="mailto:nugrohoamdal@gmail.com?subject=Inquiry%20Collaboration%20-%20Nugroho%20Amdal" 
-                 class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-white/10 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full break-all sm:break-normal">
+              <a href="mailto:nugrohoamdal@gmail.com?subject=Request%20Tailored%20CV%20%2F%20Career%20Opportunity%20-%20Nugroho%20Amdal" 
+                 data-track-event="cta_recruiter_click" data-track-target="hero_email_tailored_cv"
+                 class="px-4 py-3 rounded-xl font-display font-semibold text-[13px] bg-slate-900/90 hover:bg-slate-800 text-slate-100 hover:text-white border border-white/15 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2 max-w-full">
                 <i class="fa-solid fa-envelope text-sky-400 flex-shrink-0"></i>
-                <span class="truncate sm:overflow-visible">nugrohoamdal@gmail.com</span>
+                <span class="lang lang-id">Email &amp; Request Tailored CV</span>
+                <span class="lang lang-en">Email / Request Tailored CV</span>
               </a>
 
               <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
-                 class="p-3.5 rounded-xl bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/10 transition-all transform hover:-translate-y-0.5"
-                 title="LinkedIn Profile">
-                <i class="fa-brands fa-linkedin-in text-base"></i>
+                 aria-label="LinkedIn Profile - Nugroho Amdal"
+                 data-track-event="cta_recruiter_click" data-track-target="hero_linkedin"
+                 class="px-4 py-3 rounded-xl font-display font-semibold text-[13px] bg-slate-900/90 hover:bg-blue-700 text-slate-100 hover:text-white border border-white/15 transition-all transform hover:-translate-y-0.5 inline-flex items-center space-x-2"
+                 title="LinkedIn: linkedin.com/in/nugroho-amdal">
+                <i class="fa-brands fa-linkedin-in text-sky-400 text-sm"></i>
+                <span>LinkedIn</span>
               </a>
             </div>
 
@@ -770,12 +788,12 @@
               <!-- Main Cutout Image (No Card Frame, Bottom Gradient Mask) -->
               <img src="assets/hero-cutout.webp" 
                    alt="Nugroho Amdal, S.S., CI. - Global HR Specialist, HR Technology Workflow Architect & Certified Instructor BNSP Level 4" 
-                   class="hero-cutout-img w-full max-w-full max-h-[540px] lg:max-h-[580px] object-contain object-bottom pointer-events-none select-none" width="1080" height="1350" loading="eager" fetchpriority="high">
+                   class="hero-cutout-img w-full max-w-full max-h-[520px] lg:max-h-[540px] object-contain object-bottom pointer-events-none select-none" width="1080" height="1350" loading="eager" fetchpriority="high" decoding="async">
 
               <!-- Grounded Authority Status Deck (Solid, Non-Floating) -->
               <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 z-20">
                 <!-- Status Item 1: BNSP Level 4 CI (ToT) -->
-                <div class="glass-card px-4 py-3 rounded-xl border border-emeraldCustom/30 bg-slate-900/80 shadow-md flex items-center space-x-3">
+                <div class="glass-card bg-slate-900/90 px-4 py-3 rounded-xl border border-emeraldCustom/30 shadow-md flex items-center space-x-3">
                   <div class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
                     <i class="fa-solid fa-certificate"></i>
                   </div>
@@ -787,7 +805,7 @@
                 </div>
 
                 <!-- Status Item 2: Best HR of the Year 2023 -->
-                <div class="glass-card px-4 py-3 rounded-xl border border-amber-500/30 bg-slate-900/80 shadow-md flex items-center space-x-3">
+                <div class="glass-card bg-slate-900/90 px-4 py-3 rounded-xl border border-amber-500/30 shadow-md flex items-center space-x-3">
                   <div class="w-10 h-10 rounded-lg bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg flex-shrink-0">
                     <i class="fa-solid fa-trophy"></i>
                   </div>
@@ -826,62 +844,62 @@
             
             <!-- 1. The KPI Institute -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="The KPI Institute (Melbourne / Global)">
-              <img src="assets/logo-kpi-institute.png" alt="Logo The KPI Institute Australia - Standar Manajemen Kinerja & KPI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1920" height="1080" loading="lazy">
+              <img src="assets/logo-kpi-institute.png" alt="Logo The KPI Institute Australia - Standar Manajemen Kinerja & KPI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1920" height="1080" loading="lazy" decoding="async">
             </div>
 
             <!-- 2. PT Angkasa Pura II -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="PT Angkasa Pura II (Persero)">
-              <img src="assets/logo-angkasa-pura.png" alt="Logo PT Angkasa Pura II Persero - BUMN Kebandarudaraan Indonesia" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="900" height="309" loading="lazy">
+              <img src="assets/logo-angkasa-pura.png" alt="Logo PT Angkasa Pura II Persero - BUMN Kebandarudaraan Indonesia" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="900" height="309" loading="lazy" decoding="async">
             </div>
 
             <!-- 3. Kementerian Pendidikan -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi">
-              <img src="assets/logo-kementerian-pendidikan.webp" alt="Logo Kemendikbudristek - Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="768" height="768" loading="lazy">
+              <img src="assets/logo-kementerian-pendidikan.webp" alt="Logo Kemendikbudristek - Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="768" height="768" loading="lazy" decoding="async">
             </div>
 
             <!-- 4. Aeronef Academy (NEW) -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Aeronef Academy">
-              <img src="assets/logo-aeronefacademy.webp" alt="Logo Aeronef Academy - Aviation Training & Career Center" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1600" height="1111" loading="lazy">
+              <img src="assets/logo-aeronefacademy.webp" alt="Logo Aeronef Academy - Aviation Training & Career Center" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1600" height="1111" loading="lazy" decoding="async">
             </div>
 
             <!-- 5. Jogja Flight (NEW) -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Jogja Flight">
-              <img src="assets/logo-jogjaflight.jpg" alt="Logo Jogja Flight Aviation Training Center - Pendidikan Pramugari & Staff Penerbangan" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="402" height="304" loading="lazy">
+              <img src="assets/logo-jogjaflight.jpg" alt="Logo Jogja Flight Aviation Training Center - Pendidikan Pramugari & Staff Penerbangan" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="402" height="304" loading="lazy" decoding="async">
             </div>
 
             <!-- 6. Mr. BOB Kampung Inggris -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Mr. BOB Kampung Inggris">
-              <img src="assets/logo-mrbob.webp" alt="Logo Mr. BOB Kampung Inggris Pare Kediri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="2557" height="2560" loading="lazy">
+              <img src="assets/logo-mrbob.webp" alt="Logo Mr. BOB Kampung Inggris Pare Kediri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="2557" height="2560" loading="lazy" decoding="async">
             </div>
 
             <!-- 7. TEI Recruitment -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="TEI Recruitment">
-              <img src="assets/logo-teirecruitment.jpg" alt="Logo TEI Recruitment - International Talent Sourcing" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="200" height="200" loading="lazy">
+              <img src="assets/logo-teirecruitment.jpg" alt="Logo TEI Recruitment - International Talent Sourcing" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
             </div>
 
             <!-- 8. Talent Up -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Talent Up">
-              <img src="assets/logo-talentup.webp" alt="Logo Talent Up Indonesia - Career Acceleration & HR Consulting" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1080" height="1080" loading="lazy">
+              <img src="assets/logo-talentup.webp" alt="Logo Talent Up Indonesia - Career Acceleration & HR Consulting" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1080" height="1080" loading="lazy" decoding="async">
             </div>
 
             <!-- 9. AIESEC Global -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="AIESEC Global">
-              <img src="assets/logo-aisec.png" alt="Logo AIESEC Global - International Youth Leadership Organization" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1265" height="259" loading="lazy">
+              <img src="assets/logo-aisec.png" alt="Logo AIESEC Global - International Youth Leadership Organization" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="1265" height="259" loading="lazy" decoding="async">
             </div>
 
             <!-- 10. NusaWork HR Tech (Cropped) -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="NusaWork HR Tech">
-              <img src="assets/logo-nusawork.webp" alt="Logo NusaWork HR Tech - Platform HRIS & People Management" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="479" height="84" loading="lazy">
+              <img src="assets/logo-nusawork.webp" alt="Logo NusaWork HR Tech - Platform HRIS & People Management" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="479" height="84" loading="lazy" decoding="async">
             </div>
 
             <!-- 11. Study Abroad Center -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="Study Abroad Center">
-              <img src="assets/logo-studyabroadcenter.webp" alt="Logo Study Abroad Center - Konsultan Pendidikan Luar Negeri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="300" height="300" loading="lazy">
+              <img src="assets/logo-studyabroadcenter.webp" alt="Logo Study Abroad Center - Konsultan Pendidikan Luar Negeri" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="300" height="300" loading="lazy" decoding="async">
             </div>
 
             <!-- 12. LMSL International -->
             <div class="bg-slate-50 border border-slate-200/90 rounded-xl h-16 sm:h-20 px-4 py-2 flex items-center justify-center shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 group" title="LMSL International">
-              <img src="assets/logo-lmsl.jpg" alt="Logo London Montessori School Leaders International" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="447" height="447" loading="lazy">
+              <img src="assets/logo-lmsl.jpg" alt="Logo London Montessori School Leaders International" class="max-h-9 sm:max-h-11 w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-300" width="447" height="447" loading="lazy" decoding="async">
             </div>
 
             <!-- 13. Closing Card: & berbagai perusahaan lainnya -->
@@ -899,7 +917,7 @@
     </section>
     <!-- ==================== 6-COLUMN TRUST & IMPACT BAR ==================== -->
     <section id="credibility-strip" class="border-y border-white/10 bg-cardDark/60 backdrop-blur-xl py-8 relative z-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-white/10 text-center">
           
           <div class="px-3 py-2" data-aos="fade-up" data-aos-delay="50">
@@ -954,10 +972,10 @@
       </div>
     </section>
     <!-- ==================== ABOUT ME & 6 KEUNGGULAN ==================== -->
-    <section id="about" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-20 lg:py-24 bg-cardDark/40 border-t border-white/10 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           <!-- Column Left: Professional Bio (7 Cols) -->
           <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
@@ -967,7 +985,7 @@
               <span class="lang lang-en">About Nugroho Amdal</span>
             </div>
 
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2]">
               <span class="lang lang-id">
                 Praktisi People & Culture yang Menggabungkan <span class="text-sky-300">Strategi Global</span>, Ketajaman Analitik, dan Eksekusi Teknologi.
               </span>
@@ -976,7 +994,7 @@
               </span>
             </h2>
 
-            <div class="text-base sm:text-lg text-slate-300 space-y-4 font-sans leading-relaxed">
+            <div class="text-[15px] sm:text-base text-slate-300 space-y-4 font-sans leading-[1.65] max-w-prose">
               <p class="lang lang-id">
                 Saya beroperasi di persimpangan <strong>Global HR Operations, HR Technology & Workflow Automation, Learning & Development (L&D), serta Leadership Coaching</strong>. Jejak pengalaman profesional saya merentang dari memimpin operasional SDM berskala 500+ staf lintas 26 negara di kawasan APAC, EMEA, dan Americas (The KPI Institute), mengawal operasional layanan digital dan pelatihan berstandar keselamatan di BUMN (PT Angkasa Pura II Bandara Soekarno-Hatta), membina 150+ talenta aviasi di Aeronef Academy dan Jogja Flight, memimpin ekspansi rekrutmen massal 40+ staf dalam 2 bulan di Mr. BOB, hingga mendirikan platform Career Tech berbasis AI di Talent Up.
               </p>
@@ -1087,8 +1105,8 @@
     </section>
 
     <!-- ==================== SECTION 5: SELECTED PROFESSIONAL IMPACT ==================== -->
-    <section id="impact" class="py-24 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="impact" class="py-20 lg:py-24 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
             <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-cyan-500/20 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider text-cyan-400 font-display mb-4">
               <i class="fa-solid fa-gem"></i>
@@ -1197,9 +1215,9 @@
     </section>
 
     <!-- ==================== SECTION 6: FEATURED CASE STUDIES (EXECUTIVE BUSINESS IMPACT) ==================== -->
-    <section id="case-studies" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
+    <section id="case-studies" class="py-20 lg:py-24 bg-cardDark/40 border-t border-white/10 relative scroll-mt-24">
       <div id="featured-stories" class="relative -top-24"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14" data-aos="fade-up">
           <div class="max-w-3xl">
@@ -1208,11 +1226,11 @@
               <span class="lang lang-id">Studi Kasus Bisnis &amp; Dampak Eksekutif</span>
               <span class="lang lang-en">Featured Case Studies &amp; Executive Outcomes</span>
             </div>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
               <span class="lang lang-id">Menyelesaikan Bottleneck Bisnis Nyata dengan <span class="text-sky-300">Dampak Terukur</span>.</span>
               <span class="lang lang-en">Solving Critical Business Bottlenecks with <span class="text-sky-300">Measurable ROI</span>.</span>
             </h2>
-            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
               <span class="lang lang-id">Ringkasan tantangan organisasi, nilai bisnis, dan hasil tervalidasi. Untuk demo interaktif, diagram arsitektur, dan simulasi sistem, kunjungi <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-cyanCustom underline hover:text-white">HR Technology Lab</a> di bawah.</span>
               <span class="lang lang-en">Executive overview of organizational challenges, strategic value, and verified business impact. For architecture diagrams, spreadsheets, and live simulators, visit the <a href="#hr-tech-lab" onclick="handleNavClick(event, '#hr-tech-lab')" class="text-cyanCustom underline hover:text-white">HR Technology Lab</a> below.</span>
             </p>
@@ -1345,41 +1363,58 @@
     </section>
 
     <!-- ==================== REKAM JEJAK KARIR & METRIK HR ==================== -->
-    <section id="experience" class="py-24 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" class="py-20 lg:py-24 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
-        <div class="max-w-3xl mb-16" data-aos="fade-up">
+        <div class="max-w-3xl mb-12" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
             <i class="fa-solid fa-timeline"></i>
             <span class="lang lang-id">Rekam Jejak Karir Terverifikasi</span>
             <span class="lang lang-en">Verified Career Track Record</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Pengalaman Kerja Terverifikasi & Dampak Kuantitatif.</span>
             <span class="lang lang-en">Verified Professional Roles & Quantitative Impact.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Memimpin siklus penuh People Operations, analitik tenaga kerja tingkat eksekutif, serta transformasi L&D di skala nasional dan global.</span>
             <span class="lang lang-en">Leading end-to-end People Operations, executive workforce analytics, and L&D transformations across national and global footprints.</span>
           </p>
         </div>
 
-        <div class="mb-12 p-5 rounded-2xl bg-blue-950/40 border border-blue-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" data-aos="fade-up">
+        <div class="mb-12 p-5 rounded-2xl bg-blue-950/50 border border-blue-500/35 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4" data-aos="fade-up">
           <div class="text-sm text-slate-200 font-sans">
             <strong class="text-white font-display block sm:inline">
               <span class="lang lang-id">Sedang merekrut untuk peran HR Leader, People Operations, atau L&amp;D?</span>
               <span class="lang lang-en">Hiring for an HR Lead, People Operations, or L&amp;D role?</span>
             </strong>
             <span class="text-slate-300 text-xs sm:text-sm block sm:inline sm:ml-1">
-              <span class="lang lang-id">Tersedia untuk penempatan Jakarta/Surabaya maupun Remote Global.</span>
-              <span class="lang lang-en">Open to Jakarta/Surabaya or Global Remote roles.</span>
+              <span class="lang lang-id">Tersedia untuk penempatan Jakarta/Surabaya maupun Remote Global (APAC, EMEA, Americas).</span>
+              <span class="lang lang-en">Open to Jakarta/Surabaya or Global Remote roles (APAC, EMEA, Americas).</span>
             </span>
           </div>
-          <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20mendiskusikan%20peluang%20karir%20%2F%20peran%20HR%20profesional." target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-display font-semibold text-xs transition-all">
-            <i class="fa-brands fa-whatsapp text-emerald-300 text-sm"></i>
-            <span class="lang lang-id">Minta CV &amp; Jadwalkan Wawancara</span>
-            <span class="lang lang-en">Request Tailored CV</span>
-          </a>
+          <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+            <a href="mailto:nugrohoamdal@gmail.com?subject=Request%20Tailored%20CV%20-%20HR%20%2F%20L%26D%20Role"
+               data-track-event="cta_recruiter_click" data-track-target="experience_email_tailored_cv"
+               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-cyanCustom/40 text-cyan-300 hover:text-white font-display font-semibold text-xs transition-all">
+              <i class="fa-solid fa-envelope text-sky-400 text-sm"></i>
+              <span class="lang lang-id">Email &amp; Request Tailored CV</span>
+              <span class="lang lang-en">Email: Request Tailored CV</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
+               data-track-event="cta_recruiter_click" data-track-target="experience_linkedin"
+               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-700 border border-white/15 text-slate-200 hover:text-white font-display font-semibold text-xs transition-all">
+              <i class="fa-brands fa-linkedin-in text-sky-400 text-sm"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20mendiskusikan%20peluang%20karir%20%2F%20peran%20HR%20profesional." target="_blank" rel="noopener noreferrer"
+               data-track-event="cta_recruiter_click" data-track-target="experience_whatsapp"
+               class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-display font-semibold text-xs transition-all">
+              <i class="fa-brands fa-whatsapp text-emerald-300 text-sm"></i>
+              <span class="lang lang-id">WhatsApp</span>
+              <span class="lang lang-en">WhatsApp</span>
+            </a>
+          </div>
         </div>
 
         <!-- Career Experience Cards Grid (Including Aeronef Academy & Jogja Flight) -->
@@ -1672,9 +1707,9 @@
     </section>
 
     <!-- ==================== 4 AI & SYSTEMS CASE STUDIES ==================== -->
-    <section id="hr-tech-lab" class="py-24 relative">
+    <section id="hr-tech-lab" class="py-20 lg:py-24 relative scroll-mt-24">
       <div id="ai-systems" class="relative -top-24"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
 
         <!-- ==================== WHAT I CAN PROVIDE YOU (PROBLEM & SOLUTION MATRIX) ==================== -->
         <div id="capability-matrix" class="mb-20" data-aos="fade-up">
@@ -1684,11 +1719,11 @@
               <i class="fa-solid fa-layer-group"></i>
               <span>CAPABILITY &amp; VALUE MATRIX</span>
             </div>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
               <span class="lang lang-id">Masalah yang Saya Pecahkan &amp; Solusi yang Saya Berikan</span>
               <span class="lang lang-en">What I Can Provide You: Problems Solved &amp; Solutions Delivered</span>
             </h2>
-            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+            <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
               <span class="lang lang-id">Dipetakan berdasarkan tingkat kompleksitas—mulai dari arsitektur sistem HR berskala enterprise hingga pendampingan karier personal.</span>
               <span class="lang lang-en">Mapped by complexity level—from enterprise-scale HR system architecture to personalized career coaching.</span>
             </p>
@@ -2186,11 +2221,11 @@
             <span class="lang lang-id">HR Technology Lab • Simulasi &amp; Arsitektur Teknis</span>
             <span class="lang lang-en">HR Technology Lab • Architecture &amp; Live Simulators</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Solusi Digital, Otomasi Alur Kerja & AI Enablement Nyata.</span>
             <span class="lang lang-en">Digital Solutions, Workflow Automation & Proven AI Enablement.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">
               Sistem operasional deterministik dan arsitektur alur kerja yang telah diimplementasikan untuk mengeliminasi bottleneck kritis di rekrutmen, penggajian (PPh 21 TER), analitik budaya (EVP), dan pengembangan karier.
             </span>
@@ -2204,7 +2239,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           <!-- Featured Flagship: 27-Sheet Automated HRIS & Payroll Architecture -->
-          <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-cyan-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
+          <div id="lab-hris" class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-cyan-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between scroll-mt-24" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -2223,8 +2258,8 @@
               </div>
 
               <!-- Thumbnail Flowchart Image -->
-              <div class="relative group my-2">
-                <img src="assets/hris_payroll_flowchart.webp" alt="Automated HRIS & Payroll System Architecture Flowchart" class="w-full rounded-xl border border-gray-700/80 mb-4 shadow-lg hover:border-cyan-500/50 transition-colors" width="2752" height="1536" loading="lazy">
+              <div class="relative group max-w-4xl mx-auto my-4 p-3 sm:p-4 rounded-2xl bg-slate-950/60 border border-white/10">
+                <img src="assets/hris_payroll_flowchart.webp" alt="Automated HRIS & Payroll System Architecture Flowchart" class="w-full h-auto max-h-[68vh] mx-auto object-contain rounded-xl border border-gray-700/80 shadow-lg hover:border-cyan-500/50 transition-colors" width="2752" height="1536" loading="lazy" decoding="async">
               </div>
 
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
@@ -2305,7 +2340,7 @@
           </div>
           
           <!-- Featured System 2: Automated Recruitment & Manpower Planning (MPP) Hub -->
-          <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-blue-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
+          <div id="lab-recruitment" class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-blue-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between scroll-mt-24" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -2324,8 +2359,8 @@
               </div>
 
               <!-- Thumbnail Flowchart Image -->
-              <div class="relative group my-2">
-                <img src="assets/recruitment_mpp_flowchart.webp" alt="Automated Recruitment & Manpower Planning (MPP) Architecture Flowchart" class="w-full rounded-xl border border-gray-700/80 mb-4 shadow-lg hover:border-blue-500/50 transition-colors" width="2752" height="1536" loading="lazy">
+              <div class="relative group max-w-4xl mx-auto my-4 p-3 sm:p-4 rounded-2xl bg-slate-950/60 border border-white/10">
+                <img src="assets/recruitment_mpp_flowchart.webp" alt="Automated Recruitment & Manpower Planning (MPP) Architecture Flowchart" class="w-full h-auto max-h-[68vh] mx-auto object-contain rounded-xl border border-gray-700/80 shadow-lg hover:border-blue-500/50 transition-colors" width="2752" height="1536" loading="lazy" decoding="async">
               </div>
 
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
@@ -2400,7 +2435,7 @@
           </div>
           
           <!-- Featured System 3: Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic -->
-          <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-purple-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
+          <div id="lab-evp" class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-purple-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between scroll-mt-24" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -2419,8 +2454,8 @@
               </div>
 
               <!-- Thumbnail Flowchart Image -->
-              <div class="relative group my-2">
-                <img src="assets/evp_analytics_flowchart.webp" alt="Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic Architecture Flowchart" class="w-full rounded-xl border border-gray-700/80 mb-4 shadow-lg hover:border-purple-500/50 transition-colors" width="2752" height="1536" loading="lazy">
+              <div class="relative group max-w-4xl mx-auto my-4 p-3 sm:p-4 rounded-2xl bg-slate-950/60 border border-white/10">
+                <img src="assets/evp_analytics_flowchart.webp" alt="Automated Employee Value Proposition (EVP) Analytics & Culture Diagnostic Architecture Flowchart" class="w-full h-auto max-h-[68vh] mx-auto object-contain rounded-xl border border-gray-700/80 shadow-lg hover:border-purple-500/50 transition-colors" width="2752" height="1536" loading="lazy" decoding="async">
               </div>
 
               <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
@@ -2495,7 +2530,7 @@
           </div>
 
           <!-- Featured System 4: HR Chat Assistant — AI Employee Self-Service & Helpdesk Orchestrator -->
-          <div class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-emerald-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between" data-aos="fade-up">
+          <div id="lab-chat" class="col-span-1 md:col-span-2 glass-card p-7 sm:p-9 rounded-3xl border border-emerald-500/40 bg-cardDark/90 relative overflow-hidden shadow-2xl flex flex-col justify-between scroll-mt-24" data-aos="fade-up">
             <div>
               <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div class="inline-flex items-center space-x-2 flex-wrap gap-2">
@@ -2514,7 +2549,7 @@
               </div>
 
               <!-- 4-Step Visual Workflow Architecture Diagram -->
-              <div class="my-6 p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10">
+              <div class="max-w-4xl mx-auto my-5 p-3 sm:p-4 rounded-2xl bg-black/40 border border-white/10">
                 <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
                   <i class="fa-solid fa-diagram-project text-emerald-400"></i>
                   <span class="lang lang-id">Alur Orkestrasi 4-Langkah (Zero-Friction Employee Self-Service):</span>
@@ -2940,8 +2975,8 @@
     </section>
 
     <!-- ==================== SECTION 9: CORPORATE SOLUTIONS & ADVISORY ==================== -->
-    <section id="corporate-solutions" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
-      
+    <section id="corporate-solutions" class="py-20 lg:py-24 bg-cardDark/40 border-t border-white/10 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
       <!-- Legacy Anchor Alias: #topics -->
       <div id="topics" class="relative -top-24"></div>
         
@@ -2951,11 +2986,11 @@
             <span class="lang lang-id">Silabus & Topik Pelatihan</span>
             <span class="lang lang-en">Syllabi & Training Topics</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Kurikulum Berbasis Kompetensi (BNSP Level 4) yang Dapat Dikustomisasi.</span>
             <span class="lang lang-en">Customizable Competency-Based Curricula (BNSP Level 4).</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Setiap materi dirancang dengan pendekatan pedagogi terstruktur, studi kasus dunia kerja aktual, dan tolok ukur evaluasi Kirkpatrick Model.</span>
             <span class="lang lang-en">Every module integrates pedagogical rigor, real-world operational case studies, and measurable Kirkpatrick evaluation benchmarks.</span>
           </p>
@@ -3050,11 +3085,11 @@
             <span class="lang lang-id">Layanan Kolaborasi B2B & Personal</span>
             <span class="lang lang-en">B2B & Individual Collaboration Services</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Empat Pilar Kontribusi untuk Organisasi & Individu.</span>
             <span class="lang lang-en">Four Strategic Contribution Pillars for Teams & Leaders.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Format kolaborasi fleksibel, mulai dari lokakarya korporat full-day, keynote seminar, coaching privat 1-on-1, hingga pelatihan bahasa bisnis intensif.</span>
             <span class="lang lang-en">Flexible engagement models spanning full-day corporate workshops, keynote speaking, 1-on-1 executive coaching, to specialized business English.</span>
           </p>
@@ -3065,8 +3100,8 @@
           <!-- Pillar 1 -->
           <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
             <div>
-              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
-                <img src="assets/pillar-01-training.webp" alt="Layanan Corporate Training & Workshop SDM Berbasis BNSP Level 4 oleh Nugroho Amdal" class="w-full h-full object-cover" width="1280" height="653" loading="lazy">
+              <div class="aspect-[16/9] overflow-hidden bg-white/95 p-2 flex items-center justify-center">
+                <img src="assets/pillar-01-training.webp" alt="Layanan Corporate Training & Workshop SDM Berbasis BNSP Level 4 oleh Nugroho Amdal" class="w-full h-full object-contain" width="1280" height="653" loading="lazy" decoding="async">
               </div>
               <div class="p-7">
                 <h3 class="font-serif text-2xl font-bold text-white mb-2">Corporate Training & L&D Consulting</h3>
@@ -3089,7 +3124,7 @@
           <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
             <div>
               <div class="aspect-[16/9] overflow-hidden bg-slate-900">
-                <img src="assets/pillar-02-speaking.webp" alt="Layanan Keynote Speaker & Seminar Nasional HR & AI Workflow oleh Nugroho Amdal" class="w-full h-full object-cover" width="1531" height="851" loading="lazy">
+                <img src="assets/pillar-02-speaking.webp" alt="Layanan Keynote Speaker & Seminar Nasional HR & AI Workflow oleh Nugroho Amdal" class="w-full h-full object-cover object-top" width="1531" height="851" loading="lazy" decoding="async">
               </div>
               <div class="p-7">
                 <h3 class="font-serif text-2xl font-bold text-white mb-2">Keynote Speaking / Seminar / Webinar</h3>
@@ -3111,8 +3146,8 @@
           <!-- Pillar 3 -->
           <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150">
             <div>
-              <div class="aspect-[16/9] overflow-hidden bg-slate-900">
-                <img src="assets/pillar-03-coaching.webp" alt="Layanan 1-on-1 Career Coaching & Bimbingan Karir Eksekutif oleh Nugroho Amdal" class="w-full h-full object-cover" width="640" height="359" loading="lazy">
+              <div class="aspect-[16/9] overflow-hidden bg-white/95 p-1.5 flex items-center justify-center">
+                <img src="assets/pillar-03-coaching.webp" alt="Layanan 1-on-1 Career Coaching & Bimbingan Karir Eksekutif oleh Nugroho Amdal" class="w-full h-full object-contain" width="640" height="359" loading="lazy" decoding="async">
               </div>
               <div class="p-7">
                 <h3 class="font-serif text-2xl font-bold text-white mb-2">1-on-1 Career & Leadership Coaching</h3>
@@ -3135,7 +3170,7 @@
           <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
             <div>
               <div class="aspect-[16/9] overflow-hidden bg-slate-900">
-                <img src="assets/pillar-04-english.webp" alt="Layanan Executive Business English & Aviation English Training oleh Nugroho Amdal" class="w-full h-full object-cover" width="1600" height="900" loading="lazy">
+                <img src="assets/pillar-04-english.webp" alt="Layanan Executive Business English & Aviation English Training oleh Nugroho Amdal" class="w-full h-full object-cover object-top" width="1600" height="900" loading="lazy" decoding="async">
               </div>
               <div class="p-7">
                 <h3 class="font-serif text-2xl font-bold text-white mb-2">Professional & Executive English Training</h3>
@@ -3159,7 +3194,7 @@
 
       <!-- Legacy Anchor Bridge: #services-rates (Owner Decision A: Concise Summary + Bridge to products.html#services-rates) -->
       <div id="services-rates" class="relative -top-24 mt-24 pt-20 border-t border-white/10"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="glass-card p-8 sm:p-10 rounded-3xl border border-gold/40 bg-gradient-to-br from-slate-900/95 via-cardDark to-blue-950/30 shadow-2xl" data-aos="fade-up">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-4">
@@ -3219,7 +3254,7 @@
             <i class="fa-solid fa-circle-question"></i>
             <span>FAQ</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-3">
             <span class="lang lang-id">Pertanyaan yang Sering Diajukan.</span>
             <span class="lang lang-en">Frequently Asked Questions.</span>
           </h2>
@@ -3311,12 +3346,13 @@
         </div>
 
 
+      </div>
     </section>
 
     <!-- ==================== SECTION 10: CREDENTIALS, RECOGNITION & GALLERY ==================== -->
-    <section id="credentials" class="py-24 relative">
+    <section id="credentials" class="py-20 lg:py-24 relative scroll-mt-24">
       <div id="certifications" class="relative -top-24"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-16" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider text-emerald-400 font-display mb-3">
@@ -3324,11 +3360,11 @@
             <span class="lang lang-id">Kredensial & Standar Mutu Internasional</span>
             <span class="lang lang-en">Credentials & International Quality Standards</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Sertifikasi Resmi, Standar Mutu & Penghargaan.</span>
             <span class="lang lang-en">Official Certifications, Quality Standards & Honors.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Standar kompetensi resmi berlisensi BNSP, sistem manajemen mutu ISO, serta pendidikan akademis bahasa dan teknologi.</span>
             <span class="lang lang-en">Certified under national BNSP competency rubrics, ISO management systems, and academic degrees in language and technology.</span>
           </p>
@@ -3482,7 +3518,7 @@
       </div>
 
       <div id="gallery" class="relative -top-24 mt-24 pt-20 border-t border-white/10"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-16" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
@@ -3490,11 +3526,11 @@
             <span class="lang lang-id">Galeri Dokumentasi & Bukti Lapangan</span>
             <span class="lang lang-en">Event Documentation & Field Proof</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Jejak Kolaborasi di Kementerian, BUMN, Bisnis Global & Kampus.</span>
             <span class="lang lang-en">Track Record Across Ministries, SOEs, Global Forums & Campuses.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Dokumentasi nyata saat memfasilitasi pelatihan, seminar eksekutif, coaching, dan transformasi kapabilitas talenta. Klik gambar untuk memperbesar.</span>
             <span class="lang lang-en">Real-world visual proof from executive seminars, corporate workshops, coaching clinics, and international forums. Click any photo to inspect in high resolution.</span>
           </p>
@@ -3508,7 +3544,7 @@
                onclick="openLightbox('assets/doc-01-kemendikbud.webp', 'Seminar Karir Kemendikbud Jakarta', 'Pembicara pengembangan karir di lingkungan kementerian dan institusi nasional.')"
                data-aos="fade-up" data-aos-delay="50">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-01-kemendikbud.webp" alt="Dokumentasi Seminar Karir Kemendikbudristek Jakarta bersama Pembicara Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1920" height="1280" loading="lazy">
+              <img src="assets/doc-01-kemendikbud.webp" alt="Dokumentasi Seminar Karir Kemendikbudristek Jakarta bersama Pembicara Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1920" height="1280" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Seminar Karir Kemendikbud</h3>
@@ -3521,7 +3557,7 @@
                onclick="openLightbox('assets/doc-02-intl-seminar.webp', 'International Business Seminar', 'Featured speaker on global talent strategy and organizational competitiveness.')"
                data-aos="fade-up" data-aos-delay="100">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-02-intl-seminar.webp" alt="Dokumentasi International Business Seminar SDM Global bersama Pembicara Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1440" height="1800" loading="lazy">
+              <img src="assets/doc-02-intl-seminar.webp" alt="Dokumentasi International Business Seminar SDM Global bersama Pembicara Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1440" height="1800" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">International Business Seminar</h3>
@@ -3534,7 +3570,7 @@
                onclick="openLightbox('assets/doc-03-brand-collab.webp', 'Kolaborasi Brand & HR Tech', 'Thought leadership on recruitment pipeline optimization and team performance.')"
                data-aos="fade-up" data-aos-delay="150">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-03-brand-collab.webp" alt="Dokumentasi Kolaborasi Strategis Industri & Talent Acquisition bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1170" height="1356" loading="lazy">
+              <img src="assets/doc-03-brand-collab.webp" alt="Dokumentasi Kolaborasi Strategis Industri & Talent Acquisition bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1170" height="1356" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Kolaborasi Brand & HR Tech</h3>
@@ -3547,7 +3583,7 @@
                onclick="openLightbox('assets/doc-04-startup-training.webp', 'Startup Training Session', 'Fasilitasi peningkatan kapabilitas tim sesuai ekspektasi bisnis modern.')"
                data-aos="fade-up" data-aos-delay="200">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-04-startup-training.webp" alt="Dokumentasi Pelatihan Karyawan Startup Teknologi & Otomasi Kerja bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1504" height="841" loading="lazy">
+              <img src="assets/doc-04-startup-training.webp" alt="Dokumentasi Pelatihan Karyawan Startup Teknologi & Otomasi Kerja bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1504" height="841" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Startup Training Session</h3>
@@ -3560,7 +3596,7 @@
                onclick="openLightbox('assets/doc-05-diaspora.webp', 'Jaringan Diaspora Global', 'Kolaborasi dan jejaring profesional lintas negara.')"
                data-aos="fade-up" data-aos-delay="50">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-05-diaspora.webp" alt="Dokumentasi Forum Diaspora & Pengelolaan Talenta Lintas Negara bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy">
+              <img src="assets/doc-05-diaspora.webp" alt="Dokumentasi Forum Diaspora & Pengelolaan Talenta Lintas Negara bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Jaringan Diaspora Global</h3>
@@ -3573,7 +3609,7 @@
                onclick="openLightbox('assets/doc-06-aiesec.webp', 'AIESEC Global Event', 'Pembicara pengembangan kepemimpinan muda di forum internasional.')"
                data-aos="fade-up" data-aos-delay="100">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-06-aiesec.webp" alt="Dokumentasi AIESEC Youth Leadership & Cross-Border Exchange bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1080" height="1350" loading="lazy">
+              <img src="assets/doc-06-aiesec.webp" alt="Dokumentasi AIESEC Youth Leadership & Cross-Border Exchange bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1080" height="1350" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">AIESEC Global Event</h3>
@@ -3586,7 +3622,7 @@
                onclick="openLightbox('assets/doc-07-bumn.webp', 'Kolaborasi dengan BUMN', 'Fasilitasi pelatihan dan berbagi praktik terbaik di lingkungan korporasi negara.')"
                data-aos="fade-up" data-aos-delay="150">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-07-bumn.webp" alt="Dokumentasi Corporate Training BUMN PT Angkasa Pura II bersama Trainer Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy">
+              <img src="assets/doc-07-bumn.webp" alt="Dokumentasi Corporate Training BUMN PT Angkasa Pura II bersama Trainer Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Kolaborasi Korporasi BUMN</h3>
@@ -3599,7 +3635,7 @@
                onclick="openLightbox('assets/doc-08-komunitas.webp', 'Sharing di Komunitas Karir', 'Pembimbingan aktif strategi pencarian kerja dan peningkatan kompetensi.')"
                data-aos="fade-up" data-aos-delay="200">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-08-komunitas.webp" alt="Dokumentasi Workshop Komunitas Profesional & Pengembangan Karir bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy">
+              <img src="assets/doc-08-komunitas.webp" alt="Dokumentasi Workshop Komunitas Profesional & Pengembangan Karir bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Komunitas Karir Profesional</h3>
@@ -3612,7 +3648,7 @@
                onclick="openLightbox('assets/doc-09-webinar-nasional.webp', 'Webinar Karir Nasional', 'Sesi edukasi skala besar bersama ratusan peserta dari berbagai provinsi.')"
                data-aos="fade-up" data-aos-delay="50">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-09-webinar-nasional.webp" alt="Dokumentasi Keynote Speaker Webinar Nasional HR & Inovasi AI bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy">
+              <img src="assets/doc-09-webinar-nasional.webp" alt="Dokumentasi Keynote Speaker Webinar Nasional HR & Inovasi AI bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1920" height="2560" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Webinar Karir Nasional</h3>
@@ -3625,7 +3661,7 @@
                onclick="openLightbox('assets/doc-10-kampus.webp', 'Kuliah Tamu & Seminar Kampus', 'Menjembatani kesiapan lulusan universitas dengan kebutuhan industri nyata.')"
                data-aos="fade-up" data-aos-delay="100">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-10-kampus.webp" alt="Dokumentasi Kuliah Tamu Universitas Brawijaya, UM & UTM bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1170" height="780" loading="lazy">
+              <img src="assets/doc-10-kampus.webp" alt="Dokumentasi Kuliah Tamu Universitas Brawijaya, UM & UTM bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1170" height="780" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Kuliah Tamu Kampus Nasional</h3>
@@ -3638,7 +3674,7 @@
                onclick="openLightbox('assets/doc-11-industry-partner.webp', 'Kemitraan Industri', 'Kolaborasi strategis bersama para praktisi dan pemimpin bisnis.')"
                data-aos="fade-up" data-aos-delay="150">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-11-industry-partner.webp" alt="Dokumentasi Forum Kemitraan Industri & Standarisasi Kompetensi Kerja bersama Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1064" height="1280" loading="lazy">
+              <img src="assets/doc-11-industry-partner.webp" alt="Dokumentasi Forum Kemitraan Industri & Standarisasi Kompetensi Kerja bersama Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1064" height="1280" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Kemitraan Industri</h3>
@@ -3651,7 +3687,7 @@
                onclick="openLightbox('assets/doc-12-public-speaking.webp', 'Public Speaking & Executive Presence Training', 'Melatih komunikasi persuasif dan kepercayaan diri profesional.')"
                data-aos="fade-up" data-aos-delay="200">
             <div class="aspect-[4/3] overflow-hidden bg-slate-900">
-              <img src="assets/doc-12-public-speaking.webp" alt="Dokumentasi Public Speaking & Professional MC Bootcamp bersama Trainer Nugroho Amdal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="1600" height="900" loading="lazy">
+              <img src="assets/doc-12-public-speaking.webp" alt="Dokumentasi Public Speaking & Professional MC Bootcamp bersama Trainer Nugroho Amdal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" width="1600" height="900" loading="lazy" decoding="async">
             </div>
             <div class="p-4">
               <h3 class="font-display font-bold text-sm text-white mb-1">Public Speaking & Presence</h3>
@@ -3666,8 +3702,8 @@
     </section>
 
     <!-- ==================== SECTION 11: TALENT UP SPOTLIGHT ==================== -->
-    <section id="talent-up" class="py-24 bg-cardDark/40 border-t border-white/10 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="talent-up" class="py-20 lg:py-24 bg-cardDark/40 border-t border-white/10 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="glass-card p-8 sm:p-12 rounded-3xl border border-purple-500/35 bg-gradient-to-br from-slate-900/90 via-cardDark to-indigo-950/30 relative overflow-hidden" data-aos="fade-up">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-8 space-y-5">
@@ -3676,11 +3712,11 @@
                 <span class="lang lang-id">Ekosistem Inisiatif Pendiri • Talent Up</span>
                 <span class="lang lang-en">Founder Ecosystem Spotlight • Talent Up</span>
               </div>
-              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
+              <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2]">
                 <span class="lang lang-id">Talent Up: Akselerasi Karier &amp; Produk Otomasi Berbasis AI.</span>
                 <span class="lang lang-en">Talent Up: Career Acceleration &amp; AI-Enabled Product Ecosystem.</span>
               </h2>
-              <p class="text-base text-slate-300 leading-relaxed font-sans">
+              <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
                 <span class="lang lang-id">Di luar mandat HR korporat dan advisory eksekutif, saya mendirikan <strong>Talent Up</strong> sebagai wadah pengembangan talenta dan laboratorium produk karier digital—membimbing <strong>1.150+ individu</strong>, melayani <strong>200+ peserta e-learning</strong>, serta menghadirkan aplikasi <strong>Career Coach AI</strong> (~100 pengguna aktif) dan prototipe <strong>Job Apply AI</strong>.</span>
                 <span class="lang lang-en">Alongside corporate HR leadership and executive advisory, I founded <strong>Talent Up</strong> as a career empowerment platform and digital product lab—mentoring <strong>1,150+ talents</strong>, serving <strong>200+ e-learning learners</strong>, and building the <strong>Career Coach AI</strong> web app (~100 active users) and <strong>Job Apply AI</strong> prototype.</span>
               </p>
@@ -3699,7 +3735,7 @@
             </div>
             <div class="lg:col-span-4 flex flex-col items-center justify-center">
               <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/80 shadow-2xl w-48 h-48 flex items-center justify-center">
-                <img src="assets/logo-talentup.webp" alt="Logo Talent Up Indonesia" class="w-full h-full object-contain" width="1080" height="1080" loading="lazy">
+                <img src="assets/logo-talentup.webp" alt="Logo Talent Up Indonesia" class="w-full h-full object-contain" width="1080" height="1080" loading="lazy" decoding="async">
               </div>
               <div class="mt-4 text-center text-xs text-slate-400 font-display">
                 1,150+ Mentored • 200+ E-Learning • Career Coach AI
@@ -3711,28 +3747,28 @@
     </section>
 
     <!-- ==================== SECTION 12: FINAL CONVERSION STAGE BANNER ==================== -->
-    <section id="kolaborasi" class="relative py-28 overflow-hidden min-h-[500px] flex items-center">
+    <section id="kolaborasi" class="relative py-24 pb-28 overflow-hidden min-h-[460px] flex items-center scroll-mt-24">
       <div id="contact" class="relative -top-24"></div>
       
       <!-- Stage Background Image with Dark Gradient Overlay -->
       <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
-           style="background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.85) 0%, rgba(6, 11, 20, 0.92) 50%, #060B14 100%), url('assets/cta-bg-stage.webp');">
+           style="background-color: #060B14; background-image: linear-gradient(180deg, rgba(6, 11, 20, 0.88) 0%, rgba(6, 11, 20, 0.94) 50%, #060B14 100%), url('assets/cta-bg-stage.webp');">
       </div>
 
-      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+      <div class="relative z-10 max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-blue-600/20 border border-blue-400/40 text-xs font-bold font-display uppercase tracking-wider text-cyanCustom mb-6 max-w-full whitespace-normal break-words">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-blue-400/40 text-xs font-bold font-display uppercase tracking-wider text-cyanCustom mb-6 max-w-full whitespace-normal break-words">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></span>
           <span class="lang lang-id">Mari Berkolaborasi &amp; Terhubung</span>
           <span class="lang lang-en">Let's Connect &amp; Collaborate</span>
         </div>
 
-        <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-6 max-w-3xl mx-auto">
           <span class="lang lang-id">Siap Berdiskusi untuk Peran Strategis HR Maupun Kolaborasi Korporat.</span>
           <span class="lang lang-en">Ready to Connect for Strategic HR Roles or Corporate Collaborations.</span>
         </h2>
 
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 font-sans">
+        <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose mx-auto mb-10 font-sans">
           <span class="lang lang-id">
             Pilih jalur komunikasi sesuai kebutuhan Anda—apakah untuk peluang posisi HR profesional (Full-Time / Remote Global) atau kolaborasi In-House Training, Keynote Speaking, dan Konsultasi KPI korporat.
           </span>
@@ -3741,32 +3777,36 @@
           </span>
         </p>
 
-        <!-- Dual Audience WhatsApp CTA Paths + Direct Email & LinkedIn -->
-        <div class="flex flex-wrap items-center justify-center gap-4">
+        <!-- Dual Audience WhatsApp CTA Paths + Direct Email (Tailored CV) & LinkedIn -->
+        <div class="flex flex-wrap items-center justify-center gap-3.5">
           <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20mendiskusikan%20peluang%20karir%20%2F%20peran%20HR%20profesional." 
              target="_blank" rel="noopener noreferrer"
-             class="px-7 py-4 rounded-xl font-display font-semibold text-sm sm:text-base bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-2xl shadow-blue-600/40 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
-            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+             data-track-event="cta_recruiter_click" data-track-target="final_whatsapp_career"
+             class="px-6 py-3.5 rounded-xl font-display font-semibold text-sm bg-blue-700 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-2xl shadow-blue-600/40 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+            <i class="fa-brands fa-whatsapp text-emerald-300 text-lg"></i>
             <span class="lang lang-id">WA Recruiter / Peluang Karir</span>
             <span class="lang lang-en">WhatsApp: Career &amp; Hiring</span>
           </a>
 
           <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20kami%20tertarik%20berdiskusi%20mengenai%20sesi%20In-House%20Training%20%2F%20Keynote%20Speaking%20%2F%20Konsultasi%20HR%20korporat." 
              target="_blank" rel="noopener noreferrer"
-             class="px-7 py-4 rounded-xl font-display font-semibold text-sm sm:text-base bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 shadow-2xl shadow-amber-600/30 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
-            <i class="fa-brands fa-whatsapp text-slate-950 text-xl"></i>
+             data-track-event="cta_corporate_click" data-track-target="final_whatsapp_corporate"
+             class="px-6 py-3.5 rounded-xl font-display font-semibold text-sm bg-amber-500 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 shadow-2xl shadow-amber-600/30 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+            <i class="fa-brands fa-whatsapp text-slate-950 text-lg"></i>
             <span class="lang lang-id">WA Klien Korporat / Training</span>
             <span class="lang lang-en">WhatsApp: Corporate &amp; Training</span>
           </a>
 
-          <a href="mailto:nugrohoamdal@gmail.com?subject=Career%20or%20Corporate%20Inquiry%20-%20Nugroho%20Amdal" 
-             class="px-6 py-4 rounded-xl font-display font-semibold text-sm sm:text-base bg-slate-800/90 hover:bg-slate-700/90 text-white border border-white/15 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+          <a href="mailto:nugrohoamdal@gmail.com?subject=Request%20Tailored%20CV%20%2F%20Career%20or%20Corporate%20Inquiry%20-%20Nugroho%20Amdal" 
+             data-track-event="cta_recruiter_click" data-track-target="final_email_tailored_cv"
+             class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-white border border-white/20 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
             <i class="fa-solid fa-envelope text-sky-400"></i>
-            <span>nugrohoamdal@gmail.com</span>
+            <span>nugrohoamdal@gmail.com <span class="text-cyan-300 text-xs font-normal">(Request Tailored CV)</span></span>
           </a>
 
           <a href="https://www.linkedin.com/in/nugroho-amdal" target="_blank" rel="noopener noreferrer"
-             class="px-6 py-4 rounded-xl font-display font-semibold text-sm sm:text-base bg-slate-800/90 hover:bg-blue-600 text-white border border-white/15 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
+             data-track-event="cta_recruiter_click" data-track-target="final_linkedin"
+             class="px-5 py-3.5 rounded-xl font-display font-semibold text-sm bg-slate-900 hover:bg-blue-700 text-white border border-white/20 transition-all transform hover:-translate-y-1 inline-flex items-center space-x-2.5">
             <i class="fa-brands fa-linkedin-in text-sky-300"></i>
             <span>LinkedIn Profile</span>
           </a>
@@ -3778,8 +3818,8 @@
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-white/10 bg-obsidian py-12 relative z-10 text-slate-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="border-t border-white/10 bg-obsidian py-12 pb-24 relative z-10 text-slate-400 text-sm">
+    <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         
         <div>
@@ -3827,17 +3867,18 @@
         © 2026 Nugroho Amdal, S.S., CI. All rights reserved. • Built for 100% self-hosted GitHub Pages deployment.
       </div>
     </div>
+
+    <!-- ==================== BACK TO TOP BUTTON ==================== -->
+    <button id="backToTopBtn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            aria-label="Kembali ke atas / Back to top"
+            class="fixed bottom-[74px] right-4 z-40 w-10 h-10 rounded-full bg-cardDark/95 border border-white/15 text-cyanCustom hover:bg-royal hover:text-white shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 invisible translate-y-2 transition-all duration-300">
+      <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
   </footer>
 
-  <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->
-  <script src="assets/js/assistant-widget.js?v=2.2" defer></script>
-
-  <!-- ==================== BACK TO TOP BUTTON ==================== -->
-  <button id="backToTopBtn" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-          aria-label="Kembali ke atas / Back to top"
-          class="fixed bottom-24 right-5 z-40 w-11 h-11 rounded-full bg-cardDark/90 border border-white/15 text-cyanCustom hover:bg-royal hover:text-white shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 invisible translate-y-2 transition-all duration-300">
-    <i class="fa-solid fa-arrow-up text-sm"></i>
-  </button>
+  <!-- ==================== ZERO-COOKIE TELEMETRY & ASISTEN MAS AMDAL ==================== -->
+  <script src="assets/js/analytics-hook.js" defer></script>
+  <script src="assets/js/assistant-widget.js?v=2.3" defer></script>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 invisible flex items-center justify-center p-4 sm:p-6" onclick="closeLightbox(event)">
@@ -3856,8 +3897,8 @@
   </div>
 
   <!-- ==================== JAVASCRIPT LIBS & SCRIPTS ==================== -->
-  <!-- AOS Animate on Scroll -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- AOS Animate on Scroll (Deferred) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
   <script>
     // Mobile Menu & Navigation Functions
@@ -4034,13 +4075,17 @@
       }
     });
 
-    // Initialize AOS (respecting prefers-reduced-motion)
-    AOS.init({
-      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-      once: true,
-      duration: 800,
-      offset: 60,
-      easing: 'ease-out-cubic'
+    // Initialize AOS once deferred script is ready (respecting prefers-reduced-motion)
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) {
+        AOS.init({
+          disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+          once: true,
+          duration: 800,
+          offset: 60,
+          easing: 'ease-out-cubic'
+        });
+      }
     });
 
     // Bilingual Toggle Logic
@@ -4052,11 +4097,11 @@
       const btnEN = document.getElementById('btnLangEN');
 
       if (lang === 'id') {
-        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
-        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
+        btnID.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnEN.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white';
       } else {
-        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
-        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
+        btnEN.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnID.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white';
       }
     }
 

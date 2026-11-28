@@ -39,7 +39,9 @@
   <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -72,8 +74,9 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- AOS Animation on Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- AOS Animation on Scroll (Non-Blocking) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /></noscript>
 
   <!-- Schema.org JSON-LD Structured Data for Google & AI Engines (GEO) -->
   <script type="application/ld+json">
@@ -348,11 +351,18 @@
 
     /* Desktop Root Font-Size Scaling (Comfortable Reading Hierarchy) */
     @media (min-width: 1024px) {
-      html {
-        font-size: 15px;
-      }
       nav a {
         white-space: nowrap;
+      }
+    }
+    @media (min-width: 1280px) {
+      html {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 1536px) {
+      html {
+        font-size: 15px;
       }
     }
 
@@ -408,60 +418,60 @@
   </a>
 
   <!-- ==================== NAVIGATION BAR ==================== -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/80 backdrop-blur-xl border-b border-white/10">
-    <div class="w-full max-w-full px-4 xl:px-8 h-20 flex items-center justify-between">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-obsidian/85 backdrop-blur-xl border-b border-white/10">
+    <div class="w-full max-w-[1440px] mx-auto px-4 xl:px-6 h-20 flex items-center justify-between gap-3">
       
       <!-- Brand Wordmark -->
       <a href="/#hero" class="flex flex-col group shrink-0 min-w-max">
-        <span class="font-serif text-lg xs:text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors whitespace-nowrap">
+        <span class="font-serif text-lg sm:text-xl 2xl:text-2xl font-bold tracking-tight text-white group-hover:text-cyanCustom transition-colors whitespace-nowrap">
           Nugroho Amdal<span class="text-gold font-sans font-normal text-xs sm:text-sm ml-1">, S.S., CI.</span>
         </span>
-        <span class="hidden md:block text-[9px] xl:text-[10px] font-display tracking-wider uppercase text-slate-400 group-hover:text-slate-200 transition-colors whitespace-nowrap">
+        <span class="hidden 2xl:block text-[10px] font-display tracking-wider uppercase text-slate-400 group-hover:text-slate-200 transition-colors whitespace-nowrap">
           <span class="lang lang-id">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
           <span class="lang lang-en">Global HR • HR Technology Workflow Architect • BNSP Trainer</span>
         </span>
       </a>
 
       <!-- Desktop Navigation Links (Unified Phase 4.1 8 Items) -->
-      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3.5 2xl:gap-5">
-        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+      <nav aria-label="Primary Navigation" class="hidden xl:flex items-center gap-3 xl:gap-4">
+        <a href="/#about" onclick="handleNavClick(event, '/#about')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Profil</span><span class="lang lang-en">Profile</span>
         </a>
-        <a href="/#case-studies" onclick="handleNavClick(event, '/#case-studies')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#case-studies" onclick="handleNavClick(event, '/#case-studies')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Dampak Nyata</span><span class="lang lang-en">Impact</span>
         </a>
-        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#experience" onclick="handleNavClick(event, '/#experience')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Rekam Jejak</span><span class="lang lang-en">Track Record</span>
         </a>
-        <a href="/#hr-tech-lab" onclick="handleNavClick(event, '/#hr-tech-lab')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#hr-tech-lab" onclick="handleNavClick(event, '/#hr-tech-lab')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">HR Tech &amp; AI</span><span class="lang lang-en">HR Tech &amp; AI</span>
         </a>
-        <a href="/#corporate-solutions" onclick="handleNavClick(event, '/#corporate-solutions')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#corporate-solutions" onclick="handleNavClick(event, '/#corporate-solutions')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Konsultasi</span><span class="lang lang-en">Consulting</span>
         </a>
-        <a href="/#credentials" onclick="handleNavClick(event, '/#credentials')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="/#credentials" onclick="handleNavClick(event, '/#credentials')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Kredensial</span><span class="lang lang-en">Credentials</span>
         </a>
-        <a href="products.html" onclick="handleNavClick(event, 'products.html')" aria-current="page" class="text-[13px] 2xl:text-[14px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
+        <a href="products.html" onclick="handleNavClick(event, 'products.html')" aria-current="page" class="text-[13px] font-semibold whitespace-nowrap text-cyanCustom border-b-2 border-cyanCustom pb-0.5 transition-colors duration-200">
           <span class="lang lang-id">Produk &amp; Service</span><span class="lang lang-en">Products &amp; Services</span>
         </a>
-        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] 2xl:text-[14px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
+        <a href="stories.html" onclick="handleNavClick(event, 'stories.html')" class="text-[13px] font-medium whitespace-nowrap text-gray-300 hover:text-white transition-colors duration-200 py-1">
           <span class="lang lang-id">Cerita &amp; Insight</span><span class="lang lang-en">Stories</span>
         </a>
       </nav>
 
       <!-- Right Controls: Bilingual Button Beam + CTA + Mobile Hamburger -->
-      <div class="shrink-0 flex items-center gap-3">
+      <div class="shrink-0 flex items-center gap-2.5">
         
         <!-- BILINGUAL TOGGLE WITH CONIC ROTATING BORDER BEAM -->
         <div class="border-beam-outer shadow-lg" title="Ganti Bahasa / Switch Language">
-          <div class="bg-cardDark/95 rounded-full p-1 flex items-center space-x-1">
+          <div class="bg-cardDark rounded-full p-1 flex items-center space-x-1">
             <button id="btnLangID" type="button" onclick="switchLanguage('id')" 
-              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md">
+              class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md">
               ID
             </button>
             <button id="btnLangEN" type="button" onclick="switchLanguage('en')" 
-              class="lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white">
+              class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white">
               EN
             </button>
           </div>
@@ -470,10 +480,10 @@
         <!-- Quick Contact CTA -->
         <a href="https://wa.me/6285395940406?text=Halo%20Nugroho%2C%20saya%20tertarik%20dengan%20produk%20dan%20program%20Talent%20Up." 
            target="_blank" rel="noopener noreferrer"
-           class="hidden sm:inline-flex items-center space-x-2 whitespace-nowrap px-3.5 py-2 text-xs font-semibold font-display rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-          <span class="lang lang-id">Konsultasi Produk</span>
-          <span class="lang lang-en">Product Inquiry</span>
+           class="hidden sm:inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-1.5 text-[13px] font-semibold font-display rounded-xl bg-blue-700 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-emerald-300 text-sm"></i>
+          <span class="lang lang-id">Hubungi</span>
+          <span class="lang lang-en">Contact</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -530,7 +540,7 @@
       <div class="absolute inset-0 overflow-hidden pointer-events-none w-full">
       </div>
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+      <div class="relative z-10 max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
         
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-blue-600/20 border border-blue-400/40 text-xs font-bold font-display uppercase tracking-wider text-cyanCustom mb-6">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
@@ -538,7 +548,7 @@
           <span class="lang lang-en">Unified Catalog • Products & Professional Services</span>
         </div>
 
-        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+        <h1 class="font-serif text-[clamp(2.25rem,3.6vw,3.25rem)] font-bold text-white leading-[1.16] mb-6 max-w-4xl mx-auto">
           <span class="lang lang-id">
             Katalog Produk & <span class="text-sky-300">Layanan Profesional</span> Terpadu.
           </span>
@@ -547,7 +557,7 @@
           </span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 font-sans">
+        <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose mx-auto mb-10 font-sans">
           <span class="lang lang-id">
             Solusi komprehensif dari alat bantu AI mandiri, program bimbingan karir intensif seumur hidup, hingga layanan korporasi (Corporate Training ToT BNSP Level 4, HR Tech Advisory, dan Executive Coaching).
           </span>
@@ -572,8 +582,8 @@
     </section>
 
     <!-- ==================== SECTION 1: AI TOOLS & DIGITAL PRODUCTS ==================== -->
-    <section id="ai-tools-products" class="py-20 bg-cardDark/40 border-t border-white/10 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="ai-tools-products" class="py-20 bg-cardDark/40 border-t border-white/10 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-14" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-blue-400 font-display mb-3">
@@ -581,11 +591,11 @@
             <span class="lang lang-id">Kategori 1 • AI Tools & Digital Products</span>
             <span class="lang lang-en">Category 1 • AI Tools & Digital Products</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Alat Bantu AI & Produk Digital untuk Efisiensi Nyata.</span>
             <span class="lang lang-en">Production AI Tools & Digital Products Built for Impact.</span>
           </h2>
-          <p class="text-base text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Dibangun dengan logika deterministik dan metodologi HR global, menjamin akurasi tinggi, bebas halusinasi, dan langsung melipatgandakan produktivitas pencari kerja maupun praktisi SDM.</span>
             <span class="lang lang-en">Engineered on deterministic architectures and global HR standards, delivering high accuracy, zero hallucination, and immediate productivity acceleration.</span>
           </p>
@@ -632,7 +642,7 @@
                 </h4>
                 <p class="text-sm text-gray-400 mb-3 italic">"Bukan sekadar perbaik CV, tapi ngasih saran karir detail & realistis persis kayak orang dalam industri."</p>
                 <div class="aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-700">
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/o9I9-OQx9QI" title="Testimoni Career Coach AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/o9I9-OQx9QI" title="Testimoni Career Coach AI" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               </div>
               <a href="https://careerclarity-app.vercel.app/" target="_blank" rel="noopener noreferrer"
@@ -739,8 +749,8 @@
     </section>
 
     <!-- ==================== SECTION 2: PROFESSIONAL SERVICES & MENTORSHIP ==================== -->
-    <section id="professional-services" class="py-20 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="professional-services" class="py-20 relative scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-14" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-amber-500/20 border border-amber-500/30 text-xs font-bold uppercase tracking-wider text-amber-400 font-display mb-3">
@@ -748,11 +758,11 @@
             <span class="lang lang-id">Kategori 2 • Professional Services & Mentorship</span>
             <span class="lang lang-en">Category 2 • Professional Services & Mentorship</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Layanan B2B Korporasi & Program Mentorship Karir.</span>
             <span class="lang lang-en">Enterprise B2B Services & High-Impact Career Mentorship.</span>
           </h2>
-          <p class="text-base text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Katalog terpadu layanan profesional: pendampingan karir seumur hidup, pelatihan korporat bersertifikasi BNSP Level 4, arsitektur sistem HR Technology, serta sesi coaching eksekutif.</span>
             <span class="lang lang-en">Unified catalog of professional services: lifetime career mentorship, BNSP Level 4 corporate workshops, HR Technology architecture retainers, and private executive coaching.</span>
           </p>
@@ -805,7 +815,7 @@
                 </h4>
                 <p class="text-sm text-gray-400 mb-3 italic">"Awalnya ekspektasi 3 bulan, ternyata di bawah 2 bulan udah dapet kerja sampai kaget &amp; nolak-nolak tawaran interview lain!"</p>
                 <div class="aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-gray-700">
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/-oqf20U85gs" title="Testimoni Talent Up Bootcamp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/-oqf20U85gs" title="Testimoni Talent Up Bootcamp" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               </div>
               <a href="https://talentup.myscalev.com/careerdevelopment" target="_blank" rel="noopener noreferrer"
@@ -1177,8 +1187,8 @@
     </section>
 
     <!-- ==================== SECTION 3: KOLABORASI TRANSPARAN / RATE CARD ==================== -->
-    <section id="services-rates" class="py-24 relative bg-cardDark/40 border-t border-white/5">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services-rates" class="py-20 lg:py-24 relative bg-cardDark/40 border-t border-white/5 scroll-mt-24">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-14" data-aos="fade-up">
           <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-bold uppercase tracking-wider text-cyanCustom font-display mb-3">
@@ -1186,11 +1196,11 @@
             <span class="lang lang-id">Kolaborasi Transparan & Rate Card</span>
             <span class="lang lang-en">Transparent Collaboration & Rate Card</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-4">
             <span class="lang lang-id">Referensi Investasi Layanan Kolaborasi Transparan.</span>
             <span class="lang lang-en">Transparent Collaboration Investment Reference.</span>
           </h2>
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+          <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose font-sans">
             <span class="lang lang-id">Berikut adalah baseline referensi resmi investasi untuk coaching 1-on-1, corporate training, setup sistem HRIS, hingga speaking engagement. Penawaran dapat dinegosiasikan sesuai kebutuhan unik Anda.</span>
             <span class="lang lang-en">Official reference baseline rates for 1-on-1 coaching, corporate training, HRIS system setup, and speaking engagements. Proposals are negotiable to match your unique scope.</span>
           </p>
@@ -1380,24 +1390,24 @@
     </section>
 
     <!-- ==================== FINAL CTA BANNER ==================== -->
-    <section class="relative py-24 overflow-hidden border-t border-white/10 flex items-center bg-obsidian">
+    <section class="relative py-24 pb-28 overflow-hidden border-t border-white/10 flex items-center bg-obsidian">
       <!-- Ambient Radial Glow -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none w-full">
       </div>
 
-      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+      <div class="relative z-10 max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-blue-600/20 border border-blue-400/40 text-xs font-bold font-display uppercase tracking-wider text-cyanCustom mb-6 max-w-full whitespace-normal break-words">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></span>
           <span class="lang lang-id">Konsultasi Terbuka & Kustomisasi Solusi</span>
           <span class="lang lang-en">Open Consultation & Tailored Solutions</span>
         </div>
 
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mb-6">
+        <h2 class="font-serif text-[clamp(1.75rem,2.6vw,2.35rem)] font-bold text-white leading-[1.2] mb-6 max-w-3xl mx-auto">
           <span class="lang lang-id">Butuh Solusi Kustom untuk Kebutuhan Spesifik Organisasi Anda?</span>
           <span class="lang lang-en">Need a Custom Solution for Your Team or Organization?</span>
         </h2>
 
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 font-sans">
+        <p class="text-[15px] sm:text-base text-slate-300 leading-[1.65] max-w-prose mx-auto mb-10 font-sans">
           <span class="lang lang-id">
             Diskusikan kebutuhan otomasi alur kerja, penyelenggaraan workshop internal, atau program akselerasi karir bersama Nugroho Amdal, S.S., CI.
           </span>
@@ -1427,8 +1437,8 @@
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-white/10 bg-obsidian py-12 relative z-10 text-slate-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="border-t border-white/10 bg-obsidian py-12 pb-24 relative z-10 text-slate-400 text-sm">
+    <div class="max-w-[1180px] mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         
         <div>
@@ -1469,18 +1479,26 @@
         © 2026 Nugroho Amdal, S.S., CI. All rights reserved. • Built for 100% self-hosted GitHub Pages deployment.
       </div>
     </div>
+    <button id="backToTopBtn" type="button" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="hidden fixed bottom-[74px] right-4 z-40 w-10 h-10 rounded-full bg-slate-800/95 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 shadow-lg transition-all items-center justify-center">
+      <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
   </footer>
 
-  <!-- AOS Animate on Scroll -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- AOS Animate on Scroll (Deferred) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
   <script>
-    // Initialize AOS
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 60,
-      easing: 'ease-out-cubic'
+    // Initialize AOS once deferred script is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) {
+        AOS.init({
+          once: true,
+          duration: 800,
+          offset: 60,
+          easing: 'ease-out-cubic'
+        });
+      }
     });
 
     // Bilingual Toggle Logic
@@ -1492,11 +1510,11 @@
       const btnEN = document.getElementById('btnLangEN');
 
       if (lang === 'id') {
-        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
-        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-400 hover:text-white';
+        btnID.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnEN.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white';
       } else {
-        btnEN.className = 'lang-btn px-3 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
-        btnID.className = 'lang-btn px-3 py-1 rounded-full text-xs font-display transition-all duration-300 text-slate-400 hover:text-white';
+        btnEN.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 bg-royal text-white shadow-md';
+        btnID.className = 'lang-btn px-2.5 py-1 rounded-full text-xs font-bold font-display transition-all duration-300 text-slate-300 hover:text-white';
       }
     }
 
@@ -1702,10 +1720,6 @@
       });
     });
   </script>
-  <button id="backToTopBtn" type="button" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          class="hidden fixed bottom-24 right-5 z-40 w-10 h-10 rounded-full bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white border border-white/15 shadow-lg transition-all items-center justify-center">
-    <i class="fa-solid fa-arrow-up text-sm"></i>
-  </button>
   <script>
     window.addEventListener('scroll', () => {
       const btt = document.getElementById('backToTopBtn');
@@ -1714,7 +1728,8 @@
       else { btt.classList.add('hidden'); btt.classList.remove('flex'); }
     });
   </script>
-  <!-- ==================== ASISTEN MAS AMDAL CHAT WIDGET ==================== -->
-  <script src="assets/js/assistant-widget.js?v=2.2" defer></script>
+  <!-- ==================== ZERO-COOKIE TELEMETRY & ASISTEN MAS AMDAL ==================== -->
+  <script src="assets/js/analytics-hook.js" defer></script>
+  <script src="assets/js/assistant-widget.js?v=2.3" defer></script>
 </body>
 </html>

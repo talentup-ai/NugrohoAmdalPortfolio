@@ -95,8 +95,8 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       /* Root Container */
       #amdal-assistant-root {
         position: fixed;
-        bottom: 24px;
-        right: 24px;
+        bottom: 16px;
+        right: 16px;
         z-index: 99999;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
         display: flex;
@@ -115,16 +115,17 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         opacity: 0;
         transform: translateY(32px) scale(0.96);
         transition: transform 0.6s var(--amdal-ease), opacity 0.6s var(--amdal-ease), box-shadow 0.3s ease;
-        background: linear-gradient(135deg, #0F172A 0%, #060B14 100%);
+        background-color: #0F172A;
+        background-image: linear-gradient(135deg, #0F172A 0%, #060B14 100%);
         border: 1px solid rgba(59, 130, 246, 0.35);
         border-radius: 9999px;
-        padding: 10px 18px 10px 14px;
+        padding: 8px 14px 8px 11px;
         color: #FFFFFF;
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         cursor: pointer;
-        box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
         user-select: none;
         backdrop-filter: blur(12px);
       }
@@ -145,16 +146,17 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       }
 
       .amdal-trigger-avatar {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
         border-radius: 9999px;
-        background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+        background-color: #1D4ED8;
+        background-image: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         color: #FFFFFF;
         font-weight: 700;
-        font-size: 13px;
+        font-size: 11.5px;
         letter-spacing: -0.5px;
         border: 1.5px solid rgba(255, 255, 255, 0.2);
         position: relative;
@@ -173,7 +175,7 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
       }
 
       .amdal-trigger-text {
-        font-size: 13.5px;
+        font-size: 12.5px;
         font-weight: 600;
         color: #F8FAFC;
         letter-spacing: 0.1px;
@@ -199,10 +201,10 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
         transition: opacity 0.5s var(--amdal-ease), transform 0.5s var(--amdal-ease);
         background: #0F172A;
         border: 1px solid rgba(59, 130, 246, 0.35);
-        border-radius: 16px;
-        padding: 10px 14px;
-        margin-bottom: 10px;
-        max-width: 320px;
+        border-radius: 14px;
+        padding: 9px 12px;
+        margin-bottom: 8px;
+        max-width: 300px;
         box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.65), 0 0 16px rgba(37, 99, 235, 0.15);
         display: flex;
         align-items: center;
@@ -842,6 +844,8 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
   function createWidgetDOM() {
     const root = document.createElement('div');
     root.id = 'amdal-assistant-root';
+    root.setAttribute('role', 'complementary');
+    root.setAttribute('aria-label', t.headerTitle);
 
     // 1. Auto-Dismiss Callout Bubble
     const calloutEl = document.createElement('div');
@@ -999,6 +1003,9 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
     triggerBtn.addEventListener('click', () => {
       dismissCallout(calloutEl);
       toggleChat(!isChatOpen);
+      if (window.trackPortfolioEvent) {
+        window.trackPortfolioEvent('assistant_toggle', { open: isChatOpen });
+      }
     });
 
     // Close Window Button
@@ -1136,6 +1143,9 @@ const CLOUD_RUN_ENDPOINT = 'https://backend-assistant-one.vercel.app';
   async function handleUserSend(text) {
     if (!text || isSending) return;
     isSending = true;
+    if (window.trackPortfolioEvent) {
+      window.trackPortfolioEvent('assistant_message_sent', { length: text.length });
+    }
 
     // Smoothly collapse header to maximize reading room
     collapseHeader();
